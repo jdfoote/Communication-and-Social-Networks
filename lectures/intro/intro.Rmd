@@ -1,0 +1,177 @@
+---
+title: COM 411
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    reveal_plugins: ["notes"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+
+f <- function (x) {formatC(x, format="d", big.mark=',')}
+bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
+gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
+wrapify <- function (x) {paste("{", x, "}", sep="")}
+p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+```
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+
+
+<section>
+<h2>
+COM 41100: Communication and Social Networks
+</h2>
+<h3>
+Tuesday and Thursday, 3:00-4:15
+</h3>
+
+</section>
+
+# Welcome!
+
+## Agenda for the day
+
+> - Introductions
+> - About the class
+
+## Introductions
+- Name
+- Year
+- Major
+- Something boring about you
+
+## What is Communication and Social Networks?
+
+<div class='container'>
+<div class='col'>
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/240px-Facebook_icon.svg.png'/>
+</div>
+<div class='col'>
+<img src='./images/Twitter_Logo_Blue.png' style='width:270px;' />
+</div>
+</div>
+
+<div style= "color:orange; transform: rotate(17deg);" class='fragment'>NOT THIS KIND OF SOCIAL NETWORK!</div>
+
+## Social networks are much more interesting!
+
+>- Collective decision making
+>- Social contagion
+>- Social influence
+<img class='fragment' src='https://www.researchgate.net/profile/Thiago_Silva8/publication/224946853/figure/fig2/AS:302557231632393@1449146673764/Illustration-of-the-Zacharys-karate-club-network-There-are-34-vertices-divided-into-two.png' height='200px' />
+
+
+## Goals
+1. Understand the foundations of network theory and analysis
+2. Critically read social network studies
+3. Learn how social networks relate to your own interests
+4. Gain a basic understanding of gathering and analyzing network data in R
+
+# How we reach those goals
+
+## Assignments
+
+>- Homework
+>	- Social network concepts
+>	- Programming practice
+>- Reading
+>- Participation (in-class and online)
+
+## Exams
+>- Two in-class exams
+
+## Final Project
+>- Group-based, network-inspired project
+
+## Grading
+
+## Programming
+
+>- You will be able to do stuff like this:
+
+<div class='fragment'>
+```{r, echo = T, message = F, fig.height = 5}
+library(igraph)
+
+z <- graph("Zachary") # the Zachary karate club
+
+ceb <- cluster_edge_betweenness(z)
+V(z)$community = ceb$membership
+plot(z, vertex.color = V(z)$community, vertex.label = NA)
+
+```
+</div>
