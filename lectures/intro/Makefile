@@ -9,7 +9,6 @@ new: all
 	firefox *.html
 
 clean:
-	rm *.html
 	rm -r *_files
 	rm -r *_cache
 
