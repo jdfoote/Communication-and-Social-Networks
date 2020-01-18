@@ -20,6 +20,7 @@ bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
 gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
 wrapify <- function (x) {paste("{", x, "}", sep="")}
 p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+library(igraph)
 ```
 
 <style type="text/css">
@@ -108,6 +109,20 @@ Tuesday and Thursday, 3:00-4:15
 > - Introductions
 > - About the class
 
+## About me
+
+<div class='container'>
+<div class='col fragment'>
+<img src='./images/family.jpg'>
+</div>
+<div class='col fragment'>
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:250px;'>
+</div>
+<div class='col fragment'>
+<img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:250px;'/>
+</div>
+</div>
+
 ## Introductions
 - Name
 - Year
@@ -129,17 +144,18 @@ Tuesday and Thursday, 3:00-4:15
 
 ## Social networks are much more interesting!
 
->- Collective decision making
->- Social contagion
->- Social influence
 <img class='fragment' src='https://www.researchgate.net/profile/Thiago_Silva8/publication/224946853/figure/fig2/AS:302557231632393@1449146673764/Illustration-of-the-Zacharys-karate-club-network-There-are-34-vertices-divided-into-two.png' height='200px' />
+
+>- How do groups make decisions
+>- How do fads and fashions start and spread?
+>- How do our connections influence our perceptions about and behavior in the world?
 
 
 ## Goals
-1. Understand the foundations of network theory and analysis
-2. Critically read social network studies
-3. Learn how social networks relate to your own interests
-4. Gain a basic understanding of gathering and analyzing network data in R
+> 1. Understand the foundations of network theory and analysis
+> 2. Critically read social network studies
+> 3. Learn how social networks relate to your own interests
+> 4. Gain a basic understanding of gathering and analyzing network data in R
 
 # How we reach those goals
 
@@ -151,6 +167,9 @@ Tuesday and Thursday, 3:00-4:15
 >- Reading
 >- Participation (in-class and online)
 
+## Textbook
+>- Multiple readings from Six Degrees: The Science of a Connected Age (~$10)
+
 ## Exams
 >- Two in-class exams
 
@@ -158,6 +177,23 @@ Tuesday and Thursday, 3:00-4:15
 >- Group-based, network-inspired project
 
 ## Grading
+>- Normal grading has some negative unintended consequences
+<div class='container'>
+<div class='col'>
+<img class='fragment' src='./images/discussion.jpg' style='max-width:450px;'/>
+</div>
+</div>
+>- How can we build a learning community?
+
+## Grading
+>- I'm interested in teaching, not assessing
+>- Assignments will be turned in on Brightspace
+>- I will provide feedback
+>- 4 times during the semester you will turn in reflection pieces
+>- If I disagree I will reach out
+
+## Dangers of this approach to grading
+
 
 ## Programming
 
@@ -165,13 +201,71 @@ Tuesday and Thursday, 3:00-4:15
 
 <div class='fragment'>
 ```{r, echo = T, message = F, fig.height = 5}
-library(igraph)
-
 z <- graph("Zachary") # the Zachary karate club
 
-ceb <- cluster_edge_betweenness(z)
-V(z)$community = ceb$membership
-plot(z, vertex.color = V(z)$community, vertex.label = NA)
+ceb <- cluster_edge_betweenness(z) # Identify communities
+V(z)$community = ceb$membership # Add communities as node attributes
+plot(z, 
+     vertex.color = V(z)$community, # Color by community
+     vertex.size = sqrt(betweenness(z)), # Size by betweenness centrality
+     vertex.label = NA) # Remove labels
 
 ```
 </div>
+
+## Getting in touch
+>- Office Hours
+>- Email
+
+## Tech in the classroom
+
+## Please be vocal
+>- I will solicit feedback as part of reflections
+>- Let me know what is and isn't working
+
+## Assignments
+
+>- Read the syllabus
+>- Fill out the survey (linked on syllabus)
+>- Read preface and chapter 1 of Six Degrees
+>	- And order the book
+>- Introduce yourself (and give thoughts on the readings?) on Brightspace
+
+
+# Simulation Activity
+
+## Read Instruction Sheet
+
+- Only communicate through written messages
+- <b>No</b> talking
+- Write your number and time finished on the board
+
+## How did it go?
+
+>- What worked well?
+>- What didn't?
+>- Who was fastest? Why?
+>- What was the longest path a resource traveled?
+
+## Global network
+<img class='fragment' src='images/simulation.jpg'/>
+
+## Debrief topics to cover
+- Reciprocity
+- Degree centrality
+- Social capital
+- Structural holes
+- Reputation and deceit
+- Position and power
+- Multiplexity
+- Number vs. type of ties
+- Global/local networks
+- Tie maintenance
+- Sponsorship
+- Norms and social conventions
+
+## Meta discussion
+- How does this differ from real-world networks?
+
+- What does this make you see differently?
+
