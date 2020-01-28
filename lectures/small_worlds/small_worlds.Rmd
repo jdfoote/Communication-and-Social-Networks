@@ -22,6 +22,7 @@ wrapify <- function (x) {paste("{", x, "}", sep="")}
 p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
 source('../class_list.R')
 set.seed(0121)
+library(igraph)
 ```
 
 <style type="text/css">
@@ -92,6 +93,27 @@ visibility: inherit; }
 
 </style>
 
+
+<section>
+<blockquote>Human progress is neither automatic nor inevitable... Every step toward the goal of justice requires sacrifice, suffering, and struggle; the tireless exertions and passionate concern of dedicated individuals.
+</blockquote>
+
+Martin Luther King, Jr.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Civil_Rights_March_on_Washington%2C_D.C._%28Dr._Martin_Luther_King%2C_Jr._and_Mathew_Ahmann_in_a_crowd.%29_-_NARA_-_542015_-_Restoration.jpg" width="500px"/>
+</section>
+
+## Housekeeping
+> - Tech policy
+> - Designated reminder
+> - Proposed structure for class
+>	- Semi-"flipped" class
+
+## Questions from the homework
+>- Edgelists
+>- Matrices
+>- Graphs
+
 # Why is the network perspective so important?
 
 ## Power failure example
@@ -102,4 +124,95 @@ visibility: inherit; }
 > - Non-linear
 > - Unpredictable, even when individuals are understood
 
+## Segregation Example
 
+> - Link to this example is on the wiki
+> - Go through this with a partner
+> - Discuss in small groups
+> - Discuss as a class
+
+## Emergence
+> - How does individual behavior aggregate?
+> - When is this simple? When is it complicated? (TPS)
+> - Fire example
+> - Boids example
+
+## Interdependence and Structure
+
+> - If components are interdependent, then how they are connected matters
+>	- Both for individuals and for the system
+> - What are some examples of this? (TPS)
+
+
+## Structure of networks
+
+> - What do real social networks look like?
+> - What is clustering?
+> - What is a random graph?
+
+## Random Graph
+
+```{r}
+G = erdos.renyi.game(100, .3)
+
+V(G)$size = 8
+l <- layout_with_graphopt(G)
+plot(G, directed = T, layout = l, vertex.label='')
+
+```
+
+## Actual social network
+
+- Faculty friendship network
+
+```{r}
+
+library(igraphdata)
+data("UKfaculty")
+
+l <- layout_with_graphopt(UKfaculty)
+V(UKfaculty)$size = 8
+V(UKfaculty)$label = ''
+plot(UKfaculty, edge.arrow.size=.3, edge.curved=.1, layout = l)
+
+```
+
+## Other insights and ideas from Six Degrees?
+
+
+## Assignments
+
+> - Read Chapter 3 of Six Degrees
+
+
+# Six Degrees of Wikipedia
+
+## Concepts from reading
+
+> - Structure and agency
+> - Clustering
+> - Path lengths
+> - Distance
+
+## Putting it together
+
+> - What does "Six Degrees" refer to?
+> - What is the puzzle?
+> - What is the solution?
+
+## Milgram Experiment
+
+>- What was he trying to do?
+>- Did you find the results surprising?
+>- Do you think that technology has changed this today? In what ways
+>- What do you think the distance is of the Purdue network?
+
+## How is knowledge connected?
+> - Six Degrees of Wikipedia
+>	- Can be done in pairs, turn in with both names on it
+
+
+<aside class='notes'>If there is still time, can show the Oracle of Bacon</aside>
+
+## Assignment
+> - Find someone with HI driver's license
