@@ -1,0 +1,57 @@
+---
+title: "Jeremy's Example"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+For example, this will create a new vector and then draw a histogram of it:
+
+```{r}
+
+ages <- c(18,19,21,20,17,18,20,19,22,25,22,19,20,21)
+hist(ages, breaks = 7)
+
+```
+
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor.
+
+This is how you would load the data from https://kateto.net/network-visualization.
+
+First, you need to download the dataset from [here](http://www.kateto.net/wordpress/wp-content/uploads/2019/06/sunbelt2019.zip).
+
+Download this file and unzip it. Then, change what's within the quotation marks to point to the location where it's saved on your computer:
+
+```{r, message=F}
+
+nodes <- read.csv("Dataset1-Media-Example-NODES.csv", header=T, as.is=T)
+links <- read.csv("Dataset1-Media-Example-EDGES.csv", header=T)
+```
+
+Now we can convert this into a network
+```{r}
+library('igraph')
+net <- graph_from_data_frame(d=links, vertices=nodes, directed=T) 
+```
+
+and plot it.
+
+```{r}
+plot(net)
+```
+
+For this (very brief) assignment, use https://kateto.net/network-visualization as inspiration and make this plot look nicer.
+
+```{r}
+
+# Your new plotting code here
+
+```
