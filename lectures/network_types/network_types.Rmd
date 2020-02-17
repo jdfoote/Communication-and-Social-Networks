@@ -274,3 +274,25 @@ people %>%
 > - Homework 3 (extended family network)
 > - Install R and RStudio (optional)
 
+
+# Intro to R
+
+## The Dad Joke
+
+Shout out to people wondering what the opposite of 'in' is.
+
+## Homework
+
+> - How did it go?
+> - What was different from the first assignment?
+
+## Questions about R?
+
+> - We will regroup at the end of class
+> - We can adjust how quickly we go through things
+
+## For Tuesday
+
+Turn in Self-Assessment Reflection (instructions on wiki)
+Finish Introduction to R?
+

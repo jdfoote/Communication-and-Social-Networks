@@ -1,0 +1,253 @@
+---
+title: COM 411
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    reveal_plugins: ["notes"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+
+f <- function (x) {formatC(x, format="d", big.mark=',')}
+bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
+gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
+wrapify <- function (x) {paste("{", x, "}", sep="")}
+p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+library(igraph)
+```
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+
+## Today's Dad Joke
+Bro, can you pass me that leaflet?
+
+
+Brochure.
+
+## Housekeeping
+
+> - Thursday Dr. Lee will be visiting
+> - Next Thursday is an in-class exam
+
+## Reflection summary
+
+> - Good
+>	- Activities
+>	- Class discussion
+> - Bad
+>	- Six Degrees book
+>	  - Sorry!
+>	- Brightspace + wiki
+>	  - Not sorry ;)
+> - Confusing
+>	- What kinds of goals to set?
+
+## What to know from Six Degrees
+
+> - How closely connected are people who are geographically/socially distant?
+> - People are clustered: our friends are friends with each other, so it feels like it should be distant
+>	- High clustering coefficient
+> - Human networks have short diameter
+>	- We are all connected within a surprisingly small distance
+
+
+## Homework Review
+
+>  - Questions about networks in R?
+
+# Power in Social Networks
+
+## What is power?
+> - Long, varied history in the social sciences
+>   - One version is the capacity to achieve one's will
+>   - How do we do that? Through capital
+> - Social networks are one way of measuring "social capital"
+> - Who has power in a social network?
+
+## Degree Centrality
+
+>- Counts the number of edges each node has
+>  - In, out, or all
+
+```{r, out.width="50%"}
+set.seed(23)
+G = random.graph.game(8, .35)
+
+plot(G, vertex.size = (degree(G) +1)* 4)
+
+degrees = degree(G)
+names(degrees) = 1:8
+print("Degree Centrality:")
+print(degrees)
+
+```
+
+## Closeness Centrality
+
+Average distance to all other nodes
+
+<div class="container">
+<div class='fragment col'>
+```{r}
+plot(G)
+```
+</div>
+
+<div class='fragment col'>
+```{r}
+plot(G, vertex.size = closeness(G, normalized = T) * 50)
+```
+</div>
+
+
+## Betweenness Centrality
+
+Counts the number of shortest paths that go through each node. This is based on the value of being in a "structural hole"
+
+Which of these has the highest betweenness?
+<div class="container">
+<div class='fragment col'>
+```{r}
+plot(G)
+```
+</div>
+
+<div class='fragment col'>
+```{r}
+plot(G, vertex.size = betweenness(G) * 5)
+```
+</div>
+
+
+## Eigenvector Centrality
+
+Who is connected to the most important people? If you have only one friend, but that friend is the President, then you are still powerful.
+
+<div class="container">
+<div class='fragment col'>
+```{r}
+plot(G, vertex.size = eigen_centrality(G)$vector * 40)
+```
+</div>
+
+<div class='fragment col'>
+```{r}
+pa = barabasi.game(8, directed = F)
+plot(pa,vertex.size = eigen_centrality(pa)$vector * 40)
+```
+</div>
+
+## Network-level
+
+
+## Density
+
+Directed
+$$
+\frac{\sum(edges)}{N * (N-1)}
+$$
+
+Undirected: Multiply by 2
+
+
+
+## Centralization
+
+How unequal is the centrality between nodes?
+
+<div class="container">
+<div class='col'>
+```{r, out.width='33%'}
+x = random.graph.game(8, .3)
+plot(x)
+
+plot(make_star(8, mode='undirected'))
+
+plot(make_lattice(8, circular = T))
+```
+
+## Using metadata to find Paul Revere
+
+> - Where did the data come from?
+>    - What kind of network was it?
+> - Did this make you think differently about metadata? 
+>	- About privacy?
+
+
+## Homework
+
+> - Reading
+> - Keep working on R
