@@ -6,8 +6,7 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: false
-    reveal_plugins: ["notes"]
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
