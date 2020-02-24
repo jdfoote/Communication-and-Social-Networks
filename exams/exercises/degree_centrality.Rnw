@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+make_matrix <- function(g){
+    x = as.matrix(as_adj(g))
+  result = xtable(x, digits = 0)
+  return(result)
+}
+
+@
+
+\begin{question}
+
+Calculate the total degree centrality for each of the following nodes in the graph (8 points):
+
+\begin{enumerate}
+\item A:
+\item B:
+\item C:
+\item D:
+\end{enumerate}
+
+\end{question}
+
+\begin{solution}
+
+\begin{enumerate} % Changed from answerlist to maintain order
+\item \Sexpr{degree(G)['A']}
+\item \Sexpr{degree(G)['B']}
+\item \Sexpr{degree(G)['C']}
+\item \Sexpr{degree(G)['D']}
+\end{enumerate}
+
+\end{solution}
+
+\exname{matrix}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}

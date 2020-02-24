@@ -1,0 +1,28 @@
+<<echo=FALSE, results=hide>>=
+make_matrix <- function(g){
+    x = as.matrix(as_adj(g))
+  result = xtable(x, digits = 0)
+  return(result)
+}
+
+@
+
+\begin{question}
+
+Which node has the highest betweenness centrality? Explain why. (6 points)
+\vspace{6em}
+
+
+\end{question}
+
+\begin{solution}
+
+
+\Sexpr{V(g)[which.max(betweenness(G)]}
+
+
+\end{solution}
+
+\exname{betweenness}
+\extype{string}
+\exsolution{1}

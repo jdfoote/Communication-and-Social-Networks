@@ -1,0 +1,82 @@
+<<echo=FALSE, results=hide>>=
+## regression parameters
+library(igraph)
+nodes_1 <- c("A","B","C","D","E")
+nodes_2 <- c(1:6)
+
+make_new_graph <- function(i){
+  G = sample_bipartite(length(nodes_1),length(nodes_2), type='Gnm', m = 8)
+  V(G)$kind = c(rep("Person", length(nodes_1)), rep("Club", length(nodes_2)))
+  V(G)$label = c(nodes_1, nodes_2)
+  V(G)$type = V(G)$kind=='Person'
+  V(G)$shape <- c("square", "circle")[(V(G)$kind=='Person')+1]
+  V(G)$color <- c("gray", "gold")[(V(G)$kind=='Person')+1]
+  return(G)
+}
+
+all_graphs = lapply(1:4, make_new_graph)
+true_graph <- all_graphs[[1]]
+bad_graphs <- all_graphs[2:length(all_graphs)]
+
+## Projections
+good_projection = bipartite.projection(true_graph)[[2]]
+bad_projections = lapply(bad_graphs, function(x) bipartite.projection(x)[[2]])
+
+
+projection_plot = function(g){
+  return(plot(g, vertex.size=35, vertex.label.cex=4, edge.color='black', edge.width=2))
+}
+@
+
+
+\begin{question}
+The following is a network made from an imaginary set of students (nodes A-E) who belong to a set of clubs (nodes 1-6).
+
+\setkeys{Gin}{width=0.55\textwidth}
+<<width=6,height=6,fig=T,echo=FALSE>>=
+plot(true_graph, layout = layout.bipartite, vertex.size=30, vertex.label.cex=3, edge.color='black')
+@
+
+
+What is the name for this type of network? (4 points)
+\vspace{5em}
+
+\setkeys{Gin}{width=0.33\textwidth}
+Which of the following is a projection of this network? (8 points)
+\begin{answerlist}
+
+\item 
+<<width=6,height=6,fig=T,echo=FALSE>>=
+projection_plot(good_projection)
+@
+
+\item
+<<width=6,height=6,fig=T,echo=FALSE>>=
+projection_plot(bad_projections[[1]])
+@
+
+\item 
+<<width=6,height=6,fig=T,echo=FALSE>>=
+projection_plot(bad_projections[[2]])
+@
+
+\item 
+<<width=6,height=6,fig=T,echo=FALSE>>=
+projection_plot(bad_projections[[3]])
+@
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+projection_plot(good_projection)
+
+\end{solution}
+
+\exname{bipartite}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}
+

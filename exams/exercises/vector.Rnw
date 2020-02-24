@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+v = sample(1:10, 5)
+to_get = sample(v, 1)
+
+while(T){
+  solution_idx = match(to_get, v)
+  wrong_idx = sample(1:6, 3)
+  if(!(solution_idx %in% wrong_idx) & solution_idx != to_get){ # Make sure that the solution isn't a wrong answer
+    break
+  }
+
+}
+@
+\begin{question}
+
+How would you select the number \Sexpr{to_get} from the vector $v =$ (\Sexpr{paste(v, collapse=', ')})? (5 points)
+
+
+\begin{answerlist}
+  \item v[\Sexpr{solution_idx}]
+  \item v\$\Sexpr{solution_idx}
+  \item v[\Sexpr{to_get}]
+  \item v\$\Sexpr{to_get}
+  \item v[\Sexpr{wrong_idx[1]}]
+  \item v\$\Sexpr{wrong_idx[1]}
+  \item v[\Sexpr{wrong_idx[2]}]
+  \item v\$\Sexpr{wrong_idx[2]}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+v[\Sexpr{solution_idx}]
+
+\end{solution}
+
+\exname{six_degrees}
+\extype{schoice}
+\exsolution{10000000}
+\exshuffle{5}
+
+

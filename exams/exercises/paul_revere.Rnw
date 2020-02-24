@@ -1,0 +1,19 @@
+\begin{question}
+In the reading about identifying Paul Revere from network data, how were the networks created? (4 points)
+
+\begin{answerlist}
+  \item From lists of membership in organizations
+  \item From records of correspondence
+  \item From mentions in news articles
+  \item From co-sponsorship of laws
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{revere}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}

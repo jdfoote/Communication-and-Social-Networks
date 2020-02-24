@@ -1,0 +1,94 @@
+<<echo=FALSE, results=hide>>=
+## regression parameters
+library(igraph)
+library(xtable)
+nodes <- sample(c("A","B","C","D","E","F","G","H","I"))
+
+G <- make_graph(c(
+  2,3,
+  3,4,
+  1,5,
+  2,5,
+  1,6,
+  2,6,
+  3,7,
+  4,7,
+  1,8,
+  1,9
+), directed = F)
+V(G)$name = nodes
+
+rewire_func <- function(x, g){
+  new_graph = rewire(g, each_edge(.15))
+}
+
+bad_graphs = lapply(1:4, rewire_func, G)
+
+any_isomorphic <- function(g, graph_list){
+  graph_list[[length(graph_list) + 1]] = g
+  isomorphisms = sapply(graph_list, function(x) sapply(graph_list, function(y) is_isomorphic_to(x,y)))
+  return(sum(isomorphisms) > length(graph_list))
+}
+
+while(any_isomorphic(G, bad_graphs)){
+  bad_graphs = lapply(1:4, rewire_func, G)
+}
+
+
+make_edgelist <- function(g){
+  x = as_edgelist(g)
+  colnames(x) <- c('From', 'To')
+  result = xtable(x, digits = 0)
+  print(result,  include.rownames=F, floating = F)
+}
+
+@
+
+\begin{question}
+Consider the following social network, made up of 9 people. Use this network to answer questions 1-7.
+
+\setkeys{Gin}{width=0.65\textwidth}
+<<width=6,height=6,fig=T,echo=FALSE>>=
+plot(G, vertex.color = NA, vertex.cex=3.2, edge.color='black', edge.width=2)
+@
+
+
+Is this network directed or undirected? How can you tell? (4 points)
+\vspace{5em}
+
+\newpage
+
+Which of the following is the edgelist representation of this network? (6 points)
+\begin{answerlist}
+\item 
+<<echo=F, results=tex>>=
+make_edgelist(G)
+@
+
+\item
+<<echo=F, results=tex>>=
+make_edgelist(bad_graphs[[1]])
+@
+
+\item 
+<<echo=F, results=tex>>=
+make_edgelist(bad_graphs[[2]])
+@
+
+\item 
+<<echo=F, results=tex>>=
+make_edgelist(bad_graphs[[3]])
+@
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{edgelist}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}

@@ -1,0 +1,25 @@
+\begin{question}
+Six Degrees discusses a paradox of large-scale human social networks: they exhibit both high \underline{\hspace{3cm}} and low \underline{\hspace{3cm}}. (5 points)
+
+
+\begin{answerlist}
+  \item Clustering; diameter
+  \item Density; centralization
+  \item Diameter; betweenness centrality
+  \item Multiplexity; diameter
+  \item Density; centralization
+  \item Centralization; hierarchy
+  \item Triadic closure; density
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{six_degrees}
+\extype{schoice}
+\exsolution{1000000}
+\exshuffle{5}
+
+

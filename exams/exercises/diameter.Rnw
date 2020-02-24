@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+
+solution = diameter(G)
+
+while(T){
+  wrong_answers = sample(c(.5, .3, 2:8), 4)
+  if(!(solution %in% wrong_answers)){
+    break
+  }
+}
+@
+
+\begin{question}
+
+What is the diameter of the graph? (5 points)
+
+<<echo=FALSE, results=tex>>=
+answerlist(c(solution, wrong_answers))
+@
+
+\end{question}
+
+\begin{solution}
+
+The diameter is the maximum distance between any two nodes. In this case, the diameter is:
+
+\Sexpr{diameter(G)}
+
+\end{solution}
+  
+\exname{density}
+\extype{schoice}
+\exsolution{10000}

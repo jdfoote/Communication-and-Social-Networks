@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+
+@
+
+\begin{question}
+Which of the following networks is most centralized? (5 points)
+
+
+\setkeys{Gin}{width=0.35\textwidth}
+\begin{answerlist}
+\item 
+<<out.width=.2,out.height=.2,fig=T,echo=FALSE>>=
+plot(make_star(8, mode='undirected'),
+     vertex.label = NA, edge.color='black')
+@
+\item
+<<fig.width=2.2,fig.height=2.2,fig=T,echo=FALSE>>=
+x = random.graph.game(8, .3)
+plot(x, vertex.label = NA, edge.color='black')
+@
+\item 
+<<fig.width=2.2,fig.height=2.2,fig=T,echo=FALSE>>=
+plot(make_lattice(8, circular = T), vertex.label = NA, edge.color='black')
+@
+\item 
+<<fig.width=2.2,fig.height=2.2,fig=T,echo=FALSE>>=
+plot(barabasi.game(8, directed = F), vertex.label = NA, edge.color='black')
+@
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{centralization}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}
+

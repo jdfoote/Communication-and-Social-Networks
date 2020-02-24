@@ -1,0 +1,21 @@
+\begin{question}
+What was the goal of the ASSIST program? (4 points)
+
+\begin{answerlist}
+  \item To reduce smoking rates
+  \item To reduce teen pregnancy
+  \item To improve standardized test scores
+  \item To reduce childhood obesity
+  \item To reduce bullying behaviors
+  \item To prepare students for college
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{ASSIST}
+\extype{schoice}
+\exsolution{100000}
+\exshuffle{5}

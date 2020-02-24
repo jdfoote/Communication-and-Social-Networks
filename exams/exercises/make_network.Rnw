@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+
+nodes <- sample(c("A","B","C","D"))
+
+G <- make_graph(c(
+  1,2,
+  3,4,
+  1,3
+))
+V(G)$name = nodes
+
+solution = as.vector(t(as_edgelist(G)))
+wrong = sample(solution)
+formatted = function(v){
+  return(paste(shQuote(v), collapse=', '))
+}
+@
+\begin{question}
+
+How would you create an igraph network object called "G" for the following network? (5 points)
+
+\setkeys{Gin}{width=0.5\textwidth}
+<<width=6,height=6,fig=T,echo=FALSE>>=
+plot(G, vertex.size=25, vertex.cex=2.7, vertex.color=NA, edge.color='black', edge.width=2)
+@
+
+\begin{answerlist}
+  \item G = make\_network(c(\Sexpr{formatted(solution)}))
+  \item plot(G)
+  \item G = make\_network(c(\Sexpr{formatted(wrong)}))
+  \item G = igraph(c(\Sexpr{formatted(solution)}))
+  \item G = igraph(c(\Sexpr{formatted(wrong)}))
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+G = make\_network(c(\Sexpr{formatted(solution)}))
+
+\end{solution}
+
+\exname{make_network}
+\extype{schoice}
+\exsolution{10000}
+\exshuffle{5}
+
+

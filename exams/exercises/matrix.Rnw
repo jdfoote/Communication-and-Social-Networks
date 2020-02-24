@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+make_matrix <- function(g){
+    x = as.matrix(as_adj(g))
+  result = xtable(x, digits = 0)
+  return(result)
+}
+
+@
+
+
+
+\begin{question}
+
+Which of the following is the matrix representation of this network? (6 points)
+\begin{answerlist}
+\item 
+<<echo=F, results=tex>>=
+print(make_matrix(G), floating = F)
+@
+
+\item
+<<echo=F, results=tex>>=
+print(make_matrix(bad_graphs[[1]]), floating = F)
+@
+
+\item 
+<<echo=F, results=tex>>=
+print(make_matrix(bad_graphs[[2]]), floating = F)
+@
+
+\item 
+<<echo=F, results=tex>>=
+print(make_matrix(bad_graphs[[3]]), floating = F)
+@
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{matrix}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}

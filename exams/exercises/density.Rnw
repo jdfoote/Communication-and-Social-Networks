@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+
+solution = graph.density(G)
+err <- graph.density(G)/2
+range <- c(0,2) * solution
+sc <- num_to_schoice(solution, wrong = err, range = range, delta = 0.05, digits = 3)
+
+num_nodes = length(V(G))
+num_edges = length(E(G))
+possible_edges = num_nodes * (num_nodes - 1) / 2
+@
+
+\begin{question}
+
+What is the density of the graph? (5 points)
+
+<<echo=FALSE, results=tex>>=
+answerlist(sc$questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+To calculate density, we calculate the number of actual edges divided by the total possible number of edges.
+
+In this case, there are \Sexpr{num_edges} actual edges. There are \Sexpr{num_nodes} total nodes. The total number of edges would exist if each node were connected to each of its neighbors (or $ \Sexpr{num_nodes} * (\Sexpr{num_nodes - 1})$).
+
+However, this is a directed network, so the total possible edges is half as much (an edge from A to B is the same as an edge from B to A), and so it is actually $ \Sexpr{num_nodes} * (\Sexpr{num_nodes - 1}) / 2$ or \Sexpr{possible_edges}.
+
+The density is therefore \Sexpr{num_edges}/\Sexpr{possible_edges} or \Sexpr{fmt(num_edges/possible_edges, 3)}.
+
+\end{solution}
+  
+\exname{density}
+\extype{schoice}
+\exsolution{\Sexpr{mchoice2string(sc$solutions)}}

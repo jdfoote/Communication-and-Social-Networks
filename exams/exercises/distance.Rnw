@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+
+@
+
+\begin{question}
+
+Calculate the distance between each of the following pairs of nodes in the graph (8 points):
+
+\begin{enumerate}
+\item A -- B:
+\item B -- C:
+\item C -- D:
+\item D -- E:
+\end{enumerate}
+
+\end{question}
+
+\begin{solution}
+
+\begin{enumerate}
+\item \Sexpr{distances(G, v='A', to = 'B')}
+\item \Sexpr{distances(G, v='B', to = 'C')}
+\item \Sexpr{distances(G, v='C', to = 'D')}
+\item \Sexpr{distances(G, v='D', to = 'E')}
+\end{enumerate}
+
+\end{solution}
+
+\exname{distance}
+\extype{schoice}
+\exsolution{1000}
+\exshuffle{4}

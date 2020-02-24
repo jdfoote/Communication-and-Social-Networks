@@ -1,0 +1,25 @@
+\begin{question}
+The reading "Core Discussion Networks of Americans" discusses networks created by surveying people about their friends and whether their friends are friends with each other. 
+
+This is an example of what kind of network? (4 points)
+
+
+\begin{answerlist}
+  \item Ego network
+  \item Bipartite network
+  \item Centralized network
+  \item Dense network
+  \item Betweenness centralization
+  \item Multiplex network
+  \item Small world network
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+\exname{core_discussion}
+\extype{schoice}
+\exsolution{1000000}
+\exshuffle{5}

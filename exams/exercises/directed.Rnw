@@ -1,0 +1,26 @@
+<<echo=FALSE, results=hide>>=
+
+@
+
+\begin{question}
+Explain the difference between an undirected network and a directed network. Give one example of each. (8 points)
+
+\vspace{5em}
+
+\end{question}
+
+\begin{solution}
+
+\end{solution}
+
+%% \extype{string}
+%% \exsolution{nil}
+%% \exname{directed}
+%% \exextra[essay,logical]{TRUE}
+%% \exextra[essay_format,character]{editor}
+%% \exextra[essay_required,logical]{FALSE}
+%% \exextra[essay_fieldlines,numeric]{5}
+%% \exextra[essay_attachments,numeric]{1}
+%% \exextra[essay_attachmentsrequired,logical]{FALSE}
+
+
