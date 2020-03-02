@@ -37,12 +37,10 @@ myexam <- c("graph_questions.Rnw", # Includes edgelist
 
 ## generate a single PDF exam (shown in PDF viewer)
 ## with specification of a template (for an exam) %s encoding
-#exams2pdf(myexam, n = 1,
-#  encoding = "UTF-8",
-#  edir = "exercises",
-#  points = 5,
-#  showpoints = T,
-#  template = "templates/solution.tex")
+exams2pdf(myexam, n = 1,
+  encoding = "UTF-8",
+  edir = "exercises",
+  template = "templates/solution.tex")
 
 ## generate three PDF exams and corresponding solutions in output directory
 ## (with the header used to set a custom Date and ID for the exam)

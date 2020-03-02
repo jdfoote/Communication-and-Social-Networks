@@ -1,3 +1,6 @@
 sample_syllabi
 class_list.*
 readings/
+.Rproj.user
+grades.*
+.Rhistory
