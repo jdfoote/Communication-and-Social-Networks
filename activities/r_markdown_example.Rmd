@@ -7,6 +7,13 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
+```{r}
+x <- c(43,643,765)
+
+print(paste0("The mean of x is ", mean(x)))
+```
+
+
 For example, this will create a new vector and then draw a histogram of it:
 
 ```{r}

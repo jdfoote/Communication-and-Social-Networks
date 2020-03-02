@@ -1,0 +1,123 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r, message=F}
+library(igraph)
+library(tidyverse)
+```
+
+# Network Visualizations
+
+## Aspects of visualizations
+
+> - Nodes
+> - Edges
+> - Location
+
+## Nodes
+
+> - Information can be conveyed by:
+>   - Shape, size, color
+> - Shape
+>   - Typically categorical (e.g., gender, age range)
+> - Size
+>   - Often a network measure, but can be something about node
+> - Color
+>    - Often community detection
+
+## Examples
+
+```{r}
+#G = graph_from_data_frame(read.csv('../one_k_redittors.csv'))
+G = random.graph.game(15, .4)
+plot(G)
+```
+
+## With node shapes
+
+```{r}
+V(G)$shape = sample(c('square', 'circle','sphere'), size = gorder(G), replace = T)
+plot(G)
+ages = c('18-25', '26-34', '34-50')
+```
+
+## Nodes sized by betweenness centrality
+
+```{r}
+V(G)$shape = 'circle'
+plot(G, vertex.size = betweenness(G) * 2.5)
+```
+
+## Nodes colored by community
+
+```{r}
+
+community = membership(fastgreedy.community(G))
+colors = c('red', 'orange', 'darkgreen')
+V(G)$color = colors[community]
+plot(G)
+```
+
+## Edges
+
+> - Size
+>   - Typically represent weight of relationship
+> - Color
+>   - Typically represents different types of relationships
+
+## Examples
+
+## Edge width as weight
+```{r}
+
+make_edges = function(from, nodes = 15){
+  x = 1:nodes
+  x = x[x != from]
+  to = sample(x, 1)
+}
+
+from = sample(1:15, size = 35, replace = T)
+to = map_int(from, make_edges)
+G = graph_from_edgelist(cbind(from,to))
+E(G)$weight = sample(1:4, size = ecount(G), replace = T)
+E(G)$type = sample(c(T,F), size=ecount(G), replace = T)
+E(G)$arrow.size=.5
+
+plot(G, edge.width = E(G)$weight)
+```
+
+## Edge color as type
+
+
+```{r}
+colors = c('gray', 'orange')
+E(G)$color = colors[E(G)$type + 1]
+
+plot(G)
+```
+
+## Position
+
+> - Can represent literal distance
+>   - Cities
+>   - Seating chart
+> - Or social distance
+>   - Formal hierarchy
+>   - Degree centrality
+
+## Node placement can make a big difference in how a network is perceived
+
+```{r, out.width='32%'}
+G = random.graph.game(15, .4)
+plot(G, layout = layout_in_circle(G))
+plot(G, layout = layout_randomly)
+plot(G, layout = layout_as_star)
+plot(G)
+plot(G, layout = layout_on_grid)
+plot(G, layout = layout_with_lgl)
+```
+
