@@ -243,3 +243,58 @@ plot(G, layout = layout_on_grid)
 plot(G, layout = layout_with_lgl)
 ```
 
+## Today's activity
+
+> - Start working on DataCamp Network Analysis, chapters 2 and 3
+
+
+# Network Analysis in R
+
+
+## Today's Dad Joke
+
+Within minutes, the detective knew exactly what the murder weapon was.
+
+<span class='fragment'>
+It was a brief case.
+</span>
+
+## Housekeeping
+
+> - Self-assessment overview
+> - Scott Feld guest lecture
+
+
+## DataCamp Review
+
+
+
+## What makes for a good network visualization?
+
+Kozo Sugiyama's rules:
+
+1. Lines should be straight.
+2. Lines should be far apart from one another.
+3. Lines should not cross or touch.
+4. Lines should be easy to follow from one node to another.
+5. Nodes that connect should be close.
+6. Nodes that are most central should be close to the center of the graph.
+7. Nodes that are similar in some way should be placed near one another.
+
+## Activity
+
+Find and Assess a network visualization
+
+> - Use Google Images (or similar) to find images of network graphs.
+> - Put the image (and your assessment) on the padlet at https://padlet.com/jdfoote1/networks (link is also on wiki)
+
+## Discussion
+
+> - Did you agree with Sugiyama's rules?
+> - What types of color/shape/size approaches were effective?
+
+## Visualization Competition
+
+> - 
+
+
