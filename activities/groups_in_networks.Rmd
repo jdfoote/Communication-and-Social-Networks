@@ -1,0 +1,149 @@
+---
+title: "Groups in Networks"
+author: "Jeremy Foote"
+date: "3/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(igraph)
+```
+
+# Review of R/igraph concepts
+
+
+```{r}
+edges = read.csv('~/Desktop/DeleteMe/edges.csv')
+node_atts = read.csv('~/Desktop/DeleteMe/node_atts.csv')
+G = graph_from_data_frame(edges, vertices=node_atts)
+plot(G)
+
+```
+
+```{r}
+# The igraph object stores the attributes in edge and vertex objects. You can access the nodes with V() and the edges with E()
+V(G)[[]]
+vertex.attributes(G)
+E(G)[[]]
+edge.attributes(G)
+```
+
+And we can access and change either attributes or the nodes or edges that we're looking at
+
+```{r}
+# Change color based on type
+E(G)[E(G)$type == 'Friendship']$color = 'green'
+E(G)[E(G)$type == 'Enemy']$color = 'tomato'
+
+# Change width based on weight
+E(G)$width = E(G)$weight
+
+
+plot(G)
+```
+```{r}
+temp_graph = delete_vertices(G, V(G)[V(G)$age > 21])
+
+plot(temp_graph)
+```
+
+
+# Groups and Communities in Networks
+
+When we think about friend groups the concept seems intuitive and like it should be quite simple to identify different groups in a network. However, when it comes down to actually figuring out where to draw lines around groups, it isn't so easy. I'm going to go through a few different concepts for groups and how you might visualize them in R.
+
+## Components
+
+The simplest version of a group in a social network is all of the people who are connected to each other. This is called a component. Most real-world networks include almost everyone in a single, "giant component". This seems strange at first, but an example can help to show why it works this way. Let's say you had a network of 50 people with two large components of 25 people each. If any one of the 25 people in one component adds an edge to any one of the 25 people in the other component, then the components merge. In other words, there are so many possible edges that would combine the components that one of them is bound to occur unless there is something separating the groups.
+
+The following visualizations show a random graph as it goes from 3% density to 15% density. It quickly becomes a single, large component.
+
+This attribute of networks means that components are rarely very interesting as a way of grouping nodes.
+
+```{r}
+# Don't worry about understanding this code - it's basically just plotting 
+# different densities of random graphs
+for(p in c(.03, .05, .1, .15)){
+  G = random.graph.game(50, p)
+  plot(G)
+}
+```
+
+
+## Cliques
+
+The next simplest idea is a clique - this identifies groups of nodes where everyone is connected to everyone else in the group.
+
+Let's create a small world network, since this should have some grouping like we want, and then find the largest clique
+
+```{r}
+# Make a random graph
+G = watts.strogatz.game(2,5, 1,.3)
+
+# Find the largest clique(s)
+largest_cliques <- largest.cliques(G)
+
+# Change the color of the first largest clique
+V(G)$color = 'orange'
+V(G)[largest_cliques[[1]]]$color = 'green'
+
+plot(G)
+
+```
+
+This is not a super intuitive way of identifying groups and it misses some clear areas that we would probably consider groups.
+
+The reading discusses a number of tweaks to this approach, such as n-cliques (where everyone in the group has to be connected within a distance of n) and k-plexes (where everyone in the group has to be connected to all but k other members). Neither of these have implementations in igraph so I won't visualize them.
+
+## K-cores
+
+One other approach is called k-cores. The idea is to identify "central" and "peripheral" parts of a network. Each node gets a "coreness" number, which is the largest k for which it exists in a subgraph where all nodes are connected with at least k edges. This sounds super confusing, but it makes a bit more sense when plotted. igraph actually has some great tools for doing this.
+
+```{r}
+
+graph_coreness = coreness(G)
+colors = rainbow(max(graph_coreness))
+plot(G, vertex.color = colors[graph_coreness])
+
+```
+
+## More complicated algorithms
+
+There are a number of more complicated algorithms for finding communities in networks, often called "community structure" or "clustering". The very bottom of [this page](https://igraph.org/r/doc/communities.html) shows those which have been implemented in igraph.
+
+Most of them are based on one of two ideas - the first is [modularity](https://en.wikipedia.org/wiki/Modularity_(networks)). These approaches attempt to find partitions of a network which maximize the number of edges within groups and minimize the number of edges between them.
+
+The second approach is based on "random walks". The idea is that if you start at a random place in a network and move along a random edge, and keep doing this over and over, then walks should generally stay within groups and rarely go between them.
+
+I'll show you how to visualize a couple of these in igraph.
+
+First, a modularity approach (example taken from https://kateto.net/network-visualization)
+```{r}
+# Community detection (by optimizing modularity over partitions):
+clp <- fastgreedy.community(G)
+
+# Community detection returns an object of class "communities" 
+# which igraph knows how to plot: 
+plot(clp, G)
+ 
+# We can also plot the communities without relying on their built-in plot:
+V(G)$community <- clp$membership
+colrs <- adjustcolor( c("gray50", "tomato", "gold", "yellowgreen"), alpha=.6)
+plot(G, vertex.color=colrs[V(G)$community])
+```
+
+And a random walk approach:
+
+```{r}
+clp <- cluster_walktrap(G)
+
+plot(clp, G)
+```
+
+In most networks, these approaches are generally similar.
+
+
+# Assignment
+
+Keep working on your visualization, this time adding a visualization of group structure within the Dutch school network.
