@@ -1,6 +1,6 @@
 ---
 title: "Groups in Networks"
-author: "Jeremy Foote"
+author: "Jeremy Foote"  
 date: "3/31/2020"
 output: html_document
 ---
@@ -12,10 +12,17 @@ library(igraph)
 
 # Review of R/igraph concepts
 
+## Graphs can be represented as spreadsheets
+
+If you want to follow along with this part, you will need to download the following two files, and save them in the same directory as this file:
+
+[Edges Spreadsheet](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/edges.csv)
+[Nodes Spreadsheet](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/node_atts.csv)
 
 ```{r}
-edges = read.csv('~/Desktop/DeleteMe/edges.csv')
-node_atts = read.csv('~/Desktop/DeleteMe/node_atts.csv')
+edges = read.csv('./edges.csv') # If this doesn't work, then change the directory to wherever you saved the edges file
+# It might be something like '/home/jeremy/Desktop/edges.csv'
+node_atts = read.csv('./node_atts.csv')
 G = graph_from_data_frame(edges, vertices=node_atts)
 plot(G)
 
