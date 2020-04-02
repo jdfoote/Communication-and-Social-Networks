@@ -14,15 +14,18 @@ library(igraph)
 
 ## Graphs can be represented as spreadsheets
 
-If you want to follow along with this part, you will need to download the following two files, and save them in the same directory as this file:
+If you want to follow along with this part of the video, you will need to download the following two files, and open them in Excel:
 
 [Edges Spreadsheet](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/edges.csv)
 [Nodes Spreadsheet](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/node_atts.csv)
 
 ```{r}
-edges = read.csv('./edges.csv') # If this doesn't work, then change the directory to wherever you saved the edges file
-# It might be something like '/home/jeremy/Desktop/edges.csv'
-node_atts = read.csv('./node_atts.csv')
+# Next, we load the spreadsheets into R, from the web
+edges = read.csv('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/edges.csv')
+node_atts = read.csv('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/node_atts.csv'  )
+# You could also do this by loading them from your computer, with something like the following:
+# edges = read.csv('/home/jeremy/Desktop/edges.csv') # You'd need to change this path to where they are saved on your computer
+# node_atts = read.csv('/home/jeremy/Desktop/node_atts.csv')
 G = graph_from_data_frame(edges, vertices=node_atts)
 plot(G)
 
