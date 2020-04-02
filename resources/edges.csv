@@ -1,0 +1,12 @@
+from,to,type,weight
+A,B,Friendship,4
+B,C,Friendship,1
+A,F,Friendship,2
+C,E,Friendship,4
+D,B,Enemy,1
+B,C,Friendship,3
+E,D,Friendship,2
+F,C,Enemy,3
+G,A,Friendship,2
+C,A,Friendship,4
+B,F,Enemy,1
