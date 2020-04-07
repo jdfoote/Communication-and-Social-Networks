@@ -262,11 +262,30 @@ It was a brief case.
 ## Housekeeping
 
 > - Self-assessment overview
-> - Scott Feld guest lecture
+>	- R
+>	- Coming with questions / Office hours
+>	- Readings
+>	  - Too long
+>	  - Put on Brightspace
+>	- Posting slides
+> - In class
+>	- Break
+>	- Dealing with confusion
+>	  - More group discussion
+>	  - Questions in class
+>	  - Writing on projector vs. on board?
 
 
 ## DataCamp Review
 
+> - neighbors()
+> - ego()
+> - make_ego_network()
+> - Come back to:
+>	- lapply
+>	- randomization
+>	- transitivity
+>	- cliques
 
 
 ## What makes for a good network visualization?
@@ -285,7 +304,8 @@ Kozo Sugiyama's rules:
 
 Find and Assess a network visualization
 
-> - Use Google Images (or similar) to find images of network graphs.
+> - Use Google Images (or similar) to find an image of a network graphs.
+> - What do you think the image does well and poorly? Does it follow Sugiyama's rules?
 > - Put the image (and your assessment) on the padlet at https://padlet.com/jdfoote1/networks (link is also on wiki)
 
 ## Discussion
@@ -295,6 +315,12 @@ Find and Assess a network visualization
 
 ## Visualization Competition
 
-> - 
+> - Dutch school dataset (on wiki)
+> - In groups of 2-3
+>	- Come up with question
+>	- Come up with visualization approach
+> - We will work on this more next Thursday
 
-
+## Homework
+> - Scott Feld guest lecture
+>	- Summary and questions assignment
