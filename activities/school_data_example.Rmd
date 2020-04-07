@@ -30,6 +30,7 @@ E(friend_net)[which_mutual(friend_net)==F]$color = 'tomato'
 E(friend_net)[which_mutual(friend_net)==T]$color = 'steelblue'
 E(friend_net)$arrow.size = .25 # Setting the arrow size much smaller
 V(friend_net)$label = NA # Removing the labels since they are meaningless
+
 plot(friend_net)
 
 ```
@@ -49,7 +50,7 @@ vertex.attributes(friend_net)$alcohol_use
 # We can just use the values as an index to the colors list.
 # First, we make the colors list - this will make 5 different colors,
 # going from light to dark blue
-color_list = colors_func(length(unique(V(friend_net)$alcohol_use)))
+color_list = colors_func(5)
 # Next, we set the colors of the nodes based on alcohol_use
 V(friend_net)$color = color_list[V(friend_net)$alcohol_use]
 plot(friend_net)
