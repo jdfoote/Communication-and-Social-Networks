@@ -35,25 +35,82 @@ plot(G)
 # The igraph object stores the attributes in edge and vertex objects. You can access the nodes with V() and the edges with E()
 V(G)[[]]
 vertex.attributes(G)
+
 E(G)[[]]
 edge.attributes(G)
 ```
 
-And we can access and change either attributes or the nodes or edges that we're looking at
+And we can create or change attributes on the nodes or edges that we're looking at
 
 ```{r}
-# Change color based on type
-E(G)[E(G)$type == 'Friendship']$color = 'green'
-E(G)[E(G)$type == 'Enemy']$color = 'tomato'
+# Edges and nodes can have special attributes which are used for plotting.
+# For example, here we change the color based on the type of edge
+E(G)[which(type == 'Friendship')]$color = 'lightgreen'
+E(G)[which(type == 'Enemy')]$color = 'tomato'
 
 # Change width based on weight
-E(G)$width = E(G)$weight
+E(G)$width = E(G)$weight * 2
+
+# We can do the same with the nodes
+# Here I change the color based on the behavior.
+# Behavior goes from 1 to 4, so we need 4 colors
+colors = c('lightgreen', 'orange', 'lightblue', 'tomato')
+# We select a color based on the behavior
+# colors[V(G)$behavior] creates a new vector of colors, based on the number in
+# behavior.
+V(G)$color = colors[V(G)$behavior]
 
 
-plot(G)
+plot(G, edge.curved = .3)
 ```
+
+There are different ways to select which edges or nodes we want to change.
+
 ```{r}
-temp_graph = delete_vertices(G, V(G)[V(G)$age > 21])
+# This is what I've been teaching you, but it only works when there are no NAs
+
+V(G)[V(G)$age < 21]
+
+# This is a shorthand for the same thing
+
+V(G)[age < 21]
+
+# If there are NAs, then you will get an error
+# Let's add a new node without any attributes and try again
+g1 <- add_vertices(G, 1, name='H', color = 'pink')
+
+plot(g1)
+
+# When we run this line we get an error about an unknown vertex selected.
+# igraph doesn't know what to do with the missing data - so it throws an error.
+V(g1)[age < 21]
+
+# The simplest solution is to use 'which' - this returns a list of nodes and removes nodes with missing data
+
+V(g1)[which(age != 21)]
+
+# Once you have the list, you can do something like change the size
+
+V(g1)[which(age < 21)]$size <- 20
+
+plot(g1)
+
+# We ran into trouble again, because we only have size for some nodes - we need it for all of them. The easiest way to do this is to just set a size for every node, and then change it for some.
+
+V(g1)$size <- 10
+V(g1)[which(age < 21)]$size <- 20
+
+plot(g1)
+```
+
+You can use the same syntax to identify edges or nodes that you want to remove.
+
+```{r}
+# For example, this removes vertices with aga > 21
+temp_graph = delete_vertices(G, V(G)[which(age > 21)])
+
+# And then removes enemy edges
+temp_graph = delete_edges(G, E(G)[which(type == 'Enemy')])
 
 plot(temp_graph)
 ```
