@@ -1,0 +1,67 @@
+---
+title: "Majority Illusion"
+author: "Jeremy Foote"
+date: "12/30/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(igraph)
+library(tidyverse)
+library(ggraph)
+
+```
+
+## The Majority Illusion
+
+It's important to remember that we experience the social world through local networks - we perceive the people connected to us, but not others.
+
+In many situations, this can lead us to make incorrect inferences about the global network, especially when the number of neighbors per person is skewed (which it usually is in the real world!).
+
+
+Here, we set up a skewed network with 20 people, 
+```{r initial}
+set.seed(2021)
+G = barabasi.game(30, m = 2, directed = F) %>% as_tbl_graph()
+
+weighted_party <- sapply(1:30, function(x) sample(c('R','D'), 1, replace = T, prob = c(x/30, 1-x/30)))
+
+G <- G %>% 
+    activate(nodes) %>% 
+  mutate(d = centrality_degree()) %>%
+  arrange(d) %>%
+    print() %>%
+  mutate(party = weighted_party)
+
+
+set_graph_style(plot_margin = margin(1,1,1,1))
+G %>% ggraph(layout = 'stress') +
+  geom_node_point(aes(color = party)) +
+  geom_edge_link(width = .25) +
+  scale_color_manual(values = c("R" = "red", "D" = "blue"))
+  
+```
+
+I've set this up so that there are the same number of Democrats and Republicans, but so that on average Republicans are more central (they have more friends).
+
+However, let's look at what people "see". Here is a plot of what people think that majority of others believe, based on their own neighbors.
+
+```{r}
+
+get_prop_r <- function(G, x){
+  # Gets the proportion of Republicans among neighbors
+  n_list = neighbors(G, x)
+  parties = V(G)[n_list]$party
+  return(sum(parties == "R")/length(parties))
+}
+
+V(G)$neighbor_prop_r <- sapply(V(G), function(x) get_prop_r(G, x))
+
+G %>% as_tbl_graph(G) %>%
+  ggraph(layout = 'fr') +
+  geom_node_point(aes(color = cut(neighbor_prop_r, breaks = c(0,.34,.5,.68,1))
+                      )) +
+  geom_edge_link(width = .25)
+  #scale_color_manual(values = c("R" = "red", "D" = "blue"))
+```

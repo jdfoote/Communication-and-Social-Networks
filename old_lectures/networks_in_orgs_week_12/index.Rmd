@@ -1,0 +1,145 @@
+---
+title: COM 411
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+
+f <- function (x) {formatC(x, format="d", big.mark=',')}
+bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
+gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
+wrapify <- function (x) {paste("{", x, "}", sep="")}
+p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+library(igraph)
+library(tidyverse)
+```
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+
+
+## Today's Dad Joke
+
+How do you avoid death?
+
+You stay in the living room.
+
+## Housekeeping
+
+> - Final project is up
+> - Due during Finals week
+>	- Pitch to a company about network approach
+>	- Visualizations + justifications
+
+## Dutch school example
+
+> - More videos
+> - We will get there!!
+> - Ask on Slack, come to office hours
+
+## Assignments
+
+> - Tentative plan is to just have reading summaries + work on final project
+
+## Networks in organizations
+
+> - Organizational charts are a kind of network (top-down)
+> - "Informal" networks are bottom-up and can tell you about how an organization is functioning
+> - Advice, trust, and communication
+>	- Tells about individuals (don't make untrusted people managers)
+>	- Also about structures: are groups not communicating?
+
+## Networks in small groups
+
+> - Information needs to flow
+> - Transactive memory
+>	- Through communication, learning who knows what
+> - Shared mental models
+>	- What are we trying to do?
+
+## Network structures
+
+> - Dense
+> - Low hierarchy
+> - Inclusive (few people on the periphery)
+> - When people feel part of a group, information flows better and they work harder
+
+## Thanks
+
+> - Stay safe
+> - Stay home
+> - Look out for each other

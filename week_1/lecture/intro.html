@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>COM 411</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="intro_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="intro_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">COM 411</h1>
+</section>
+
+<section class="slide level2">
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+<section>
+<h2>
+COM 41100: Communication and Social Networks
+</h2>
+<h3>
+Tuesday and Thursday, 3:00-4:15
+</h3>
+</section>
+</section>
+<section><section id="welcome" class="title-slide slide level1"><h1>Welcome!</h1></section><section id="agenda-for-the-day" class="slide level2">
+<h2>Agenda for the day</h2>
+<ul>
+<li class="fragment">Introductions</li>
+<li class="fragment">About the class</li>
+</ul>
+</section><section id="about-me" class="slide level2">
+<h2>About me</h2>
+<div class="container">
+<div class="col fragment">
+<p><img src='images/family.jpg'></p>
+</div>
+<div class="col fragment">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:250px;'></p>
+</div>
+<div class="col fragment">
+<p><img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:250px;'/></p>
+</div>
+</div>
+</section><section id="introductions" class="slide level2">
+<h2>Introductions</h2>
+<ul>
+<li>Name</li>
+<li>Year</li>
+<li>Major</li>
+<li>Something boring about you</li>
+</ul>
+</section><section id="what-is-communication-and-social-networks" class="slide level2">
+<h2>What is Communication and Social Networks?</h2>
+<div class="container">
+<div class="col">
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/240px-Facebook_icon.svg.png'/></p>
+</div>
+<div class="col">
+<p><img src='images/Twitter_Logo_Blue.png' style='width:270px;' /></p>
+</div>
+</div>
+<div class="fragment" style="color:orange; transform: rotate(17deg);">
+NOT THIS KIND OF SOCIAL NETWORK!
+</div>
+</section><section id="social-networks-are-much-more-interesting" class="slide level2">
+<h2>Social networks are much more interesting!</h2>
+<p><img class='fragment' src='https://www.researchgate.net/profile/Thiago_Silva8/publication/224946853/figure/fig2/AS:302557231632393@1449146673764/Illustration-of-the-Zacharys-karate-club-network-There-are-34-vertices-divided-into-two.png' height='200px' /></p>
+<ul>
+<li class="fragment">How do groups make decisions</li>
+<li class="fragment">How do fads and fashions start and spread?</li>
+<li class="fragment">How do our connections influence our perceptions about and behavior in the world?</li>
+</ul>
+</section><section id="goals" class="slide level2">
+<h2>Goals</h2>
+<ol type="1">
+<li class="fragment">Understand the foundations of network theory and analysis</li>
+<li class="fragment">Critically read social network studies</li>
+<li class="fragment">Learn how social networks relate to your own interests</li>
+<li class="fragment">Gain a basic understanding of gathering and analyzing network data in R</li>
+</ol>
+</section></section>
+<section><section id="how-we-reach-those-goals" class="title-slide slide level1"><h1>How we reach those goals</h1></section><section id="assignments" class="slide level2">
+<h2>Assignments</h2>
+<ul>
+<li class="fragment">Homework
+<ul>
+<li class="fragment">Social network concepts</li>
+<li class="fragment">Programming practice</li>
+</ul></li>
+<li class="fragment">Reading</li>
+<li class="fragment">Participation (in-class and online)</li>
+</ul>
+</section><section id="textbook" class="slide level2">
+<h2>Textbook</h2>
+<ul>
+<li class="fragment">Multiple readings from Six Degrees: The Science of a Connected Age (~$10)</li>
+</ul>
+</section><section id="exams" class="slide level2">
+<h2>Exams</h2>
+<ul>
+<li class="fragment">Two in-class exams</li>
+</ul>
+</section><section id="final-project" class="slide level2">
+<h2>Final Project</h2>
+<ul>
+<li class="fragment">Group-based, network-inspired project</li>
+</ul>
+</section><section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li class="fragment">Normal grading has some negative unintended consequences
+<div class="container">
+<div class="col">
+<p><img class='fragment' src='images/discussion.jpg' style='max-width:450px;'/></p>
+</div>
+</div></li>
+<li class="fragment">How can we build a learning community?</li>
+</ul>
+</section><section id="grading-1" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li class="fragment">I’m interested in teaching, not assessing</li>
+<li class="fragment">Assignments will be turned in on Brightspace</li>
+<li class="fragment">I will provide feedback</li>
+<li class="fragment">4 times during the semester you will turn in reflection pieces</li>
+<li class="fragment">If I disagree I will reach out</li>
+</ul>
+</section><section id="dangers-of-this-approach-to-grading" class="slide level2">
+<h2>Dangers of this approach to grading</h2>
+</section><section id="programming" class="slide level2">
+<h2>Programming</h2>
+<ul>
+<li class="fragment">You will be able to do stuff like this:</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">z &lt;-<span class="st"> </span><span class="kw">graph</span>(<span class="st">&quot;Zachary&quot;</span>) <span class="co"># the Zachary karate club</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">ceb &lt;-<span class="st"> </span><span class="kw">cluster_edge_betweenness</span>(z) <span class="co"># Identify communities</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">V</span>(z)<span class="op">$</span>community =<span class="st"> </span>ceb<span class="op">$</span>membership <span class="co"># Add communities as node attributes</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">plot</span>(z, </a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">     <span class="dt">vertex.color =</span> <span class="kw">V</span>(z)<span class="op">$</span>community, <span class="co"># Color by community</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">     <span class="dt">vertex.size =</span> <span class="kw">sqrt</span>(<span class="kw">betweenness</span>(z)), <span class="co"># Size by betweenness centrality</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">     <span class="dt">vertex.label =</span> <span class="ot">NA</span>) <span class="co"># Remove labels</span></a></code></pre></div>
+<p><img src="intro_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
+</div>
+</section><section id="getting-in-touch" class="slide level2">
+<h2>Getting in touch</h2>
+<ul>
+<li class="fragment">Office Hours</li>
+<li class="fragment">Email</li>
+</ul>
+</section><section id="tech-in-the-classroom" class="slide level2">
+<h2>Tech in the classroom</h2>
+</section><section id="please-be-vocal" class="slide level2">
+<h2>Please be vocal</h2>
+<ul>
+<li class="fragment">I will solicit feedback as part of reflections</li>
+<li class="fragment">Let me know what is and isn’t working</li>
+</ul>
+</section><section id="assignments-1" class="slide level2">
+<h2>Assignments</h2>
+<ul>
+<li class="fragment">Read the syllabus</li>
+<li class="fragment">Fill out the survey (linked on syllabus)</li>
+<li class="fragment">Read preface and chapter 1 of Six Degrees
+<ul>
+<li class="fragment">And order the book</li>
+</ul></li>
+<li class="fragment">Introduce yourself (and give thoughts on the readings?) on Brightspace</li>
+</ul>
+</section></section>
+<section><section id="simulation-activity" class="title-slide slide level1"><h1>Simulation Activity</h1></section><section id="read-instruction-sheet" class="slide level2">
+<h2>Read Instruction Sheet</h2>
+<ul>
+<li>Only communicate through written messages</li>
+<li><b>No</b> talking</li>
+<li>Write your number and time finished on the board</li>
+</ul>
+</section><section id="how-did-it-go" class="slide level2">
+<h2>How did it go?</h2>
+<ul>
+<li class="fragment">What worked well?</li>
+<li class="fragment">What didn’t?</li>
+<li class="fragment">Who was fastest? Why?</li>
+<li class="fragment">What was the longest path a resource traveled?</li>
+</ul>
+</section><section id="global-network" class="slide level2">
+<h2>Global network</h2>
+<p><img class='fragment' src='images/simulation.jpg'/></p>
+</section><section id="debrief-topics-to-cover" class="slide level2">
+<h2>Debrief topics to cover</h2>
+<ul>
+<li>Reciprocity</li>
+<li>Degree centrality</li>
+<li>Social capital</li>
+<li>Structural holes</li>
+<li>Reputation and deceit</li>
+<li>Position and power</li>
+<li>Multiplexity</li>
+<li>Number vs. type of ties</li>
+<li>Global/local networks</li>
+<li>Tie maintenance</li>
+<li>Sponsorship</li>
+<li>Norms and social conventions</li>
+</ul>
+</section><section id="meta-discussion" class="slide level2">
+<h2>Meta discussion</h2>
+<ul>
+<li><p>How does this differ from real-world networks?</p></li>
+<li><p>What does this make you see differently?</p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="intro_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="intro_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'intro_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,3 @@
+edgelist.csv is an edgelist. If there are only 7-8 participants, then simply remove node 9 and 8.
+
+The wanted and needed resources come from the correct resource.csv file, and they differ by number of participants.

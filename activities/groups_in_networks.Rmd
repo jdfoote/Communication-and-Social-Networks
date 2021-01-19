@@ -25,7 +25,7 @@ edges = read.csv('https://github.com/jdfoote/Communication-and-Social-Networks/r
 node_atts = read.csv('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/node_atts.csv'  )
 # You could also do this by loading them from your computer, with something like the following:
 # edges = read.csv('/home/jeremy/Desktop/edges.csv') # You'd need to change this path to where they are saved on your computer
-# node_atts = read.csv('/home/jeremy/Desktop/node_atts.csv')
+# node_atts = read.csv('/home/jeremy/Desktop/node_atts.csv')  
 G = graph_from_data_frame(edges, vertices=node_atts)
 plot(G)
 
@@ -111,7 +111,7 @@ temp_graph = delete_vertices(G, V(G)[which(age > 21)])
 
 # And then removes enemy edges
 temp_graph = delete_edges(G, E(G)[which(type == 'Enemy')])
-
+  
 plot(temp_graph)
 ```
 

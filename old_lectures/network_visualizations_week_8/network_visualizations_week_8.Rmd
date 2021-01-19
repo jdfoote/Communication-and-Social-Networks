@@ -1,0 +1,326 @@
+---
+title: COM 411
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+
+f <- function (x) {formatC(x, format="d", big.mark=',')}
+bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
+gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
+wrapify <- function (x) {paste("{", x, "}", sep="")}
+p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+library(igraph)
+library(tidyverse)
+```
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+
+## Today's Dad Joke
+
+Just so everyone's clear,
+<span class='fragment'>
+I'm going to put my glasses on.
+</span>
+
+## Housekeeping
+
+> - C-Span Archives Undergrad Research Competition
+> - bit.ly/ccseurc20
+
+# Troubled Lands Recap
+
+## Main questions
+
+> - How did you play differently in different versions?
+> - What in real life is similar to each version of the game?
+> - How did you decide whether or not to help others?
+> - What does this have to do with social networks and social capital?!
+
+## Debrief
+
+> - What did you think about while playing?
+> - How did you feel as you played? Did those feeling change across different versions of the game?
+> - When do you help others in real life?
+
+## Debrief
+
+> - Were resources and abilities distributed fairly?
+> - How should resources be distributed in the real world?
+> - What role did communication play? How did your group make decisions?
+> - Did you work to make things equal? Why or why not?
+> - What kinds of inequality appeared in the game?
+
+## Debrief
+
+> - Did anyone sanction someone else? Why? 
+> - How did others respond to being sanctioned?
+> - What is similar to a "sanction" in the real world?
+
+# Network Visualizations
+
+## Aspects of visualizations
+
+> - Nodes
+> - Edges
+> - Location
+
+## Nodes
+
+> - Information can be conveyed by:
+>   - Shape, size, color
+> - Shape
+>   - Typically categorical (e.g., gender, age range)
+> - Size
+>   - Often a network measure, but can be something about node
+> - Color
+>    - Often community detection
+
+## Examples
+
+```{r}
+#G = graph_from_data_frame(read.csv('../one_k_redittors.csv'))
+G = random.graph.game(15, .4)
+plot(G)
+```
+
+## With node shapes
+
+```{r}
+V(G)$shape = sample(c('square', 'circle','sphere'), size = gorder(G), replace = T)
+plot(G)
+ages = c('18-25', '26-34', '34-50')
+```
+
+## Nodes sized by betweenness centrality
+
+```{r}
+V(G)$shape = 'circle'
+plot(G, vertex.size = betweenness(G) * 2.5)
+```
+
+## Nodes colored by community
+
+```{r}
+
+community = membership(fastgreedy.community(G))
+colors = c('red', 'orange', 'darkgreen')
+V(G)$color = colors[community]
+plot(G)
+```
+
+## Edges
+
+> - Size
+>   - Typically represent weight of relationship
+> - Color
+>   - Typically represents different types of relationships
+
+## Examples
+
+## Edge width as weight
+```{r}
+
+make_edges = function(from, nodes = 15){
+  x = 1:nodes
+  x = x[x != from]
+  to = sample(x, 1)
+}
+
+from = sample(1:15, size = 35, replace = T)
+to = map_int(from, make_edges)
+G = graph_from_edgelist(cbind(from,to))
+E(G)$weight = sample(1:4, size = ecount(G), replace = T)
+E(G)$type = sample(c(T,F), size=ecount(G), replace = T)
+E(G)$arrow.size=.5
+
+plot(G, edge.width = E(G)$weight)
+```
+
+## Edge color as type
+
+
+```{r}
+colors = c('gray', 'orange')
+E(G)$color = colors[E(G)$type + 1]
+
+plot(G)
+```
+
+## Position
+
+> - Can represent literal distance
+>   - Cities
+>   - Seating chart
+> - Or social distance
+>   - Formal hierarchy
+>   - Degree centrality
+
+## Node placement can make a big difference in how a network is perceived
+
+```{r, out.width='32%'}
+G = random.graph.game(15, .4)
+plot(G, layout = layout_in_circle(G))
+plot(G, layout = layout_randomly)
+plot(G, layout = layout_as_star)
+plot(G)
+plot(G, layout = layout_on_grid)
+plot(G, layout = layout_with_lgl)
+```
+
+## Today's activity
+
+> - Start working on DataCamp Network Analysis, chapters 2 and 3
+
+
+# Network Analysis in R
+
+
+## Today's Dad Joke
+
+Within minutes, the detective knew exactly what the murder weapon was.
+
+<span class='fragment'>
+It was a brief case.
+</span>
+
+## Housekeeping
+
+> - Self-assessment overview
+>	- R
+>	- Coming with questions / Office hours
+>	- Readings
+>	  - Too long
+>	  - Put on Brightspace
+>	- Posting slides
+> - In class
+>	- Break
+>	- Dealing with confusion
+>	  - More group discussion
+>	  - Questions in class
+>	  - Writing on projector vs. on board?
+
+
+## DataCamp Review
+
+> - neighbors()
+> - ego()
+> - make_ego_network()
+> - Come back to:
+>	- lapply
+>	- randomization
+>	- transitivity
+>	- cliques
+
+
+## What makes for a good network visualization?
+
+Kozo Sugiyama's rules:
+
+1. Lines should be straight.
+2. Lines should be far apart from one another.
+3. Lines should not cross or touch.
+4. Lines should be easy to follow from one node to another.
+5. Nodes that connect should be close.
+6. Nodes that are most central should be close to the center of the graph.
+7. Nodes that are similar in some way should be placed near one another.
+
+## Activity
+
+Find and Assess a network visualization
+
+> - Use Google Images (or similar) to find an image of a network graphs.
+> - What do you think the image does well and poorly? Does it follow Sugiyama's rules?
+> - Put the image (and your assessment) on the padlet at https://padlet.com/jdfoote1/networks (link is also on wiki)
+
+## Discussion
+
+> - Did you agree with Sugiyama's rules?
+> - What types of color/shape/size approaches were effective?
+
+## Visualization Competition
+
+> - Dutch school dataset (on wiki)
+> - In groups of 2-3
+>	- Come up with question
+>	- Come up with visualization approach
+> - We will work on this more next Thursday
+
+## Homework
+> - Scott Feld guest lecture
+>	- Summary and questions assignment

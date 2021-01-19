@@ -1,0 +1,142 @@
+---
+title: COM 411
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+
+f <- function (x) {formatC(x, format="d", big.mark=',')}
+bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
+gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
+wrapify <- function (x) {paste("{", x, "}", sep="")}
+p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
+library(igraph)
+library(tidyverse)
+```
+
+<style type="text/css">
+
+/* Changes to RevealJS default formatting.
+
+I prefer this style but you can change these to your preferences */
+
+/* This bit lets you do columns */
+.container{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
+.highlight {
+color: LightCoral;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+text-transform: none;
+}
+
+.reveal h1 {
+margin-top:200px;
+}
+
+div.footnote {
+font-size: 40%;
+text-align: right;
+}
+
+.bg-image{
+width: 180px;
+}
+
+.reveal .slides section .fragment.fade-in-then-out,
+.reveal .slides section .fragment.current-visible {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
+  .reveal .slides section .fragment.current-visible.current-fragment {
+    opacity: 1;
+    visibility: inherit; }
+
+.reveal .slides section .fragment.fade-in-then-semi-out {
+  opacity: 0;
+  visibility: hidden; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
+    opacity: 0.5;
+    visibility: inherit; }
+  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
+    opacity: 1;
+visibility: inherit; }
+
+</style>
+
+
+## Today's Dad Joke
+
+When I was young, we were really poor. My family could only afford a second-hand calculator, which was missing the "X" button.
+
+Times were hard.
+
+## Housekeeping
+
+> - Self Assessment responses are in
+> - Timing for final project
+>	- Don't wait - get started now!
+>	- Reach out if you get stuck
+>	- Watch the video and use the example data
+>	- Not all visualizations have to be networks
+> - Reading summaries + FlipGrid
+
+
+## Networks and Technology
+
+> - Social media has made large-scale human networks visible
+>	- Degree distributions
+>	- Network paths (six degrees of separation)
+>	- Communication patterns
+>	- Information and belief diffusion
+
+## Social science is being reshaped by online data
+
+> - We can look at thousands or millions of people
+> - Starting to answer questions like:
+>	- When do people change their minds?
+>	- Why do people choose to cooperate?
+>	- What predicts participating in a new group?
+> - We can finally see global networks instead of just small portions
+
+## But, there are some important caveats
+
+> - Technology doesn't only record interactions, it shapes them
+>	- Is this true of people, or true of Facebook/Reddit/Twitter?
+> - Human systems respond to observation and evolve
+> - Much is unobserved
+>	- These are often "thin slices"
+>	- In what other ways are people communicating?
+>	- What other technologies or circumstances shape their behavior?
+
+## Those who understand networks have an advantage
+
+> - Advertisers, activists, and politicians who understand network principles like homophily, clustering, and complex contagion will see their messages spread farther and faster.
+
