@@ -1,5 +1,5 @@
 ---
-title: COM 411
+pagetitle: Welcome to COM 411!
 output: 
   revealjs::revealjs_presentation:
     theme: white
@@ -94,15 +94,6 @@ library(ggraph)
 > - Resolving confusion
 > - Project-based
 
-## Discord Meetings
-
-> - Tuesdays are "required"
-> - Thursdays are typically more of a co-working time (but sometimes synchronous)
-> - Discussion questions due on Mondays (in Discord)
-> - Random cold calling based on questions
->	- I will track whether you are prepared
-> - Think, pair, share
-
 ## Grading
 >- Normal grading has some negative unintended consequences
 <div class='container'>
@@ -121,6 +112,16 @@ library(ggraph)
 >- If I disagree I will reach out
 
 ## Dangers of this approach to grading
+
+## Discord Meetings
+
+> - Tuesdays are "required"
+> - Thursdays are typically more of a co-working time (but sometimes synchronous)
+> - Discussion questions due on Mondays (in Discord)
+> - Random cold calling based on questions
+>	- I will track whether you are prepared
+> - Think, pair, share
+
 
 ## Assignments
 
