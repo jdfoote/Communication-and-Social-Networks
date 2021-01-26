@@ -8,6 +8,7 @@ output:
     transition: convex
     self_contained: false
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -92,9 +93,29 @@ visibility: inherit; }
 </style>
 
 ## Today's Dad Joke
-- Why did the near-sighted man fall in the well?
 
-> - He couldn't see that well
+Shout out to people wondering what the opposite of 'in' is.
+
+
+## Housekeeping
+
+> - Reading academic articles
+>	- Don't read everything
+> - Etherpad
+>	- How to run notetaking?
+>	- Collaborative summaries during the week?
+
+## Schedule
+
+> - Housekeeping / Announcements (5-10)
+> - Discussion and review (40-45)
+> - Consolidation and Confusion (10-15)
+> - Supplementary lectures
+>	- Discuss at end of class
+
+
+
+
 
 # Network Data and Network Types
 
@@ -177,7 +198,7 @@ plot(
 >- 20 random reddittors and their communities
 ```{r, echo = F, message=F, echo=F}
 library(tidyverse)
-r = read_csv('../one_k_redittors.csv')
+r = read_csv('../../resources/one_k_redittors.csv')
 r = r %>% filter(author %in% sample(unique(r$author), 50))
 r = r %>% filter(! subreddit %in% r$author)
 G = graph.data.frame(r, directed = T)
