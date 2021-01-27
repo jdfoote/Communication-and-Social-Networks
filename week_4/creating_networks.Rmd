@@ -1,0 +1,137 @@
+---
+title: Creating Networks
+author: "Jeremy Foote"
+date: "1/27/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# import the libraries needed
+library(igraph)
+library(ggraph)
+library(tidygraph)
+```
+
+The goal of this assignment is very simple - learn how to create a network in such a way that R can understand it.
+
+While there are multiple ways to do this, I'm going to show you what I think is the simplest: using Excel to create an edgelist and a list of node attributes, and then loading them in.
+
+If you recall, an edgelist is just a list of the edges in the network. We'll start by creating a simple edgelist, using made up names.
+
+In Excel (or LibreOffice) open a new spreadsheet, and create a spreadsheet that looks like this:
+
+| From | To |
+|----|---|
+|John | Ida |
+| Elwyn | Ida |
+| Okan | Axelle |
+| John | Axelle | 
+| Axelle | Ida |
+
+Save the spreadsheet to your computer and then:
+
+1. Click `File > Import Dataset > Excel`
+2. Browse to the file
+3. Under Import options, change the name to `edgelist`
+3. Copy and paste the code in the "Code Preview" window here (delete my code which is given as an example).
+
+```{r}
+library(readxl)
+edgelist <- read_excel("~/Teaching/communication_and_networks/week_4/sample_data.xlsx")
+View(edgelist)
+```
+
+
+To test if it worked, run this code
+
+```{r}
+
+print(edgelist)
+```
+
+
+Next, we will create a table of attributes for the people in our network, and import that, too.
+
+Do the same thing again - open a new spreadsheet, and this time make it look like this:
+
+| Name   | Age | Gender | Major |
+|--------|-----|--------|-------|
+| John   | 22  | M      | COM   |
+| Elwyn  | 23  | M      | SOC   |
+| Okan   | 25  | F      | COM   |
+| Ida    | 19  | F      | SOC   |
+| Axelle | 20  | T      | COM   |
+
+Again, save it and import it. This time, import it as node_atts.
+
+Here is my import code:
+
+```{r}
+library(readxl)
+node_atts <- read_excel("~/Teaching/communication_and_networks/week_4/node_atts.xlsx")
+View(edgelist)
+```
+
+Run the following code to check that it worked.
+
+```{r}
+print(node_atts)
+
+```
+
+
+## Importing into R
+
+Finally, we'll create a network "object" using these files. This is just a representation of the network in a way that R can create visualizations and get network statistics, etc.
+
+We do this by running `graph_from_data_frame`. This is a [function](https://www.tutorialspoint.com/r/r_functions.htm) that takes in the arguments `d`, `vertices`, and `directed`. 
+
+`d` is the edgelist
+`vertices` is the node attributes
+`directed` is whether this is a directed or undirected graph.
+`G <-` saves the network to the variable `G` and then `plot(G)` makes a basic plot of it.
+
+```{r}
+G <- graph_from_data_frame(d = edgelist, 
+                           vertices = node_atts, directed = T)
+plot(G)
+```
+
+Let's enhance this basic plot by using `ggraph` and by coloring nodes based on their major.
+
+```{r}
+G %>%
+  ggraph(layout='kk') +
+  geom_node_point(aes(color = Major)) +
+  geom_edge_fan()
+
+```
+
+## Exercise 1
+
+See if you can figure out how to add another person to the network (hint: the easiest way to do this is in Excel). Give them node attributes and at least one edge. Create a graph with that person and a plot.
+
+## Exercise 2
+
+Change the ggraph plot so that it colors the students by gender instead of by major
+
+```{r}
+## YOUR CODE HERE
+
+```
+
+
+## Challenge Exercise
+
+Change the ggraph plot so that it show the names of the students, and make the nodes bigger.
+
+Hint: You will a [geom_node_label](https://ggraph.data-imaginist.com/reference/geom_node_text.html) and the "aesthetics" for [geom_node_point](https://ggraph.data-imaginist.com/reference/geom_node_point.html) may be helpful
+
+```{r}
+
+
+```
+
+
+

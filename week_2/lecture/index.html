@@ -591,6 +591,11 @@ visibility: inherit; }
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
+<li class="fragment">Discord announcements
+<ul>
+<li class="fragment">Do they work?</li>
+<li class="fragment">Notification settings</li>
+</ul></li>
 <li class="fragment">Reading academic articles
 <ul>
 <li class="fragment">Don’t read everything</li>
@@ -614,25 +619,7 @@ visibility: inherit; }
 </ul></li>
 </ul>
 </section>
-<section><section id="network-data-and-network-types" class="title-slide slide level1"><h1>Network Data and Network Types</h1></section><section id="homework" class="slide level2">
-<h2>Homework</h2>
-<ul>
-<li class="fragment">Did you find someone with a Hawaiian driver’s license?</li>
-<li class="fragment">How did it go?</li>
-<li class="fragment">What were the challenges?</li>
-<li class="fragment">Were there overlapping networks?</li>
-</ul>
-</section></section>
-<section><section id="networks-in-r" class="title-slide slide level1"><h1>Networks in R</h1></section><section id="what-is-r" class="slide level2">
-<h2>What is R?</h2>
-</section><section id="why-are-we-using-r" class="slide level2">
-<h2>Why are we using R?</h2>
-<ul>
-<li class="fragment">Powerful</li>
-<li class="fragment">Reproducible</li>
-<li class="fragment">Extensible</li>
-</ul>
-</section><section id="network-data" class="slide level2">
+<section><section id="network-data-and-network-types" class="title-slide slide level1"><h1>Network Data and Network Types</h1></section><section id="network-data" class="slide level2">
 <h2>Network Data</h2>
 <ul>
 <li class="fragment">What are the three main ways of representing networks?</li>
@@ -643,58 +630,58 @@ visibility: inherit; }
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">as_adjacency_matrix</span>(sw)</a></code></pre></div>
 <pre><code>## 16 x 16 sparse Matrix of class &quot;dgCMatrix&quot;
 ##                                      
-##  [1,] . 1 . 1 . . . . . . . . 1 . 1 .
-##  [2,] 1 . 1 1 . 1 . . 1 . . . . 1 . .
-##  [3,] . 1 . 1 1 . 1 . . . . . . . 1 .
-##  [4,] 1 1 1 . . . . 1 1 1 . . . . . .
-##  [5,] . . 1 . . 1 . . 1 . . . . . . .
-##  [6,] . 1 . . 1 . 1 . . . . . . . . .
-##  [7,] . . 1 . . 1 . . . . 1 . . . . .
-##  [8,] . . . 1 . . . . . . 1 . . 1 . 1
-##  [9,] . 1 . 1 1 . . . . 1 . 1 . . . .
-## [10,] . . . 1 . . . . 1 . 1 . . 1 . .
-## [11,] . . . . . . 1 1 . 1 . 1 . . . 1
-## [12,] . . . . . . . . 1 . 1 . . . . 1
-## [13,] 1 . . . . . . . . . . . . 1 . .
-## [14,] . 1 . . . . . 1 . 1 . . 1 . . .
-## [15,] 1 . 1 . . . . . . . . . . . . 1
-## [16,] . . . . . . . 1 . . 1 1 . . 1 .</code></pre>
+##  [1,] . 1 . . 1 . . . . . 1 . 1 1 . .
+##  [2,] 1 . 1 . . 1 . . . . . . . 1 . .
+##  [3,] . 1 . . . . 1 1 . . 1 . . 1 1 .
+##  [4,] . . . . . . . 1 . . . . . . . 1
+##  [5,] 1 . . . . . . 1 1 1 . . . . . .
+##  [6,] . 1 . . . . 1 . . 1 . . . . . .
+##  [7,] . . 1 . . 1 . 1 . . 1 . . . . .
+##  [8,] . . 1 1 1 . 1 . . . . . . . 1 .
+##  [9,] . . . . 1 . . . . 1 . 1 1 . . 1
+## [10,] . . . . 1 1 . . 1 . 1 . . 1 . .
+## [11,] 1 . 1 . . . 1 . . 1 . . . . . 1
+## [12,] . . . . . . . . 1 . . . . . . 1
+## [13,] 1 . . . . . . . 1 . . . . . . .
+## [14,] 1 1 1 . . . . . . 1 . . . . 1 .
+## [15,] . . 1 . . . . 1 . . . . . 1 . .
+## [16,] . . . 1 . . . . 1 . 1 1 . . . .</code></pre>
 </section><section id="edgelists" class="slide level2">
 <h2>Edgelists</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">as_edgelist</span>(sw)</a></code></pre></div>
 <pre><code>##       [,1] [,2]
 ##  [1,]    1    2
-##  [2,]    1   15
+##  [2,]    1    5
 ##  [3,]    2    3
 ##  [4,]    2    6
-##  [5,]    3    4
+##  [5,]    3    8
 ##  [6,]    3    7
-##  [7,]    1    4
+##  [7,]    1   14
 ##  [8,]    4    8
-##  [9,]    5    6
+##  [9,]    5   10
 ## [10,]    5    9
 ## [11,]    6    7
-## [12,]    4   10
-## [13,]    8   16
+## [12,]    6   10
+## [13,]    7    8
 ## [14,]    7   11
-## [15,]    3    5
-## [16,]    8   11
+## [15,]    5    8
+## [16,]    8   15
 ## [17,]    9   10
-## [18,]    4    9
+## [18,]    9   13
 ## [19,]   10   11
 ## [20,]   10   14
-## [21,]   11   12
-## [22,]    2    9
+## [21,]    1   11
+## [22,]    3   11
 ## [23,]    9   12
 ## [24,]   12   16
-## [25,]   13   14
+## [25,]    3   14
 ## [26,]    1   13
-## [27,]    8   14
+## [27,]   14   15
 ## [28,]    2   14
-## [29,]   15   16
+## [29,]    4   16
 ## [30,]    3   15
-## [31,]   11   16
-## [32,]    2    4</code></pre>
+## [31,]    9   16
+## [32,]   11   16</code></pre>
 </section><section id="graphsplotssociograms" class="slide level2">
 <h2>Graphs/plots/sociograms</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">plot</span>(sw,</a>
@@ -719,10 +706,6 @@ visibility: inherit; }
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" /></p>
 </section><section id="extended-ego-networks" class="slide level2">
 <h2>Extended ego networks</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">plot</span>(</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="kw">make_ego_graph</span>(sw, </a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">                 <span class="dt">nodes =</span> <span class="dv">1</span>, </a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">                 <span class="dt">order =</span> <span class="dv">2</span>)[[<span class="dv">1</span>]])</a></code></pre></div>
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" /></p>
 </section><section id="bipartite-networks" class="slide level2">
 <h2>Bipartite Networks</h2>
@@ -732,84 +715,34 @@ visibility: inherit; }
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" /></p>
 </section><section id="what-does-this-data-look-like" class="slide level2">
 <h2>What does this data look like?</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">head</span>(r)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">head</span>(r)</a></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
-##   author           subreddit         posts
-##   &lt;chr&gt;            &lt;chr&gt;             &lt;dbl&gt;
-## 1 DuvyRsa          DotA2                31
-## 2 NattyLightMerica FSAE                  1
-## 3 AnimatronicJesus CringeAnarchy         1
-## 4 deegsboy24       malehairadvice        1
-## 5 fly_malcolmX     Sneakers              1
-## 6 AnimatronicJesus TrollXChromosomes     1</code></pre>
+##   author               subreddit          posts
+##   &lt;chr&gt;                &lt;chr&gt;              &lt;dbl&gt;
+## 1 mysticmusti          TwoBestFriendsPlay   101
+## 2 Trumandahuman        ForeverAlone          28
+## 3 ask-me-about-my-cats relationships         17
+## 4 chemtaalib           TheWeeknd             26
+## 5 mysticmusti          Games                 19
+## 6 furiousxgeorge       eagles                64</code></pre>
 </section><section id="bipartite-networks-can-be-projected" class="slide level2">
 <h2>Bipartite networks can be “projected”</h2>
 <ul>
 <li class="fragment">People who comment in the same communities</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">projections =<span class="st"> </span><span class="kw">bipartite_projection</span>(G)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">sr =<span class="st"> </span>projections[[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">people =<span class="st"> </span>projections[[<span class="dv">2</span>]]</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">people <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">delete.vertices</span>(<span class="kw">degree</span>(.) <span class="op">&lt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="st">  </span><span class="kw">plot_graph</span>()</a></code></pre></div>
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-9-1.png" width="768" /></p>
 </section><section id="projections" class="slide level2">
 <h2>Projections</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">sr <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">delete.vertices</span>(<span class="kw">degree</span>(.) <span class="op">&lt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">plot_graph</span>()</a></code></pre></div>
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-10-1.png" width="768" /></p>
 </section><section id="nodes-and-edges-can-have-attributes" class="slide level2">
 <h2>Nodes and edges can have attributes</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">V</span>(sw)<span class="op">$</span>gender =<span class="st"> </span><span class="kw">sample</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), </a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">                      <span class="kw">length</span>(<span class="kw">V</span>(sw)), </a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">                      <span class="dt">replace =</span> T)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;green&#39;</span>,<span class="st">&#39;orange&#39;</span>,<span class="st">&#39;red&#39;</span>)</a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="kw">V</span>(sw)<span class="op">$</span>color &lt;-<span class="st"> </span>colors[<span class="kw">as.integer</span>(<span class="kw">V</span>(sw)<span class="op">$</span>gender)]</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="kw">plot</span>(sw</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8">     )</a></code></pre></div>
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-11-1.png" width="768" /></p>
 </section><section id="edge-attributes" class="slide level2">
 <h2>Edge attributes</h2>
 <ul>
 <li class="fragment">Usually this is weight</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">#tmp = delete.edges(sr, which(E(sr)$weight &lt; 2))</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">people <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">delete.vertices</span>(<span class="kw">degree</span>(.) <span class="op">&lt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw">plot</span>(</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">    <span class="dt">layout =</span> <span class="kw">layout_with_fr</span>(.),</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">    <span class="dt">vertex.size =</span> <span class="dv">9</span>,</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">    <span class="dt">vertex.label.cex =</span> <span class="fl">.4</span>,</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">    <span class="dt">edge.width =</span> <span class="kw">E</span>(.)<span class="op">$</span>weight</a>
-<a class="sourceLine" id="cb13-9" data-line-number="9">  )</a></code></pre></div>
 <p><img src="network_types_files/figure-revealjs/unnamed-chunk-12-1.png" width="768" /></p>
-</section><section id="assignments" class="slide level2">
-<h2>Assignments</h2>
-<ul>
-<li class="fragment">Homework 3 (extended family network)</li>
-<li class="fragment">Install R and RStudio (optional)</li>
-</ul>
-</section></section>
-<section><section id="intro-to-r" class="title-slide slide level1"><h1>Intro to R</h1></section><section id="the-dad-joke" class="slide level2">
-<h2>The Dad Joke</h2>
-<p>Shout out to people wondering what the opposite of ‘in’ is.</p>
-</section><section id="homework-1" class="slide level2">
-<h2>Homework</h2>
-<ul>
-<li class="fragment">How did it go?</li>
-<li class="fragment">What was different from the first assignment?</li>
-</ul>
-</section><section id="questions-about-r" class="slide level2">
-<h2>Questions about R?</h2>
-<ul>
-<li class="fragment">We will regroup at the end of class</li>
-<li class="fragment">We can adjust how quickly we go through things</li>
-</ul>
-</section><section id="for-tuesday" class="slide level2">
-<h2>For Tuesday</h2>
-<p>Turn in Self-Assessment Reflection (instructions on wiki) Finish Introduction to R?</p>
 </section></section>
     </div>
   </div>

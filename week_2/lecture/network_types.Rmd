@@ -99,6 +99,9 @@ Shout out to people wondering what the opposite of 'in' is.
 
 ## Housekeeping
 
+> - Discord announcements
+>	- Do they work?
+>	- Notification settings
 > - Reading academic articles
 >	- Don't read everything
 > - Etherpad
@@ -119,24 +122,6 @@ Shout out to people wondering what the opposite of 'in' is.
 
 # Network Data and Network Types
 
-
-
-## Homework
-
->- Did you find someone with a Hawaiian driver's license?
->- How did it go?
->- What were the challenges?
->- Were there overlapping networks?
-
-# Networks in R
-
-## What is R?
-
-## Why are we using R?
-
->- Powerful
->- Reproducible
->- Extensible
 
 
 ## Network Data
@@ -185,7 +170,7 @@ plot(make_ego_graph(sw, nodes = 1)[[1]])
 
 ## Extended ego networks
 
-```{r}
+```{r, echo = F}
 plot(
   make_ego_graph(sw, 
                  nodes = 1, 
@@ -240,10 +225,10 @@ head(r)
 
 ## Bipartite networks can be "projected"
 
->- People who comment in the same communities
+>- People who post in the same communities
 
 
-```{r}
+```{r, echo=F}
 projections = bipartite_projection(G)
 sr = projections[[1]]
 people = projections[[2]]
@@ -255,31 +240,30 @@ people %>% delete.vertices(degree(.) < 1) %>%
 
 ## Projections
 
-```{r}
+```{r, echo = F}
 sr %>% delete.vertices(degree(.) < 1) %>%
   plot_graph()
 ```
 
 ## Nodes and edges can have attributes
 
-```{r}
+```{r, echo = F}
 V(sw)$gender = sample(c(1,2,3), 
                       length(V(sw)), 
                       replace = T)
 
 colors <- c('green','orange','red')
 V(sw)$color <- colors[as.integer(V(sw)$gender)]
-plot(sw
-     )
+plot(sw)
 ```
 
 ## Edge attributes
 
 >- Usually this is weight
 
-```{r}
-#tmp = delete.edges(sr, which(E(sr)$weight < 2))
-people %>%
+```{r, echo = F}
+tmp = delete.edges(people, which(E(people)$weight < 2))
+tmp %>%
   delete.vertices(degree(.) < 1) %>%
   plot(
     layout = layout_with_fr(.),
@@ -288,32 +272,4 @@ people %>%
     edge.width = E(.)$weight
   )
 ```
-
-
-## Assignments
-
-> - Homework 3 (extended family network)
-> - Install R and RStudio (optional)
-
-
-# Intro to R
-
-## The Dad Joke
-
-Shout out to people wondering what the opposite of 'in' is.
-
-## Homework
-
-> - How did it go?
-> - What was different from the first assignment?
-
-## Questions about R?
-
-> - We will regroup at the end of class
-> - We can adjust how quickly we go through things
-
-## For Tuesday
-
-Turn in Self-Assessment Reflection (instructions on wiki)
-Finish Introduction to R?
 
