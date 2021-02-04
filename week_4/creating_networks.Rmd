@@ -38,7 +38,7 @@ Save the spreadsheet to your computer and then:
 
 ```{r}
 library(readxl)
-edgelist <- read_excel("~/Teaching/communication_and_networks/week_4/sample_data.xlsx")
+edgelist <- read_excel("~/Teaching/communication_and_networks/week_4/edgelist.xlsx")
 View(edgelist)
 ```
 

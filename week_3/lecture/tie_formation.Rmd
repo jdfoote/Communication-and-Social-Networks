@@ -1,0 +1,129 @@
+---
+pagetitle: COM 411
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Today's Dad Joke
+
+My neighbor had the nerve to ring my doorbell at 3 o'clock in the morning.
+
+<span class='fragment'>
+Luckily I was still up playing the drums.
+</span>
+
+
+## Housekeeping
+
+> - Self Assessment Reflection next week
+>	- Goals for the class
+>	- Feedback for me
+> - R Lab 2
+> - This week was a lot: R + readings
+> - Use Thursdays as R working time
+> - More videos from me
+
+
+
+## The Plan for R
+
+> - A short assignment every few weeks
+> - Goals:
+>	- Create and import network data
+>	- Use visualizations to explore interesting connections
+>	- Calculate basic network statistics
+
+
+# Creation of edges
+
+## Why do people form relationships / edges?
+
+> - Psychological explanations
+>	- Homophily
+
+<div class='fragment'>
+```{r, fig.height=3}
+theme_set(theme_graph())
+df = data.frame(from = c("A","B","C"), to = c("B","C","A"), type=c('enemy','enemy','friend'))
+colors = data.frame(name=c("A","B","C"), color = c("gold", "black", "black"))
+
+G = graph_from_data_frame(d = df, vertices = colors) %>% as_tbl_graph()
+
+plot = G %>%
+  activate(nodes) %>%
+  mutate(size = centrality_betweenness()) %>%
+  ggraph(layout = 'linear', circular= T) +
+  #geom_node_point(aes(color = color), size = 8) + 
+  geom_node_text(aes(label = name, color = color), size = 10) +
+  scale_color_manual(values = c("gold"='gold',"black"='black'), guide = F) +
+  #scale_edge_color_manual(values = c('enemy' = 'white', 'friend'='white'), guide = F)
+  coord_cartesian(clip = 'off')
+plot
+```
+</div>
+
+## Triadic closure / transitivity
+
+<div class='fragment'>
+```{r, fig.height=3}
+
+plot = plot + geom_edge_fan(aes(color = type,
+                         start_cap = label_rect(node1.name),
+                         end_cap = label_rect(node1.name)),
+                     width = .3, 
+                     arrow = arrow(length = unit(3,'mm'))
+				)
+
+plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='white'), guide = F)
+           
+```
+</div>
+
+## Balance Theory
+
+<div class='fragment'>
+```{r, fig.height=3}
+plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='red'), guide = F)
+```
+</div>
+<aside class='notes'>
+Balance theory is a bit more complicated. It says that we want our relationships to be in balance
+If A is friends with  B and B is friends with C, but A and C are enemies, then balance theory says that this is unstable. Ties will dissolve or change valence.
+
+This does depend on the type of relationship, though. What if black represents "hates"? If A hates B and B hates C, then maybe A will like C. Or if A is in love with B and B is in love with C, then A may hate C. These triangles are the source of lots of literature!
+</aside>
+
+## Why do people form edges?
+
+> - Rational explanations
+>	- Social capital
+>	  - People seek to fill structural holes and obtain powerful positions in the network
+>	- Social exchange theory
+>	  - Do the benefits of relationship outweigh the costs?
+>	  - What resources does each node have and need?
+> - Assumed to operate at the dyad / edge level
+
+
+## Focus of Activity
+
+> - Partially a pushback against these
+>	- People choose activities
+>	- Ties are often a function of activities, not dyadic choices
+
