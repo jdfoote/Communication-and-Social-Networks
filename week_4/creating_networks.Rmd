@@ -70,7 +70,7 @@ Here is my import code:
 ```{r}
 library(readxl)
 node_atts <- read_excel("~/Teaching/communication_and_networks/week_4/node_atts.xlsx")
-View(edgelist)
+View(node_atts)
 ```
 
 Run the following code to check that it worked.
