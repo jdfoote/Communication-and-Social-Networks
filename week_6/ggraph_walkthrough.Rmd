@@ -1,0 +1,92 @@
+---
+pagetitle: COM 411
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+knitr::opts_knit$set(root.dir = './')
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+
+## Intro to syntax of R and ggraph
+
+### Piping data and activating a table
+
+```{r}
+create_notable('zachary') %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree())
+  
+```
+
+```{r}
+create_notable('zachary') %>%
+  activate(edges) %>%
+  mutate(bw = centrality_edge_betweenness()) %>%
+  ggplot() +
+  geom_histogram(aes(x=bw))
+```
+
+
+## A network plot
+
+Three parts:
+
+* layout
+* nodes
+* edges
+
+Lots of layout options, ggraph can pick for you, or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html).
+
+```{r}
+create_notable('zachary') %>%
+  ggraph(layout = 'kk') +
+  geom_node_point() +
+  geom_edge_fan()
+```
+```{r}
+create_notable('zachary') %>%
+  ggraph(layout = 'circle') +
+  geom_node_point() +
+  geom_edge_fan()
+```
+```{r}
+create_notable('zachary') %>%
+  ggraph(layout = 'focus', focus = 3) +
+  geom_node_point() +
+  geom_edge_fan() +
+  ggforce::geom_circle(aes(x0 = 0, y0 = 0, r = r), data.frame(r = 1:3), colour = 'grey') + 
+  coord_fixed() + 
+  theme_graph()
+```
+
+## Aesthetics
+
+The primary way that you will gain understanding or make an argument through network plots is through changing the color, size, etc. of nodes and edges.
+
+If you want to change things based on a value that changes, then you need to put it in a "mapping". This is the first "argument" to the node or edge geom, and starts with `aes(`. Aesthetics that apply to all of the nodes or edges appear outside of the mapping. 
+
+
+```{r}
+create_notable('zachary') %>%
+  activate(nodes) %>%
+  mutate(group = as.factor(group_infomap())) %>%
+  ggraph() +
+  geom_edge_fan(width = .2, color = 'lightblue') + 
+  geom_node_point(aes(color = group)) + 
+  coord_fixed() + 
+  theme_graph()
+```

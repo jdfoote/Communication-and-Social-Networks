@@ -1,0 +1,36 @@
+---
+title: COM 411
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+#source("resources/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+
+## Today's Dad Joke
+
+One astronaut says to another, "I can’t find any milk for my coffee"
+
+The other astronaut replies, "In space no one can, here use cream"
+
+
+## Housekeeping
+
+> - Self Assessment Reflections are due
+> - No R homework this week, but more readings + video
+

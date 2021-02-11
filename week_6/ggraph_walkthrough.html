@@ -10,6 +10,69 @@
   <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
 
@@ -449,83 +512,85 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 
-<section><section id="ego-networks-and-network-perceptions" class="title-slide slide level1"><h1>Ego networks and network perceptions</h1></section><section id="sources-of-ego-networks" class="slide level2">
-<h2>Sources of ego networks</h2>
+<section id="intro-to-syntax-of-r-and-ggraph" class="slide level2">
+<h2>Intro to syntax of R and ggraph</h2>
+<h3 id="piping-data-and-activating-a-table">Piping data and activating a table</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(nodes) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">degree =</span> <span class="kw">centrality_degree</span>())</a></code></pre></div>
+<pre><code>## # A tbl_graph: 34 nodes and 78 edges
+## #
+## # An undirected simple graph with 1 component
+## #
+## # Node Data: 34 x 1 (active)
+##   degree
+##    &lt;dbl&gt;
+## 1     16
+## 2      9
+## 3     10
+## 4      6
+## 5      3
+## 6      4
+## # … with 28 more rows
+## #
+## # Edge Data: 78 x 2
+##    from    to
+##   &lt;int&gt; &lt;int&gt;
+## 1     1     2
+## 2     1     3
+## 3     1     4
+## # … with 75 more rows</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(edges) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">bw =</span> <span class="kw">centrality_edge_betweenness</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x=</span>bw))</a></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="ggraph_walkthrough_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
+</section>
+<section id="a-network-plot" class="slide level2">
+<h2>A network plot</h2>
+<p>Three parts:</p>
 <ul>
-<li class="fragment">Surveys of individuals</li>
-<li class="fragment">“Extraction” from complete network</li>
-<li class="fragment">Usually one step from ego</li>
+<li>layout</li>
+<li>nodes</li>
+<li>edges</li>
 </ul>
-</section><section id="example---full-network" class="slide level2">
-<h2>Example - Full network</h2>
-<p><img src="ego_nets_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
-</section><section id="example---ego-network-highlighted" class="slide level2">
-<h2>Example - Ego network highlighted</h2>
-<p><img src="ego_nets_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
-</section><section id="example---ego-network" class="slide level2">
-<h2>Example - Ego network</h2>
-<p><img src="ego_nets_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /></p>
-</section><section id="what-can-we-measure-about-ego-networks" class="slide level2">
-<h2>What can we measure about ego networks?</h2>
-<ul>
-<li class="fragment">Degree centrality (size)</li>
-<li class="fragment">Density</li>
-<li class="fragment">Groups</li>
-<li class="fragment">Distance</li>
-<li class="fragment">Homogeneity</li>
-<li class="fragment">Homophily</li>
-<li class="fragment">Composition</li>
-</ul>
-</section><section id="how-can-we-use-ego-network-data" class="slide level2">
-<h2>How can we use ego network data?</h2>
-<ul>
-<li class="fragment">GSS data
-<ul>
-<li class="fragment">Changes over time</li>
-<li class="fragment">Comparison by location</li>
-</ul></li>
-<li class="fragment">Predicting individual outcomes
-<ul>
-<li class="fragment">Health</li>
-<li class="fragment">Employment</li>
-<li class="fragment">Happiness</li>
-</ul></li>
-</ul>
-</section></section>
-<section><section id="network-perception" class="title-slide slide level1"><h1>Network Perception</h1></section><section id="ego-networks-are-the-only-part-of-the-networks-that-we-see" class="slide level2">
-<h2>Ego networks are the only part of the networks that we see</h2>
-<ul>
-<li class="fragment">But are they real?</li>
-<li class="fragment">Perceived networks differ from observed networks (Bernard, Kilworth, and Sailer)
-<ul>
-<li class="fragment">“What people say about their communications bears no resemblance to their behavior” (BKS, 1982)</li>
-</ul></li>
-<li class="fragment">“Friendship” is often not mutual</li>
-</ul>
-</section><section id="so-what" class="slide level2">
-<h2>So what?</h2>
-<ul>
-<li class="fragment">Perceptions are what influence actions</li>
-<li class="fragment">Potential network vs. “activated” network (Smith et al., 2012)
-<ul>
-<li class="fragment">Part of wealth and opportunity disparity may be due to differences in network activation</li>
-</ul></li>
-</ul>
-</section><section id="how-can-we-overcome-perception-biases" class="slide level2">
-<h2>How can we overcome perception biases?</h2>
-<ul>
-<li class="fragment">Get information from others
-<ul>
-<li class="fragment">Build picture of whole network (Krackhardt et al)</li>
-</ul></li>
-<li class="fragment">Think in terms of potential networks and activation and mobilization</li>
-<li class="fragment">Recognize the value of “weak ties”</li>
-</ul>
-</section><section id="todays-dad-joke" class="slide level2">
-<h2>Today’s Dad Joke</h2>
-<p>I accidentally swallowed a bunch of scrabble tiles.</p>
-<p>My next trip to the bathroom could spell disaster.</p>
-</section></section>
+<p>Lots of layout options, ggraph can pick for you, or you can look through some <a href="https://igraph.org/c/doc/igraph-Layout.html">here</a> and <a href="https://ggraph.data-imaginist.com/articles/Layouts.html">here</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw">ggraph</span>(<span class="dt">layout =</span> <span class="st">&#39;kk&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_node_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_edge_fan</span>()</a></code></pre></div>
+<p><img src="ggraph_walkthrough_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw">ggraph</span>(<span class="dt">layout =</span> <span class="st">&#39;circle&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_node_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_edge_fan</span>()</a></code></pre></div>
+<p><img src="ggraph_walkthrough_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw">ggraph</span>(<span class="dt">layout =</span> <span class="st">&#39;focus&#39;</span>, <span class="dt">focus =</span> <span class="dv">3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_node_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_edge_fan</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span>ggforce<span class="op">::</span><span class="kw">geom_circle</span>(<span class="kw">aes</span>(<span class="dt">x0 =</span> <span class="dv">0</span>, <span class="dt">y0 =</span> <span class="dv">0</span>, <span class="dt">r =</span> r), <span class="kw">data.frame</span>(<span class="dt">r =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>), <span class="dt">colour =</span> <span class="st">&#39;grey&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_graph</span>()</a></code></pre></div>
+<p><img src="ggraph_walkthrough_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" /></p>
+</section>
+<section id="aesthetics" class="slide level2">
+<h2>Aesthetics</h2>
+<p>The primary way that you will gain understanding or make an argument through network plots is through changing the color, size, etc. of nodes and edges.</p>
+<p>If you want to change things based on a value that changes, then you need to put it in a “mapping”. This is the first “argument” to the node or edge geom, and starts with <code>aes(</code>. Aesthetics that apply to all of the nodes or edges appear outside of the mapping.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">create_notable</span>(<span class="st">&#39;zachary&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(nodes) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">group =</span> <span class="kw">as.factor</span>(<span class="kw">group_infomap</span>())) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw">ggraph</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_edge_fan</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">color =</span> <span class="st">&#39;lightblue&#39;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_node_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> group)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="st">  </span><span class="kw">theme_graph</span>()</a></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="ggraph_walkthrough_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+</section>
     </div>
   </div>
 

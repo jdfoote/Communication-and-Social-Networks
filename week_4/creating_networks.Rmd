@@ -105,7 +105,7 @@ G %>%
   ggraph(layout='kk') +
   geom_node_point(aes(color = Major)) +
   geom_edge_fan()
-
+  
 ```
 
 ## Exercise 1

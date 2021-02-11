@@ -22,7 +22,7 @@ library(ggraph)
 ```
 
 
-# Ego networks
+# Ego networks and network perceptions
 
 ## Sources of ego networks
 
@@ -34,9 +34,40 @@ library(ggraph)
 ## Example - Full network
 
 ```{r}
+#neigbhors(G, 1)
+G = create_notable('zachary') %>%
+  activate(nodes) %>%
+  mutate(id = 1:nrow(.N())) %>%
+  mutate(dist_from_2 = as.vector(distances(., 2))) %>%
+  mutate(is_neighbor = dist_from_2 <= 1)
 
-G = create_notable('karate')
+plot = G %>%
+  ggraph(layout = 'lgl') + 
+  geom_edge_fan(width=.5) + 
+  theme(legend.position = 'right')
 
+plot + geom_node_point(aes(), size = 3)
+
+```
+
+## Example - Ego network highlighted
+
+```{r}
+plot + geom_node_point(aes(color = as.factor(dist_from_2)), size = 3) + 
+  theme(legend.position = 'right') + 
+  labs(color = "Distance from ego")
+```
+
+## Example - Ego network
+
+```{r}
+G %>%
+  filter(is_neighbor == TRUE) %>%
+  ggraph(layout = 'lgl') +
+  geom_edge_fan(width=.5) + 
+  geom_node_point(aes(color = as.factor(dist_from_2)), size = 3) + 
+  theme(legend.position = 'right') + 
+  labs(color = "Distance from ego")
 ```
 
 
@@ -60,6 +91,28 @@ G = create_notable('karate')
 >	- Health
 >	- Employment
 >	- Happiness
+
+# Network Perception
+
+## Ego networks are the only part of the networks that we see
+
+> - But are they real?
+> - Perceived networks differ from observed networks (Bernard, Kilworth, and Sailer)
+>	- "What people say about their communications bears no resemblance to their behavior" (BKS, 1982)
+> - "Friendship" is often not mutual
+
+## So what?
+
+> - Perceptions are what influence actions
+> - Potential network vs. "activated" network (Smith et al., 2012)
+>	- Part of wealth and opportunity disparity may be due to differences in network activation
+
+## How can we overcome perception biases?
+
+> - Get information from others
+>	- Build picture of whole network (Krackhardt et al)
+> - Think in terms of potential networks and activation and mobilization
+> - Recognize the value of "weak ties"
 
 
 
