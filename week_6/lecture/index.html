@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>COM 411</title>
+  <title>Week 6</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="centrality_files/reveal.js-3.3.0.1/css/reveal.css"/>
+  <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
 
-<link rel="stylesheet" href="centrality_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
 
 
   <!-- some tweaks to reveal css -->
@@ -59,6 +59,7 @@
 
     <style type="text/css">code{white-space: pre;}</style>
 
+    <link rel="stylesheet" href="../../libs/custom_css.css"/>
 
 <!-- Printing and PDF exports -->
 <script id="paper-css" type="application/dynamic-css">
@@ -448,226 +449,70 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">COM 411</h1>
+    <h1 class="title">Week 6</h1>
 </section>
 
-<section class="slide level2">
-
-<style type="text/css">
-
-/* Changes to RevealJS default formatting.
-
-I prefer this style but you can change these to your preferences */
-
-/* This bit lets you do columns */
-.container{
-  display: flex;
-}
-
-.col{
-  flex: 1;
-}
-
-.reveal section img{
-border: none;
-background: none;
-box-shadow: none;
-}
-
-.highlight {
-color: LightCoral;
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-text-transform: none;
-}
-
-.reveal h1 {
-margin-top:200px;
-}
-
-div.footnote {
-font-size: 40%;
-text-align: right;
-}
-
-.bg-image{
-width: 180px;
-}
-
-.reveal .slides section .fragment.fade-in-then-out,
-.reveal .slides section .fragment.current-visible {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
-  .reveal .slides section .fragment.current-visible.current-fragment {
-    opacity: 1;
-    visibility: inherit; }
-
-.reveal .slides section .fragment.fade-in-then-semi-out {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
-    opacity: 0.5;
-    visibility: inherit; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
-    opacity: 1;
-visibility: inherit; }
-
-</style>
-</section>
-<section id="todays-dad-joke" class="slide level2">
-<h2>Today’s Dad Joke</h2>
+<section id="dad-joke" class="slide level2">
+<h2>Dad Joke</h2>
 <p>Bro, can you pass me that leaflet?</p>
 <p>Brochure.</p>
+</section>
+<section id="self-reflections" class="slide level2">
+<h2>Self Reflections</h2>
+<ul>
+<li class="fragment">Thank you so much for being open and honest!</li>
+<li class="fragment">Some summary thoughts</li>
+<li class="fragment">Overall, things are going pretty well</li>
+<li class="fragment">R has been hard but people are feeling OK about it</li>
+<li class="fragment">Lots of people want to engage more in class
+<ul>
+<li class="fragment">Expressing confusion and asking questions is often better for learning</li>
+</ul></li>
+<li class="fragment">People are working together outside of class
+<ul>
+<li class="fragment">Move some of this to Discord?</li>
+</ul></li>
+</ul>
+</section>
+<section id="anonymous-feedback" class="slide level2">
+<h2>Anonymous Feedback</h2>
+<ul>
+<li class="fragment">People like our discussions</li>
+<li class="fragment">Possible changes
+<ul>
+<li class="fragment">More lectures and less readings</li>
+<li class="fragment">Better plan for notes</li>
+<li class="fragment">Making assignments in Brightspace</li>
+</ul></li>
+</ul>
 </section>
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
-<li class="fragment">Thursday Dr. Lee will be visiting</li>
-<li class="fragment">Next Thursday is an in-class exam</li>
+<li class="fragment">Explanation of why R + fundamentals of R and ggraph videos</li>
+<li class="fragment">Videos + readings on centrality and power</li>
+<li class="fragment">How do we measure who is important and influential?</li>
 </ul>
 </section>
-<section id="reflection-summary" class="slide level2">
-<h2>Reflection summary</h2>
+<section id="today" class="slide level2">
+<h2>Today</h2>
 <ul>
-<li class="fragment">Good
+<li class="fragment">Try doing a discussion / summarization in breakout rooms
 <ul>
-<li class="fragment">Activities</li>
-<li class="fragment">Class discussion</li>
+<li class="fragment">Identify 3-4 important ideas for goals of the class</li>
+<li class="fragment">Write on the shared doc</li>
 </ul></li>
-<li class="fragment">Bad
-<ul>
-<li class="fragment">Six Degrees book
-<ul>
-<li class="fragment">Sorry!</li>
-</ul></li>
-<li class="fragment">Brightspace + wiki
-<ul>
-<li class="fragment">Not sorry ;)</li>
-</ul></li>
-</ul></li>
-<li class="fragment">Confusing
-<ul>
-<li class="fragment">What kinds of goals to set?</li>
-</ul></li>
+<li class="fragment">Room 1: Lecture</li>
+<li class="fragment">Room 2: Hanneman and Riddle, Ch. 9</li>
+<li class="fragment">Room 3: Marsden - Discussion networks</li>
+<li class="fragment">Room 4: Smith et al - Status differences</li>
 </ul>
 </section>
-<section id="what-to-know-from-six-degrees" class="slide level2">
-<h2>What to know from Six Degrees</h2>
-<ul>
-<li class="fragment">How closely connected are people who are geographically/socially distant?</li>
-<li class="fragment">People are clustered: our friends are friends with each other, so it feels like it should be distant
-<ul>
-<li class="fragment">High clustering coefficient</li>
-</ul></li>
-<li class="fragment">Human networks have short diameter
-<ul>
-<li class="fragment">We are all connected within a surprisingly small distance</li>
-</ul></li>
-</ul>
-</section>
-<section id="homework-review" class="slide level2">
-<h2>Homework Review</h2>
-<ul>
-<li class="fragment">Questions about networks in R?</li>
-</ul>
-</section>
-<section><section id="power-in-social-networks" class="title-slide slide level1"><h1>Power in Social Networks</h1></section><section id="what-is-power" class="slide level2">
-<h2>What is power?</h2>
-<ul>
-<li class="fragment">Long, varied history in the social sciences
-<ul>
-<li class="fragment">One version is the capacity to achieve one’s will</li>
-<li class="fragment">How do we do that? Through capital</li>
-</ul></li>
-<li class="fragment">Social networks are one way of measuring “social capital”</li>
-<li class="fragment">Who has power in a social network?</li>
-</ul>
-</section><section id="degree-centrality" class="slide level2">
-<h2>Degree Centrality</h2>
-<ul>
-<li class="fragment">Counts the number of edges each node has</li>
-<li class="fragment">In, out, or all</li>
-</ul>
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-1-1.png" width="50%" /></p>
-<pre><code>## [1] &quot;Degree Centrality:&quot;</code></pre>
-<pre><code>## 1 2 3 4 5 6 7 8 
-## 4 3 1 2 2 4 2 2</code></pre>
-</section><section id="closeness-centrality" class="slide level2">
-<h2>Closeness Centrality</h2>
-<p>Average distance to all other nodes</p>
-<div class="container">
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
-</div>
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /></p>
-</div>
-</section><section id="betweenness-centrality" class="slide level2">
-<h2>Betweenness Centrality</h2>
-<p>Counts the number of shortest paths that go through each node. This is based on the value of being in a “structural hole”</p>
-Which of these has the highest betweenness?
-<div class="container">
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" /></p>
-</div>
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" /></p>
-</div>
-</section><section id="eigenvector-centrality" class="slide level2">
-<h2>Eigenvector Centrality</h2>
-<p>Who is connected to the most important people? If you have only one friend, but that friend is the President, then you are still powerful.</p>
-<div class="container">
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
-</div>
-<div class="fragment col">
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" /></p>
-</div>
-</section><section id="network-level" class="slide level2">
-<h2>Network-level</h2>
-</section><section id="density" class="slide level2">
-<h2>Density</h2>
-<p>Directed <span class="math display">\[
-\frac{\sum(edges)}{N * (N-1)}
-\]</span></p>
-<p>Undirected: Multiply by 2</p>
-</section><section id="centralization" class="slide level2">
-<h2>Centralization</h2>
-<p>How unequal is the centrality between nodes?</p>
-<div class="container">
-<div class='col'>
-<p><img src="centrality_files/figure-revealjs/unnamed-chunk-8-1.png" width="33%" /><img src="centrality_files/figure-revealjs/unnamed-chunk-8-2.png" width="33%" /><img src="centrality_files/figure-revealjs/unnamed-chunk-8-3.png" width="33%" /></p>
-</section><section id="using-metadata-to-find-paul-revere" class="slide level2">
-<h2>Using metadata to find Paul Revere</h2>
-<ul>
-<li class="fragment">Where did the data come from?
-<ul>
-<li class="fragment">What kind of network was it?</li>
-</ul></li>
-<li class="fragment">Did this make you think differently about metadata?
-<ul>
-<li class="fragment">About privacy?</li>
-</ul></li>
-</ul>
-</section><section id="homework" class="slide level2">
-<h2>Homework</h2>
-<ul>
-<li class="fragment">Reading</li>
-<li class="fragment">Keep working on R</li>
-</ul>
-</section></section>
     </div>
   </div>
 
-  <script src="centrality_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="centrality_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+  <script src="../../libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="../../libs/reveal.js-3.3.0.1/js/reveal.js"></script>
 
   <script>
 
@@ -687,7 +532,7 @@ Which of these has the highest betweenness?
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'centrality_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: '../../libs/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
         ]
       });
     </script>

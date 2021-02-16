@@ -1,0 +1,74 @@
+---
+title: Where does data come from?
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ./resources/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Sources of data
+
+> - Survey data
+> - Experimental data
+> - Observational data
+
+## Constructs make social science difficult
+
+> - Physicists can measure the things they are interested in
+> - We are usually interested in theoretical constructs
+>	- Identity
+>	- Intelligence
+>	- Race
+>	- Norms
+> - We have to "operationalize" these constructs by finding data that represent them
+
+
+## Survey data
+
+> - Pros:
+>	- Asks the questions you want to ask
+>	- Good "construct validity"
+> - Cons:
+>	- Small sample
+>	- Selection bias
+>	- Self-reporting
+
+## Experimental data
+
+> - Pros:
+>	- Answers causal questions
+> - Cons:
+>	- Small sample (often)
+>	- Construct validity needs to be argued for
+>	- Generalizability - labs aren't the real world
+
+## Observational data
+
+> - Pros:
+>	- Often gathered in normal settings
+>	- Can be huge amounts of data
+>	- Longitudinal
+> - Cons:
+>	- Typically not built for research questions
+>	- Have to build measures to represent constructs
+>	- Data can be "messy" and missing in opaque ways
+
+
+## Data storytelling
+
+> - Understand the limits of what data can and can't tell you
+> - Think about whether the data gathering process could be influencing results
+
+
+
