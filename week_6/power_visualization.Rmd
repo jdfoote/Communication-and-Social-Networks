@@ -15,10 +15,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T)
 knitr::opts_knit$set(root.dir = './')
+library(tidyverse)
 library(igraph)
 library(tidygraph)
 library(ggraph)
-set_graph_style(plot_margin = margin(1,1,1,1))
+ggraph::set_graph_style(plot_margin = margin(1,1,1,1), family = 'sans')
 ```
 
 # Visualizing centrality using ggraph

@@ -1,74 +1,60 @@
 ---
-title: Where does data come from?
+title: Week 5
 output: 
   revealjs::revealjs_presentation:
     theme: white
     progress: true
     transition: convex
     self_contained: false
-    css: ./resources/custom_css.css
+    css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
     lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = './')
 source("resources/preamble.R")
 ```
 
-## Sources of data
+## Dad Joke
+Bro, can you pass me that leaflet?
 
-> - Survey data
-> - Experimental data
-> - Observational data
-
-## Constructs make social science difficult
-
-> - Physicists can measure the things they are interested in
-> - We are usually interested in theoretical constructs
->	- Identity
->	- Intelligence
->	- Race
->	- Norms
-> - We have to "operationalize" these constructs by finding data that represent them
+Brochure.
 
 
-## Survey data
+## Self Reflections
 
-> - Pros:
->	- Asks the questions you want to ask
->	- Good "construct validity"
-> - Cons:
->	- Small sample
->	- Selection bias
->	- Self-reporting
+> - Thank you so much for being open and honest!
+> - Some summary thoughts
+> - Overall, things are going pretty well
+> - R has been hard but people are feeling OK about it
+> - Lots of people want to engage more in class
+>	- Expressing confusion and asking questions is often better for learning
+> - People are working together outside of class
+>	- Move some of this to Discord?
 
-## Experimental data
+## Anonymous Feedback
 
-> - Pros:
->	- Answers causal questions
-> - Cons:
->	- Small sample (often)
->	- Construct validity needs to be argued for
->	- Generalizability - labs aren't the real world
+> - People like our discussions
+> - Possible changes
+>	- More lectures and less readings
+>	- Better plan for notes
+>	- Making assignments in Brightspace
 
-## Observational data
+## Housekeeping
 
-> - Pros:
->	- Often gathered in normal settings
->	- Can be huge amounts of data
->	- Longitudinal
-> - Cons:
->	- Typically not built for research questions
->	- Have to build measures to represent constructs
->	- Data can be "messy" and missing in opaque ways
+> - Explanation of why R + fundamentals of R and ggraph videos
+> - Videos + readings on centrality and power
+> - How do we measure who is important and influential?
+> - Homework
 
+## Today
 
-## Data storytelling
-
-> - Understand the limits of what data can and can't tell you
-> - Think about whether the data gathering process could be influencing results
-
-
-
+> - Try doing a discussion / summarization in breakout rooms
+>	- Identify 3-4 important ideas for goals of the class
+>	- Write on the shared doc
+> - Room 1: Lecture
+> - Room 2: Hanneman and Riddle, Ch. 9
+> - Room 3: Marsden - Discussion networks
+> - Room 4: Smith et al - Status differences
