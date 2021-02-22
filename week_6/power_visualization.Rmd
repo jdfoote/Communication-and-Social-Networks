@@ -117,17 +117,17 @@ This measure counts the number of shortest paths that go through each node. This
 
 Look again at the network and guess which nodes will have the highest betweenness centrality.
 
-After you've done that, turn this into a code block (by adding "{r}" after the backticks) and then find the bug in the code below so that it shows betweenness centrality
+After you've done that, turn this into a code block (by adding "{r}" after the backticks) and then find the bug in the code below so that it colors the nodes based on betweenness centrality
 
-```{r}
+```
 G %>%
   activate(nodes) %>%
   mutate(centrality = centrality_betweenness()) %>%
   ggraph() +
-  geom_node_point(aes(color = centrality), size = 10) +
+  geom_node_point(color = centrality, size = 10) +
   geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(aes(end_cap = circle(4,"mm"),
-                start_cap = circle(4, "mm")),
+  geom_edge_fan(end_cap = circle(4,"mm"),
+                start_cap = circle(4, "mm"),
                 arrow = arrow(length = unit(3, 'mm'))) +
   scale_color_viridis_c(name = "Betweenness Centrality")
 ```
