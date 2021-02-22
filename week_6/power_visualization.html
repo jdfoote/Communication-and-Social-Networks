@@ -588,33 +588,35 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h3 id="exercise-2">Exercise</h3>
 <p>Look again at the network and guess which nodes will have the highest betweenness centrality.</p>
 <p>After you’ve done that, turn this into a code block (by adding “{r}” after the backticks) and then find the bug in the code below so that it shows betweenness centrality</p>
-<pre><code>G %&gt;%
-  activate(nodes) %&gt;%
-  mutate(centrality = centrality_betweenness()) %&gt;%
-  ggraph() +
-  geom_node_point(aes(size = centrality), color = &#39;#ceb888&#39;) +
-  geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(end_cap = circle(node2.centrality + 2,&quot;mm&quot;),
-                start_cap = circle(node1.centrality + 2, &quot;mm&quot;),
-                arrow = arrow(length = unit(3, &#39;mm&#39;))) +
-  scale_size_continuous(name = &quot;Betweenness Centrality&quot;)</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">G <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(nodes) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">centrality =</span> <span class="kw">centrality_betweenness</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw">ggraph</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_node_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> centrality), <span class="dt">size =</span> <span class="dv">10</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_node_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_edge_fan</span>(<span class="kw">aes</span>(<span class="dt">end_cap =</span> <span class="kw">circle</span>(<span class="dv">4</span>,<span class="st">&quot;mm&quot;</span>),</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">                <span class="dt">start_cap =</span> <span class="kw">circle</span>(<span class="dv">4</span>, <span class="st">&quot;mm&quot;</span>)),</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">                <span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> <span class="kw">unit</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_viridis_c</span>(<span class="dt">name =</span> <span class="st">&quot;Betweenness Centrality&quot;</span>)</a></code></pre></div>
+<pre><code>## Using `stress` as default layout</code></pre>
+<p><img src="power_visualization_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
 </section><section id="eigenvector-centrality" class="slide level2">
 <h2>Eigenvector centrality</h2>
 <p>The last important measures of centrality is eigenvector centrality. The calculation is complicated and based on matrix algebra but the concept is pretty simple: all else being equal, a node is more powerful if it’s connected to a node that’s well-connected.</p>
 <p>This is actually the basis of Google’s original search algorithm, and is part of what made them successful.</p>
 <h3 id="exercise-3">Exercise</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">G <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(nodes) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">centrality =</span> <span class="kw">centrality_eigen</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw">ggraph</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_node_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> centrality), <span class="dt">color =</span> <span class="st">&#39;#ceb888&#39;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_node_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_edge_fan</span>(<span class="kw">aes</span>(<span class="dt">end_cap =</span> <span class="kw">circle</span>(node2.centrality <span class="op">+</span><span class="st"> </span><span class="dv">2</span>,<span class="st">&quot;mm&quot;</span>),</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8">                    <span class="dt">start_cap =</span> <span class="kw">circle</span>(node1.centrality <span class="op">+</span><span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;mm&quot;</span>)),</a>
-<a class="sourceLine" id="cb12-9" data-line-number="9">                <span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> <span class="kw">unit</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_size_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Eigenvector Centrality&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">G <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">activate</span>(nodes) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">centrality =</span> <span class="kw">centrality_eigen</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw">ggraph</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_node_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> centrality), <span class="dt">color =</span> <span class="st">&#39;#ceb888&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_node_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">8</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_edge_fan</span>(<span class="kw">aes</span>(<span class="dt">end_cap =</span> <span class="kw">circle</span>(node2.centrality <span class="op">+</span><span class="st"> </span><span class="dv">2</span>,<span class="st">&quot;mm&quot;</span>),</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">                    <span class="dt">start_cap =</span> <span class="kw">circle</span>(node1.centrality <span class="op">+</span><span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;mm&quot;</span>)),</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">                <span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> <span class="kw">unit</span>(<span class="dv">3</span>, <span class="st">&#39;mm&#39;</span>))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_size_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Eigenvector Centrality&quot;</span>)</a></code></pre></div>
 <pre><code>## Using `stress` as default layout</code></pre>
-<p><img src="power_visualization_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+<p><img src="power_visualization_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" /></p>
 <p>Why does Node 5 have such low centrality? Why does 8 have such high centrality?</p>
 </section></section>
     </div>

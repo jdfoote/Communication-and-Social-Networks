@@ -1,0 +1,37 @@
+---
+title: Week 5
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Dad Joke
+
+My landlord texted saying we need to meet up and talk about how high my heating bill is.
+
+<p class='fragment'>
+I replied back: “Sure, my door is always open.”
+</p>
+
+## Housekeeping
+
+> - Confusion around getting help with R
+>	- Goal is understanding and competence
+>	- There are difficulties to be worked through
+>	- But explaining confusion and asking for help can be good
+>	- If you got it, try to help others without just giving the answer
+> - Sorry about the YAML front matter bug!
+> - No R this week
+> - But a lot of readings
