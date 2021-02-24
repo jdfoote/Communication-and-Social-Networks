@@ -1,5 +1,5 @@
 ---
-title: Week 5
+title: Week 6
 output: 
   revealjs::revealjs_presentation:
     theme: white
@@ -31,7 +31,9 @@ I replied back: “Sure, my door is always open.”
 >	- Goal is understanding and competence
 >	- There are difficulties to be worked through
 >	- But explaining confusion and asking for help can be good
+>	- Try on your own first
 >	- If you got it, try to help others without just giving the answer
+>	- Posting solutions?
 > - Sorry about the YAML front matter bug!
-> - No R this week
+> - No R this week but feel free to keep working on last week's
 > - But a lot of readings
