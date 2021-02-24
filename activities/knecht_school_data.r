@@ -2,6 +2,8 @@
 # http://www.stats.ox.ac.uk/~snijders/siena/klas12b.zip
 # which also includes a description of the data
 setwd("~/Desktop/DeleteMe/snijders/") 
+library(igraph)
+library(tidygraph)
 
 # Make friendship edgelist
 friend_matrix = as.matrix(read.table("klas12b-net-2.dat"))
@@ -38,7 +40,18 @@ V(G)$sex <- atts$sex
 V(G)$age <- atts$age
 V(G)$ethnicity <- atts$ethnicity
 V(G)$religion <- atts$religion
+V(G)$name <- 1:length(V(G)$name)
 
 friend_net = subgraph.edges(G, E(G)[E(G)$type=='friendship'])
 
 save(G, friend_net, file = '~/Teaching/communication_and_networks/activities/school_graph.Rdata')
+
+G %>% as_tbl_graph() %>% 
+  activate(nodes) %>% 
+  as.data.frame() %>% 
+  write_csv('~/Teaching/communication_and_networks/resources/school_graph_nodes.csv')
+
+G %>% as_tbl_graph() %>% 
+  activate(edges) %>% 
+  as.data.frame() %>% 
+  write_csv('~/Teaching/communication_and_networks/resources/school_graph_edges.csv')
