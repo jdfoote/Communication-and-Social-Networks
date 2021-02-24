@@ -8,18 +8,18 @@ friend_matrix = as.matrix(read.table("klas12b-net-2.dat"))
 friend_matrix[friend_matrix==9] <- NA
 G = graph_from_adjacency_matrix(friend_matrix)
 G = simplify(G)
-G_edgelist = as.data.frame(as_edgelist(G))
-G_edgelist['type'] = 'friendship'
+E(G)$type = 'friendship'
+
 
 # Make primary school edgelist
 klas12b.primary <- as.matrix(read.table("klas12b-primary.dat"))
 primary_graph = graph_from_adjacency_matrix(klas12b.primary)
 primary_graph = simplify(primary_graph)
-primary_graph_edgelist = as.data.frame(as_edgelist(primary_graph))
-primary_graph_edgelist$type = 'primary_school'
+primary_graph_edges = as_edgelist(primary_graph)
 
-# Combine them into a new graph
-G = graph_from_data_frame(rbind(G_edgelist, primary_graph_edgelist))
+G = add_edges(G, c(t(primary_graph_edges)))
+E(G)$type[is.na(E(G)$type)] <- 'primary_school'
+
 
 
 delinquency <- read.table("klas12b-delinquency.dat")[,2]
