@@ -481,3 +481,6 @@ G %>%
 ```
 
 It gets trickier if you are filtering out nodes, but it is possible. See [here](https://github.com/thomasp85/ggraph/issues/130) for an example.
+
+
+Find a mistake or a typo? Suggestions for other things to cover? Send me an email at jdfoote@purdue.edu or a pull request at https://github.com/jdfoote/Communication-and-Social-Networks/blob/spring-2021/week_6/ggraph_walkthrough.Rmd
