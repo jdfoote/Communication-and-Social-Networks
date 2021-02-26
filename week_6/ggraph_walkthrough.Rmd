@@ -307,6 +307,7 @@ G %>%
   scale_color_viridis()
 
 ```
+
 ## Tips and Tricks
 
 ### Adding to graphs
