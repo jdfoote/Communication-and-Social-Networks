@@ -1,14 +1,6 @@
 ---
-pagetitle: COM 411
-output: 
-  revealjs::revealjs_presentation:
-    theme: white
-    progress: true
-    transition: convex
-    self_contained: false
-    css: ../../libs/custom_css.css
-    reveal_plugins: ["notes"]
-    lib_dir: ../../libs
+title: 'Intro to tidygraph and ggraph'
+output: html_document
 ---
 
 
@@ -18,12 +10,28 @@ knitr::opts_knit$set(root.dir = './')
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
+set_graph_style() # This sets the default style to the graph style
 ```
 
 
-## Intro to syntax of R and ggraph
+R has a lot of great tools for working with tables (also called dataframes or tibbles). One really powerful and relatively intuitive set of tools is called the "tidyverse". Tools in the tidyverse make assumptions about what data will look like -- rows represent observations and columns represent variables about that observation.
 
-### Piping data and activating a table
+The [tidygraph](https://tidygraph.data-imaginist.com/index.html) package extends that paradigm to networks, by representing networks as two tables -- a table of nodes and node attributes and a table of edges and edge attributes.
+
+This lets you work with networks using many of the same tools that have been developed for working on other types of data.
+
+
+# Getting to the data
+
+## Activating a table
+
+Because a network is really composed of two tables, we have to let R know which table we want to manipulate. This is done using `activate(nodes)` or `activate(edges)`.
+
+For example, the code below activates the node table and then uses `mutate` (which we will talk more about further down) to create a variable called `degree` in the nodes table.
+
+(Note that the code throughout this tutorial uses "[pipes](https://r4ds.had.co.nz/pipes.html?q=pipe#pipes)". Pipes (`%>%`) let you express a sequence of operations, by taking the output of the previous operation and using it as the input of the next operation.)
+
 
 ```{r}
 create_notable('zachary') %>%
@@ -32,24 +40,34 @@ create_notable('zachary') %>%
   
 ```
 
+Because the networks are just stored as data frames, that means that we can also do things like use `ggplot` to graph attributes of a network. This code below creates an edge attribute called `bw` which is a measure of edge betweenness, and then makes a histogram of the distribution of `bw`.
+
+
 ```{r}
 create_notable('zachary') %>%
   activate(edges) %>%
   mutate(bw = centrality_edge_betweenness()) %>%
   ggplot() +
-  geom_histogram(aes(x=bw))
+  geom_histogram(aes(x=bw)) +
+  theme_minimal()
 ```
 
 
-## A network plot
+# Plots
 
-Three parts:
+The companion library to `tidygraph` is [ggraph](https://ggraph.data-imaginist.com/). `ggraph` is a set of tools based on `ggplot2`. The key idea behind both `ggraph` and `ggplot2` is that you can build a plot by adding layers according to a "[grammar of graphics](https://r4ds.had.co.nz/graphics-for-communication.html)" that let you add to and change things about the plot. 
+
+`ggraph` includes tons of really cool types of plots but for this tutorial I am going to focus on standard plots that show nodes as circles and edges as lines. There are three key components that should be part of any of these plots:
 
 * layout
 * nodes
 * edges
 
+## Layout
+
 Lots of layout options, ggraph can pick for you, or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html).
+
+Layouts are defined inside the `ggraph()` function, which has to be called before making any plot. The code below makes a tidy graph of the Zachary karate network using `create_notable('zachary')`. It then sets `'kk'` as the layout, and adds a layer for the nodes and a layer for the edges.
 
 ```{r}
 create_notable('zachary') %>%
@@ -57,36 +75,408 @@ create_notable('zachary') %>%
   geom_node_point() +
   geom_edge_fan()
 ```
+
+The following few plots show how changes the layout can really change the look and the interpretation of the plot. These all show the same data.
+
 ```{r}
 create_notable('zachary') %>%
   ggraph(layout = 'circle') +
   geom_node_point() +
   geom_edge_fan()
 ```
+
+In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like I wanted to.
+
 ```{r}
 create_notable('zachary') %>%
+  mutate(d = distances(.G(), to=3)) %>%
   ggraph(layout = 'focus', focus = 3) +
-  geom_node_point() +
   geom_edge_fan() +
   ggforce::geom_circle(aes(x0 = 0, y0 = 0, r = r), data.frame(r = 1:3), colour = 'grey') + 
+  geom_node_point(aes(color = as.factor(d)), size = 3) +
   coord_fixed() + 
-  theme_graph()
+  scale_color_viridis_d() +
+  labs(color='Distance from Node 3')
 ```
 
-## Aesthetics
+# Node and Edge Aesthetics
 
-The primary way that you will gain understanding or make an argument through network plots is through changing the color, size, etc. of nodes and edges.
+There are a lots of different "geoms" for displaying nodes and edges ([full list here](https://ggraph.data-imaginist.com/reference/index.html)). We are going to focus on using the simplest - `geom_node_point()` and `geom_edge_fan()`.
 
-If you want to change things based on a value that changes, then you need to put it in a "mapping". This is the first "argument" to the node or edge geom, and starts with `aes(`. Aesthetics that apply to all of the nodes or edges appear outside of the mapping. 
+The primary way to gain understanding or make an argument through network plots is through changing the color, size, etc. of nodes and edges.
 
+If you want to change things based on a value that changes, then you need to put it in a "mapping". This is the first "argument" to the node or edge geom, and appears within `aes()`. Aesthetics that apply to all of the nodes or edges appear outside of the mapping. 
+
+For example, in this graph the `geom_edge_fan` has `color` and `width` set to `.2` and `'lightblue'`, respectively. These apply to all of the edges.
+
+On the other hand, the `geom_node_point` has `color` set to `group`. This means that the color should vary based on what the `group` variable is set to for each node.
 
 ```{r}
 create_notable('zachary') %>%
-  activate(nodes) %>%
-  mutate(group = as.factor(group_infomap())) %>%
-  ggraph() +
+  activate(nodes) %>% 
+  mutate(group = as.factor(group_infomap())) %>% # Creates a `group` variable based on the infomap algorithm
+  ggraph(layout = 'stress') +
   geom_edge_fan(width = .2, color = 'lightblue') + 
   geom_node_point(aes(color = group)) + 
   coord_fixed() + 
   theme_graph()
 ```
+
+## Colors
+
+Often, we want to color things based on variables that already exist in our data. For these examples, let's move to a new dataset. The following code loads in data from a Dutch school collected by Andrea Knecht and [described here](http://www.stats.ox.ac.uk/~snijders/siena/). I have cleaned it up a bit, using just Wave 2 from the data and changed it into CSV files - one for the nodes and one for the edges.
+
+This code downloads these CSV files and creates a network from them called `G`. If we look at the node data, we can see that there are a lot of attributes about each student that we might want to visualize in a plot.
+
+```{r, message=F}
+nodes = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/spring-2021/resources/school_graph_nodes.csv')
+edges = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/spring-2021/resources/school_graph_edges.csv')
+
+G = graph_from_data_frame(d=edges, v = nodes) %>% as_tbl_graph()
+
+G
+```
+
+
+For example, we may want to visualize alcohol use. This is how you would change the color of nodes based on alcohol use. The `scale_color_viridis()` at the bottom changes from the default color scale to the [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) pallette which is prettier and easier to read.
+
+```{r, message=F}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(width = .5, color = 'gray') +
+  geom_node_point(aes(color=alcohol_use), size = 3) +
+  scale_color_viridis()
+```
+
+You may notice that there are as many as four edges between nodes. This is because this is actually a directed graph with two different types of relationships - whether two people went to primary school together and whether they are friends. We can enhance the graph by adding color based on the type of relationship.
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type),width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) +
+  scale_color_viridis()
+```
+
+If you want to choose your own colors, you can do that with `scale_color_manual` for nodes or `scale_edge_color_manual` for edges. You will need to create what's called a "named vector" where you assign a color to each of the possible values for the measure.
+
+You can either use a name for a color or if you want a specific color you can use a hexadecimal color value. In this example I mix a named color (`lightgray`) with a hex code for Purdue Gold (`'#ceb888'`), and assign them to `friendship` and `primary_school`, respectively.
+
+Notice that this also includes `scale_color_viridis`, which changes the color scale used for the nodes. In general, to change something about the edge colors use `scale_edge_color...`, and for the nodes, it's just `scale_color...`.
+
+You can learn a lot more about color, color palettes, etc.  [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/)
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type),width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) +
+  scale_color_viridis() +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'lightgray'))
+```
+
+The other common approach to highlighting aspects of a graph is to change the size of nodes or the width of edges. Let's change our previous graph so that now the size of the nodes is based on delinquency. (Note that there is some missing data with delinquency so the node in the bottom right just disappears. We'll talk in a moment about how to deal with that.)
+
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type), width = .5) +
+  geom_node_point(aes(color=alcohol_use, size = delinquency)) +
+  scale_color_viridis() +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'gray'))
+```
+
+The one thing that I do not like about `ggraph` is that it is not easy to make directed graphs that show arrows.
+
+Here is the most basic way I can figure out to do arrows that look ok.
+
+You need to add an `arrow` parameter with an `arrow()` function that gives the length and width of the arrows, and then `start_cap` and `end_cap` sizes that say how far away from the node center to start and end the arrows, which you just have to play around with until it looks how you want it to. It isn't great.
+
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(arrow = arrow(length = unit(3, 'mm')),
+                end_cap = circle(1,'mm'),
+                start_cap = circle(1, 'mm')
+                ) + 
+  geom_node_point()
+```
+
+And unfortunately, it is even worse when you resize nodes. I cannot figure out a good way to automatically adjust where the arrows start and stop when node sizes change. I think that there is a strategy that is supposed to work but it isn't working now (I [reported a bug](https://github.com/thomasp85/ggraph/issues/282)).
+
+For now, I think it's just not a good idea to resize nodes in graphs where you want to display arrows for directed edges.
+
+
+## Facets
+
+Finally, one strategy for visualization that `ggraph` makes really easy is the ability to "facet" the data. This basically means splitting apart the data based on some measure and visualizing each part of the data with that measure. For example, this code facets the graph into two subgraphs - one for females and one for males (Note that this is just one more layer - we can keep all of the crazy fancy visualizations we already added):
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type), width = .5) +
+  geom_node_point(aes(color=alcohol_use, size = delinquency)) +
+  scale_color_viridis() +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'gray')) +
+  facet_nodes(~sex)
+```
+
+Or if you wanted to facet based on the edge type:
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type), width = .5) +
+  geom_node_point(aes(color=alcohol_use, size = delinquency)) +
+  scale_color_viridis() +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'gray')) +
+  facet_edges(~type)
+```
+
+Facets use a strange new syntax. The tilde (`~`) can be read as "by", and facets can have two dimensions. Typically you will just want one, then you just put the tilde before the measure (like we did with `facet_edges(~type)` above). However, you can also facet across multiple dimensions, in which case you put one measure on either side of the tilde. For example, it's not a very useful plot but this plot facets by sex and ethnicity:
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type), width = .5) +
+  geom_node_point(aes(color=alcohol_use, size = delinquency)) +
+  scale_color_viridis() +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'gray')) +
+  facet_nodes(ethnicity~sex)
+```
+
+# Table manipulations
+
+## Filter
+
+`tidygraph` gives you a few other important tools. Often, the network data you have won't be exactly what you want to visualize. You will often want to filter either the edges or the nodes. For example, in this data we may want to just look at friendships. We can do that with `filter`.
+
+First, we need to "activate" the edges dataframe, then we filter it. For numeric measures, you can filter using less than, greater than, etc. (`<, >, >=, <=`). There are complicated things you can do with text measures but we'll focus on the two simplest. `==` filters only to those items where the value is an exact match and `!=` filters only to those where it isn't. So, the code below keeps only those edges where the type is equal to `'friendship'`.
+
+```{r}
+G %>%
+  activate(edges) %>% # Remember to activate whatever you want to filter
+  filter(type == 'friendship') %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  scale_color_viridis()
+```
+
+## Mutate
+
+One of the other powerful tools from `tidygraph` is the ability to create new measures. This has the odd name of `mutate`, but it really just means to create a new variable.
+
+One way of using this is to create network measures and apply them to nodes.
+
+In this example I color nodes by "coreness", which is one of my favorite measures of how integrated someone is in a network. If your coreness score is 3, that means you are part of a group of at least 3 nodes where all of them are also connected to at least 3 others.
+
+There are lots and lots of different measures that you can calculate - you can learn about them [here](https://tidygraph.data-imaginist.com/reference/index.html)
+
+```{r}
+G %>%
+  activate(edges) %>% # Remember to activate whatever you want to filter
+  filter(type == 'friendship') %>%
+  activate(nodes) %>%
+  mutate(coreness = node_coreness(mode = 'all')) %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(color=coreness), size = 3) + 
+  scale_color_viridis()
+
+```
+This measure does a really good job of showing just where the core network is, and who is (and isn't) part of it.
+
+There are similar measures for edges, and we can mix and match filter and mutate. For example, this code filters to just the edges which are mutual (both people marked the other as a friend), and then creates the coreness measure for coloring the nodes.
+
+
+
+```{r}
+G %>%
+  activate(edges) %>% # Remember to activate whatever you want to filter
+  filter(type == 'friendship') %>%
+  filter(edge_is_mutual()) %>%
+  activate(nodes) %>%
+  mutate(coreness = node_coreness(mode = 'all')) %>%
+  as.undirected() %>% # This line and the following line collapse the edges into one edge
+  simplify() %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(color=coreness), size = 3) + 
+  scale_color_viridis()
+
+```
+## Tips and Tricks
+
+### Adding to graphs
+
+In this tutorial, I have built every visualization starting with a network object. However, you don't have to do that. You can create a plot and iteratively add to it.
+
+You do this by saving a plot as a variable.
+
+For example, this saves a plot with just edges to the variable `p`
+
+```{r}
+p <- G %>%
+  activate(edges) %>%
+  filter(type == 'friendship') %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5)
+p
+```
+
+And now we can add in the nodes on this plot.
+
+```{r}
+p +
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  scale_color_viridis()
+```
+Note that all we can do is add layers - we can't take away or alter layers that have already been added to an existing plot.
+
+We can do a similar thing by saving a filtered or mutated version of a network. For example, we keep filtering to just the friendship edges. Let's just save a new version of that graph that is already filtered.
+
+```{r}
+friend_G <- G %>%
+  activate(edges) %>%
+  filter(type == 'friendship')
+```
+
+
+### Order of layers
+
+One thing that's worth keeping in mind is that later layers will be drawn over the top of earlier layers. In practice, this means that edge layers should typically be drawn first.
+
+Edges drawn last :(
+
+```{r}
+friend_G %>%
+  ggraph(layout = 'stress') + 
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  scale_color_viridis()
+```
+
+Edges drawn first =)
+
+```{r}
+ friend_G %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  scale_color_viridis()
+```
+
+### Changing Legends and Title
+
+By default, legends will be given the name of the variable that they represent. Sometimes this is fine, but you will often want to change the legend titles. This is confusing but the most consistent way to do this is with the `name` parameter in the `scale...` commands.
+
+You can also change the title with the `labs` command.
+
+For example, we take our super complicated plot above and add some labels for each of the legends, plus a title.
+
+```{r}
+G %>%
+  ggraph(layout = 'stress') +
+  geom_edge_fan(aes(color=type), width = .5) +
+  geom_node_point(aes(color=alcohol_use, size = delinquency)) +
+  scale_color_viridis(name = 'Alcohol Use') +
+  scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'lightgray'), name = 'Edge Type') +
+  scale_size(name = 'Delinquency') + 
+  labs(title = 'The relationship between delinquency and alcohol use')
+```
+
+
+
+
+### Dealing with NA values
+
+`NA` represents missing data in R. In network data, this is typically node attributes that we don't know. For example, maybe one of the people didn't fill out the survey so we don't have demographic information about them.
+
+Typically, we will still want to display that person in a plot. If we are using color, then this works OK - if you look in the plot above you will notice some gray nodes - these are nodes where `alcohol_use` data was `NA`.
+
+However, if we resize nodes based on `alcohol_use` we get an error. `ggraph` doesn't have a default to fall back on when size is missing, so it gives us a warning and makes them size 0.
+
+```{r}
+ friend_G %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(size=alcohol_use))
+```
+
+There isn't a clear way to fix this problem. One option is to filter out the missing data. Another is to just choose a size for the missing data. Either of these have the danger of being misleading.
+
+Filtering out nodes with missing `alcohol_use`
+```{r}
+friend_G %>%
+  activate(nodes) %>%
+  filter(!is.na(alcohol_use)) %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(size=alcohol_use))
+```
+
+Adding size "1" for all of the missing data
+```{r}
+friend_G %>% 
+  activate(nodes) %>% 
+  mutate(alcohol_use = replace_na(alcohol_use, 1)) %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(color = 'gray', width = .5) +
+  geom_node_point(aes(size=alcohol_use))
+```
+
+
+### Visualizing similarity
+
+One visualization that I really like colors the edges based on how similar two nodes are. For example, we may want to show whether people have similar drinking behavior to their friends.
+
+So, we use `mutate` to create a new edge variable based on the absolute distance between drinking behavior for the two nodes on either side of the edge.
+
+
+```{r}
+friend_G %>%
+  mutate(drinking_diff = abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])) %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(aes(color = drinking_diff), width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  scale_color_viridis() + 
+  scale_edge_color_viridis()
+
+```
+
+This is tricky to undrstand.
+
+Basically, we need to modify the edge variable based on something about the nodes. However, when we activate the edge table we don't have information about the nodes. `.N()` lets us access the nodes table from the edge table, and `from` and `to` refer to the node that an edge is coming from and the node it is going to, respectively.
+
+So, `.N()$alcohol_use` refers to the `alcohol_use` column in the nodes table, and `.N()$alcohol_use[from]` refers to the value of `alcohol_use` for the from node.
+
+Putting it all together, `abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])` subtracts the `alcohol_use` of the "to" node from that of the "from" node, and takes the absolute value. It saves that as `drinking_diff` and then colors edges based on that.
+
+
+### Reusing a layout
+
+Finally, when we filter out edges we may want to keep the nodes in the same place. We can do that by saving the original position of the nodes and then passing that directly as the layout to `ggraph()` like so:
+
+```{r}
+
+l = create_layout(G, 'stress') %>% select(x,y) %>% as.matrix()
+
+G %>%
+  activate(edges) %>%
+  ggraph(layout = l) + 
+  geom_edge_fan() + 
+  geom_node_point()
+```
+
+```{r}
+G %>%
+  activate(edges) %>%
+  filter(type == 'friendship') %>%
+  ggraph(layout = l) + 
+  geom_edge_fan() + 
+  geom_node_point()
+```
+
+It gets trickier if you are filtering out nodes, but it is possible. See [here](https://github.com/thomasp85/ggraph/issues/130) for an example.
