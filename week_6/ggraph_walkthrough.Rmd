@@ -65,7 +65,7 @@ The companion library to `tidygraph` is [ggraph](https://ggraph.data-imaginist.c
 
 ## Layout
 
-Lots of layout options, ggraph can pick for you, or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html).
+There are lots of layout options included with ggraph. You can let ggraph pick for you or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html).
 
 Layouts are defined inside the `ggraph()` function, which has to be called before making any plot. The code below makes a tidy graph of the Zachary karate network using `create_notable('zachary')`. It then sets `'kk'` as the layout, and adds a layer for the nodes and a layer for the edges.
 
@@ -85,7 +85,7 @@ create_notable('zachary') %>%
   geom_edge_fan()
 ```
 
-In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like I wanted to.
+In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like what I wanted.
 
 ```{r}
 create_notable('zachary') %>%
