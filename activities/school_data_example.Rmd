@@ -2,18 +2,20 @@
 title: "Dutch School Example"
 author: "Jeremy Foote"
 date: "3/24/2020"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ## Example
 
 I'm doing an in-depth example, primarily to give you examples of the sorts of things that you could do with the data, and so you'll have code to work with.
 
-This is above and beyond what I would expect for this week's assignment. That being said, I encourage you to be ambitious in how you approach this assignment. This is at the heart of seeing how networks can help us to understand things about the world.
+This is above and beyond what I would expect for this assignment. That being said, I encourage you to be ambitious in how you approach this assignment. This is at the heart of seeing how networks can help us to understand things about the world.
 
 ## My question
 
-Do stronger friendships influence each other more?
+Do stronger friendships influence drinking behavior more?
 
 While these are friendships ties, they are not all reciprocal Sometimes A nominates B as a friend, but B doesn't nominate A. We might expect that when an edge is reciprocal (both people nominate each other), then the friendship is stronger, and therefore their behavior is more likely to be the same.
 
@@ -23,6 +25,8 @@ First, I color the reciprocal ties. The `which_mutual()` function tells me which
 
 ```{r, message=F, warning=F}
 library(igraph)
+library(tidygraph)
+library(ggraph)
 load(url('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/activities/school_graph.Rdata'))
 
 which_mutual(friend_net)

@@ -447,7 +447,7 @@ friend_G %>%
 
 ```
 
-This is tricky to undrstand.
+This is tricky to understand.
 
 Basically, we need to modify the edge variable based on something about the nodes. However, when we activate the edge table we don't have information about the nodes. `.N()` lets us access the nodes table from the edge table, and `from` and `to` refer to the node that an edge is coming from and the node it is going to, respectively.
 

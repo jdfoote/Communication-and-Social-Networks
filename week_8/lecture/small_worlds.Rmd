@@ -7,212 +7,81 @@ output:
     progress: true
     transition: convex
     self_contained: false
+    css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = './')
 source("resources/preamble.R")
-
-f <- function (x) {formatC(x, format="d", big.mark=',')}
-bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
-gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
-wrapify <- function (x) {paste("{", x, "}", sep="")}
-p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
-source('../class_list.R')
 set.seed(0121)
 library(igraph)
+library(tidygraph)
+library(ggraph)
 ```
 
-<style type="text/css">
+# What do human networks look like?
 
-/* Changes to RevealJS default formatting.
+## Hard to measure for a long time
 
-I prefer this style but you can change these to your preferences */
+> - Erdos and Reyni came up with random graphs
+> - Each edge has equal probability of existing
+> - This obviously isn't true
+> - Most of us are much more likely to be connected to those near us (along multiple dimensions)
 
-/* This bit lets you do columns */
-.container{
-  display: flex;
-}
+## What do "groupy" networks look like?
 
-.col{
-  flex: 1;
-}
+> - High clustering (triadic closure)
+> - Long path lengths
+> - High "geodesic distance" (longest path between any two nodes)
 
-.reveal section img{
-border: none;
-background: none;
-box-shadow: none;
-}
+## Milgram Experiment and 6 degrees
 
-.highlight {
-color: LightCoral;
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-text-transform: none;
-}
-
-.reveal h1 {
-margin-top:200px;
-}
-
-div.footnote {
-font-size: 40%;
-text-align: right;
-}
-
-.bg-image{
-width: 180px;
-}
-
-.reveal .slides section .fragment.fade-in-then-out,
-.reveal .slides section .fragment.current-visible {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
-  .reveal .slides section .fragment.current-visible.current-fragment {
-    opacity: 1;
-    visibility: inherit; }
-
-.reveal .slides section .fragment.fade-in-then-semi-out {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
-    opacity: 0.5;
-    visibility: inherit; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
-    opacity: 1;
-visibility: inherit; }
-
-</style>
+> - Try to get a letter to Mr. X
+> - Found that (of those that made it) it took ~6 steps
+  > - Similar results found in 2003 using email (Dodds, Muhamad, Watts)
 
 
-<section>
-<blockquote>Human progress is neither automatic nor inevitable... Every step toward the goal of justice requires sacrifice, suffering, and struggle; the tireless exertions and passionate concern of dedicated individuals.
-</blockquote>
+## The puzzle
 
-Martin Luther King, Jr.
+> - We know that we are in "groupy" networks yet all ~8 billion of us seem to be connected within a relatively short number of steps. How?
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Civil_Rights_March_on_Washington%2C_D.C._%28Dr._Martin_Luther_King%2C_Jr._and_Mathew_Ahmann_in_a_crowd.%29_-_NARA_-_542015_-_Restoration.jpg" width="500px"/>
-</section>
+## Watts and Strogatz big insight
 
-## Housekeeping
-> - Tech policy
-> - Designated reminder
-> - Proposed structure for class
->	- Semi-"flipped" class
+"Groupy" graph:
 
-## Questions from the homework
->- Edgelists
->- Matrices
->- Graphs
+```{r, fig.height = 4.5, fig.width =4.5}
+G = watts.strogatz.game(1, 40, 2, 0)
 
-# Why is the network perspective so important?
-
-## Power failure example
-
-## Complex systems are all around us
-
-> - Interdependent
-> - Non-linear
-> - Unpredictable, even when individuals are understood
-
-## Segregation Example
-
-> - Link to this example is on the wiki
-> - Go through this with a partner
-> - Discuss in small groups
-> - Discuss as a class
-
-## Emergence
-> - How does individual behavior aggregate?
-> - When is this simple? When is it complicated? (TPS)
-> - Fire example
-> - Boids example
-
-## Interdependence and Structure
-
-> - If components are interdependent, then how they are connected matters
->	- Both for individuals and for the system
-> - What are some examples of this? (TPS)
-
-
-## Structure of networks
-
-> - What do real social networks look like?
-> - What is clustering?
-> - What is a random graph?
-
-## Random Graph
-
-```{r}
-G = erdos.renyi.game(100, .3)
-
-V(G)$size = 8
-l <- layout_with_graphopt(G)
-plot(G, directed = T, layout = l, vertex.label='')
-
+G %>% ggraph('circle') + geom_edge_arc() + geom_node_point() + theme_graph()
 ```
 
-## Actual social network
+Average distance: `r mean(distances(G), na.rm=T)`;
+Max distance: `r max(distances(G), na.rm=T)`
 
-- Faculty friendship network
+## Just a few random "rewirings" make a clustered network with low distances
 
-```{r}
+10% of edges rewired:
 
-library(igraphdata)
-data("UKfaculty")
+```{r, fig.height = 4.5, fig.width =4.5}
+G = watts.strogatz.game(1, 40, 2, .1)
 
-l <- layout_with_graphopt(UKfaculty)
-V(UKfaculty)$size = 8
-V(UKfaculty)$label = ''
-plot(UKfaculty, edge.arrow.size=.3, edge.curved=.1, layout = l)
-
+G %>% ggraph('circle') + geom_edge_fan() + geom_node_point() + theme_graph()
 ```
 
-## Other insights and ideas from Six Degrees?
+Average distance: `r mean(distances(G), na.rm=T)`;
+Max distance: `r max(distances(G), na.rm=T)`
+
+## Where do these "rewirings" appear?
+
+> - Hubs
+> - People who move far from home
+> - People whose interests diverge from those around them
 
 
-## Assignments
+## Lots of other networks have these same characteristics
 
-> - Read Chapter 3 of Six Degrees
-
-
-# Six Degrees of Wikipedia
-
-## Concepts from reading
-
-> - Structure and agency
-> - Clustering
-> - Path lengths
-> - Distance
-
-## Putting it together
-
-> - What does "Six Degrees" refer to?
-> - What is the puzzle?
-> - What is the solution?
-
-## Milgram Experiment
-
->- What was he trying to do?
->- Did you find the results surprising?
->- Do you think that technology has changed this today? In what ways
->- What do you think the distance is of the Purdue network?
-
-## How is knowledge connected?
+> - Oracle of Bacon
 > - Six Degrees of Wikipedia
->	- Can be done in pairs, turn in with both names on it
-
-
-<aside class='notes'>If there is still time, can show the Oracle of Bacon</aside>
-
-## Assignment
-> - Find someone with HI driver's license
