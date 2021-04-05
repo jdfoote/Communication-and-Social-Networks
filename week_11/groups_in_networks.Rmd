@@ -7,9 +7,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(igraph)
-library(tidygraph)
 library(ggraph)
-set_graph_style()
+library(tidygraph)
 ```
 
 In this lesson, we will focus on understanding different approaches to identifying groups in networks. Human networks are "groupy" - whether through triadic closure or foci of activity, and so they typically have groups. If you think about your own friendship network, it's likely that you could group many of them (e.g., high school friends, soccer friends, and Comm friends). Network structure can be used to identify different groups.
@@ -59,7 +58,6 @@ UK %>%
   geom_edge_fan(alpha=.4) +
   geom_node_point(aes(color=as.factor(Group))) +
   scale_color_viridis_d(name="Department")
-
 ```
 
 

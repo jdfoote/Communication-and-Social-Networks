@@ -106,7 +106,6 @@ Times were hard.
 >	- Reach out if you get stuck
 >	- Watch the video and use the example data
 >	- Not all visualizations have to be networks
-> - Reading summaries + FlipGrid
 
 
 ## Networks and Technology
