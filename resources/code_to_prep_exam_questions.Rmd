@@ -1,0 +1,80 @@
+---
+title: "Exam Network Prep"
+author: "Jeremy Foote"
+date: "4/8/2021"
+output: html_document
+---
+```{r}
+
+library(igraph)
+library(xtable)
+library(ggraph)
+library(tidygraph)
+library(tidyverse)
+nodes <- sample(c("A","B","C","D","E","F","G","H","I"))
+
+G <- make_graph(c(
+  2,3,
+  3,4,
+  1,5,
+  2,5,
+  1,6,
+  2,6,
+  3,7,
+  4,7,
+  1,8,
+  1,9
+), directed = F)
+V(G)$name = nodes
+
+G %>% as_tbl_graph() %>%
+  ggraph() +
+  geom_edge_fan(color='darkgray') +
+  geom_node_label(aes(label=name), size = 8, color='darkgreen') +
+  theme_graph()
+
+```
+
+Code for making simply physician network
+
+```{r}
+library(networkdata)
+
+
+simple_phys <- physicians %>% as_tbl_graph() %>% 
+  activate(edges) %>% 
+  filter(relation=='friendship') %>%
+  select(-relation) %>%
+  activate(nodes) %>%
+  filter(city == 1) %>%
+  mutate(specialty = recode(specialty, 
+                            "1" = "GP", 
+                            "2" = "Internal Medicine",
+                            "3" = "Pediatrician",
+                            "4" = "Other",
+                            "9" = "Unknown"
+                            )) %>%
+  select(med_sch_yr, patients, specialty)
+
+simple_phys %>%
+  as_data_frame('vertices') %>%
+  mutate(name = row_number()) %>%
+  relocate(name) %>%
+  write_csv('~/Teaching/communication_and_networks/resources/simple_phys_nodes.csv')
+
+simple_phys %>%
+  as_data_frame('edges') %>%
+  write_csv('~/Teaching/communication_and_networks/resources/simple_phys_edges.csv')
+
+
+nodes = read_csv('~/Teaching/communication_and_networks/resources/simple_phys_nodes.csv')
+edges = read_csv('~/Teaching/communication_and_networks/resources/simple_phys_edges.csv')
+G = graph_from_data_frame(edges, vertices = nodes)
+
+G %>% as_tbl_graph() %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(aes(color=as.factor(specialty)))
+```
+
+
