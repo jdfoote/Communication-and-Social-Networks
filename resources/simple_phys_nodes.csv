@@ -1,0 +1,118 @@
+name,med_sch_yr,patients,specialty
+1,2,5,Pediatrician
+2,6,4,GP
+3,4,4,Internal Medicine
+4,5,3,GP
+5,4,3,GP
+6,3,5,Internal Medicine
+7,1,6,GP
+8,4,6,GP
+9,2,1,Pediatrician
+10,4,6,GP
+11,2,5,Internal Medicine
+12,5,6,GP
+13,6,2,GP
+14,5,5,GP
+15,4,6,GP
+16,5,1,Internal Medicine
+17,4,5,GP
+18,5,6,GP
+19,1,9,Internal Medicine
+20,4,3,Internal Medicine
+21,5,5,Pediatrician
+22,6,4,Pediatrician
+23,4,4,Pediatrician
+24,5,4,Internal Medicine
+25,6,4,GP
+26,3,5,GP
+27,4,4,Pediatrician
+28,5,3,Internal Medicine
+29,3,5,Internal Medicine
+30,6,4,GP
+31,5,6,Internal Medicine
+32,1,3,Internal Medicine
+33,5,5,GP
+34,1,2,GP
+35,4,4,GP
+36,3,5,Internal Medicine
+37,4,3,Internal Medicine
+38,1,2,GP
+39,1,4,GP
+40,5,9,Other
+41,3,1,Other
+42,2,5,Other
+43,3,5,Other
+44,5,2,Other
+45,2,6,Other
+46,3,2,Other
+47,2,2,Other
+48,3,4,Other
+49,3,3,Other
+50,4,4,Other
+51,4,6,Other
+52,4,6,Other
+53,2,6,Other
+54,5,3,Other
+55,3,9,Other
+56,1,9,Other
+57,3,6,Other
+58,2,4,Other
+59,6,1,Other
+60,6,2,Other
+61,4,4,Other
+62,5,3,Other
+63,6,4,Other
+64,6,1,Other
+65,6,4,Other
+66,5,5,Other
+67,6,2,Other
+68,6,3,Other
+69,4,6,Other
+70,1,9,Internal Medicine
+71,1,2,Internal Medicine
+72,2,5,Internal Medicine
+73,4,3,GP
+74,4,5,GP
+75,3,5,GP
+76,3,6,GP
+77,4,5,Pediatrician
+78,3,3,Pediatrician
+79,4,5,GP
+80,1,4,GP
+81,4,4,Internal Medicine
+82,1,3,Internal Medicine
+83,4,6,Other
+84,5,3,Other
+85,5,1,Other
+86,6,9,Other
+87,6,9,Other
+88,3,9,Other
+89,3,9,Other
+90,2,9,Other
+91,9,9,Pediatrician
+92,1,2,Pediatrician
+93,2,2,Internal Medicine
+94,4,3,Internal Medicine
+95,5,3,Internal Medicine
+96,4,1,Internal Medicine
+97,2,3,GP
+98,5,2,Internal Medicine
+99,3,6,Other
+100,5,1,Other
+101,2,3,Other
+102,6,2,Other
+103,5,2,Other
+104,5,6,Other
+105,4,5,GP
+106,2,9,Other
+107,1,4,GP
+108,1,5,GP
+109,2,9,Other
+110,9,9,Other
+111,9,9,Unknown
+112,9,9,Unknown
+113,9,9,Unknown
+114,9,9,Unknown
+115,9,9,Unknown
+116,9,9,Unknown
+117,9,9,Unknown
