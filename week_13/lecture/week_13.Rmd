@@ -1,0 +1,47 @@
+---
+title: Week 13 - Collective behavior
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Dad Joke
+
+
+What does a sprinter eat before a race?
+
+<p class='fragment'>
+Nothing, they fast!
+</p>
+
+## Housekeeping
+
+> - Self-assessment reflections
+>	- Feedback is in
+>	- Talk with me about discrepancies or questions
+> - Exam is due
+
+<iframe src="https://giphy.com/embed/3ohs7Ys9J8XyFVheg0" class='fragment' width="480" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+
+## Upcoming Assignments
+
+> - Final project rough draft (April 22)
+> - Peer feedback

@@ -69,12 +69,14 @@ simple_phys %>%
 
 nodes = read_csv('~/Teaching/communication_and_networks/resources/simple_phys_nodes.csv')
 edges = read_csv('~/Teaching/communication_and_networks/resources/simple_phys_edges.csv')
-G = graph_from_data_frame(edges, vertices = nodes)
+G = graph_from_data_frame(edges, vertices = nodes) %>% as_tbl_graph()
 
-G %>% as_tbl_graph() %>%
-  ggraph() +
+G %>% 
+  ggraph('fr') +
   geom_edge_fan() +
-  geom_node_point(aes(color=as.factor(specialty)))
+  geom_node_point(aes(color=as.factor(specialty))) + 
+  scale_color_viridis_d()
 ```
+
 
 

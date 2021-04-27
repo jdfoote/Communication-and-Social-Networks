@@ -1,0 +1,66 @@
+---
+title: "COM 411: Networked Racism"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Today's Dad Joke
+
+How can you identify a dogwood tree?
+
+<p class='fragment'>
+By its bark
+</p>
+
+## Housekeeping
+
+> - Get feedback to your peers! (And upload to Brightspace)
+> - Final draft DUE May 6
+> - Self Assessment Reflection
+> - Feedback for me (Purdue / Google Form / email / Discord)
+
+
+## Plan for today
+
+> - Lecture
+> - Discussion
+> - Peer feedback & Office Hours
+
+# Networks and Race
+
+## Racism in America
+
+> - Overt, animus-based racism is (probably) declining
+<img class='fragment' src='https://content.gallup.com/origin/gallupinc/GallupSpaces/Production/Cms/POLL/bb8ic2qate-wa_cbgc2ifg.png'/>
+
+## But there is still lots of racism
+
+> - Some is psychological
+>	- We have talked about the power of homophily
+> - Some is "structural" and a result of past racism
+>	- Examples in the built environment?
+>	- In education?
+>	- In hiring?
+
+## Networks and racism
+
+> - How can networks produce or maintain racially biased outcomes?
+> - How does this tie into ideas about social/cultural/economic capital?
+
