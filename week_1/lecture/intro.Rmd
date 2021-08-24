@@ -5,9 +5,8 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: false
+    self_contained: true
     css: ./resources/custom_css.css
-    reveal_plugins: ["notes"]
 ---
 
 ```{r setup, include=FALSE}
@@ -35,11 +34,11 @@ library(ggraph)
 
 ## Dad Joke
 
-- Why did the nearsighted man fall in the well?
-> - He couldn't see that well!
+Why did the nearsighted man fall in the well?
+
+<span class='fragment'>He couldn't see that well!</span>
 
 ## Introductions
-> - Try breakout rooms
 - Name
 - Year
 - Major
@@ -105,23 +104,32 @@ library(ggraph)
 
 ## Grading
 >- I'm interested in teaching, not assessing
-> - Goal is to build in assessments that encourage learning and accountability
+> - Goal is to build structures that encourage learning and accountability
 >- Assignments will be turned in on Brightspace and/or discussed in class
->- I will provide feedback
->- 4 times during the semester you will turn in reflection pieces
+>- I will provide general feedback
+>- 3 times during the semester you will turn in reflection pieces
 >- If I disagree I will reach out
 
 ## Dangers of this approach to grading
 
-## Discord Meetings
+## Class Meetings
 
-> - Tuesdays are "required"
-> - Thursdays are typically more of a co-working time (but sometimes synchronous)
-> - Discussion questions due on Mondays (in Discord)
-> - Random cold calling based on questions
+> - Most content is asynchronous
+>	- Readings
+>	- Video lectures
+> - Tuesdays
+>   - Discussion questions due on Mondays (Google Docs link)
+>	- Time discussing + reviewing homework
+>	- Random cold calling based on questions
 >	- I will track whether you are prepared
-> - Think, pair, share
+> - Thursdays 
+>	- Activities
+>	- R Labs
+>	- Co-working / Office Hours
 
+## Class meetings
+
+> - Masks will be required
 
 ## Assignments
 
@@ -168,8 +176,7 @@ create_notable('zachary') %>%
 
 ## Discord
 
-> - Conversation
-> - Class sessions
+> - Conversation and questions
 > - Help
 >	- In general, ask publicly so others can answer / see the answer
 
@@ -181,13 +188,13 @@ create_notable('zachary') %>%
 ## Brightspace
 
 > - Some readings
-> - Submit some assignments
+> - Submit assignments
 
 ## Office Hours
 
-> - On Discord
->	- 1-to-1 meetings on Friday 10-12
->	- Sign up on the wiki
+> - Thursdays, 2-4
+>	- Sign up on the wiki (or just show up)
+>	- Also open to meeting virtually
 
 ## Please be vocal
 >- I will solicit feedback as part of reflections
@@ -197,6 +204,7 @@ create_notable('zachary') %>%
 
 >- Read the syllabus
 > - This Thursday will be a (fun!) synchronous activity
+> - Sign up for Discord and bring a laptop
 
 
 ## Questions?

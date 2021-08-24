@@ -4,7 +4,6 @@ all: $(patsubst %.Rmd,%.html,$(wildcard *.Rmd))
 
 %.html: %.Rmd
 	Rscript -e 'library(rmarkdown); rmarkdown::render("$<", output_file = "$@")'
-	cp $@ index.html
 
 new: all
 	firefox *.html
