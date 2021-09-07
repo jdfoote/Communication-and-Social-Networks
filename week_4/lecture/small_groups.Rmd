@@ -1,0 +1,96 @@
+---
+title: Networks in small groups
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+    css: ../../libs/custom_css.css
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+#source("resources/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Much of our lives are lived in the context of small groups
+
+> - Families
+> - Class groups
+> - Roommates
+> - Friendship groups
+> - Work groups
+> - Volunteer organizations
+
+## Lots of network theories relate to the structure of small groups
+
+> - Triadic closure
+> - Reciprocity
+> - Homophily
+
+## Research has also focused on what makes groups effective at meeting their goals
+
+> - Which network do you think would be most effective?
+<div class='fragment'>
+```{r fig.width=2, fig.height=2}
+make_star(6) %>%
+  as_tbl_graph() %>%
+  ggraph(layout='fr') +
+  geom_edge_fan() + 
+  geom_node_point() + theme_void()
+
+make_ring(6) %>%
+  as_tbl_graph() %>%
+  ggraph(layout='fr') +
+  geom_edge_fan() + 
+  geom_node_point() + theme_void()
+
+make_full_graph(6) %>%
+  as_tbl_graph() %>%
+  ggraph(layout='fr') +
+  geom_edge_fan() + 
+  geom_node_point() + theme_void()
+
+```
+</div>
+
+## It depends on the task!
+
+> - Centralization is beneficial for simple tasks
+> - Decentralization is beneficial for complex tasks or when information is scattered
+> - Rings are pretty bad no matter what :)
+
+## Communication isn't usually determined from on high
+
+> - Communication networks both represent and enable patterns of communication
+
+## Why do edges exist in small groups?
+
+> - Social capital
+> - Social exchange
+> - Collective action
+> - Transactive memory
+>	- Know _who knows what_
+>	- Knowledge is passed through communication
+
+## In general, "integrative" groups perform better at complex tasks
+
+> - Low hierarchy
+> - Small periphery
+
+> - In these groups, people are:
+>	- Coordinated
+>	- Motivated
+
+## Groups are embedded
+
+> - Work group vs. school assignment, etc.
+> - People are also embedded in different groups
+> - Tricky but important to consider the influence of environment
+

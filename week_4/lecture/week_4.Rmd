@@ -5,10 +5,8 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: false
+    self_contained: true
     css: ../../libs/custom_css.css
-    reveal_plugins: ["notes"]
-    lib_dir: ../../libs
 ---
 
 
@@ -24,13 +22,21 @@ library(ggraph)
 
 ## Today's Dad Joke
 
-One astronaut says to another, "I can’t find any milk for my coffee"
+My neighbor had the nerve to ring my doorbell at 3 o'clock in the morning.
 
-The other astronaut replies, "In space no one can, here use cream"
+<span class='fragment'>
+Luckily I was still up playing the drums.
+</span>
 
 
 ## Housekeeping
 
-> - Self Assessment Reflections are due
-> - No R homework this week, but more readings + video
+> - Self Assessment Reflections
+>	- Goals for the class
+>	- Feedback for me
 
+
+## Discussion Questions
+
+
+## Homework review
