@@ -1,0 +1,63 @@
+---
+title: COM 411
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: true
+    css: ../../libs/custom_css.css
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+#source("resources/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+
+## Today's Dad Joke
+
+One astronaut says to another, "I can’t find any milk for my coffee"
+
+<span class='fragment'>The other astronaut replies, "In space no one can, here use cream"</span>
+
+
+## Housekeeping
+
+> - Turning in R homework
+> - Discussion Questions
+
+
+## Edge formation review
+
+> - What is an edge?
+> - What is one reason an edge might form?
+> - What is homophily?
+>	- Does your social network exhibit homophily?
+>	- What are some causes of homophily?
+> - What is reciprocity?
+> - What is an example of transitivity?
+> - What is balance theory?
+
+
+## Edge formation review
+
+> - What are foci of activity?
+> - How do ties dissolve?
+>	- What ties have you seen dissolve in your network? What type is most likely to dissolve?
+> - What is "tie maintenance" and what forms does it take?
+
+## Discussion Questions
+
+
+## Homework review
+
+## Thursday
+
+> - Watch R videos before class
+> - Work on Lab 2 during class
