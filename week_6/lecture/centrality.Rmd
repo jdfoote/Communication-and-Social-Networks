@@ -1,132 +1,32 @@
 ---
-title: COM 411
+title: Power, centrality, and hierarchy
 template: "../resources/template.html"
 output: 
   revealjs::revealjs_presentation:
     theme: white
     progress: true
     transition: convex
-    self_contained: false
-    reveal_plugins: ["notes"]
+    self_contained: true
+    css: ../../resources/custom_css.css
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F, message=F)
 knitr::opts_knit$set(root.dir = './')
 source("resources/preamble.R")
-
-f <- function (x) {formatC(x, format="d", big.mark=',')}
-bold <- function(x) {paste('{\\textbf{',x,'}}', sep ='')}
-gray <- function(x) {paste('{\\textcolor{gray}{',x,'}}', sep ='')}
-wrapify <- function (x) {paste("{", x, "}", sep="")}
-p <- function (x) {formatC(x, format='f', digits=1, big.mark=',')}
 library(igraph)
+library(tidygraph)
+library(ggraph)
+
+set_graph_style('theme_graph')
 ```
 
-<style type="text/css">
-
-/* Changes to RevealJS default formatting.
-
-I prefer this style but you can change these to your preferences */
-
-/* This bit lets you do columns */
-.container{
-  display: flex;
-}
-
-.col{
-  flex: 1;
-}
-
-.reveal section img{
-border: none;
-background: none;
-box-shadow: none;
-}
-
-.highlight {
-color: LightCoral;
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-text-transform: none;
-}
-
-.reveal h1 {
-margin-top:200px;
-}
-
-div.footnote {
-font-size: 40%;
-text-align: right;
-}
-
-.bg-image{
-width: 180px;
-}
-
-.reveal .slides section .fragment.fade-in-then-out,
-.reveal .slides section .fragment.current-visible {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-out.current-fragment,
-  .reveal .slides section .fragment.current-visible.current-fragment {
-    opacity: 1;
-    visibility: inherit; }
-
-.reveal .slides section .fragment.fade-in-then-semi-out {
-  opacity: 0;
-  visibility: hidden; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.visible {
-    opacity: 0.5;
-    visibility: inherit; }
-  .reveal .slides section .fragment.fade-in-then-semi-out.current-fragment {
-    opacity: 1;
-visibility: inherit; }
-
-</style>
 
 ## Today's Dad Joke
 Bro, can you pass me that leaflet?
 
 
 Brochure.
-
-## Housekeeping
-
-> - Thursday Dr. Lee will be visiting
-> - Next Thursday is an in-class exam
-
-## Reflection summary
-
-> - Good
->	- Activities
->	- Class discussion
-> - Bad
->	- Six Degrees book
->	  - Sorry!
->	- Brightspace + wiki
->	  - Not sorry ;)
-> - Confusing
->	- What kinds of goals to set?
-
-## What to know from Six Degrees
-
-> - How closely connected are people who are geographically/socially distant?
-> - People are clustered: our friends are friends with each other, so it feels like it should be distant
->	- High clustering coefficient
-> - Human networks have short diameter
->	- We are all connected within a surprisingly small distance
-
-
-## Homework Review
-
->  - Questions about networks in R?
 
 # Power in Social Networks
 
@@ -142,14 +42,25 @@ Brochure.
 >- Counts the number of edges each node has
 >  - In, out, or all
 
-```{r, out.width="50%"}
+
+```{r, out.width="45%", message=F}
 set.seed(23)
 G = random.graph.game(8, .35)
+G <- G %>% as_tbl_graph() %>%
+  mutate(name = LETTERS[1:8])
 
-plot(G, vertex.size = (degree(G) +1)* 4)
+G <- create_notable("Zachary") %>%
+  mutate(name = 1:34)
 
+ G %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(size=9, color='gold') +
+  geom_node_text(aes(label=name))
+```
+
+```{r}
 degrees = degree(G)
-names(degrees) = 1:8
 print("Degree Centrality:")
 print(degrees)
 
@@ -162,13 +73,23 @@ Average distance to all other nodes
 <div class="container">
 <div class='fragment col'>
 ```{r}
-plot(G)
+G %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(size=9, color='gold') +
+  geom_node_text(aes(label=name))
 ```
 </div>
 
 <div class='fragment col'>
 ```{r}
-plot(G, vertex.size = closeness(G, normalized = T) * 50)
+G %>%
+  mutate(closeness = centrality_closeness(normalized = T)) %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(aes(size=closeness), color='gold') +
+  scale_size(range = c(2,10)) +
+  geom_node_text(aes(label=name))
 ```
 </div>
 
@@ -181,36 +102,46 @@ Which of these has the highest betweenness?
 <div class="container">
 <div class='fragment col'>
 ```{r}
-plot(G)
+G %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(size=9, color='gold') +
+  geom_node_text(aes(label=name))
 ```
 </div>
 
 <div class='fragment col'>
 ```{r}
-plot(G, vertex.size = betweenness(G) * 5)
+G %>%
+  mutate(betweenness = centrality_betweenness(normalized = T)) %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(aes(size=betweenness), color='gold') +
+  scale_size(range = c(2,10)) +
+  geom_node_text(aes(label=name))
 ```
 </div>
 
 
 ## Eigenvector Centrality
 
-Who is connected to the most important people? If you have only one friend, but that friend is the President, then you are still powerful.
+It's not what you know, it's who you know 
 
 <div class="container">
 <div class='fragment col'>
 ```{r}
-plot(G, vertex.size = eigen_centrality(G)$vector * 40)
+G %>%
+  mutate(eigenvector_centrality = centrality_eigen()) %>%
+  ggraph() +
+  geom_edge_fan() +
+  geom_node_point(aes(size=eigenvector_centrality), color='gold') +
+  scale_size(range = c(2,10)) +
+  geom_node_text(aes(label=name))
 ```
 </div>
 
-<div class='fragment col'>
-```{r}
-pa = barabasi.game(8, directed = F)
-plot(pa,vertex.size = eigen_centrality(pa)$vector * 40)
-```
-</div>
 
-## Network-level
+# Network-level
 
 
 ## Density
@@ -231,23 +162,53 @@ How unequal is the centrality between nodes?
 <div class="container">
 <div class='col'>
 ```{r, out.width='33%'}
+set.seed(23)
 x = random.graph.game(8, .3)
-plot(x)
 
-plot(make_star(8, mode='undirected'))
+make_bw_plot <- function(G) {
+  plot <- G %>%
+    as_tbl_graph() %>%
+  mutate(name = LETTERS[1:nrow(.N())]) %>%
+  mutate(betweenness = centrality_betweenness()) %>%
+  ggraph(layout='stress') +
+  geom_edge_fan() +
+  geom_node_point(aes(size=betweenness), color='gold') +
+  scale_size(range = c(2,10)) +
+  geom_node_text(aes(label=name))
+  return(plot)
+}
 
-plot(make_lattice(8, circular = T))
+x %>% make_bw_plot()
+
+create_star(8, mode='undirected') %>% make_bw_plot()
+create_lattice(8, circular = T) %>% make_bw_plot()
+```
+Betweenness Centralization scores:
+```{r}
+centralization.betweenness(x)$centralization
+centralization.betweenness(create_star(8, mode='undirected'))$centralization
+centralization.betweenness(create_lattice(8, circular = T))$centralization
 ```
 
-## Using metadata to find Paul Revere
+## Hierarchy
 
-> - Where did the data come from?
->    - What kind of network was it?
-> - Did this make you think differently about metadata? 
->	- About privacy?
+Does information flow from the top down or in both directions?
 
+```{r out.width='45%'}
+library(sna)
+library(intergraph)
+library(networkdata)
 
-## Homework
-
-> - Reading
-> - Keep working on R
+ht_advice %>%
+  as_tbl_graph() %>% 
+  ggraph() +
+  #geom_edge_fan(aes(alpha = stat(index))) + 
+  #scale_edge_alpha_identity() +
+  geom_edge_fan(arrow = arrow(length = unit(3, 'mm')), 
+                 end_cap = circle(5, 'mm'),
+                alpha = .7) + 
+  geom_node_point(size = 9, color = 'gold')
+  
+print('Hierarchy of advice network:')
+print(hierarchy(asNetwork(ht_advice)))
+```

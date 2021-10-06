@@ -43,6 +43,14 @@ text-align: right;
 width: 180px;
 }
 
+.reveal .slides section .fragment.step-fade-in-then-out {
+	opacity: 0;
+	display: none; }
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+	opacity: 1;
+	display: inline; }
+
+
 /*.reveal .slides section .fragment.fade-in-then-out,
 /*.reveal .slides section .fragment.current-visible {
 /*  opacity: 0;

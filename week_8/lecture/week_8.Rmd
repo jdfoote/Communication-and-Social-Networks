@@ -32,10 +32,12 @@ A stick.
 
 ## Housekeeping
 
-> - Guest lecture next week
->	- Scott Feld
->	- On Zoom (I will send link)
->	- Prepare questions and I'll send to him
+> - Social Search assignment
+>	- Try to find someone with driver's license from HI
+>	- No group texts
+>	- Diagram search network
+>	- Instructions on wiki
+
 > - Visualization Challenge
 >	- I will send out more details
 >	- Idea is to visualize something about a network

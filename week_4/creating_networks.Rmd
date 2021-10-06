@@ -35,6 +35,7 @@ Save the spreadsheet to your computer and then:
 2. Browse to the file
 3. Under Import options, change the name to `edgelist`
 3. Copy and paste the code in the "Code Preview" window here (delete my code which is given as an example).
+4. *If you are using a Mac or Linux, you may have to add '~/' to the beginning of the file path.
 
 ```{r}
 library(readxl)
@@ -103,9 +104,8 @@ Let's enhance this basic plot by using `ggraph` and by coloring nodes based on t
 ```{r}
 G %>%
   ggraph(layout='kk') +
-  geom_node_point(aes(color = Major)) +
-  geom_edge_fan()
-  
+  geom_edge_fan() +
+  geom_node_point(aes(color = Major))
 ```
 
 ## Exercise 1
@@ -119,6 +119,7 @@ Change the ggraph plot so that it colors the students by gender instead of by ma
 ```{r}
 ## YOUR CODE HERE
 
+
 ```
 
 
@@ -126,7 +127,7 @@ Change the ggraph plot so that it colors the students by gender instead of by ma
 
 Change the ggraph plot so that it show the names of the students, and make the nodes bigger.
 
-Hint: You will a [geom_node_label](https://ggraph.data-imaginist.com/reference/geom_node_text.html) and the "aesthetics" for [geom_node_point](https://ggraph.data-imaginist.com/reference/geom_node_point.html) may be helpful
+Hint: You will want to use [geom_node_text](https://ggraph.data-imaginist.com/reference/geom_node_text.html) and the "aesthetics" for [geom_node_point](https://ggraph.data-imaginist.com/reference/geom_node_point.html); see if you can figure out the examples.
 
 ```{r}
 

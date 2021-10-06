@@ -7,11 +7,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/reveal.css"/>
+  <link rel="stylesheet" href="week_6_files/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
 
-<link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="week_6_files/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
 
 
   <!-- some tweaks to reveal css -->
@@ -443,6 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <script src="week_6_files/header-attrs-2.11/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -462,25 +463,90 @@ I replied back: “Sure, my door is always open.”
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
-<li class="fragment">Confusion around getting help with R
+<li class="fragment">Discussion questions
 <ul>
-<li class="fragment">Goal is understanding and competence</li>
-<li class="fragment">There are difficulties to be worked through</li>
-<li class="fragment">But explaining confusion and asking for help can be good</li>
-<li class="fragment">Try on your own first</li>
-<li class="fragment">If you got it, try to help others without just giving the answer</li>
-<li class="fragment">Posting solutions?</li>
+<li class="fragment">Should be based on the readings</li>
+<li class="fragment">What <em>concepts</em> from the readings 1) am I confused about? or 2) would it be interesting to discuss with the class?</li>
 </ul></li>
-<li class="fragment">Sorry about the YAML front matter bug!</li>
-<li class="fragment">No R this week but feel free to keep working on last week’s</li>
-<li class="fragment">But a lot of readings</li>
+<li class="fragment">Put homework questions in #homework-help on Discord
+<ul>
+<li class="fragment">Copy and paste code</li>
+<li class="fragment">Why hasn’t this been happening?</li>
+</ul></li>
+<li class="fragment">No R this week so keep working on the last few</li>
 </ul>
+</section>
+<section id="concept-review" class="slide level2">
+<h2>Concept Review</h2>
+<ul>
+<li class="fragment">What is centrality?</li>
+<li class="fragment">What is the difference between centrality and centralization?</li>
+<li class="fragment">What is degree centrality?</li>
+<li class="fragment">What are some shortcomings of degree centrality as a measure of power/influence?</li>
+<li class="fragment">What is betweenness centrality?</li>
+<li class="fragment">What is closeness centrality?</li>
+<li class="fragment">What is eigenvector centrality?</li>
+</ul>
+</section>
+<section id="concept-review-1" class="slide level2">
+<h2>Concept Review</h2>
+<ul>
+<li class="fragment">What aspects of power/influence do centrality measures miss?</li>
+<li class="fragment">What can centralization tell us about a network?</li>
+<li class="fragment">What does density tell us about a network?</li>
+<li class="fragment">What is hierarchy?</li>
+</ul>
+</section>
+<section id="discussion-questions" class="slide level2">
+<h2>Discussion Questions</h2>
+</section>
+<section id="r-review" class="slide level2">
+<h2>R Review</h2>
+</section>
+<section id="anatomy-of-ggraph" class="slide level2">
+<h2>Anatomy of ggraph</h2>
+<pre>
+
+<span class='fragment highlight-current-red' data-fragment-index="1">G %>% </span>
+<span class='fragment highlight-current-red' data-fragment-index="2">activate(nodes) %>% </span>
+<span class='fragment highlight-current-red' data-fragment-index="3">mutate(centrality = centrality_eigen()) %>% </span>
+<span class='fragment highlight-current-red' data-fragment-index="4">ggraph(layout = 'kk') + </span>
+<span class='fragment highlight-current-red' data-fragment-index="5">geom_edge_fan</span><span class='fragment highlight-current-red' data-fragment-index="6">(aes(width=weight)</span>, <span class='fragment highlight-current-red' data-fragment-index="7">color = 'gray'</span>) + 
+<span class='fragment highlight-current-red' data-fragment-index="8">geom_node_point(aes(size=centrality), color = 'gold')</span>
+
+</pre>
+<div class="r-stack">
+<p class="fragment step-fade-in-then-out" data-fragment-index="1">
+Loads the graph, which is stored as the variable <code>G</code> (the <code>%&gt;%</code> sends the output to the next line)
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="2">
+Selects the nodes “spreadsheet” to edit. To activate the edges, run <code>activate(edges)</code>
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="3">
+Calculates the eigenvector centrality and saves it as a new column in the nodes spreadsheet. Note that we keep using <code>%&gt;%</code> until we get to <code>ggraph()</code>
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="4">
+Tells R we want to take the network and make a plot from it. This is where we set the layout
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="5">
+Remember to add edges first.
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="6">
+The first argument is the “aesthetic mapping” - this maps aspects of the plot to variables in your data. In this case, we change the width of the edges based on the variable “weight”, which must be in our edges “spreadsheet”
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="7">
+We can also change the look of the plot universally. These options go <em>outside</em> of <code>aes()</code>
+</p>
+<p class="fragment step-fade-in-then-out" data-fragment-index="8">
+This code does similar operations to the nodes. It changes the size based on the centrality (which we calculated and defined in line 3) and changes the color of all nodes to <code>gold</code>
+</p>
+</div>
 </section>
     </div>
   </div>
 
-  <script src="../../libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="../../libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+  <script src="week_6_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="week_6_files/reveal.js-3.3.0.1/js/reveal.js"></script>
 
   <script>
 
@@ -500,7 +566,7 @@ I replied back: “Sure, my door is always open.”
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '../../libs/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'week_6_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
         ]
       });
     </script>
