@@ -1,0 +1,432 @@
+---
+title: "Additional ggraph explanation"
+author: "Jeremy Foote"
+date: "10/4/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading libraries
+
+Before getting started, you have to load the network libraries that we are going to use.
+
+`library(x)` is how you load something. So this will load the four libraries: `igraph, tidygraph, ggraph`, and `networkdata`.
+
+```{r}
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(networkdata)
+# If you don't have networkdata, you will need to run install.packages('networkdata') to install it.
+theme_set(theme_graph)
+```
+
+## Loading data from tidygraph
+
+In R Lab 1 you practiced loading data from Excel spreadsheets. In the real world, this is often what you will be doing.
+
+For the purposes of this class, you can reuse data that you either create randomly or that you load from a prepared dataset.
+
+### Creating random networks
+
+`tidygraph` has a bunch of options for random graphs, starting with `play_` and non-random graphs (like a full network or a star) that start with `create_`. The full list is at https://tidygraph.data-imaginist.com/reference/index.html#section-graph-creation
+
+In this example, we create a totally random network o and set it to the variable `G`.
+
+The second line, that just says `G` is so that R will show information about the network. It will tell us how many nodes and edges there are, and show information about the nodes and edges, if it exists (e.g., the age and major of nodes). In this network, we don't have any node information.
+
+```{r}
+G = play_erdos_renyi(n = 20, p = .4)
+G
+```
+
+We can also visualize this network. We will work on fancy plotting later but for now we can just use `plot` to show the default plot and to make sure that our code worked.
+
+```{r}
+plot(G)
+```
+
+
+*Excercise*:
+
+Create a newtork based on the `play_islands` random network. Note that you may need to play around with the parameters which are listed at https://tidygraph.data-imaginist.com/reference/component_games.html.
+
+Visualize the network that you created using `plot()`
+
+
+
+```{r}
+## YOUR CODE HERE
+```
+
+
+### Loading real networks
+
+`networkdata` is a package full of real networks. We will typically use these, since they are both more realistic and they have a lot more edge and node data, which is more interesting to visualize.
+
+It is a bit tricky to load these networks but it isn't too bad once you learn a few tricks.
+
+First, you need to figure out if the network is actually a list of networks. For a bunch of the data, researchers collected a bunch of networks of the same individuals over time. If that's the case, then you can use `[[n]]` to get the nth network. For our purposes, it's usually fine to just get the first network. For example, this is the first recording of an ant network.
+
+
+```{r}
+G = animal_12[[1]]
+plot(G)
+```
+
+The other thing that we will want to do is convert these from `igraph` format to `tidygraph` format. This is easily done, using `as_tbl_graph`.
+
+You can tell that this is in a different format by trying to just look at the network. For example, this is the output when trying to see the `law_advice` network.
+
+```{r}
+law_advice
+```
+
+And here it is when we convert it. This is what it should look like.
+
+```{r}
+as_tbl_graph(law_advice)
+
+G = as_tbl_graph(law_advice)
+```
+
+Note how I saved the `tidygraph` version of `law_advice` as `G`.
+
+
+*Excercise:* Load the `law_friendship` network, convert it to `tidygraph` format, and then `plot` it.
+
+```{r}
+### YOUR CODE HERE
+
+```
+
+
+The full list of datasets included in the `networkdata` package can be viewed by running: `data(package = "networkdata")`
+
+
+## Mutating data
+
+Often, we will want to add a new column to either the node or edge dataframes (i.e., spreadsheets).
+
+This can be done using the `mutate` function.
+
+We choose the spreadsheet we want to edit using either `activate(nodes)` or `activate(edges)`.
+
+For example, this loads the `law_advice` data and creates a new variable called `is_older` based on whether someone is older than the median age.
+
+(Note the use of `%>%` - this just takes the output of one function and makes it the first input of the next function)
+
+```{r}
+# Load the data and convert it to tidygraph format
+G = as_tbl_graph(law_advice)
+
+# Mutate the data by adding a new column to identify the older half of the nodes
+G = G %>%
+  activate(nodes) %>% # Activate nodes
+  mutate(is_older = age > median(age)) 
+
+G
+```
+
+The other thing we often want to do is add a column for network statistics, so that we can visualize them later. There are lots of network statistics that we can calculate for nodes but there are some for edges, too. They are listed [here](https://tidygraph.data-imaginist.com/reference/index.html#section-centrality). We will usually use either centrality measures or community detection.
+
+For example, this code creates two new columns: `eigen_centrality` and `group` from two functions given by `tidygraph`.
+
+```{r}
+G = G %>% 
+  activate(nodes) %>% 
+  mutate(eigen_centrality = centrality_eigen()) %>%
+  mutate(group = group_spinglass())
+
+G
+```
+
+*Exercise:* 
+
+Create a new column called `popularity` that measures in-degree centrality (Note that you will need to look at the documentation for the degree centrality measure and figure out how to change the mode to in-degrees).
+
+```{r}
+## Your code here
+
+```
+
+
+## Filtering nodes or edges
+
+Sometimes we may want to just look at a subset of the nodes or edges. We can use `filter` to do that.
+
+This example code gives us only nodes whose age is less than 40, and saves it as `G_young`
+
+```{r}
+G_young = G %>%
+  activate(nodes) %>%
+  filter(age < 40)
+
+G_young
+```
+
+
+*Exercise:*
+
+See if you can figure out how to create a new graph called `G_recip` that only includes edges that are reciprocal/mutual. (Remember that you will need to use `activate(edges)`).
+
+```{r}
+## Your code here
+
+```
+
+
+
+# Visualization in ggraph
+
+Now that we have all of the measures we may want to visualize saved in the dataframes, we can use `ggraph` to visualize them.
+
+There are three key things we can adjust when making plots: the layout, the edges, and the nodes.
+
+## Layout
+
+The layout is where the nodes appear on the screen. Most layouts have nodes with lots of connections close to each other but you can put things into other layouts. The layout is set inside of `ggraph` and if you leave it blank, then `ggraph` will choose the layout it thinks is best. There are lots of layouts in ggraph ([examples here](https://ggraph.data-imaginist.com/articles/Layouts.htm)). For our purposes, often "fr", "kk", "lgl", or "stress" should work pretty well.
+
+Note that if all we do is include `ggraph` and the layout, as below, we won't actually get a plot. That's because all that `ggraph()` does is tell R where to put each node. But we haven't told it to draw any nodes!
+
+```{r}
+G %>%
+  ggraph(layout = 'kk')
+```
+
+We'll talk in a minute about what these do, but let's draw nodes and edges.
+
+First, we can add edges.
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link()
+```
+
+Each time we add a `+` and a new line, it draws another layer on the chart. So, now we'll draw nodes on the top.
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link() +
+  geom_node_point()
+```
+
+We will make this look a lot prettier in a minute, but let's take a look at a few other layouts.
+
+```{r}
+G %>%
+  ggraph(layout = 'grid') +
+  geom_edge_link() +
+  geom_node_point()
+```
+
+```{r}
+G %>%
+  ggraph(layout = 'drl') +
+  geom_edge_link() +
+  geom_node_point()
+```
+
+*Exercise:* 
+
+Change the layout to one of the other layouts. Think about how you might interpret this network differently depending on which layout you saw.
+
+```{r}
+## Your code here
+```
+
+
+
+## Edges
+
+The next concept is edges. Usually, you will want to make edges the next layer that you draw, so that the nodes appear on top of the edges.
+
+I think that default width of the edges is too wide, so let's change that first.
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width=.1) +
+  geom_node_point()
+
+```
+
+Note that this change applied to all of the edges. The other thing we often change for edges is the color.
+
+We can either change things universally, or we can make a "mapping" from an aesthetic to the data in our graph. If we want to make a mapping, then the first argument after the `geom_` that we are using should start with `aes()`
+
+For example, this code shows all of the reciprocated/mutual relationships as a different color.
+
+
+```{r}
+# First, let's save is_mutual as its own column
+G = G %>%
+  activate(edges) %>%
+  mutate(is_mutual = edge_is_mutual())
+
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(aes(color=is_mutual), width = .1) +
+  geom_node_point() + 
+  scale_edge_color_viridis(discrete = T)
+```
+
+*Exercise:*
+
+Instead of changing the width, change the `alpha` of the edges. What is the difference? Which do you prefer?
+
+```{r}
+## Your code here
+```
+
+
+*Challenge Exercise:*
+
+When changing colors, you may not want to use the default colors. The following code uses `scale_edge_color_viridis()` to use my favorite color pallette, but the yellos is a bit too light. See if you can figure out how to change where the scale begins and ends to make the colors a bit nicer ([confusing documentation here](https://ggraph.data-imaginist.com/reference/scale_edge_colour.html)).
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(aes(color=is_mutual), width = .1) +
+  geom_node_point() + 
+  scale_edge_color_viridis(discrete = T)
+```
+
+
+
+## Nodes
+
+Like edges, when we want to visualize something about nodes the most common operations are to change the size or change the color.
+
+It is often instructive to simply show attributes of the nodes. For example, we may want to know whether there is homophily by seniority in this company, which is what this plot does. As with edges, we put mappings inside of `aes()`.
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width = .05) +
+  geom_node_point(aes(color = seniority))
+```
+
+Not surprisingly, it appears that the most senior people are near the center.
+
+One other comparison we may want to make is across networks. This is the advice network, but let's see if frienship patterns look similar.
+
+```{r}
+law_friends %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width = .05) +
+  geom_node_point(aes(color = seniority))
+```
+Perhaps unsurprisingly, senior people are more at the periphery of this network.
+
+
+*Exercise:*
+
+Color the nodes based on the `is_older` column that we created earlier.
+
+```{r}
+## Your code here
+```
+
+
+*Exercise:*
+
+The other common mapping is to change the size of nodes. Map the `size` parameter to our `eigen_centrality` measure.
+
+```{r}
+## Your code here
+```
+
+## Putting everything together
+
+These skills can be used in the service of answering questions about a network. While there is a danger of having too much going on in a figure, sometimes it can be helpful to visualize multiple aspects of a chart at once.
+
+For example, if we wanted to understand whether people go to advice to people within their own office or across offices, we might do something like making nodes a different shape based on the office they are in, and a different color based on the network "group" that they are in.
+
+(Note that I use one aesthetic we haven't talked about yet - the `shape` of a node)
+
+(Note 2: If you want to knit this document, then this error will stop it from working. You can just comment out the code by putting a `#` before each line.)
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width = .05) +
+  geom_node_point(aes(color = group, shape=office))
+```
+When we try that, we get an error saying that "A continuous variable can not be mapped to shape." 
+
+What in the world does that mean?
+
+R stores variables as different types. By default, it stores numbers as, well, numbers. When we try to map a shape aesthetic to a number, `ggraph` complains because shapes should really apply to categorical variables instead of numbers.
+
+In this case, the `office` variable really is a category, so we can change it to a categorical variable (called a `factor` in R). We'll also change the `group` variable because it really is a `factor`, too.
+
+We can change them in the plotting code like this:
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width=.05) +
+  geom_node_point(aes(color = as.factor(group), shape = as.factor(office)),
+                  size = 5
+                  )
+```
+
+Or, if we wanted, we could actually change them in the network object, like this:
+
+```{r}
+G = G %>% 
+  activate(nodes) %>% 
+  mutate(group = as.factor(group)) %>% 
+  mutate(office = as.factor(office))
+
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(width=.05) +
+  geom_node_point(aes(color = group, shape = office), size = 6)
+```
+
+It looks like there is quite a bit of clustering by office, which we would expect, but also a number of ties that go across offices.
+
+
+*Exercise:*
+
+Make a plot that visualizes the law school that someone went to as the color of the node, and their eigenvector centrality as the size of the node.
+
+```{r}
+## Your code here
+```
+
+
+*Exercise:*
+
+Come up with your own question for this data (or even another dataset from `networkdata`) and create your own visualization.
+
+```{r}
+## Your code here
+
+```
+
+
+
+## Quick note on legend titles
+
+By defualt, legend titles match up with the variable name. If you want to change them, it's not super intuitive, but you make a new layer of `labs` (for labels). 
+
+For nodes, you can just put the aesthetic you want to change. For edges, you have to include `edge_` before it. Here's an example:
+
+```{r}
+G %>%
+  ggraph(layout = 'kk') +
+  geom_edge_link(aes(color = is_mutual), width=.05) +
+  geom_node_point(aes(color = group, shape = office), size = 6) +
+  labs(color = 'Group', shape = 'Office', edge_color = 'Edge is reciprocated')
+```
+
