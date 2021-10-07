@@ -22,7 +22,10 @@ library(igraph)
 library(tidygraph)
 library(ggraph)
 library(networkdata)
-# If you don't have networkdata, you will need to run install.packages('networkdata') to install it.
+# If you don't have networkdata, you will need to run the following (just uncomment the lines)
+# install.packages("drat")
+#drat::addRepo("schochastics")
+#install.packages("networkdata")
 theme_set(theme_graph)
 ```
 
