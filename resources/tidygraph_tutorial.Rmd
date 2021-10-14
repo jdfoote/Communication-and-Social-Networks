@@ -22,7 +22,7 @@ library(igraph)
 library(tidygraph)
 library(ggraph)
 library(networkdata)
-theme_set(theme_graph)
+theme_set(theme_graph())
 ```
 If you get an error that you don't have `networkdata`, then you will need to run the following (just uncomment the lines and then comment them again after you've installed it.)
 ```{r}
@@ -30,6 +30,8 @@ If you get an error that you don't have `networkdata`, then you will need to run
 #drat::addRepo("schochastics")
 #install.packages("networkdata")
 ```
+
+If you *still* get an error, then this is likely because you are on Windows and need to install RTools. Install the version for your version of R from http://cran.r-project.org/bin/windows/Rtools/ and then try running the code above again.
 
 
 ## Loading data from tidygraph
@@ -179,7 +181,7 @@ G_young
 
 *Exercise:*
 
-See if you can figure out how to create a new graph called `G_recip` that only includes edges that are reciprocal/mutual. (Remember that you will need to use `activate(edges)`).
+See if you can figure out how to create a new graph called `G_recip` that only includes edges that are reciprocal/mutual. (Remember that you will need to use `activate(edges)`). The edge measures that you can calculate are at https://tidygraph.data-imaginist.com/reference/index.html#section-edge-measures
 
 ```{r}
 ## Your code here

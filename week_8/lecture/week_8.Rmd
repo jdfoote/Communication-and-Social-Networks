@@ -9,7 +9,6 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
-    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -39,5 +38,22 @@ A stick.
 >	- Instructions on wiki
 
 > - Visualization Challenge
->	- I will send out more details
->	- Idea is to visualize something about a network
+>	- Start from existing dataset (Dutch school student behavior)
+>	- Come up with a question
+>	- Create a network visualization that helps to answer that question
+>	- Working in partners is great
+
+
+## Review Questions
+
+> - What is a "path length"?
+> - What is the "geodesic distance" or "diameter" of a network?
+> - What is triadic closure?
+> - Why would we expect networks with high triadic closure to have high geodesic distance?
+> - What was the Travers and Milgram experiment?
+> - How can we have such high triadic closure but still have short path lengths? What was the key insight from Watts and Strogatz?
+
+## R Questions
+
+
+## R Co-working time

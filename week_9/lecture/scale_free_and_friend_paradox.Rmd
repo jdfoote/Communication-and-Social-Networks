@@ -19,6 +19,7 @@ set.seed(0121)
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
 ```
 
 ## Scale-free networks
@@ -28,6 +29,61 @@ library(ggraph)
 >	- A few people have many edges, while many have few
 > - Why?
 >	- Rich-get-richer processes (preferential attachment)
+
+## Why are they called scale-free?
+
+> - No matter where you zoom in on the distribution, it has the same shape
+
+<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+set_graph_style()
+
+G = play_barabasi_albert(10000, growth = 1, power = 1)
+
+df = G %>% 
+  as_tbl_graph() %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree(mode='all')) %>%
+  as_tibble() %>%
+  group_by(degree) %>%
+  tally(name = 'count')
+
+
+df %>% 
+  filter(degree > 1) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() +
+  labs(title="All nodes")
+
+```
+
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 2) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 3")
+```
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 3) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 4")
+```
+
+</div>
+</div>
 
 ## Implications
 
