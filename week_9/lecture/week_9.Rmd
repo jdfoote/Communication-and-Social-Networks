@@ -9,7 +9,6 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
-    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -20,6 +19,7 @@ set.seed(0121)
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
 ```
 
 ## Dad Joke
@@ -32,9 +32,91 @@ Because he couldn't find a date.
 
 ## Housekeeping
 
+> - Video for next week coming
+> - Thursday - 6 Degrees of Wikipedia + R Review
 > - Self-assessment reflections
 > - Visualization challenge is due next week
 >	- "Knit" to Word Doc
 > - Light reading
 
-## Welcome to Scott Feld
+## Review Questions
+
+> - What is a degree distribution?
+
+<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+set_graph_style()
+
+G = play_barabasi_albert(10000, growth = 1, power = 1)
+
+df = G %>% 
+  as_tbl_graph() %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree(mode='all')) %>%
+  as_tibble() %>%
+  group_by(degree) %>%
+  tally(name = 'count')
+
+
+df %>% 
+  filter(degree > 1) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() +
+  labs(title="All nodes")
+
+```
+
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 2) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 3")
+```
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 3) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 4")
+```
+
+</div>
+</div>
+
+## Review Questions
+
+Think, Pair, Share
+
+> - What is a scale-free distribution?
+> -	When/where do we find scale-free distributions?
+> - What is an example of a network that would *not* have a scale-free distribution?
+> - What are the benefits of scale-free networks?
+
+## Review Questions
+
+Think, Pair, Share
+
+> - What is the "friendship paradox"?
+> - How is the friendship paradox useful?
+
+
+## Discussion Questions
+
+
+## Visualization Challenge
+
+> - Similarity visualization
+
+
+## Work on Tidygraph Tutorial

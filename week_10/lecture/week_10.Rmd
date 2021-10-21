@@ -50,34 +50,3 @@ Me: "Listening. I would say listening is my biggest weakness."
 > - Visualization feedback + show and tell
 > - Summary + discussion of readings 
 
-## Diffusion and Contagion
-
-> - What we do is influenced by what others do
-> - Network effects
->	- Standards, languages, technologies
-> - Beliefs
-
-## Simple contagion
-
-> - Small world networks make simple contagion (like COVID-19) is really hard to stop!
-> - Most interventions are network interventions
->	- Stopping travel attempts to block "long" ties
->	- Social distancing and shelter-in-place attempt to reduce degree
-> - The most important people to influence are those with high betweenness centrality
-
-## Complex contagion
-
-> - Most communication-related diffusions are complex
->	- You don't change beliefs/behavior just from influence from one other person
-> - Complex contagions require multiple ties between groups
->	- This is one reason groups can persist in different beliefs
-
-## Special People
-
-> - Can we predict who will trigger large-scale information cascades?
-> - Are there "influencers"?
-> - Probably not
->	- If we look in hindsight, a viral tweet seems genius, appropriate, and well-timed
->	- There were likely hundreds or thousands of similar tweets
-> - Luck + (ever-changing) structure of networks matter more than attributes of information or information spreaders
-

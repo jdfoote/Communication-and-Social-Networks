@@ -15,7 +15,7 @@ In this lesson, we will focus on understanding different approaches to identifyi
 
 ## Data
 
-For much of this lesson, we will use the `UKfaculty` frienship data which is part of the `igraphdata` package.
+For much of this lesson, we will use the `UKfaculty` friendship data which is part of the `igraphdata` package.
 
 Let's load it as `UK` and take a quick look at it
 
@@ -37,7 +37,7 @@ UK %>%
 ```
 
 
-Whenver loading a new dataset, it's worth looking at it. Because we loaded this as a tidygraph `tbl_graph`, we can just type the name of the graph, and it will show the node and edge attributes.
+Whenever loading a new dataset, it's worth looking at it. Because we loaded this as a tidygraph `tbl_graph`, we can just type the name of the graph, and it will show the node and edge attributes.
 
 
 ```{r}
@@ -67,7 +67,7 @@ We can use the known group to compare different approaches for identifying group
 
 ## Components
 
-The simplest version of a group in a social network is all of the people who are connected to each other. This is called a component. Most real-world social or communciation networks include almost everyone in a single, "giant component". This seems strange at first, but an example can help to show why it works this way. Let's say you had a network of 50 people with two large components of 25 people each. If any one of the 25 people in one component adds an edge to any one of the 25 people in the other component, then the components merge. In other words, there are so many possible edges that would combine the components that one of them is bound to occur unless there is something separating the groups.
+The simplest version of a group in a social network is all of the people who are connected to each other. This is called a component. Most real-world social or communication networks include almost everyone in a single, "giant component". This seems strange at first, but an example can help to show why it works this way. Let's say you had a network of 50 people with two large components of 25 people each. If any one of the 25 people in one component adds an edge to any one of the 25 people in the other component, then the components merge. In other words, there are so many possible edges that would combine the components that one of them is bound to occur unless there is something separating the groups.
 
 The following visualizations show a random graph as it goes from 3% density to 15% density. It quickly becomes a single, large component.
 
@@ -180,6 +180,26 @@ In most networks, community detection approaches give generally similar results.
 
 1. Change the layout of this graph to a few of the others found at the bottom of [this page](https://igraph.org/r/doc/layout_with_kk.html). See if you can find one that you think does a better job of showing group structure.
 
+```{r}
+
+# Your code here
+
+```
+
 2. I have used coloring of nodes as a way to identify different groups in a network. I think that this is a good way of visualizing groups, but there are other options. Come up with a different way of visualizing groups and either draw a picture of your idea or actually code it in ggraph.
 
+```{r}
+
+# Your code here
+
+```
+
+
 3. Go back to your Dutch school network visualization and add a visualization of group structure.
+
+
+```{r}
+
+# Your code here
+
+```

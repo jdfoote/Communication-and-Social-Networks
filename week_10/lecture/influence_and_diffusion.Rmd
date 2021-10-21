@@ -1,0 +1,86 @@
+---
+title: Social Influence
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+## Diffusion and Contagion
+
+> - What we do is influenced by what others do
+> - Network effects
+>	- Standards, languages, technologies
+> - Social constructs
+>	- Concepts or things have meaning and importance through social 
+> - Beliefs
+
+## Simple contagion
+
+> - Small world networks make simple contagion (like COVID-19) is really hard to stop!
+> - Most interventions are network interventions
+>	- Stopping travel attempts to block "long" ties
+>	- Social distancing and shelter-in-place attempt to reduce degree
+> - The most important people to influence are those with high betweenness centrality
+
+## Example
+
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(Infected = index %in% c(2,3)) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = Infected), size = 3) +
+  theme_graph()
+```
+
+
+## Complex contagion
+
+> - Most communication-related diffusions are complex
+>	- You don't change beliefs/behavior just from influence from one other person
+> - Complex contagions require multiple ties between groups
+>	- This is one reason groups can persist in different beliefs
+
+## Example
+
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(Infected = index %in% c(2,3)) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = Infected), size = 3) +
+  theme_graph() 
+```
+
+
+## Special People
+
+> - Why is the Mona Lisa the most famous painting in the world?
+>	- Because there had to be a most famous painting -- success begets success (rich-get-richer)
+
+
+## How does this apply to networks?
+
+> - Can we predict who will trigger large-scale information cascades?
+>	- Not very well
+>	- If we look in hindsight, a viral tweet seems genius, appropriate, and well-timed
+>	- There were likely hundreds or thousands of similar tweets
+> - Luck + (ever-changing) structure of networks matter more than attributes of information or information spreaders
+> - Network position is also closely related to luck!
