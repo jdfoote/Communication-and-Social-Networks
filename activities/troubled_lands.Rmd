@@ -1,6 +1,6 @@
 
 ---
-title: COM 411
+title: Troubled Lands Activity
 template: "../resources/template.html"
 output: 
   revealjs::revealjs_presentation:
@@ -8,18 +8,15 @@ output:
     progress: true
     transition: convex
     self_contained: false
-    css: ../../libs/custom_css.css
-    reveal_plugins: ["notes"]
-    lib_dir: ../../libs
+    css: ../libs/custom_css.css
 ---
 
+## Troubled Lands Explainer
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eIchwB6xJJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Troubled Lands
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eIchwB6xJJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-## Troubled Lands
-
-> - Video
 > - Rules
 >	- Talking is fine
 >	- No talking/interacting with other groups
@@ -29,14 +26,30 @@ output:
 
 ## Round 1 - Collaborative
 
+> - 8 turns
 > - Group with highest total score wins
-> - When done, bring weather cards for me for reshuffling
-> - Winner?
+> - When done, bring weather cards to me for reshuffling and write your score on the board
+
+## Reminder
+
+- Start with:
+  - 6 Forest
+  - 2 Fallows
+  - 2 Fields
+  - 2 Pasture
+
+- Eroded if rain > forests
+  - 2 become eroded
+  - Fallows, field, pasture, forest
+
+Can't plant on eroded, have to turn it to fallows first
 
 ## Round 2 - Competitive
 
+> - 8 turns
 > - Person in group with highest score wins
-> - When done, bring weather cards for me for reshuffling
+> - When done, bring weather cards to me for reshuffling
+> - Write your score and role on the board
 
 ## Round 3 - Independent
 
