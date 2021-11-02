@@ -1,5 +1,5 @@
 ---
-title: Week 10
+title: Diffusion and Contagion
 template: "../resources/template.html"
 output: 
   revealjs::revealjs_presentation:
@@ -9,7 +9,6 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
-    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -26,27 +25,118 @@ library(ggraph)
 
 Interviewer: "Where do you see yourself in 5 years?"
 
+<span class='fragment'>
 Me: "Listening. I would say listening is my biggest weakness."
+</span>
 
 ## Housekeeping
 
 > - Self-assessment reflections
 >	- Thanks!
->	- Things are OK with R
->	- Anxiety about exam
+>	- Still struggling with R
+>	- Feedback by next week
 
 ## Upcoming Assignments
 
+> - Groups in networks assignment
 > - Exam
 >	- Visualization + Essays
 >	- Submit two questions for essay section
-> - Guest lecture by Ryan Gallagher
->	- Prepare and submit discussion question
-> - Groups in networks assignment
+
+## Example questions
+> - How does one gain social capital from other forms of capital? Give three examples with explanations.
+> - What does "centrality" measure? How do "betweenness centrality", "degree centrality", and "eigenvector centrality" differ, and when might one be a better measure than the other?
+> - What is the “Friendship Paradox”?  How does it work? How does it relate to information flow and contagion?
+> - What is a "multiplex" (or multidimensional) network? Give an example where thinking of a network as multiplex could help you to understand it better.
 
 ## Plan for today
 
-> - Lecture on diffusion and contagion
+> - Diffusion and contagion review
+> - Discussion questions
 > - Visualization feedback + show and tell
-> - Summary + discussion of readings 
+> - R walkthrough together
 
+## Review Questions
+
+> - What are some things that are diffused through a social network?
+> - What is the difference between simple contagion and complex contagion?
+
+## Simple Contagion
+
+<div class="r-stack">
+
+<div class='fragment'>
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(infected = index %in% c(2,3)) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = infected), size = 3) +
+  theme_graph()
+```
+</div>
+
+<div class='fragment'>
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(infected = index %in% c(2,3)) %>%
+  mutate(neigh_2 = index %in% neighbors(.G(), 2),
+         neigh_3 = index %in% neighbors(.G(), 3)) %>%
+  mutate(infected = infected | neigh_2 | neigh_3) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = infected), size = 3) +
+  theme_graph()
+```
+</div>
+
+</div>
+
+
+## Complex Contagion
+
+<div class="r-stack">
+
+<div class='fragment'>
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(infected = index %in% c(2,3)) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = infected), size = 3) +
+  theme_graph()
+```
+</div>
+
+<div class='fragment'>
+```{r, message=F}
+create_notable('zachary') %>%
+  mutate(index = 1:nrow(.N())) %>%
+  mutate(infected = index %in% c(2,3)) %>%
+  mutate(neigh_2 = index %in% neighbors(.G(), 2),
+         neigh_3 = index %in% neighbors(.G(), 3)) %>%
+  mutate(infected = infected | (neigh_2 & neigh_3)) %>%
+  ggraph() +
+  geom_edge_fan(width = .1) + 
+  geom_node_point(aes(color = infected), size = 3) +
+  theme_graph()
+```
+</div>
+
+</div>
+
+## Review Questions
+
+> - What is an example of simple contagion?
+> - What is an example of something that spreads via complex contagion?
+
+> - What was the argument of the "Special People" chapter?
+
+## Discussion Questions
+
+## R Show and Tell
+
+## R together
