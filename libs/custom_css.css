@@ -11,6 +11,13 @@ I prefer this style but you can change these to your preferences */
   flex: 1;
 }
 
+
+.reveal section img{
+border: none;
+background: none;
+box-shadow: none;
+}
+
 .highlight {
 color: LightCoral;
 }

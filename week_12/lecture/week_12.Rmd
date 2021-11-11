@@ -9,7 +9,6 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
-    lib_dir: ../../libs
 ---
 
 ```{r setup, include=FALSE}
@@ -35,11 +34,15 @@ Times were hard.
 > - Self Assessment responses are in
 > - Exam
 >	- Open book / open note
->	- Begin on Monday, due Thursday
+>	- Begin on Tuesday, due Thursday
 >	- Do your own work
 >	- Short essay questions
 >	  - 2-4 paragraphs
 >	- Visualization / ggraph
+>	  - Load two CSV files (nodes and edges)
+>	  - Visualize something about the network (e.g., color the nodes by age)
+> - Review session on Thursday
+>	- Write questions on our Google Doc and do collaborative note-taking
 
 
 ## Final Project
@@ -52,35 +55,21 @@ Times were hard.
 > - Not all visualizations have to be networks
 > - Concepts + Visualizations
 
+## Review Questions
 
-## Networks and Technology
+> - What is the difference between a filter bubble and an echo chamber?
+> - How do echo chambers relate to social influence?
+> - What did Chris Bail's research find about breaking out of echo chambers?
+> - Group discussion:
+>	- How has the internet changed social networks? What are the most important positives and negatives?
 
-> - Social media has made large-scale human networks visible
->	- Degree distributions
->	- Network paths (six degrees of separation)
->	- Communication patterns
->	- Information and belief diffusion
 
-## Social science is being reshaped by online data
+## Review Questions
 
-> - We can look at thousands or millions of people
-> - Starting to answer questions like:
->	- When do people change their minds?
->	- Why do people choose to cooperate?
->	- What predicts participating in a new group?
-> - We can finally see global networks instead of just small portions
+> - What is context collapse?
+> - How does context collapse relate to network principles we have discussed?
 
-## But, there are some important caveats
+## Discussion Questions
 
-> - Technology doesn't only record interactions, it shapes them
->	- Is this true of people, or true of Facebook/Reddit/Twitter?
-> - Human systems respond to observation and evolve
-> - Much is unobserved
->	- These are often "thin slices"
->	- In what other ways are people communicating?
->	- What other technologies or circumstances shape their behavior?
 
-## Those who understand networks have an advantage
-
-> - Advertisers, activists, and politicians who understand network principles like homophily, clustering, and complex contagion will see their messages spread farther and faster.
-
+## R Review

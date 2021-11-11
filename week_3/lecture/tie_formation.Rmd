@@ -21,36 +21,6 @@ library(tidygraph)
 library(ggraph)
 ```
 
-## Today's Dad Joke
-
-My neighbor had the nerve to ring my doorbell at 3 o'clock in the morning.
-
-<span class='fragment'>
-Luckily I was still up playing the drums.
-</span>
-
-
-## Housekeeping
-
-> - Self Assessment Reflection next week
->	- Goals for the class
->	- Feedback for me
-> - R Lab 2
-> - This week was a lot: R + readings
-> - Use Thursdays as R working time
-> - More videos from me
-
-
-
-## The Plan for R
-
-> - A short assignment every few weeks
-> - Goals:
->	- Create and import network data
->	- Use visualizations to explore interesting connections
->	- Calculate basic network statistics
-
-
 # Creation of edges
 
 ## Why do people form relationships / edges?
