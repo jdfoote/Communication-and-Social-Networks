@@ -1,0 +1,105 @@
+---
+title: Networks and Collaboration
+template: "../resources/template.html"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    progress: true
+    transition: convex
+    self_contained: false
+    css: ../../libs/custom_css.css
+    reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: True
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Test
+
+<div class="r-stack">
+  <img class="fragment" src="https://placekitten.com/450/300" width="450" height="300">
+  <img class="fragment" src="https://placekitten.com/300/450" width="300" height="450">
+  <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
+</div>
+
+## We are surrounded by "collective goods"
+
+<ul>
+<li class='fragment' data-fragment-index="1">
+The whole group shares in the output, independent of their contributions
+</li>
+</ul>
+
+<div class='container'>
+
+<div class='col'>
+<ul>
+<li class='fragment' data-fragment-index="2">
+Parks
+</li>
+<li class='fragment' data-fragment-index="3">
+Roads
+</li>
+<li class='fragment' data-fragment-index="4">
+National defense
+</li>
+<li class='fragment' data-fragment-index="5">
+Lighthouses
+</li>
+<li class='fragment' data-fragment-index="6">
+Group projects
+</li>
+</ul>
+</div>
+<div class="col r-stack">
+  <img class="fragment" src="images/park.jpg" width="450" height="200" data-fragment-index="2">
+  <img class="fragment" src="images/road.jpg" width="450" height="300" data-fragment-index="3">
+  <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="4">
+  <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="5">
+  <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="6">
+</div>
+</div>
+
+
+## However, these goods have misaligned incentives
+
+
+> - Individual incentive is to do little or nothing
+>	- Especially when your contribution will make little difference
+> - These goods are typically underproduced, without help
+
+
+## Collaboration is the great human super power. How do we do it?
+
+> - States or organizations that force people to make the "right" decision
+> - Punishment for defection
+> - Selective incentives
+> - Heterogenous benefits
+
+
+## What do networks have to do with collaboration?
+
+> - People are "embedded" in networks
+>	- Defecting has social impacts if they occur in networks
+>	- Rumor is a way of promoting cooperation
+> - Through networks, people can coordinate
+>	- Figure out who knows what (transactive memory)
+>	- Building shared understanding of goals (shared mental model)
+
+## Online Collaboration works surprisingly well
+
+> - Wikipedia and open source software often work better than what companies produce
+> - Why does it work?
+>	- Artifact does a lot of the work of coordinating
+>	- Costs of contribution are lower
+>	- Internet allows for the identification of people for whom contribution is easy
+

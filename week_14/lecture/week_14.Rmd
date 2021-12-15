@@ -10,6 +10,7 @@ output:
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
     lib_dir: ../../libs
+    allow_uptree_lib_dir: True
 ---
 
 ```{r setup, include=FALSE}

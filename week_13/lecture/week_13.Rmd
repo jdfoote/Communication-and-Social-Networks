@@ -10,6 +10,7 @@ output:
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
     lib_dir: ../../libs
+    allow_uptree_lib_dir: True
 ---
 
 ```{r setup, include=FALSE}
@@ -20,6 +21,8 @@ set.seed(0121)
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
+df = read_csv('~/Teaching/communication_and_networks/week_13/lecture/wisdom_of_crowds_activity.csv')
 ```
 
 ## Dad Joke
@@ -33,15 +36,66 @@ Nothing, they fast!
 
 ## Housekeeping
 
-> - Self-assessment reflections
->	- Feedback is in
->	- Talk with me about discrepancies or questions
-> - Exam is due
-
-<iframe src="https://giphy.com/embed/3ohs7Ys9J8XyFVheg0" class='fragment' width="480" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+> - Exam is due on Thursday before class
+> - Under quizzes on Brightspace
+> - Remember, it will give you new random questions if you come back
 
 
 ## Upcoming Assignments
 
-> - Final project rough draft (April 22)
-> - Peer feedback
+> - Final project rough draft (November 30)
+> - Peer feedback (Due Dec 6)
+
+## Review Questions
+
+> - What is "collective behavior"?
+> - What does collective behavior have to do with networks?
+> - What is "the wisdom of crowds"?
+> - What is groupthink? Have you seen examples?
+> - In Dr. Becker's experiments, why did groups get better when communicating?
+
+## Wisdom of Crowds Activity
+
+> - Get out a piece of paper
+> - Guess how many pages are in this book and write down your guess
+> - Tell your guess (and no other information) to the two people on either side of you
+> - Guess again how many pages are in the book and write it on a new line (Guess 2)
+
+## Activity 2
+
+> - Guess 3: Guess the pages in this book
+> - Two random people will tell us their guess
+> - Guess 4: Guess the pages again for this book
+
+
+## Results
+
+## Decentralized network
+
+```{r}
+df %>%
+  filter(Network_Type == 'Decentralized') %>%
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  theme_minimal() + 
+  scale_fill_viridis_d()
+```
+
+## Centralized network
+
+```{r}
+df %>%
+  filter(Network_Type == 'Centralized') %>%
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  theme_minimal() + 
+  scale_fill_viridis_d()
+```
+
+## Review Questions
+
+> - What is the "majority illusion"?
+> - How does the majority illusion relate to the friendship paradox?
+> - Majority illusion from Nicky Case activity?
+
+## Discussion Questions
