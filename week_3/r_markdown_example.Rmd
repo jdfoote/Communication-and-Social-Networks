@@ -1,6 +1,6 @@
 ---
 title: "Markdown and Network Plotting"
-output: html_document
+output: word_document
 ---
 
 ## Introduction
