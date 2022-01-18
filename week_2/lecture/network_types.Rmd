@@ -1,13 +1,15 @@
 ---
-title: COM 411
-template: "../resources/template.html"
+title: Network Data and Network Types
 output: 
   revealjs::revealjs_presentation:
     theme: white
     progress: true
     transition: convex
-    self_contained: true
-    css: ../../resources/custom_css.css
+    self_contained: false
+    reveal_plugins: ['notes']
+    css: ../../libs/custom_css.css
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: True
 ---
 
 ```{r setup, include=FALSE}
@@ -17,9 +19,6 @@ source("resources/preamble.R")
 
 library(igraph)
 ```
-
-# Network Data and Network Types
-
 
 ## What is a social network?
 

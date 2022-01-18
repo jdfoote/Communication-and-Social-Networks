@@ -5,8 +5,11 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: true
-    css: ./resources/custom_css.css
+    self_contained: false
+    reveal_plugins: ['notes']
+    css: ../../libs/custom_css.css
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: True
 ---
 
 ```{r setup, include=FALSE}
@@ -130,6 +133,7 @@ Why did the nearsighted man fall in the well?
 ## Class meetings
 
 > - Masks will be required
+> - Don't come if you might have COVID!
 
 ## Assignments
 
@@ -204,7 +208,6 @@ create_notable('zachary') %>%
 
 >- Read the syllabus
 > - This Thursday will be a (fun!) synchronous activity
-> - Sign up for Discord and bring a laptop
 
 
 ## Questions?
