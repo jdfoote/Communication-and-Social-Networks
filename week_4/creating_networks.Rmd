@@ -1,8 +1,8 @@
 ---
 title: "Creating Networks"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
   word_document: default
 ---
 
@@ -150,21 +150,21 @@ Finally, create a new network plot with the new person.
 
 There are also R packages which have network data that you can load right into R. One of the biggest fairly simple ones is the  `networkdata` package.
 
-Unfortunately, it's a little bit tricky to do that for this package. Try to run `install.packages("remotes")` in the Console, and when that is done run `remotes::install_github("schochastics/networkdata")`, also in the console.
+Unfortunately, it's a little bit tricky to do that for this package. Try to run `install.packages("remotes")` in the Console (at the bottom left), and when that is done run `remotes::install_github("schochastics/networkdata")`, also in the console.
 
 
-If it works, then you should be able to load the package.
+If it works, then you should be able to load the package when you uncomment the code below.
 
 ```{r}
-library(networkdata)
+#library(networkdata)
 ```
 
 Now, you will have access to the networks from the package. Run `data(package='networkdata')` to see all of the options. This code shows an advice network from a high-tech firm:
 
 ```{r}
 # This code turns the ht_advice network object into a tidygraph object, and saves it as G
-G <- as_tbl_graph(ht_advice)
-plot(G)
+#G <- as_tbl_graph(ht_advice)
+#plot(G)
 ```
 
 
