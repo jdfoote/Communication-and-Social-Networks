@@ -54,7 +54,7 @@ plot(mtcars$disp, mtcars$mpg)
 
 ### Exercise
 
-Create your own code block below, and copy and paste the following code into it: hist(iris$Petal.Length)
+Create your own code block below, and copy and paste the following code into it: `hist(iris$Petal.Length)`
 
 If you do it correctly, you should see a histogram plot (a figure with a bunch of vertical gray bars)
 
@@ -70,7 +70,7 @@ If you want to use a package in your code, you will need to load it. This brings
 
 Install the igraph package by copying and pasting the code below into the console (at the bottom left of RStudio) and hitting `Enter`
 
-install.packages("igraph")
+`install.packages("igraph")`
 
 It should show a bunch of crazy messages while it installs, and take a couple of minutes. If it worked, then at the end it should say something like
 ```
@@ -85,7 +85,7 @@ Now that igraph is loaded, let's create our first network graph!!
 
 Create a new code block, and copy and paste the following into it, and then run it.
 
-library(igraph)
+`library(igraph)`
 
-G = erdos.renyi.game(10, .6)
-plot(G)
+`G = erdos.renyi.game(10, .6)`
+`plot(G)`

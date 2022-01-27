@@ -5,8 +5,11 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: true
+    self_contained: False
+    reveal_plugins: ['notes']
     css: ../../libs/custom_css.css
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: True
 ---
 
 
@@ -31,6 +34,9 @@ One astronaut says to another, "I can’t find any milk for my coffee"
 
 > - Turning in R homework
 > - Discussion Questions
+> - Readings
+>   - On Brightspace
+>   - How to read academic articles
 
 
 ## Edge formation review
