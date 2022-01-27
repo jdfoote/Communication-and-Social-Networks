@@ -98,7 +98,12 @@ G
 
 ### Exercise
 
-Do this yourself - add the `betweenness` column to `G`. When you're done, the nodes spreadsheet of `G` should have two new columns - `degree` and `betweenness`
+Do this yourself - add the `betweenness` column to `G`. When you're done, the nodes spreadsheet of `G` should have two new columns - `degree` and `betweenness`.
+
+```{r}
+# Your code here
+```
+
 
 ## Filtering
 
@@ -146,12 +151,21 @@ How many edges?
 
 (Hint: you can use `print` like I do above to print information about the graph before you plot it)
 
+```{r}
+# Your code here
+```
+
 
 
 ### Challenge Exercise
 
 
 Filter the `ht_advice` network to only those nodes with less than the median `tenure`. Plot the graph.
+
+```{r}
+## Your code here
+```
+
 
 
 ## Chaining Filtering and Mutating
@@ -172,4 +186,10 @@ Remember that the order matters - if we ran `mutate` before `filter` then it wou
 ### Exercise
 
 Sometimes, that's what we want. For the last exercise, calculate the degree centrality for `ht_advice`, save it in a column called `degree`, and then filter to just the nodes with `degree` of at least 2.
+
+```{r}
+
+## Your code here
+```
+
 
