@@ -6,12 +6,13 @@ output:
   word_document: default
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 # import the libraries needed
 library(igraph)
 library(ggraph)
 library(tidygraph)
+library(readxl) # If you get an error run install.packages('tidyverse')
 ```
 
 ## The goal
@@ -42,15 +43,13 @@ Save the spreadsheet to your computer as a .xlsx file and then:
 
 1. Click `File > Import Dataset > Excel`
 2. Browse to the file
-3. Under Import options, change the name to `edgelist`
-3. Copy and paste the code in the "Code Preview" window here (delete my code which is given as an example).
-4. *If you are using a Mac or Linux, you may have to add '~/' to the beginning of the file path.
+3. At the top of the screen under `File/URL` will be the path to the file. It should look something like `~/Desktop/excel_file.xlsx`. Copy the path to your clipboard and click `Cancel`.
+3. Uncomment the code below (remove the `#`) and paste the file path where my code says `~/your/path/here`.
 
 ```{r}
-library(readxl)
-#edgelist <- read_excel("~/Teaching/communication_and_networks/week_4/edgaelist.xlsx")
-#View(edgelist)
+#edgelist <- read_excel("~/your/path/here")
 ```
+
 You might get an error here that says something like `there is no package called 'readxl'`. If you get that, then you need to run `install.packages('tidyverse')` in the console (this is the bottom left window). It will take a while to install, but if it works correctly your code above should work.
 
 To test if everything worked right, uncomment and this code to print out all of the edges in R.
@@ -102,10 +101,10 @@ Finally, we'll create a network "object" using these files. Right now it's just 
 
 We do this by running `graph_from_data_frame`. This is a [function](https://www.tutorialspoint.com/r/r_functions.htm) that takes in the arguments `d`, `vertices`, and `directed`. 
 
-`d` is the edgelist
-`vertices` is the node attributes
-`directed` is whether this is a directed or undirected graph.
-`G <-` saves the network to the variable `G` and then `plot(G)` makes a basic plot of it.
+* `d` is the edgelist
+* `vertices` is the node attributes
+* `directed` is whether this is a directed or undirected graph.
+* `G <-` saves the network to the variable `G` and then `plot(G)` makes a basic plot of it.
 
 If you've done everything right, then when you uncomment the code below, it should produce a network plot.
 
