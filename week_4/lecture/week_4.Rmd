@@ -5,8 +5,10 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: true
+    self_contained: false
     css: ../../libs/custom_css.css
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 
@@ -38,12 +40,11 @@ Luckily I was still up playing the drums.
 >	- Report on participation
 >	- Review your HW
 >	- Review your discussion questions
-> - Discussion questions
->	- People aren't doing them. Move to Discord? Brightspace?
->	- Better way to meet goals of reading + thinking about readings?
+
+## Homework review
 
 
-## Discussion Questions
+## Review Questions
 
 > - What is centralization?
 > - When is a centralized network better?
@@ -53,12 +54,9 @@ Luckily I was still up playing the drums.
 >	- A trust network?
 > - Have you thought about the groups that you are in from a network perspective? What insights have you had?
 
-
-
-## Homework review
+## Discussion Questions
 
 
 ## Thursday
 
-> - Small group simulations/activities
-> - R Help
+- R Lab 3 - Mutating and filtering
