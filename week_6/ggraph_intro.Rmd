@@ -114,7 +114,7 @@ create_notable('zachary') %>%
 
 ### Exercise
 
-Change the layout to `random`.
+Change the layout to `randomly`.
 
 ```{r}
 # Your code here

@@ -23,11 +23,11 @@ Power has long been a central concern of social scientists. The famous sociologi
 Some of this power comes in the form of "social capital" - the idea that there is power in our relationships - through mobilizing the resources of those we are connected to.
 
 
-The construct of power has many facets and over the years social network analysts have come up with a number of different algorithms for measuring different aspects of power in networks. These are usually called "centrality measures". The intuition is that those in the center of a visualized network are typically those with the most power.
+The construct of network power has many facets and over the years social network analysts have come up with a number of different algorithms for measuring different aspects of power in networks. These are usually called "centrality measures". The intuition is that those in the center of a visualized network are typically those with the most power.
 
 ## Degree centrality
 
-Degree centrality is simply the number of connections that someone has. For directed networks, indegree can be interpreted as popularity and outdegree as gregriousness.
+Degree centrality is simply the number of connections that someone has. For directed networks, indegree can be interpreted as popularity and outdegree as gregariousness.
 
 Let's start with this network.
 

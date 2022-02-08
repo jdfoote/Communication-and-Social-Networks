@@ -160,7 +160,7 @@ How many edges?
 ### Challenge Exercise
 
 
-Filter the `ht_advice` network to only those nodes with less than the median `tenure`. Plot the graph.
+Filter the `ht_advice` network to only those nodes whose `tenure` is less than the median value for `tenure`. Plot the graph.
 
 ```{r}
 ## Your code here
