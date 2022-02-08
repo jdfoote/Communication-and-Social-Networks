@@ -5,9 +5,11 @@ output:
     theme: white
     progress: true
     transition: convex
-    self_contained: true
+    self_contained: false
+    reveal_plugins: ['notes']
     css: ../../libs/custom_css.css
     lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -31,39 +33,34 @@ Brochure.
 > - Some summary thoughts
 >	- Things are going pretty well
 >	- R is hard but people are persisting
->	- Readings are not great
 > - Cold calling is scary
 
 ## My plans for change
 
 > - Try to make more time for small group discussion
 >	- A few minutes at the beginning of class
->	- Summaries of readings?
-> - Show a few questions at a time so people can prep a bit
-> - Start w/o randomization for discussion questions
-> - Summarization at end of class
 
-## 
-
-The work and the readings are not easy but based off the grading system I truly feel I learn more in this class than other class. I say that because I get to try to attempt things in class, I am not good at without the fear of doing poorly in this class. So, in a sense I feel confident knowing that I give my all and I am wrong it is ok. I can learn what I did wrong and still be a successful student and learn in a healthy state
 
 ## Suggestions for success
 
 > - Keep working on assignments that you missed / got wrong
-> - 
+> - Ask questions on Discord
+> - Come to office hours
 
 
 ## Housekeeping
 
-> - Explanation of why R + fundamentals of R and ggraph videos
 > - Videos + readings on centrality and power
 > - How do we measure who is important and influential?
+> - Thursday
+>   - Ego network activity
+>   - R lab is pretty simple (I think)
+
+## Homework Review
 
 ## Review
 
 > - What is an "ego network"?
-> - What information can we get from an ego network?
-> - What information can't we get from an ego network?
 > - What is the "cognitive activation" of a network?
 
 
@@ -79,6 +76,8 @@ The work and the readings are not easy but based off the grading system I truly 
 
 
 ## Summary
+
+# Thursday class
 
 ## Debugging
 

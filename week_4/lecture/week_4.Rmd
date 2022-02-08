@@ -6,6 +6,7 @@ output:
     progress: true
     transition: convex
     self_contained: false
+    reveal_plugins: ['notes']
     css: ../../libs/custom_css.css
     lib_dir: ../../libs
     allow_uptree_lib_dir: true
@@ -33,6 +34,7 @@ Luckily I was still up playing the drums.
 
 ## Housekeeping
 
+> - Snow Plan
 > - Self Assessment Reflections
 >	- Goals for the class
 >	- Feedback for me
