@@ -30,9 +30,8 @@ UK <- as_tbl_graph(UKfaculty)
 UK %>%
   activate(edges) %>%
   ggraph() +
-  geom_edge_fan(alpha=.4) +
-  geom_node_point(aes(color=as.factor(Group))) +
-  scale_color_viridis_d(name="Department")
+  geom_edge_fan(alpha=.3) +
+  geom_node_point()
   
 ```
 
@@ -43,23 +42,34 @@ Whenever loading a new dataset, it's worth looking at it. Because we loaded this
 ```{r}
 UK
 ```
-So, for nodes we know the department that each person belongs to (the "Group" node attribute) and a weight representing the strength of the relationship. Some of the algorithms we are going to be working with assume undirected networks, so we're going to filter this network to only mutual edges, and treat it as undirected.
+
+So, for nodes we know the department that each person belongs to (the "Group" node attribute) and a weight representing the strength of the relationship. Some of the algorithms we are going to be working with assume undirected networks, so we're going to filter this network to only mutual edges, and treat it as undirected. That's what this first bit of code does.
 
 ```{r}
 UK <- UK %>%
-  activate(edges) %>%
-  filter(edge_is_mutual()) %>%
-  to_undirected() %>%
-  simplify() %>%
+  as.undirected() %>% 
   as_tbl_graph()
+```
 
+Now, it's easier to see what's going on, and there's only one edge between each dyad.
+
+```{r}
 UK %>%
   ggraph() +
   geom_edge_fan(alpha=.4) +
-  geom_node_point(aes(color=as.factor(Group))) +
-  scale_color_viridis_d(name="Department")
+  geom_node_point()
 ```
 
+Finally, we can color the nodes by their group. 
+
+### Exercise
+
+Make a network figure that colors the nodes by the `Group` (Hint: they will look a lot better if you use `as_factor`).
+
+```{r}
+## YOUR code HERE
+
+```
 
 We can use the known group to compare different approaches for identifying groups in networks.
 
@@ -69,13 +79,14 @@ We can use the known group to compare different approaches for identifying group
 
 The simplest version of a group in a social network is all of the people who are connected to each other. This is called a component. Most real-world social or communication networks include almost everyone in a single, "giant component". This seems strange at first, but an example can help to show why it works this way. Let's say you had a network of 50 people with two large components of 25 people each. If any one of the 25 people in one component adds an edge to any one of the 25 people in the other component, then the components merge. In other words, there are so many possible edges that would combine the components that one of them is bound to occur unless there is something separating the groups.
 
-The following visualizations show a random graph as it goes from 3% density to 15% density. It quickly becomes a single, large component.
+The following visualizations show random graph as they go from 3% density to 15% density. It quickly becomes a single, large component.
 
 This attribute of networks means that components are rarely very interesting as a way of grouping nodes.
 
 ```{r}
 # Don't worry about understanding this code - it's basically just plotting 
 # different densities of random graphs
+set.seed(11)
 for(p in c(.02, .05, .08, .10)){
   G = random.graph.game(50, p) %>% as_tbl_graph()
   plot <- G %>%
@@ -100,7 +111,7 @@ Let's find the largest cliques in this network, using the `largest_cliques` func
 UK %>% 
   largest_cliques()
 ```
-This network has a bunch of cliques of size 6 - that means that there are edges between each pair of people for all 9 of the people in the clique.
+This network has a bunch of cliques of size 9 - that means that there are edges between each pair of people for all 9 of the people in the clique.
 
 Let's visualize this by coloring the first of these cliques.
 
@@ -112,9 +123,9 @@ UK %>%
   mutate(idx = 1:nrow(.N())) %>% # Create an index for the nodes
   mutate(in_clique = idx %in% clique_nodes) %>% # If the index is one of the clique nodes
 ggraph(layout = 'stress') +
-  geom_edge_fan(alpha=.3) +
+  geom_edge_fan(alpha=.1) +
   geom_node_point(aes(color=in_clique)) + # Color by whether the node is in the clique
-  scale_color_viridis_d(name='In largest clique')
+  scale_color_discrete(name='In largest clique')
 ```
 
 
@@ -132,9 +143,9 @@ UK %>%
   activate(nodes) %>%
   mutate(coreness = node_coreness()) %>%
 ggraph(layout='stress') +
-  geom_edge_fan(alpha=.3) +
+  geom_edge_fan(alpha=.1) +
   geom_node_point(aes(color=coreness)) +
-  scale_color_viridis_c(name='Coreness')
+  scale_color_continuous(name='Coreness')
 
 ```
 
@@ -154,7 +165,7 @@ UK %>%
   activate(nodes) %>%
   mutate(community = as.factor(group_fast_greedy())) %>%
 ggraph(layout = 'stress') +
-  geom_edge_fan(alpha=.3) +
+  geom_edge_fan(alpha=.1) +
   geom_node_point(aes(color=community)) +
   scale_color_viridis_d(name='Fast Greedy Communities')
 ```
@@ -168,7 +179,7 @@ UK %>% as_tbl_graph() %>%
   activate(nodes) %>%
   mutate(community = as.factor(group_louvain())) %>%
 ggraph(layout = 'stress') +
-  geom_edge_fan(alpha=.3) +
+  geom_edge_fan(alpha=.1) +
   geom_node_point(aes(color=community)) +
   scale_color_viridis_d(name='Louvain Communities')
 ```
@@ -176,9 +187,9 @@ ggraph(layout = 'stress') +
 In most networks, community detection approaches give generally similar results.
 
 
-# Assignment
+### Exercises
 
-1. Change the layout of this graph to a few of the others found at the bottom of [this page](https://igraph.org/r/doc/layout_with_kk.html). See if you can find one that you think does a better job of showing group structure.
+1. The layout also helps to show groups. Change the layout of this graph to a few of the others found at the bottom of [this page](https://igraph.org/r/doc/layout_with_kk.html). See if you can find one that you think does a better job of showing group structure.
 
 ```{r}
 
