@@ -11,10 +11,12 @@ library(tidyverse)
 library(igraph)
 library(tidygraph)
 library(ggraph)
-ggraph::set_graph_style(plot_margin = margin(1,1,1,1), family = 'sans')
+ggraph::set_graph_style()#plot_margin = margin(1,1,1,1), family = 'sans')
 ```
 
 # Visualizing centrality using ggraph
+
+You have been building up skills and understanding about how `ggraph` works and now we're ready to start building complex visualizations. Today we'll work on different ways of showing power.
 
 ## Power and networks
 
@@ -29,7 +31,15 @@ The construct of network power has many facets and over the years social network
 
 Degree centrality is simply the number of connections that someone has. For directed networks, indegree can be interpreted as popularity and outdegree as gregariousness.
 
-Let's start with this network.
+Let's start with this network. There are a few new things going on here, so I'll walk through each line:
+
+* `set.seed(23)`: We're going to be creating a random network. By setting a "seed", we guarantee we all get the same network.
+* `G = as_tbl_graph(random.graph.game(8, .25, directed = T))`: Here's our random graph - 8 nodes, a .25 probability of each edge, and it's directed
+* `G %>% ggraph()`: Hopefully you know what these lines do - take our graph (`G`) and make it into a `ggraph`
+* `geom_edge_fan(aes(alpha = stat(index)))`: This is where things get a bit tricky. This creates edges using the `geom_edge_fan` style and sets the transparency (`alpha`) of an edge so that it's darkest closest to the `to` node. It's for helping us see the direction of directed edges.
+* `geom_node_point(color = '#ceb888', size = 5)`: This should look familiar. It just sets a color and size for nodes
+* `geom_node_text(aes(label = 1:8))`: This adds the labels 1 through 8 to the nodes. It just makes it easier for us to talk about individual nodes.
+* `scale_edge_alpha('Edge direction', guide = 'edge_direction')`: Finally, this lets you adjust the legend. We'll see more examples today and later, but the `scale_` funcions let you change the title of a legend, change the colors used, etc.
 
 ```{r}
 set.seed(23)
@@ -37,26 +47,24 @@ G = as_tbl_graph(random.graph.game(8, .25, directed = T))
 
 G %>%
   ggraph() + 
-  geom_node_point(color = '#ceb888', size = 4) + 
-  geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(arrow = arrow(length = unit(3, 'mm')),
-                start_cap = circle(2, 'mm'), # These tell the arrows where to start and end
-                end_cap = circle(2, 'mm')
-                )
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
+  geom_node_point(color = '#ceb888', size = 5) + 
+  geom_node_text(aes(label = 1:8)) + # Adds labels to nodes
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') # Adds the "Edge direction" legend
+
 ```
-Now, let's show the degree centrality by changing the size of nodes. Here is the total degree centrality
+Now, let's show the degree centrality by changing the size of nodes. Here is the total degree centrality. Note that we are using `mutate` to create the `degree` column, and then using it to adjust the size of the nodes.
 
 ```{r}
 G %>%
   activate(nodes) %>%
   mutate(degree = centrality_degree(mode = 'all')) %>%
   ggraph() +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
   geom_node_point(aes(size = degree), color = '#ceb888') +
-  geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(aes(end_cap = circle(node2.degree + 3, "pt"), # Why did the start_cap and end_cap move inside of aes()?
-                    start_cap = circle(node1.degree + 2, "pt")),
-                arrow = arrow(length = unit(3, 'mm'))) +
-  scale_size_continuous(name='Total Degree') # Can you figure out what this is doing?
+  geom_node_text(aes(label = 1:8, size=degree *1.2)) +
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') + # Adds the "Edge direction" legend
+  scale_size(name='Total Degree') # Can you figure out what this is doing?
 ```
 
 Note how this changes when we show indegree/popularity
@@ -66,11 +74,10 @@ G %>%
   activate(nodes) %>%
   mutate(degree = centrality_degree(mode = 'in')) %>%
   ggraph() +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
   geom_node_point(aes(size = degree), color = '#ceb888') +
-  geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(aes(end_cap = circle(node2.degree + 2,"mm"),
-                    start_cap = circle(node1.degree + 2, "mm")),
-                arrow = arrow(length = unit(3, 'mm'))) +
+  geom_node_text(aes(label = 1:8, size=degree * 1.2)) +
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') + # Adds the "Edge direction" legend
   scale_size_continuous(name='Indegree')
 ```
 
@@ -85,6 +92,10 @@ Now it's your turn. How would you edit the code above to show outdegree (or greg
 
 ```
 
+YOUR ANSWER HERE
+
+
+
 
 ## Closeness Centrality
 
@@ -96,11 +107,10 @@ G %>%
   activate(nodes) %>%
   mutate(centrality = centrality_closeness()) %>%
   ggraph() +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
   geom_node_point(aes(size = centrality), color = '#ceb888') +
-  geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(aes(end_cap = circle(node2.centrality + 2,"mm"),
-                    start_cap = circle(node1.centrality + 2, "mm")),
-                arrow = arrow(length = unit(3, 'mm'))) +
+  geom_node_text(aes(label = 1:8, size=centrality * 1.2)) +
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') + # Adds the "Edge direction" legend
   scale_size_continuous(name = "Closeness Centrality")
 
 ```
@@ -108,6 +118,11 @@ G %>%
 ### Exercise
 
 What do you notice about what's different here?
+
+
+YOUR ANSWER HERE
+
+
 
 ## Betweenness Centrality
 
@@ -117,19 +132,21 @@ This measure counts the number of shortest paths that go through each node. This
 
 Look again at the network and guess which nodes will have the highest betweenness centrality.
 
-After you've done that, turn this into a code block (by adding "{r}" after the backticks) and then find the bug in the code below so that it colors the nodes based on betweenness centrality
+
+YOUR ANSWER HERE
+
+After you've done that, turn this into a code block (by adding "{r}" after the backticks) and then find the bug in the code below so that it colors the nodes based on betweenness centrality (So far we've been using the size of the node to represent centrality, but color is the other common way of showing centrality).
 
 ```
 G %>%
   activate(nodes) %>%
   mutate(centrality = centrality_betweenness()) %>%
   ggraph() +
-  geom_node_point(color = centrality, size = 10) +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
+  geom_node_point(color = centrality, size = 4) +
   geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(end_cap = circle(4,"mm"),
-                start_cap = circle(4, "mm"),
-                arrow = arrow(length = unit(3, 'mm'))) +
-  scale_color_viridis_c(name = "Betweenness Centrality")
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') + # Adds the "Edge direction" legend
+  scale_color_continuous(name = "Betweenness Centrality")
 ```
 
 ## Eigenvector centrality
@@ -145,12 +162,16 @@ G %>%
   activate(nodes) %>%
   mutate(centrality = centrality_eigen()) %>%
   ggraph() +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
   geom_node_point(aes(size = centrality), color = '#ceb888') +
   geom_node_text(aes(label = 1:8)) +
-  geom_edge_fan(aes(end_cap = circle(node2.centrality + 2,"mm"),
-                    start_cap = circle(node1.centrality + 2, "mm")),
-                arrow = arrow(length = unit(3, 'mm'))) +
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') + # Adds the "Edge direction" legend
   scale_size_continuous(name = "Eigenvector Centrality")
 ```
 
+
+### Exercise
+
 Why does Node 5 have such low centrality? Why does 8 have such high centrality?
+
+YOUR ANSWER HERE
