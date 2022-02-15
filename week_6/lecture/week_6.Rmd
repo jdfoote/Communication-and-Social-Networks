@@ -8,6 +8,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -26,14 +28,10 @@ I replied back: “Sure, my door is always open.”
 
 ## Housekeeping
 
-> - Discussion questions
->	- Should be based on the readings
->	- What *concepts* from the readings 1) am I confused about? or 2) would it be interesting to discuss with the class?
->	- Add a bit more context - not just "I don't get what distance means"
 > - Put homework questions in #homework-help on Discord
 >	- Copy and paste code
->	- Why hasn't this been happening?
-> - No R this week so keep working on the last few
+> - Aesthetics lab this week
+> - Self Assessment Reflections
 
 
 ## Concept Review
