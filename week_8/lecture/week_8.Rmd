@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -37,6 +39,8 @@ A stick.
 >	- Diagram search network
 >	- Instructions on wiki
 
+## Also upcoming
+
 > - Visualization Challenge
 >	- Start from existing dataset (Dutch school student behavior)
 >	- Come up with a question
@@ -54,6 +58,9 @@ A stick.
 > - How can we have such high triadic closure but still have short path lengths? What was the key insight from Watts and Strogatz?
 
 ## R Questions
+
+
+## Discussion Questions
 
 
 ## R Co-working time

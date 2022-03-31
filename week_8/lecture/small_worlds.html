@@ -7,15 +7,24 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/reveal.css"/>
+  <link rel="stylesheet" href="../../libs/reveal.js-4.1.2/dist/reset.css">
+  <link rel="stylesheet" href="../../libs/reveal.js-4.1.2/dist/reveal.css">
 
-
-
-<link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
-
-
-  <!-- some tweaks to reveal css -->
   <style type="text/css">
+    /* CSS from pandoc style.html() */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+                  </style>
+
+  <link rel="stylesheet" href="../../libs/reveal.js-4.1.2/dist/theme/white.css" id="theme">
+
+
+  <style type="text/css">
+  /* some tweaks to reveal css */
     .reveal h1 { font-size: 2.0em; }
     .reveal h2 { font-size: 1.5em;  }
     .reveal h3 { font-size: 1.25em;	}
@@ -25,9 +34,6 @@
     .reveal .slides>section>section {
       padding: 0px 0px;
     }
-
-
-
     .reveal table {
       border-width: 1px;
       border-spacing: 2px;
@@ -53,406 +59,25 @@
       border-style: dotted;
       border-color: gray;
     }
-
-
   </style>
 
-    <style type="text/css">code{white-space: pre;}</style>
-
     <link rel="stylesheet" href="../../libs/custom_css.css"/>
-
-<!-- Printing and PDF exports -->
-<script id="paper-css" type="application/dynamic-css">
-
-/* Default Print Stylesheet Template
-   by Rob Glazebrook of CSSnewbie.com
-   Last Updated: June 4, 2008
-
-   Feel free (nay, compelled) to edit, append, and
-   manipulate this file as you see fit. */
-
-
-@media print {
-
-	/* SECTION 1: Set default width, margin, float, and
-	   background. This prevents elements from extending
-	   beyond the edge of the printed page, and prevents
-	   unnecessary background images from printing */
-	html {
-		background: #fff;
-		width: auto;
-		height: auto;
-		overflow: visible;
-	}
-	body {
-		background: #fff;
-		font-size: 20pt;
-		width: auto;
-		height: auto;
-		border: 0;
-		margin: 0 5%;
-		padding: 0;
-		overflow: visible;
-		float: none !important;
-	}
-
-	/* SECTION 2: Remove any elements not needed in print.
-	   This would include navigation, ads, sidebars, etc. */
-	.nestedarrow,
-	.controls,
-	.fork-reveal,
-	.share-reveal,
-	.state-background,
-	.reveal .progress,
-	.reveal .backgrounds {
-		display: none !important;
-	}
-
-	/* SECTION 3: Set body font face, size, and color.
-	   Consider using a serif font for readability. */
-	body, p, td, li, div {
-		font-size: 20pt!important;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		color: #000;
-	}
-
-	/* SECTION 4: Set heading font face, sizes, and color.
-	   Differentiate your headings from your body text.
-	   Perhaps use a large sans-serif for distinction. */
-	h1,h2,h3,h4,h5,h6 {
-		color: #000!important;
-		height: auto;
-		line-height: normal;
-		font-family: Georgia, "Times New Roman", Times, serif !important;
-		text-shadow: 0 0 0 #000 !important;
-		text-align: left;
-		letter-spacing: normal;
-	}
-	/* Need to reduce the size of the fonts for printing */
-	h1 { font-size: 28pt !important;  }
-	h2 { font-size: 24pt !important; }
-	h3 { font-size: 22pt !important; }
-	h4 { font-size: 22pt !important; font-variant: small-caps; }
-	h5 { font-size: 21pt !important; }
-	h6 { font-size: 20pt !important; font-style: italic; }
-
-	/* SECTION 5: Make hyperlinks more usable.
-	   Ensure links are underlined, and consider appending
-	   the URL to the end of the link for usability. */
-	a:link,
-	a:visited {
-		color: #000 !important;
-		font-weight: bold;
-		text-decoration: underline;
-	}
-	/*
-	.reveal a:link:after,
-	.reveal a:visited:after {
-		content: " (" attr(href) ") ";
-		color: #222 !important;
-		font-size: 90%;
-	}
-	*/
-
-
-	/* SECTION 6: more reveal.js specific additions by @skypanther */
-	ul, ol, div, p {
-		visibility: visible;
-		position: static;
-		width: auto;
-		height: auto;
-		display: block;
-		overflow: visible;
-		margin: 0;
-		text-align: left !important;
-	}
-	.reveal pre,
-	.reveal table {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.reveal pre code {
-		padding: 20px;
-		border: 1px solid #ddd;
-	}
-	.reveal blockquote {
-		margin: 20px 0;
-	}
-	.reveal .slides {
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 0 !important;
-		zoom: 1 !important;
-
-		overflow: visible !important;
-		display: block !important;
-
-		text-align: left !important;
-		-webkit-perspective: none;
-		   -moz-perspective: none;
-		    -ms-perspective: none;
-		        perspective: none;
-
-		-webkit-perspective-origin: 50% 50%;
-		   -moz-perspective-origin: 50% 50%;
-		    -ms-perspective-origin: 50% 50%;
-		        perspective-origin: 50% 50%;
-	}
-	.reveal .slides section {
-		visibility: visible !important;
-		position: static !important;
-		width: auto !important;
-		height: auto !important;
-		display: block !important;
-		overflow: visible !important;
-
-		left: 0 !important;
-		top: 0 !important;
-		margin-left: 0 !important;
-		margin-top: 0 !important;
-		padding: 60px 20px !important;
-		z-index: auto !important;
-
-		opacity: 1 !important;
-
-		page-break-after: always !important;
-
-		-webkit-transform-style: flat !important;
-		   -moz-transform-style: flat !important;
-		    -ms-transform-style: flat !important;
-		        transform-style: flat !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-
-		-webkit-transition: none !important;
-		   -moz-transition: none !important;
-		    -ms-transition: none !important;
-		        transition: none !important;
-	}
-	.reveal .slides section.stack {
-		padding: 0 !important;
-	}
-	.reveal section:last-of-type {
-		page-break-after: avoid !important;
-	}
-	.reveal section .fragment {
-		opacity: 1 !important;
-		visibility: visible !important;
-
-		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-	}
-	.reveal section img {
-		display: block;
-		margin: 15px 0px;
-		background: rgba(255,255,255,1);
-		border: 1px solid #666;
-		box-shadow: none;
-	}
-
-	.reveal section small {
-		font-size: 0.8em;
-	}
-
-}  
-</script>
-
-
-<script id="pdf-css" type="application/dynamic-css">
-    
-/**
- * This stylesheet is used to print reveal.js
- * presentations to PDF.
- *
- * https://github.com/hakimel/reveal.js#pdf-export
- */
-
-* {
-	-webkit-print-color-adjust: exact;
-}
-
-body {
-	margin: 0 auto !important;
-	border: 0;
-	padding: 0;
-	float: none !important;
-	overflow: visible;
-}
-
-html {
-	width: 100%;
-	height: 100%;
-	overflow: visible;
-}
-
-/* Remove any elements not needed in print. */
-.nestedarrow,
-.reveal .controls,
-.reveal .progress,
-.reveal .playback,
-.reveal.overview,
-.fork-reveal,
-.share-reveal,
-.state-background {
-	display: none !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	text-shadow: 0 0 0 #000 !important;
-}
-
-.reveal pre code {
-	overflow: hidden !important;
-	font-family: Courier, 'Courier New', monospace !important;
-}
-
-ul, ol, div, p {
-	visibility: visible;
-	position: static;
-	width: auto;
-	height: auto;
-	display: block;
-	overflow: visible;
-	margin: auto;
-}
-.reveal {
-	width: auto !important;
-	height: auto !important;
-	overflow: hidden !important;
-}
-.reveal .slides {
-	position: static;
-	width: 100%;
-	height: auto;
-
-	left: auto;
-	top: auto;
-	margin: 0 !important;
-	padding: 0 !important;
-
-	overflow: visible;
-	display: block;
-
-	-webkit-perspective: none;
-	   -moz-perspective: none;
-	    -ms-perspective: none;
-	        perspective: none;
-
-	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
-	   -moz-perspective-origin: 50% 50%;
-	    -ms-perspective-origin: 50% 50%;
-	        perspective-origin: 50% 50%;
-}
-
-.reveal .slides section {
-	page-break-after: always !important;
-
-	visibility: visible !important;
-	position: relative !important;
-	display: block !important;
-	position: relative !important;
-
-	margin: 0 !important;
-	padding: 0 !important;
-	box-sizing: border-box !important;
-	min-height: 1px;
-
-	opacity: 1 !important;
-
-	-webkit-transform-style: flat !important;
-	   -moz-transform-style: flat !important;
-	    -ms-transform-style: flat !important;
-	        transform-style: flat !important;
-
-	-webkit-transform: none !important;
-	   -moz-transform: none !important;
-	    -ms-transform: none !important;
-	        transform: none !important;
-}
-
-.reveal section.stack {
-	margin: 0 !important;
-	padding: 0 !important;
-	page-break-after: avoid !important;
-	height: auto !important;
-	min-height: auto !important;
-}
-
-.reveal img {
-	box-shadow: none;
-}
-
-.reveal .roll {
-	overflow: visible;
-	line-height: 1em;
-}
-
-/* Slide backgrounds are placed inside of their slide when exporting to PDF */
-.reveal section .slide-background {
-	display: block !important;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-/* All elements should be above the slide-background */
-.reveal section>* {
-	position: relative;
-	z-index: 1;
-}
-
-/* Display slide speaker notes when 'showNotes' is enabled */
-.reveal .speaker-notes-pdf {
-	display: block;
-	width: 100%;
-	max-height: none;
-	left: auto;
-	top: auto;
-	z-index: 100;
-}
-
-/* Display slide numbers when 'slideNumber' is enabled */
-.reveal .slide-number-pdf {
-	display: block;
-	position: absolute;
-	font-size: 14px;
-}
-
-</script>
-
-
-<script>
-var style = document.createElement( 'style' );
-style.type = 'text/css';
-var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
-var style_script = document.getElementById(style_script_id).text;
-style.innerHTML = style_script;
-document.getElementsByTagName('head')[0].appendChild(style);
-</script>
-
+    <script src="../../libs/header-attrs-2.11.3/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-<section>
-    <h1 class="title">Small worlds</h1>
+<section id="title-slide">
+  <h1 class="title">Small worlds</h1>
 </section>
 
-<section><section id="what-do-human-networks-look-like" class="title-slide slide level1"><h1>What do human networks look like?</h1></section><section id="hard-to-measure-for-a-long-time" class="slide level2">
+<section>
+<section id="what-do-human-networks-look-like" class="title-slide slide level1">
+<h1>What do human networks look like?</h1>
+
+</section>
+<section id="hard-to-measure-for-a-long-time" class="slide level2">
 <h2>Hard to measure for a long time</h2>
 <ul>
 <li class="fragment">Erdos and Reyni came up with random graphs</li>
@@ -460,43 +85,50 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li class="fragment">This obviously isn’t true</li>
 <li class="fragment">Most of us are much more likely to be connected to those near us (along multiple dimensions)</li>
 </ul>
-</section><section id="what-do-groupy-networks-look-like" class="slide level2">
+</section>
+<section id="what-do-groupy-networks-look-like" class="slide level2">
 <h2>What do “groupy” networks look like?</h2>
 <ul>
 <li class="fragment">High clustering (triadic closure)</li>
 <li class="fragment">Long path lengths</li>
 <li class="fragment">High “geodesic distance” (longest path between any two nodes)</li>
 </ul>
-</section><section id="milgram-experiment-and-6-degrees" class="slide level2">
+</section>
+<section id="milgram-experiment-and-6-degrees" class="slide level2">
 <h2>Milgram Experiment and 6 degrees</h2>
 <ul>
 <li class="fragment">Try to get a letter to Mr. X</li>
 <li class="fragment">Found that (of those that made it) it took ~6 steps</li>
 <li class="fragment">Similar results found in 2003 using email (Dodds, Muhamad, Watts)</li>
 </ul>
-</section><section id="the-puzzle" class="slide level2">
+</section>
+<section id="the-puzzle" class="slide level2">
 <h2>The puzzle</h2>
 <ul>
 <li class="fragment">We know that we are in “groupy” networks yet all ~8 billion of us seem to be connected within a relatively short number of steps. How?</li>
 </ul>
-</section><section id="watts-and-strogatz-big-insight" class="slide level2">
+</section>
+<section id="watts-and-strogatz-big-insight" class="slide level2">
 <h2>Watts and Strogatz big insight</h2>
 <p>“Groupy” graph:</p>
 <p><img src="small_worlds_files/figure-revealjs/unnamed-chunk-1-1.png" width="432" /></p>
 <p>Average distance: 5.25; Max distance: 10</p>
-</section><section id="just-a-few-random-rewirings-make-a-clustered-network-with-low-distances" class="slide level2">
+</section>
+<section id="just-a-few-random-rewirings-make-a-clustered-network-with-low-distances" class="slide level2">
 <h2>Just a few random “rewirings” make a clustered network with low distances</h2>
 <p>10% of edges rewired:</p>
 <p><img src="small_worlds_files/figure-revealjs/unnamed-chunk-2-1.png" width="432" /></p>
 <p>Average distance: 3.0425; Max distance: 6</p>
-</section><section id="where-do-these-rewirings-appear" class="slide level2">
+</section>
+<section id="where-do-these-rewirings-appear" class="slide level2">
 <h2>Where do these “rewirings” appear?</h2>
 <ul>
 <li class="fragment">Hubs</li>
 <li class="fragment">People who move far from home</li>
 <li class="fragment">People whose interests diverge from those around them</li>
 </ul>
-</section><section id="lots-of-other-networks-have-these-same-characteristics" class="slide level2">
+</section>
+<section id="lots-of-other-networks-have-these-same-characteristics" class="slide level2">
 <h2>Lots of other networks have these same characteristics</h2>
 <ul>
 <li class="fragment">Oracle of Bacon</li>
@@ -506,30 +138,34 @@ document.getElementsByTagName('head')[0].appendChild(style);
     </div>
   </div>
 
-  <script src="../../libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="../../libs/reveal.js-3.3.0.1/js/reveal.js"></script>
-
+  <script src="../../libs/reveal.js-4.1.2/dist/reveal.js"></script>
+  
+  <!-- reveal.js plugins -->
+  <script src="../../libs/reveal.js-4.1.2/plugin/notes/notes.js"></script>
+  
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Push each slide change to the browser history
+        // Implies `hash: true`
         history: true,
         // Vertical centering of slides
         center: false,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
         // Transition style for full page slide backgrounds
-        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
 
 
 
         // Optional reveal.js plugins
-        dependencies: [
-          { src: '../../libs/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+        plugins: [
+          RevealNotes,
         ]
       });
+
     </script>
   <!-- dynamically load mathjax for compatibility with self-contained -->
   <script>
