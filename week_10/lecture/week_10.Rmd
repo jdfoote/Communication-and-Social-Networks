@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -31,17 +33,17 @@ Me: "Listening. I would say listening is my biggest weakness."
 
 ## Housekeeping
 
-> - Self-assessment reflections
->	- Thanks!
->	- Still struggling with R
+> - Sorry about due date for Dutch School assignment!!
+> - Self-assessment reflections due today
 >	- Feedback by next week
+> - Troubled Lands game on Thursday
 
 ## Upcoming Assignments
 
-> - Groups in networks assignment
 > - Exam
 >	- Visualization + Essays
->	- Submit two questions for essay section
+>	- Submit two questions for short answer section
+> - Groups in networks assignment
 
 ## Example questions
 > - How does one gain social capital from other forms of capital? Give three examples with explanations.
@@ -52,9 +54,8 @@ Me: "Listening. I would say listening is my biggest weakness."
 ## Plan for today
 
 > - Diffusion and contagion review
+> - Visualization discussion + show and tell
 > - Discussion questions
-> - Visualization feedback + show and tell
-> - R walkthrough together
 
 ## Review Questions
 
@@ -132,11 +133,9 @@ create_notable('zachary') %>%
 
 > - What is an example of simple contagion?
 > - What is an example of something that spreads via complex contagion?
-
 > - What was the argument of the "Special People" chapter?
-
-## Discussion Questions
 
 ## R Show and Tell
 
-## R together
+## Discussion Questions
+
