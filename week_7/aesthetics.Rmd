@@ -102,7 +102,7 @@ There are a number of node aesthetics that we can map variables to. The most com
 
 ### Exercise
 
-Go back to your code from last week and reuse it to calculate the `degree` centrality for our network, and change the `size` based on the `degree`.
+Go back to your code from when we learned about `mutate` and figure out how to calculate `degree` centrality for our network; save the centrality in a column called `degree` and change the `size` of nodes based on the `degree`.
 
 ```{r}
 # Your code here
@@ -111,13 +111,25 @@ Go back to your code from last week and reuse it to calculate the `degree` centr
 
 ## Edge aesthetics
 
-We can also map the edge aesthetics to variables from our edgelist spreadsheet. The most common approaches are to map the type of the edge to color and the weight of the edge to the width of the edge.
+We can also map the edge aesthetics to variables from our edgelist spreadsheet. The most common approaches are to map the type of the edge to color and the weight of the edge to the `width`, `color`, or `alpha` of the edge.
 
 Looking at our data, the edges don't have weights. For your exercise, we'll put together a few skills.
 
 ## Exercise
 
-Load the `bkfrab` dataset. This records how often pairs of subjects were seen talking to each other in a fraternity. Map the `width` of the edge to the `weight` in the `edge` dataframe.
+Load the `bkfrab` dataset (also from `networkdata`, so load it in the same way as the `ff_elite` data above). This records how often pairs of subjects were seen talking to each other in a fraternity. Map the `alpha` of the edge to the `weight` in the `edge` dataframe.
+
+
+```{r}
+# Your code here
+
+
+```
+
+### Challenge Exercise
+
+
+When we look at the `bkfrab` data, there are a lot of nodes with edge weight 10. Filter to just the edges whose weight is greater than 10, and map the `color` of the edges to their weight.
 
 Hints: Remember to use `as_tbl_graph` to change the network type, and to `activate` the edge dataframe.
 
@@ -125,5 +137,7 @@ Hints: Remember to use `as_tbl_graph` to change the network type, and to `activa
 # Your code here
 
 ```
+
+
 
 You now have all of the key skills to load in, `mutate` and `filter` networks, and to do some pretty cool visualizations with them. From here on out, we'll mostly be reusing these skills in new ways.

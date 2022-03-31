@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -30,8 +32,7 @@ It would definitely spice up my autobiography.
 
 ## Housekeeping
 
-> - Good work on the discussion questions!
-> - Social Search assignment
+> - Social Search assignment (March 8)
 >	- Try to find someone with driver's license from HI
 >	- No group texts
 >	- Diagram search network
@@ -51,6 +52,13 @@ It would definitely spice up my autobiography.
 > - What are strong ties better for?
 > - How does a network of strong ties look different from a network with weak ties?
 
+## Reading Questions
+
+> - We can exchange forms of capital for goods, services, or for other kinds of capital.
+> - What's an example of exchanging cultural capital for social capital and vice versa.
+> - What's an example of exchanging social capital for economic capital and vice versa.
+> - What's an example of exchanging economic capital for cultural capital and vice versa.
+
 ## Criticism
 
 > - What aspects of the concept of capital and social capital ring true to you? What feels like is missing from this theory?
@@ -62,6 +70,3 @@ It would definitely spice up my autobiography.
 
 ## R Review
 
-> - Watch the videos!
-> - Supplementary exercises coming
-> - Help me make things better for future students! :)
