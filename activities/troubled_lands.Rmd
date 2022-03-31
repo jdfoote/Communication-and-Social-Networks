@@ -9,6 +9,8 @@ output:
     transition: convex
     self_contained: false
     css: ../libs/custom_css.css
+    lib: ../libs
+    allow_uptree_lib_dir: true
 ---
 
 ## Troubled Lands Explainer
@@ -21,8 +23,10 @@ output:
 >	- Talking is fine
 >	- No talking/interacting with other groups
 >	- Can see other people's cards
->	- Must do one thing each turn
->	- Eroded -> Fallow -> Planted
+>	- Each person does one thing each turn (before drawing the weather card)
+>	- Eroded -> Fallow -> Forest/Fields/Pasture
+>   - Weather are 1-10 (plus extra 6,8), sorted randomly
+>   - 6/9 are tough to distinguish - make sure raindrops are falling down
 
 ## Round 1 - Collaborative
 
@@ -44,14 +48,14 @@ output:
 
 Can't plant on eroded, have to turn it to fallows first
 
-## Round 2 - Competitive
+## Round 2 - Within-group competition
 
 > - 8 turns
 > - Person in group with highest score wins
 > - When done, bring weather cards to me for reshuffling
 > - Write your score and role on the board
 
-## Round 3 - Independent
+## Round 3 - Within-role competition
 
 > - Person of each type with highest score wins
 
