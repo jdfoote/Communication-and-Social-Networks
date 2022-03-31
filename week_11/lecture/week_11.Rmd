@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -45,12 +47,13 @@ My thoughts are with his family.
 ## Housekeeping
 
 > - Still working on Self Assessment Reflections
-> - Video for next week coming later today
-> - Submit Exam Questions + social search assignment ASAP
+> - TikTok Extra Credit Competition
+>   - What should this look like?
+> - Submit Exam Questions ASAP
 > - Time for exam? Tuesday after class to Thursday before class?
->	- Due Nov. 17
+>	- Due Apr 14
 >	- More details on Thursday
-> - R assignment review on Thursday
+> - R assignment co-working on Thursday
 
 ## Plan for today
 
@@ -82,9 +85,6 @@ My thoughts are with his family.
 > - Did you work to make things equal? Why or why not?
 > - What kinds of inequality appeared in the game?
 
-## Debrief
-
-> - Did anyone sanction someone else? Why?
 
 ## Community Detection Review
 
