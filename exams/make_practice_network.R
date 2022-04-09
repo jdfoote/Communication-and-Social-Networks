@@ -5,7 +5,7 @@ library(tidyverse)
 
 wd <- '~/Teaching/communication_and_networks/exams/r_practice_'
 # Makes an exponential random graph based on the `ffe_elite` dataset
-statnet_G <- networkdata::ffe_elite %>% as_tbl_graph() %>% as.undirected %>% asNetwork()
+statnet_G <- networkdata::ffe_friends %>% as_tbl_graph() %>% as.undirected %>% asNetwork()
 # Create a simple ERGM model
 ffe.fit <- ergm(statnet_G ~ edges + nodefactor('cabinet') + nodematch('cabinet'))
 # Create a simulated network
