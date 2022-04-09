@@ -1,7 +1,6 @@
 ---
 title: "Calculating Network Statistics"
 author: "Your Name Here"
-date: "2/17/2022"
 output: word_document
 ---
 
@@ -58,6 +57,32 @@ Figure out how to calculate the betweenness centralization
 ## Your code here
 ```
 
+## Identifying the most central nodes
+
+We can also show the most central nodes in a table. We already know how to calculate centrality measures. After we calculate them, we have to take a step that's a bit more complicated---basically, we take our node spreadsheet and temporarily convert it back to a "normal" R spreadsheet (a.k.a., `tibble`), and then manipulate the spreadsheet. That's what the `as_tibble()` line below does.
+
+After it's in a spreadsheet, the `select` command is the list of columns we want to keep for our table, the `arrange` command sorts the table (the `-` before `bw_centrality` sorts it in reverse order, from highest to lowest). Finally, the `head` command shows the top N nodes.
+
+```{r}
+G %>%
+  activate(nodes) %>%
+  mutate(bw_centrality = centrality_betweenness()) %>%
+  as_tibble() %>%
+  select(vertex.names, bw_centrality) %>%
+  arrange(-bw_centrality) %>%
+  head(10)
+
+```
+
+### Exercise
+
+Calculate the closeness centrality and save it as `close_centrality`; add it to the table so that it shows both types of centrality, and sort by closeness centrality.
+
+```{r}
+## Your code here
+```
+
+
 ## Visualizing node or edge-level statistics
 
 The other thing I want to show you how to do is to visualize attributes of the nodes or the edges. There are entire courses on visualizations, but I want to show you how to do a few.
@@ -67,9 +92,7 @@ The other thing I want to show you how to do is to visualize attributes of the n
 
 We may want to visualize the distribution of attributes or network statistics. 
 
-The code to do this is a bit more complicated - basically, we take our node spreadsheet and temporarily convert it back to a "normal" R spreadsheet (a.k.a., `tibble`), and then visualize it. That's what the `as_tibble()` line below does.
-
-Then, instead of using `ggraph`, we use `ggplot`, which is one of R's general plotting packages.
+We'll use tibbles again, and then instead of using `ggraph`, we use `ggplot`, which is one of R's general plotting packages.
 
 `geom_histogram` tells it to create a histogram, in this case with the `x` axis mapped to the `birthdate` variable.
 
