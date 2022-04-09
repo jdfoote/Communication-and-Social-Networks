@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -34,20 +36,15 @@ Times were hard.
 > - Self Assessment responses are in
 > - Exam
 >	- Open book / open note
->	- Begin on Tuesday, due Thursday
+>	- Begin next Tuesday, due Thursday
 >	- Do your own work
 >	- Short essay questions
 >	  - 2-4 paragraphs
->	- Visualization / ggraph
->	  - Load two CSV files (nodes and edges)
->	  - Visualize something about the network (e.g., color the nodes by age)
-> - Review session on Thursday
->	- Write questions on our Google Doc and do collaborative note-taking
-
 
 ## Final Project
 
 > - Timing for final project
+>   - Submit org that you want 
 >	- Don't wait - get started now!
 >	- Reach out if you get stuck
 > - Watch the video and use the example data
@@ -55,11 +52,18 @@ Times were hard.
 > - Not all visualizations have to be networks
 > - Concepts + Visualizations
 
+## Plan for Today
+
+> - Networks and tech review
+> - R Questions
+> - Exam Review
+
+
 ## Review Questions
 
 > - What is the difference between a filter bubble and an echo chamber?
 > - How do echo chambers relate to social influence?
-> - What did Chris Bail's research find about breaking out of echo chambers?
+> - What did Chris Bail et al.'s research find about breaking out of echo chambers?
 > - Group discussion:
 >	- How has the internet changed social networks? What are the most important positives and negatives?
 
@@ -73,3 +77,20 @@ Times were hard.
 
 
 ## R Review
+
+## Exam Review
+>	- Visualization / ggraph
+>	  - Load two CSV files (nodes and edges)
+>	  - Visualize something about the network (e.g., color the nodes by age)
+>     - Explain what you learn from the visualization
+>     - Example on the wiki
+
+## Exam Review
+
+> - Centrality
+> - Network representations (Edgelists and matrices)
+> - Network formation
+> - Small worlds
+> - Capital and social capital
+> - Contagion
+
