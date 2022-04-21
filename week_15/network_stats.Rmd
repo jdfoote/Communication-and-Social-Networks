@@ -161,7 +161,7 @@ ffe_elite %>% as_tbl_graph() %>%
   mutate(religion = as_factor(religion)) %>% # Change religion to a factor
   as_tibble() %>% # convert to a tibble
   ggplot() + 
-  geom_boxplot(aes(fill=religion, y=degree)) + # `fill` changes the filled in color. Try changing this to `color` instead
+  geom_boxplot(aes(x=religion, fill=religion, y=degree)) + # `fill` changes the filled in color. Try changing this to `color` instead
   theme_minimal()
 
 ```
