@@ -39,12 +39,15 @@ Nothing, they fast!
 > - Exam is due on Thursday before class
 > - Under quizzes on Brightspace
 > - Remember, it will give you new random questions if you come back
+> - For the R question, turn in what you get even if you don't get the whole thing right
+> - Whodunnit game on Thursday
+>   - How many people will be here?
 
 
 ## Upcoming Assignments
 
-> - Final project rough draft (November 30)
-> - Peer feedback (Due Dec 6)
+> - Final project rough draft (April 26)
+> - Peer feedback (Due April 28)
 
 ## Review Questions
 
@@ -77,8 +80,9 @@ df %>%
   filter(Network_Type == 'Decentralized') %>%
   ggplot() +
   geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=280, color = 'red', linetype='dashed') + 
   theme_minimal() + 
-  scale_fill_viridis_d()
+  scale_fill_viridis_d(name='Round')
 ```
 
 ## Centralized network
@@ -88,14 +92,18 @@ df %>%
   filter(Network_Type == 'Centralized') %>%
   ggplot() +
   geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=162, color = 'red', linetype='dashed') + 
   theme_minimal() + 
-  scale_fill_viridis_d()
+  scale_fill_viridis_d(name='Round')
 ```
 
-## Review Questions
+## Wisdom and Madness of Crowds
+
+## Questions
 
 > - What is the "majority illusion"?
 > - How does the majority illusion relate to the friendship paradox?
 > - Majority illusion from Nicky Case activity?
 
 ## Discussion Questions
+

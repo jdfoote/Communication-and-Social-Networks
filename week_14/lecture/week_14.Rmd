@@ -1,5 +1,5 @@
 ---
-title: COM 411
+title: Week 14 - Cooperation
 template: "../resources/template.html"
 output: 
   revealjs::revealjs_presentation:
@@ -27,64 +27,43 @@ library(ggraph)
 
 Yesterday I confused the words "jacuzzi" and "Yakuza".
 
+<span class='fragment'>
 Now I'm in hot water with the Japanese mafia.
+</span>
 
 ## Housekeeping
 
-> - Draft of final project to peers on Thursday
+> - Draft of final project to peers on Tuesday
 >	- I will make assignments and send a Brightspace + discord announcement
->	- Feedback by next Tuesday
+>	- Feedback by next Thursday
+>   - May want to look at the Advanced R Rmd file
+> - Is anyone doing TikTok challenge?
 
 
 ## Plan for today
 
-> - Lecture
-> - Summaries
-> - Discussion
+> - Review Questions
+> - Discussion Questions
 > - Exam review
 
-# Networks and Collaboration
+
+## Review Questions
+
+> - What is a public good?
+> - Why is it difficult to cooperate to make public goods?
+> - How do networks help?
+> - What is "transactive memory"?
+
+## Review Questions
+
+> - What are some reasons that online collaboration works?
+> - Why are so many online spaces owned and run by corporations?
+> - Why is the article on The Wealth of Networks not very good?
 
 
-## We are surrounded by "collective goods"
-
-> - The whole group shares in the output, independent of their contributions
->	- Parks
->	- Roads
->	- National defense
->	- Lighthouses
->	- Clean air
->	- Group projects
-
-## However, these goods have misaligned Incentives
-
-> - Individual incentive is to do little or nothing
->	- Especially when your contribution will make little difference
-> - These goods are typically underproduced, without help
+## Discussion Questions
 
 
-## Collaboration is the great human super power. How do we do it?
+## Exam Review
 
-> - States or organizations that force people to make the "right" decision
-> - Punishment for defection
-> - Selective incentives
-> - Heterogenous benefits
-
-
-## What do networks have to do with collaboration?
-
-> - People are "embedded" in networks
->	- Defecting has social impacts if they occur in networks
->	- Rumor is a way of promoting cooperation
-> - Through networks, people can coordinate
->	- Figure out who knows what (transactive memory)
->	- Building shared understanding of goals (shared mental model)
-
-## Online Collaboration works surprisingly well
-
-> - Wikipedia and open source software often work better than what companies produce
-> - Why does it work?
->	- Artifact does a lot of the work of coordinating
->	- Costs of contribution are lower
->	- Internet allows for the identification of people for whom contribution is easy
-
+> - Before I grade them, what questions do you have?
