@@ -7,6 +7,17 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T)
 knitr::opts_knit$set(root.dir = './')
+```
+
+In this tutorial, I'm going to introduce you to two of my favorite libraries for working with and visualizing networks - [tidygraph](tidygraph.data-imaginist.com/) and [ggraph]([ggraph.data-imaginist.com/), both developed by [Thomas Lin Pederson](https://www.data-imaginist.com/).
+
+These libraries take `igraph` networks, and then use tools from the `tidyverse` to make it easier to manipulate and visualize them. An `igraph` network is a complicated object. `tidygraph` extends the `tidy` paradigm to networks by representing networks as two tables---a table of nodes and node attributes and a table of edges and edge attributes.
+
+## Loading libraries
+
+We'll load all the libraries we need
+
+```{r}
 library(igraph)
 library(tidygraph)
 library(ggraph)
@@ -14,21 +25,29 @@ library(tidyverse)
 set_graph_style() # This sets the default style to the graph style
 ```
 
-
-R has a lot of great tools for working with tables (also called dataframes or tibbles). One really powerful and relatively intuitive set of tools is called the "tidyverse". Tools in the tidyverse make assumptions about what data will look like -- rows represent observations and columns represent variables about that observation.
-
-The [tidygraph](https://tidygraph.data-imaginist.com/index.html) package extends that paradigm to networks, by representing networks as two tables -- a table of nodes and node attributes and a table of edges and edge attributes.
-
-This lets you work with networks using many of the same tools that have been developed for working on other types of data.
-
-
 # Getting to the data
 
-## Activating a table
+## Creating a `tidygraph` network
 
-Because a network is really composed of two tables, we have to let R know which table we want to manipulate. This is done using `activate(nodes)` or `activate(edges)`.
+This tutorial assumes that you know how to create an `igraph` network. Once you've got an igraph network object, convert it to a `tidygraph` network with `as_tbl_graph()`, like so:
 
-For example, the code below activates the node table and then uses `mutate` (which we will talk more about further down) to create a variable called `degree` in the nodes table.
+```{r}
+G <- erdos.renyi.game(50, .4)
+G <- as_tbl_graph(G)
+```
+
+We can then look at the `tidygraph` object, and see the two dataframes.
+
+```{r}
+G
+```
+
+
+## Mutating a table
+
+Because a network is really composed of two tibbles, we can perform many `tidyverse`/`dplyr` operations on them. In order to know which table to use, we have to use `activate(nodes)` or `activate(edges)`.
+
+For example, the code below activates the nodes table and then uses `mutate` to create a variable called `degree`.
 
 (Note that the code throughout this tutorial uses "[pipes](https://r4ds.had.co.nz/pipes.html?q=pipe#pipes)". Pipes (`%>%`) let you express a sequence of operations, by taking the output of the previous operation and using it as the input of the next operation.)
 
@@ -40,13 +59,14 @@ create_notable('zachary') %>%
   
 ```
 
-Because the networks are just stored as data frames, that means that we can also do things like use `ggplot` to graph attributes of a network. This code below creates an edge attribute called `bw` which is a measure of edge betweenness, and then makes a histogram of the distribution of `bw`.
+Because the networks are just stored as data frames, that means that we can export them as tibbles and then do things like use `ggplot` to graph attributes of a network. This code below creates an edge attribute called `bw` which is a measure of edge betweenness, and then makes a histogram of the distribution of `bw`.
 
 
 ```{r}
 create_notable('zachary') %>%
   activate(edges) %>%
   mutate(bw = centrality_edge_betweenness()) %>%
+  as_tibble() %>%
   ggplot() +
   geom_histogram(aes(x=bw)) +
   theme_minimal()
@@ -59,45 +79,10 @@ The companion library to `tidygraph` is [ggraph](https://ggraph.data-imaginist.c
 
 `ggraph` includes tons of really cool types of plots but for this tutorial I am going to focus on standard plots that show nodes as circles and edges as lines. There are three key components that should be part of any of these plots:
 
-* layout
 * nodes
 * edges
+* layout
 
-## Layout
-
-There are lots of layout options included with ggraph. You can let ggraph pick for you or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html).
-
-Layouts are defined inside the `ggraph()` function, which has to be called before making any plot. The code below makes a tidy graph of the Zachary karate network using `create_notable('zachary')`. It then sets `'kk'` as the layout, and adds a layer for the nodes and a layer for the edges.
-
-```{r}
-create_notable('zachary') %>%
-  ggraph(layout = 'kk') +
-  geom_node_point() +
-  geom_edge_fan()
-```
-
-The following few plots show how changes the layout can really change the look and the interpretation of the plot. These all show the same data.
-
-```{r}
-create_notable('zachary') %>%
-  ggraph(layout = 'circle') +
-  geom_node_point() +
-  geom_edge_fan()
-```
-
-In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like what I wanted.
-
-```{r}
-create_notable('zachary') %>%
-  mutate(d = distances(.G(), to=3)) %>%
-  ggraph(layout = 'focus', focus = 3) +
-  geom_edge_fan() +
-  ggforce::geom_circle(aes(x0 = 0, y0 = 0, r = r), data.frame(r = 1:3), colour = 'grey') + 
-  geom_node_point(aes(color = as.factor(d)), size = 3) +
-  coord_fixed() + 
-  scale_color_viridis_d() +
-  labs(color='Distance from Node 3')
-```
 
 # Node and Edge Aesthetics
 
@@ -187,6 +172,47 @@ G %>%
   scale_edge_color_manual(values = c('friendship' = '#ceb888', 'primary_school' = 'gray'))
 ```
 
+## Layout
+
+There are lots of layout options included with ggraph. You can let ggraph pick for you or you can look through some [here](https://igraph.org/c/doc/igraph-Layout.html) and [here](https://ggraph.data-imaginist.com/articles/Layouts.html). `tidygraph` has lots of neat, non-sociometric layouts like dendograms and treemaps, but I'm going to focus on more traditional layouts.
+
+Layouts are defined inside the `ggraph()` function, which has to be called before making any plot. The code below makes a tidy graph of the Zachary karate network using `create_notable('zachary')`. It then sets `'kk'` as the layout, and adds a layer for the nodes and a layer for the edges.
+
+```{r}
+create_notable('zachary') %>%
+  ggraph(layout = 'kk') +
+  geom_node_point() +
+  geom_edge_fan()
+```
+
+The following few plots show how changes the layout can really change the look and the interpretation of the plot. These all show the same data.
+
+```{r}
+create_notable('zachary') %>%
+  ggraph(layout = 'circle') +
+  geom_node_point() +
+  geom_edge_fan()
+```
+
+In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like what I wanted.
+
+```{r}
+create_notable('zachary') %>%
+  mutate(d = distances(.G(), to=3)) %>%
+  ggraph(layout = 'focus', focus = 3) +
+  geom_edge_fan() +
+  ggforce::geom_circle(aes(x0 = 0, y0 = 0, r = r), data.frame(r = 1:3), colour = 'grey') + 
+  geom_node_point(aes(color = as.factor(d)), size = 3) +
+  coord_fixed() + 
+  scale_color_viridis_d() +
+  labs(color='Distance from Node 3')
+```
+
+
+# Advanced Concept
+
+## Directed edges
+
 The one thing that I do not like about `ggraph` is that it is not easy to make directed graphs that show arrows.
 
 Here is the most basic way I can figure out to do arrows that look ok.
@@ -204,10 +230,15 @@ G %>%
   geom_node_point()
 ```
 
-And unfortunately, it is even worse when you resize nodes. I cannot figure out a good way to automatically adjust where the arrows start and stop when node sizes change. I think that there is a strategy that is supposed to work but it isn't working now (I [reported a bug](https://github.com/thomasp85/ggraph/issues/282)).
+The better way to show direction is by adjusting the `alpha` of edges. `geom_edge_fan(aes(alpha = stat(index)))` will draw a gradient from the start node to the end node. If you want a leged, you need to make sure to include the final line as a layer - `scale_edge_alpha('Edge direction', guide = 'edge_direction')`
 
-For now, I think it's just not a good idea to resize nodes in graphs where you want to display arrows for directed edges.
-
+```{r}
+G %>%
+  ggraph(layout='stress') +
+  geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
+  geom_node_point(color = '#ceb888', size = 5) + 
+  scale_edge_alpha('Edge direction', guide = 'edge_direction') # Adds the "Edge direction" legend
+```
 
 ## Facets
 
@@ -307,6 +338,34 @@ G %>%
   scale_color_viridis()
 
 ```
+
+### Visualizing similarity
+
+One visualization that I really like colors the edges based on how similar two nodes are. For example, we may want to show whether people have similar drinking behavior to their friends.
+
+So, we use `mutate` to create a new edge variable based on the absolute distance between drinking behavior for the two nodes on either side of the edge.
+
+
+```{r}
+G %>% 
+  activate(edges) %>%
+  filter(type == 'friendship') %>%
+  mutate(drinking_diff = abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])) %>%
+  ggraph(layout = 'stress') + 
+  geom_edge_fan(aes(color = drinking_diff), width = .5) +
+  geom_node_point(aes(color=alcohol_use), size = 3) + 
+  scale_color_viridis() + 
+  scale_edge_color_viridis()
+
+```
+
+This is tricky to understand.
+
+Basically, we need to modify the edge variable based on something about the nodes. However, when we activate the edge table we don't have information about the nodes. `.N()` lets us access the nodes table from the edge table, and `from` and `to` refer to the node that an edge is coming from and the node it is going to, respectively.
+
+So, `.N()$alcohol_use` refers to the `alcohol_use` column in the nodes table, and `.N()$alcohol_use[from]` refers to the value of `alcohol_use` for the from node.
+
+Putting it all together, `abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])` subtracts the `alcohol_use` of the "to" node from that of the "from" node, and takes the absolute value. It saves that as `drinking_diff` and then colors edges based on that.
 
 ## Tips and Tricks
 
@@ -428,32 +487,6 @@ friend_G %>%
   geom_node_point(aes(size=alcohol_use))
 ```
 
-
-### Visualizing similarity
-
-One visualization that I really like colors the edges based on how similar two nodes are. For example, we may want to show whether people have similar drinking behavior to their friends.
-
-So, we use `mutate` to create a new edge variable based on the absolute distance between drinking behavior for the two nodes on either side of the edge.
-
-
-```{r}
-friend_G %>%
-  mutate(drinking_diff = abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])) %>%
-  ggraph(layout = 'stress') + 
-  geom_edge_fan(aes(color = drinking_diff), width = .5) +
-  geom_node_point(aes(color=alcohol_use), size = 3) + 
-  scale_color_viridis() + 
-  scale_edge_color_viridis()
-
-```
-
-This is tricky to understand.
-
-Basically, we need to modify the edge variable based on something about the nodes. However, when we activate the edge table we don't have information about the nodes. `.N()` lets us access the nodes table from the edge table, and `from` and `to` refer to the node that an edge is coming from and the node it is going to, respectively.
-
-So, `.N()$alcohol_use` refers to the `alcohol_use` column in the nodes table, and `.N()$alcohol_use[from]` refers to the value of `alcohol_use` for the from node.
-
-Putting it all together, `abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])` subtracts the `alcohol_use` of the "to" node from that of the "from" node, and takes the absolute value. It saves that as `drinking_diff` and then colors edges based on that.
 
 
 ### Reusing a layout
