@@ -1,0 +1,6 @@
+[submodule "r_labs"]
+	path = r_labs
+	url = git@github.com:jdfoote/com_and_social_networks_labs.git
+[submodule "r_lab_assignments"]
+	path = r_lab_assignments
+	url = git@github.com:jdfoote/com_and_social_networks_labs.git
