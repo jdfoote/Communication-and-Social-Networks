@@ -9,13 +9,13 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_knit$set(root.dir = './')
 ```
 
-In this tutorial, I'm going to introduce you to two of my favorite libraries for working with and visualizing networks - [tidygraph](tidygraph.data-imaginist.com/) and [ggraph]([ggraph.data-imaginist.com/), both developed by [Thomas Lin Pederson](https://www.data-imaginist.com/).
+In this tutorial, I'm going to introduce you to two of my favorite packages for working with and visualizing networks - [tidygraph](tidygraph.data-imaginist.com/) and [ggraph]([ggraph.data-imaginist.com/), both developed by [Thomas Lin Pederson](https://www.data-imaginist.com/).
 
-These libraries take `igraph` networks, and then use tools from the `tidyverse` to make it easier to manipulate and visualize them. An `igraph` network is a complicated object. `tidygraph` extends the `tidy` paradigm to networks by representing networks as two tables---a table of nodes and node attributes and a table of edges and edge attributes.
+These packages take `igraph` networks, and then use tools from the `tidyverse` to make it easier to manipulate and visualize them. An `igraph` network is a complicated object. `tidygraph` extends the `tidy` paradigm to networks by representing networks as two tables---a table of nodes and node attributes and a table of edges and edge attributes.
 
-## Loading libraries
+## Loading packages
 
-We'll load all the libraries we need
+We'll load all the packages we need
 
 ```{r}
 library(igraph)
@@ -75,7 +75,7 @@ create_notable('zachary') %>%
 
 # Plots
 
-The companion library to `tidygraph` is [ggraph](https://ggraph.data-imaginist.com/). `ggraph` is a set of tools based on `ggplot2`. The key idea behind both `ggraph` and `ggplot2` is that you can build a plot by adding layers according to a "[grammar of graphics](https://r4ds.had.co.nz/graphics-for-communication.html)" that let you add to and change things about the plot. 
+The companion package to `tidygraph` is [ggraph](https://ggraph.data-imaginist.com/). `ggraph` is a set of tools based on `ggplot2`. The key idea behind both `ggraph` and `ggplot2` is that you can build a plot by adding layers according to a "[grammar of graphics](https://r4ds.had.co.nz/graphics-for-communication.html)" that let you add to and change things about the plot. 
 
 `ggraph` includes tons of really cool types of plots but for this tutorial I am going to focus on standard plots that show nodes as circles and edges as lines. There are three key components that should be part of any of these plots:
 
@@ -209,7 +209,7 @@ create_notable('zachary') %>%
 ```
 
 
-# Advanced Concept
+# Advanced Concepts
 
 ## Directed edges
 
@@ -255,6 +255,7 @@ G %>%
 ```
 
 Or if you wanted to facet based on the edge type:
+
 ```{r}
 G %>%
   ggraph(layout = 'stress') +
@@ -317,6 +318,7 @@ G %>%
   scale_color_viridis()
 
 ```
+
 This measure does a really good job of showing just where the core network is, and who is (and isn't) part of it.
 
 There are similar measures for edges, and we can mix and match filter and mutate. For example, this code filters to just the edges which are mutual (both people marked the other as a friend), and then creates the coreness measure for coloring the nodes.
@@ -393,6 +395,7 @@ p +
   geom_node_point(aes(color=alcohol_use), size = 3) + 
   scale_color_viridis()
 ```
+
 Note that all we can do is add layers - we can't take away or alter layers that have already been added to an existing plot.
 
 We can do a similar thing by saving a filtered or mutated version of a network. For example, we keep filtering to just the friendship edges. Let's just save a new version of that graph that is already filtered.

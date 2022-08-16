@@ -79,6 +79,31 @@ G %>%
   geom_node_point(aes(color = older_at_univ), size= 3)
 ```
 
+## Calculating network-level statistics for groups
+
+A related, but even trickier approach is to create network-level statistics for groups. For example, you might want to show the difference in density for each of the universities. To do that, we have to use `morph` from `tidygraph`. This makes a temporary representation of a graph, in our case, a temporary set of graphs split by university. We can then use the temporary representations to calculate statistics and then `unmorph` the statistics back into the original graph.
+
+```{r}
+G = G %>% 
+  morph(to_split, university) %>% 
+  mutate(university_density = edge_density(.G())) %>% 
+  unmorph()
+```
+
+This is a bit silly, as now we have a `university_density` column for each node, which is the same for every node that went to the same university. However, we can use it, for example, to create a bar graph for the density of each university. Again, this is beyond what we covered in class, but basically I'm just getting the density values for each university and plotting them.
+
+```{r}
+G %>%
+  activate(nodes) %>%
+  mutate(university = as_factor(university)) %>%
+  as_tibble() %>%
+  group_by(university) %>%
+  summarize(university_density = mean(university_density)) %>%
+  ggplot() + 
+  geom_col(aes(x = university, y = university_density, fill = university)) + 
+  theme_minimal()
+```
+
 
 ## Homophily
 

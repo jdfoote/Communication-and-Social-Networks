@@ -49,16 +49,22 @@ Now I'm in hot water with the Japanese mafia.
 
 ## Review Questions
 
-> - What is a public good?
-> - Why is it difficult to cooperate to make public goods?
-> - How do networks help?
+> - What is a public/collective good?
+> - Why do collective goods often fail?
+> - How can networks help people to collaborate and solve collective goods problems?
 > - What is "transactive memory"?
+
+<aside class='notes'>
+Rumors and defection
+
+Transactive memory
+
+Shared mental models
+</aside>
 
 ## Review Questions
 
 > - What are some reasons that online collaboration works?
-> - Why are so many online spaces owned and run by corporations?
-> - Why is the article on The Wealth of Networks not very good?
 
 
 ## Discussion Questions

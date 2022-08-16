@@ -33,43 +33,21 @@ By its bark
 ## Housekeeping
 
 > - Exam
->	- Overall, pretty good
+>	- Overall, quite good!
 >	- Hopefully a helpful way to review
->	- Struggles with R still
->	- Add 4% to your grade as a curve
+>   - Options for making up for a bad exam
 > - Get feedback to your peers! (And upload to Brightspace)
-> - Final draft DUE December 15
+> - Final draft DUE May 4
 > - Self Assessment Reflection
 > - Feedback for me (Purdue / Google Form / email / Discord)
 
 
 ## Plan for today
 
-> - Review Collaboration lecture
 > - Networks and Racism lecture
 > - Discussion
-> - Discussion Questions
+> - Time for final project, etc.
 
-# Networks and Collaboration
-
-## Review Questions
-
-> - What is a collective good?
-> - Why do collective goods often fail?
-> - How can networks help people to collaborate and solve the collective goods problem?
-
-<aside class='notes'>
-Rumors and defection
-
-Transactive memory
-
-Shared mental models
-</aside>
-
-## Review Questions
-
-> - Why might we expect that Wikipedia and open source software would fail?
-> - What are some reasons that they work?
 
 # Networks and Race
 
@@ -101,7 +79,7 @@ Shared mental models
 
 > - In the 90s, people were given vouchers to move to lower poverty areas
 > - Chetty at al. found that children did better as adults the longer they lived in higher income areas
->	- Why? One (the best!) explanation is that people form different friendships
+>	- Why? One (the best!) explanation is that people gain greater social capital
 
 ## Takeaways
 
@@ -109,3 +87,13 @@ Shared mental models
 > - Differences in economic capital or cultural capital are more visible
 > - Our achievements are partially a function of our undeserved social networks
 > - Worth thinking about "network equality"
+
+## Discussion
+
+
+## Thank you!
+
+> - Thank you all for making this such a wonderful class!
+
+## Help / collaboration on final project
+
