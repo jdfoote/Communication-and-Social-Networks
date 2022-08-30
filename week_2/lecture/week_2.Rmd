@@ -20,9 +20,10 @@ Shout out to people wondering what the opposite of 'in' is.
 
 ## Housekeeping
 
+> - Intro survey
 > - Discussion questions
 >	- Monday at noon
->   - Really good questions this week!
+>   - Good questions this week!
 
 ## Schedule
 
@@ -36,17 +37,12 @@ Shout out to people wondering what the opposite of 'in' is.
 
 ## Review
 
-> - How did installing R + RStudio go?
+> - How did logging into Scholar go?
 > - Homework review
 >	- Encouragement to be prepared
 >	- Time to identify confusion - it's OK to be confused!
 > - Discussion questions review
 
-## Consolidation
-
-> - What were some of the key ideas?
-> - What are you thinking differently about now?
-> - What are remaining questions/confusions?
 
 # Homework and Reading Review
 
@@ -71,6 +67,11 @@ plot(G)
 
 ## Discussion Questions
 
+## Consolidation
+
+> - What were some of the key ideas?
+> - What are you thinking differently about now?
+> - What are remaining questions/confusions?
 
 ## Thursday
 

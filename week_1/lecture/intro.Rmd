@@ -215,39 +215,3 @@ Options:
 
 ## Questions?
 
-
-# Simulation Activity
-
-## Rules
-- Only communicate through written messages, to neighbors
-- Give resources with '$give jdfoote A'
-- You can continue playing after you have all resources, if you want
-
-## How did it go?
-
->- What worked well?
->- What didn't?
->- Who was fastest? Why?
->- What was the longest path a resource traveled?
-
-## Global network
-
-## Debrief topics to cover
-- Degree centrality
-- Reciprocity
-- Social capital
-- Structural holes
-- Reputation and deceit
-- Position and power
-- Multiplexity
-- Number vs. type of ties (centrality measures)
-- Global/local networks
-- Tie maintenance
-- Sponsorship
-- Norms and social conventions
-
-## Meta discussion
-- How does this differ from real-world networks?
-
-- What does this make you see differently?
-
