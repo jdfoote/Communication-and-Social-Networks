@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Group Structure Activity</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="../../libs/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="../../libs/custom_css.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Group Structure Activity</h1>
+</section>
+
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<p>You are on a yacht in the middle of the ocean that is quickly sinking.</p>
+<p>Your location is unclear because vital navigational and radio equipment have been damaged in the fire. Your best estimate is that you are many hundreds of miles from the nearest landfall.</p>
+<p>You and your friends have managed to save 15 items, undamaged and intact after the fire. In addition, you have salvaged a four man rubber life craft and a box of matches. Rank the items correctly and you will survive until rescue comes.</p>
+</section>
+<section id="the-unrealistic-part" class="slide level2">
+<h2>The unrealistic part</h2>
+<p>You need to decide on a ranking as a group, but you can only communicate with a specific set of people, and you can only communicate one-on-one.</p>
+<p>Start by making your own ranking of the items, and then discuss with your group how you want to rank them as a group.</p>
+<p>I will choose one person randomly to be the group “leader”, and their final decision is the one that counts.</p>
+</section>
+<section id="the-answers-from-the-coast-guard" class="slide level2">
+<h2>The answers (from the Coast Guard)</h2>
+<div style="font-size:17px;">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 11%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Survival</strong> <strong>item</strong></th>
+<th><strong>Coast</strong> <strong>guard</strong> <strong>ranking</strong> (step 3)</th>
+<th><strong>Coast</strong> <strong>guard</strong> <strong>reasoning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A sextant</td>
+<td><strong>15</strong></td>
+<td>Useless without the relevant tables and a chronometer</td>
+</tr>
+<tr class="even">
+<td>A shaving mirror</td>
+<td><strong>1</strong></td>
+<td>A mirror can reflect sun so others can see you</td>
+</tr>
+<tr class="odd">
+<td>A mosquito netting</td>
+<td><strong>14</strong></td>
+<td>There are NO mosquitos in the middle of the Atlantic Ocean and the netting is useless for anything else</td>
+</tr>
+<tr class="even">
+<td>A 25L container of water</td>
+<td><strong>3</strong></td>
+<td>Vital to restore fluids lost through perspiration. 25 liters will supply water rations for your group for several days</td>
+</tr>
+<tr class="odd">
+<td>A case of army rations</td>
+<td><strong>4</strong></td>
+<td>This is your basic food intake</td>
+</tr>
+<tr class="even">
+<td>Maps of the Atlantic Ocean</td>
+<td><strong>13</strong></td>
+<td>Worthless without navigation equipment</td>
+</tr>
+<tr class="odd">
+<td>A floating seat cushion</td>
+<td><strong>9</strong></td>
+<td>Useful as a life preserver if someone fell overboard</td>
+</tr>
+<tr class="even">
+<td>A 10 litre can of oil / petrol mixture</td>
+<td><strong>2</strong></td>
+<td>The second most critical item for signaling. The mixture will float on water and can be ignited using the matches</td>
+</tr>
+<tr class="odd">
+<td>A small transistor radio</td>
+<td><strong>12</strong></td>
+<td>You would be out of range of any radio station</td>
+</tr>
+<tr class="even">
+<td>20 square feet of opaque plastic sheeting</td>
+<td><strong>5</strong></td>
+<td>Can be used to collect rainwater and shelter from the wind and waves</td>
+</tr>
+<tr class="odd">
+<td>A can of shark repelient</td>
+<td><strong>10</strong></td>
+<td>To repel sharks, of course!</td>
+</tr>
+<tr class="even">
+<td>One bottle of 160 proof rum</td>
+<td><strong>11</strong></td>
+<td>Contains 80% alcohol, which means it can be used as an antiseptic for any injuries, otherwise of little value. Very dangerous if drunk, as it would cause the body to dehydrate, the opposite of what you need to survive</td>
+</tr>
+<tr class="odd">
+<td>15 feet of nylon rope</td>
+<td><strong>8</strong></td>
+<td>Could be used to lash people or equipment together to prevent being washed overboard. There are a variety of other uses, but none high on the list for survival</td>
+</tr>
+<tr class="even">
+<td>2 boxes of chocolate bars</td>
+<td><strong>6</strong></td>
+<td>Your reserve food supply</td>
+</tr>
+<tr class="odd">
+<td>An ocean fishing kit &amp; pole</td>
+<td><strong>7</strong></td>
+<td>Ranked lower than the chocolate as there is no guarantee that you will catch any fish. The pole might be used as a tent pole</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="moon-landing-activity" class="slide level2">
+<h2>Moon landing activity</h2>
+<p>You are a member of a space crew scheduled to rendezvous with a mother ship on the lighted surface of the moon. However, due to mechanical difficulties, your own ship was forced to land at a spot 200 miles from the rendezvous point.</p>
+<p>During re-entry and landing, much of the equipment aboard was damaged and, since survival depends on reaching the mother ship, the most critical items available must be chosen for the 200-mile trip.</p>
+<p>15 items are listed as being intact and undamaged after landing. Your task is to rank them in terms of their importance for your crew, to allow them to reach the rendezvous point. The ‘expert’ answers were compiled by a team of scientists and engineers at NASA.</p>
+</section>
+<section id="same-groups-new-structures" class="slide level2">
+<h2>Same groups, new structures</h2>
+</section>
+<section id="nasas-answers" class="slide level2">
+<h2>NASA’s Answers</h2>
+<div style="font-size:19px;">
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 7%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>NASA’s ranking</th>
+<th>NASA’s reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Box of matches</td>
+<td>15</td>
+<td>Completely worthless – there’s no oxygen on the Moon to sustain combustion</td>
+</tr>
+<tr class="even">
+<td>Food concentrate</td>
+<td>4</td>
+<td>Efficient means of supplying energy requirements</td>
+</tr>
+<tr class="odd">
+<td>15 metres of nylon rope</td>
+<td>6</td>
+<td>Useful in scaling Moon craters and tying injured together</td>
+</tr>
+<tr class="even">
+<td>Parachute silk</td>
+<td>8</td>
+<td>Protection from the Sun’s rays</td>
+</tr>
+<tr class="odd">
+<td>Portable heating unit</td>
+<td>13</td>
+<td>Not needed unless on the dark side</td>
+</tr>
+<tr class="even">
+<td>Small fire extinguisher</td>
+<td>11</td>
+<td>Possible means of self-propulsion</td>
+</tr>
+<tr class="odd">
+<td>One case of dehydrated milk</td>
+<td>12</td>
+<td>Bulkier duplication of food concentrate</td>
+</tr>
+<tr class="even">
+<td>Two 45-kg tanks of oxygen</td>
+<td>1</td>
+<td>Most pressing survival need (weight is not a factor since gravity is one-sixth of Earth’s – each tank would weigh only about 7.5 kg on the Moon)</td>
+</tr>
+<tr class="odd">
+<td>Stellar map</td>
+<td>3</td>
+<td>Primary means of navigation – star patterns appear essentially identical on the Moon as on Earth</td>
+</tr>
+<tr class="even">
+<td>Self-inflating life raft</td>
+<td>9</td>
+<td>CO2 bottle in military raft may be used for propulsion</td>
+</tr>
+<tr class="odd">
+<td>Magnetic compass</td>
+<td>14</td>
+<td>The magnetic field on the Moon is not polarized, so it’s worthless for navigation</td>
+</tr>
+<tr class="even">
+<td>20 litres of water</td>
+<td>2</td>
+<td>Needed for replacement of tremendous liquid loss on the light side</td>
+</tr>
+<tr class="odd">
+<td>Signal flares</td>
+<td>10</td>
+<td>Use as distress signal when the lunar base is sighted</td>
+</tr>
+<tr class="even">
+<td>First aid kit, including injection needle</td>
+<td>7</td>
+<td>Needles connected to vials of vitamins, medicines, etc. will fit special aperture in NASA spacesuit</td>
+</tr>
+<tr class="odd">
+<td>Solar-powered FM receiver-transmitter</td>
+<td>5</td>
+<td>For communication with lunar base (but FM requires line-of-sight transmission and can only be used over short ranges)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li class="fragment">Which structure would we expect to be most effective for this kind of task? Why?</li>
+<li class="fragment">What did you experience as a member of each type of group?</li>
+<li class="fragment">Have you ever been in a group that resembled either structure?</li>
+<li class="fragment">Does this have any lessons for the “real world”?</li>
+</ul>
+</section>
+<section id="code-to-create-teams-optional" class="slide level2">
+<h2>Code to create teams (optional)</h2>
+<p><img src="group_structure_exercise_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /><img src="group_structure_exercise_files/figure-revealjs/unnamed-chunk-3-2.png" width="768" /></p>
+</section>
+    </div>
+  </div>
+
+  <script src="../../libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="../../libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../../libs/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
