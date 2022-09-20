@@ -29,24 +29,6 @@ Brochure.
 
 ## Self Reflections and feedback
 
-> - Thank you so much for being open and honest!
-> - Some summary thoughts
->	- Things are going pretty well
->	- R is hard but people are persisting
-> - Cold calling is scary
-
-## My plans for change
-
-> - Try to make more time for small group discussion
->	- A few minutes at the beginning of class
-
-
-## Suggestions for success
-
-> - Keep working on assignments that you missed / got wrong
-> - Ask questions on Discord
-> - Come to office hours
-
 
 ## Housekeeping
 
@@ -54,7 +36,7 @@ Brochure.
 > - How do we measure who is important and influential?
 > - Thursday
 >   - Ego network activity
->   - R lab is pretty simple (I think)
+>   - More co-working time
 
 ## Homework Review
 
@@ -123,3 +105,27 @@ Strategies when R code doesn't work:
 
 
 ## Importing and visualizing in R
+> - Remember `graph_from_data_frame()`
+
+<!--
+# Old Slides
+
+
+> - Thank you so much for being open and honest!
+> - Some summary thoughts
+>	- Things are going pretty well
+>	- R is hard but people are persisting
+> - Cold calling is scary
+
+## My plans for change
+
+> - Try to make more time for small group discussion
+>	- A few minutes at the beginning of class
+
+
+## Suggestions for success
+
+> - Keep working on assignments that you missed / got wrong
+> - Ask questions on Discord
+> - Come to office hours
+-->

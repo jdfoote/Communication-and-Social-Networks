@@ -1,5 +1,5 @@
 ---
-title: COM 411
+title: Small Group Networks
 output: 
   revealjs::revealjs_presentation:
     theme: white
@@ -34,7 +34,6 @@ Luckily I was still up playing the drums.
 
 ## Housekeeping
 
-> - Snow Plan
 > - Self Assessment Reflections
 >	- Goals for the class
 >	- Feedback for me
@@ -45,6 +44,7 @@ Luckily I was still up playing the drums.
 
 ## Homework review
 
+## What concepts are confusing?
 
 ## Review Questions
 
