@@ -1,0 +1,30 @@
+---
+title: "Ego Network Calculations"
+author: "Your Name Here"
+date: '2022-09-22'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidygraph)
+library(readxl)
+```
+
+```{r}
+e <- read_excel('~/Teaching/communication_and_networks/activities/ego_networks/ego_edges.xlsx')
+n <- read_excel('~/Teaching/communication_and_networks/activities/ego_networks/ego_atts.xlsx')
+```
+
+```{r}
+G <- graph_from_data_frame(d=e, vertices = n, directed = F) %>% as_tbl_graph()
+```
+
+```{r}
+G <- G %>%
+  activate(edges) %>%
+  filter(!is.na(weight)) %>%
+  filter(weight != 0)
+```
+
+
