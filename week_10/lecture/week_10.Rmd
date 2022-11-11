@@ -33,9 +33,8 @@ Me: "Listening. I would say listening is my biggest weakness."
 
 ## Housekeeping
 
-> - Sorry about due date for Dutch School assignment!!
 > - Self-assessment reflections due today
->	- Feedback by next week
+>	- Feedback by next week (hopefully)
 > - Troubled Lands game on Thursday
 
 ## Upcoming Assignments
@@ -43,7 +42,7 @@ Me: "Listening. I would say listening is my biggest weakness."
 > - Exam
 >	- Visualization + Essays
 >	- Submit two questions for short answer section
-> - Groups in networks assignment
+> - Dutch School Visualization Challenge
 
 ## Example questions
 > - How does one gain social capital from other forms of capital? Give three examples with explanations.
@@ -54,7 +53,6 @@ Me: "Listening. I would say listening is my biggest weakness."
 ## Plan for today
 
 > - Diffusion and contagion review
-> - Visualization discussion + show and tell
 > - Discussion questions
 
 ## Review Questions
@@ -134,8 +132,6 @@ create_notable('zachary') %>%
 > - What is an example of simple contagion?
 > - What is an example of something that spreads via complex contagion?
 > - What was the argument of the "Special People" chapter?
-
-## R Show and Tell
 
 ## Discussion Questions
 
