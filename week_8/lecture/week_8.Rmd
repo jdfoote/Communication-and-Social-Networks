@@ -45,7 +45,7 @@ A stick.
 >	- Start from existing dataset (Dutch school student behavior)
 >	- Come up with a question
 >	- Create a network visualization that helps to answer that question
->	- Working in partners is great
+>	- Working in pairs is great
 
 
 ## Review Questions

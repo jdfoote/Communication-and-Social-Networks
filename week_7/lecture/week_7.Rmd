@@ -26,17 +26,21 @@ library(ggraph)
 
 ## Dad Joke
 
-I decided to kill off a few characters in the book I'm writing.
-
-It would definitely spice up my autobiography.
+> - Who is in favour of bringing Roman numerals back into use?
+> - I for one!
 
 ## Housekeeping
 
-> - Social Search assignment (March 8)
+> - Social Search assignment (October 18)
 >	- Try to find someone with driver's license from HI
 >	- No group texts
 >	- Diagram search network
 >	- Instructions on wiki
+
+## Final Project
+
+> - Group project: network-based intervention (e.g., spreading an idea on campus)
+> - (Group?) research project: analysis of network data
 
 ## Reading Questions
 
@@ -61,7 +65,7 @@ It would definitely spice up my autobiography.
 
 ## Criticism
 
-> - What aspects of the concept of capital and social capital ring true to you? What feels like is missing from this theory?
+> - What aspects of the concept of capital and social capital ring true to you? What feels like it is missing from this theory?
 
 ## Discussion Questions
 
