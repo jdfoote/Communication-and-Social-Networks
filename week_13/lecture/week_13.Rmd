@@ -27,11 +27,10 @@ df = read_csv('~/Teaching/communication_and_networks/week_13/lecture/wisdom_of_c
 
 ## Dad Joke
 
-
-What does a sprinter eat before a race?
+Never date a tennis player.
 
 <p class='fragment'>
-Nothing, they fast!
+Love means nothing to them.
 </p>
 
 ## Housekeeping
@@ -40,14 +39,17 @@ Nothing, they fast!
 > - Under quizzes on Brightspace
 > - Remember, it will give you new random questions if you come back
 > - For the R question, turn in what you get even if you don't get the whole thing right
-> - Whodunnit game on Thursday
->   - How many people will be here?
+> - Wisdom or Madness of Crowds on Thursday
+> - Apologies about schedule confusion!!!
+> - No class on Tuesday - discussion on Discord
+>   - Try to be online during class time
 
 
 ## Upcoming Assignments
 
-> - Final project rough draft (April 26)
-> - Peer feedback (Due April 28)
+> - R Lab 8 - November 28
+> - Final project rough draft (December 1)
+> - Peer feedback (Due December 6)
 
 ## Review Questions
 
@@ -80,7 +82,7 @@ df %>%
   filter(Network_Type == 'Decentralized') %>%
   ggplot() +
   geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
-  geom_vline(xintercept=280, color = 'red', linetype='dashed') + 
+  geom_vline(xintercept=294, color = 'red', linetype='dashed') + 
   theme_minimal() + 
   scale_fill_viridis_d(name='Round')
 ```
@@ -92,7 +94,7 @@ df %>%
   filter(Network_Type == 'Centralized') %>%
   ggplot() +
   geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
-  geom_vline(xintercept=162, color = 'red', linetype='dashed') + 
+  geom_vline(xintercept=377, color = 'red', linetype='dashed') + 
   theme_minimal() + 
   scale_fill_viridis_d(name='Round')
 ```

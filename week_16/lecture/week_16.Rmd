@@ -40,9 +40,14 @@ It was a brief case.
 ## Housekeeping
 
 > - Peer review
-> - Final project due Dec. 15
-> - Self Assessment Reflection due Dec. 15
-> - Initial grades on Brightspace
+> - Final project due Dec. 14
+> - Self Assessment Reflection due Dec. 14
+> - Advanced visualizations
+>   - Faceting
+>   - Grouping
+>   - Visualizing homophily
+>   - Changing color palettes
+>   - Changing/adding titles and legends
 
 # Network Visualizations
 
