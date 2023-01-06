@@ -8,8 +8,8 @@ output:
     progress: true
     transition: convex
     self_contained: false
-    css: ../libs/custom_css.css
-    lib: ../libs
+    css: ../../libs/custom_css.css
+    lib: ../../libs
     allow_uptree_lib_dir: true
 ---
 
