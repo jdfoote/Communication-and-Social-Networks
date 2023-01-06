@@ -33,7 +33,7 @@ Times were hard.
 
 ## Housekeeping
 
-> - Self Assessment responses are in
+> - Thanks for 
 > - Exam
 >	- Open book / open note
 >	- Begin next Tuesday, due Thursday
@@ -44,39 +44,17 @@ Times were hard.
 ## Final Project
 
 > - Timing for final project
->   - Submit org that you want 
 >	- Don't wait - get started now!
 >	- Reach out if you get stuck
-> - Watch the video and use the example data
 > - Look at example projects from the past
 > - Not all visualizations have to be networks
 > - Concepts + Visualizations
 
 ## Plan for Today
 
-> - Networks and tech review
-> - R Questions
 > - Exam Review
+> - Networks and tech review
 
-
-## Review Questions
-
-> - What is the difference between a filter bubble and an echo chamber?
-> - How do echo chambers relate to social influence?
-> - What did Chris Bail et al.'s research find about breaking out of echo chambers?
-> - Group discussion:
->	- How has the internet changed social networks? What are the most important positives and negatives?
-
-
-## Review Questions
-
-> - What is context collapse?
-> - How does context collapse relate to network principles we have discussed?
-
-## Discussion Questions
-
-
-## R Review
 
 ## Exam Review
 >	- Visualization / ggraph
@@ -90,7 +68,22 @@ Times were hard.
 > - Centrality
 > - Network representations (Edgelists and matrices)
 > - Network formation
-> - Small worlds
-> - Capital and social capital
-> - Contagion
+> - Tie strength and small worlds
+> - Power and social capital
+> - Contagion and diffusion
+> - Centrality
 
+## Review Questions
+
+> - What is the difference between a filter bubble and an echo chamber?
+> - How do echo chambers relate to social influence?
+> - What did Chris Bail et al.'s research find about breaking out of echo chambers?
+> - How has the internet changed social networks? What are the most important positives and negatives?
+
+
+## Review Questions
+
+> - What is context collapse?
+> - How does context collapse relate to network principles we have discussed?
+
+## Discussion Questions
