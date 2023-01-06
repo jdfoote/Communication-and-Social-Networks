@@ -35,8 +35,7 @@ Because he couldn't find a date.
 ## Housekeeping
 
 > - Thursday - 6 Degrees of Wikipedia + R Review
-> - Self-assessment reflections and Visualization challenge due after Spring Break
-> - Light reading
+> - Self-assessment reflections and Lab 6 due next week
 
 ## Review Questions
 
@@ -105,6 +104,36 @@ df %>%
 > - What is the "friendship paradox"?
 > - How is the friendship paradox useful?
 
+<span class='fragment'>
+```{r, out.width="45%"}
+
+set_graph_style()
+
+G = barabasi.game(10, m = 2)
+
+G = G %>% as_tbl_graph() %>%
+  mutate(degree = centrality_degree(mode='all'),
+         neighbor_degree = local_ave_degree())
+p = G %>% 
+  ggraph(layout = 'kk') +
+  geom_edge_fan() +
+  geom_node_point(color='lightblue', size = 16) +
+  geom_node_text(aes(label=degree), size = 12, fontface='bold')
+ 
+p
+```
+</span>
+<span class='fragment'>
+```{r, out.width="45%"}
+
+p + 
+  geom_node_point(aes(color = neighbor_degree > degree), size = 16) +
+  geom_node_text(aes(label=round(neighbor_degree, 2)), nudge_y = -.1, size=9) +
+  geom_node_text(aes(label=degree), nudge_y = .1, size=9) +
+  scale_color_viridis_d("Neighbors have higher degree", begin = .6, end = .85, )
+
+```
+</span>
 
 ## Discussion Questions
 
