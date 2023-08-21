@@ -49,7 +49,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -62,7 +62,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -508,7 +508,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -516,7 +516,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 
 <section>
-<section id="welcome-to-com-411-communication-and-social-networks" class="title-slide slide level1">
+<section id="welcome-to-com-411-communication-and-social-networks"
+class="title-slide slide level1">
 <h1>Welcome to COM 411: Communication and Social Networks!</h1>
 
 </section>
@@ -548,48 +549,61 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Closest connection to a famous person</li>
 </ul>
 </section>
-<section id="what-is-communication-and-social-networks" class="slide level2">
+<section id="what-is-communication-and-social-networks"
+class="slide level2">
 <h2>What is Communication and Social Networks?</h2>
 <div class="container">
 <div class="col">
-<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/240px-Facebook_icon.svg.png'/></p>
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png'/></p>
 </div>
 <div class="col">
-<p><img src='images/Twitter_Logo_Blue.png' style='width:270px;' /></p>
+<p><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/120px-X_logo_2023.svg.png' style='width:150px;' /></p>
 </div>
 </div>
-<div class="fragment" style="color:orange; transform: rotate(17deg);">
+<div class="fragment" style="color:darkred; transform: rotate(17deg);">
 NOT THIS KIND OF SOCIAL NETWORK!
 </div>
 </section>
-<section id="social-networks-are-much-more-interesting" class="slide level2">
+<section id="social-networks-are-much-more-interesting"
+class="slide level2">
 <h2>Social networks are much more interesting!</h2>
 <p><img class='fragment' src='https://www.researchgate.net/profile/Thiago_Silva8/publication/224946853/figure/fig2/AS:302557231632393@1449146673764/Illustration-of-the-Zacharys-karate-club-network-There-are-34-vertices-divided-into-two.png' height='200px' /></p>
 <ul>
 <li class="fragment">How do groups make decisions?</li>
-<li class="fragment">How do fads and fashions and misinformation and diseases spread?</li>
-<li class="fragment">How do our connections influence our perceptions about and behavior in the world?</li>
+<li class="fragment">How do fads and fashions and misinformation and
+diseases spread?</li>
+<li class="fragment">How do our connections influence our perceptions
+about and behavior in the world?</li>
 </ul>
 </section>
-<section id="who-you-are-connected-to-can-be-more-important-than-who-you-are" class="slide level2">
+<section
+id="who-you-are-connected-to-can-be-more-important-than-who-you-are"
+class="slide level2">
 <h2>Who you are connected to can be more important than who you are</h2>
 <p><img class='fragment' src='images/dyad_net.png' style='width:60%'/></p>
 </section>
-<section id="who-you-are-connected-to-can-be-more-important-than-who-you-are-1" class="slide level2">
+<section
+id="who-you-are-connected-to-can-be-more-important-than-who-you-are-1"
+class="slide level2">
 <h2>Who you are connected to can be more important than who you are</h2>
 <p><img class='fragment' src='images/full_net.png' style='width:60%;'/></p>
 </section>
-<section id="who-you-are-connected-to-can-be-more-important-than-who-you-are-2" class="slide level2">
+<section
+id="who-you-are-connected-to-can-be-more-important-than-who-you-are-2"
+class="slide level2">
 <h2>Who you are connected to can be more important than who you are</h2>
 <p><img class='fragment' src='images/covid_bubble.png' style='width:60%;'/></p>
 </section>
 <section id="goals" class="slide level2">
 <h2>Goals</h2>
 <ol type="1">
-<li class="fragment">Understand the foundations of network theory and analysis</li>
+<li class="fragment">Understand the foundations of network theory and
+analysis</li>
 <li class="fragment">Critically read social network studies</li>
-<li class="fragment">Learn how social networks relate to your own interests</li>
-<li class="fragment">Gain a basic understanding of gathering and analyzing network data in R</li>
+<li class="fragment">Learn how social networks relate to your own
+interests</li>
+<li class="fragment">Gain a basic understanding of gathering and
+analyzing network data in R</li>
 </ol>
 </section></section>
 <section>
@@ -609,7 +623,8 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <section id="grading" class="slide level2">
 <h2>Grading</h2>
 <ul>
-<li class="fragment">Normal grading has some negative unintended consequences
+<li class="fragment">Normal grading has some negative unintended
+consequences
 <div class="container">
 <div class="col">
 <p><img class='fragment' src='images/discussion.jpg' style='max-width:450px;'/></p>
@@ -622,10 +637,13 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <h2>Grading</h2>
 <ul>
 <li class="fragment">I’m interested in teaching, not assessing</li>
-<li class="fragment">Goal is to build structures that encourage learning and accountability</li>
-<li class="fragment">Assignments will be turned in on Brightspace and/or discussed in class</li>
+<li class="fragment">Goal is to build structures that encourage learning
+and accountability</li>
+<li class="fragment">Assignments will be turned in on Brightspace and/or
+discussed in class</li>
 <li class="fragment">I will provide general feedback</li>
-<li class="fragment">3 times during the semester you will turn in reflection pieces</li>
+<li class="fragment">3 times during the semester you will turn in
+reflection pieces</li>
 <li class="fragment">If I disagree I will reach out</li>
 </ul>
 </section>
@@ -642,7 +660,8 @@ NOT THIS KIND OF SOCIAL NETWORK!
 </ul></li>
 <li class="fragment">Tuesdays
 <ul>
-<li class="fragment">Discussion questions due on Mondays (Google Docs link)</li>
+<li class="fragment">Discussion questions due on Mondays (Google Docs
+link)</li>
 <li class="fragment">Time discussing + reviewing homework</li>
 <li class="fragment">Random cold calling</li>
 <li class="fragment">I will track whether you are prepared</li>
@@ -658,8 +677,8 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <section id="class-meetings-1" class="slide level2">
 <h2>Class meetings</h2>
 <ul>
-<li class="fragment">Don’t come if you might have COVID (or other transmissible illnesses)!</li>
-<li class="fragment">Otherwise, be here!</li>
+<li class="fragment">I will work hard to make our classes valuable</li>
+<li class="fragment">Do the same; be open and engaged</li>
 </ul>
 </section>
 <section id="assignments" class="slide level2">
@@ -671,6 +690,14 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <li class="fragment">Programming practice</li>
 </ul></li>
 <li class="fragment">Reading
+<ul>
+<li class="fragment">3-2-1 on Brightspace
+<ul>
+<li class="fragment">3 things you learned / connections made</li>
+<li class="fragment">2 questions / things that are still confusing</li>
+</ul></li>
+</ul></li>
+<li class="fragment">1 disucssion question for class
 <ul>
 <li class="fragment">Discussion Questions due Monday at noon</li>
 </ul></li>
@@ -720,9 +747,12 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <h2>Final Project</h2>
 <p>Options:</p>
 <ul>
-<li class="fragment">“Pitch” to an organization about how what you have learned could be used to help their organization</li>
-<li class="fragment">Group project: network-based intervention (e.g., spreading an idea on campus)</li>
-<li class="fragment">(Group?) research project: analysis of network data</li>
+<li class="fragment">“Pitch” to an organization about how what you have
+learned could be used to help their organization</li>
+<li class="fragment">Group project: network-based intervention (e.g.,
+spreading an idea on campus)</li>
+<li class="fragment">(Group?) research project: analysis of network
+data</li>
 </ul>
 </section></section>
 <section>
@@ -736,7 +766,8 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <li class="fragment">Conversation and questions</li>
 <li class="fragment">Help
 <ul>
-<li class="fragment">In general, ask publicly so others can answer / see the answer</li>
+<li class="fragment">In general, ask publicly so others can answer / see
+the answer</li>
 </ul></li>
 </ul>
 </section>
@@ -745,6 +776,7 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <ul>
 <li class="fragment">Schedule</li>
 <li class="fragment">Links to readings</li>
+<li class="fragment">Links to assignments</li>
 </ul>
 </section>
 <section id="brightspace" class="slide level2">
@@ -757,7 +789,7 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <section id="office-hours" class="slide level2">
 <h2>Office Hours</h2>
 <ul>
-<li class="fragment">Thursdays, 2-4
+<li class="fragment">Tuesdays, 2-4
 <ul>
 <li class="fragment">Also open to meeting virtually</li>
 </ul></li>
@@ -774,60 +806,14 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <h2>Assignments</h2>
 <ul>
 <li class="fragment">Read the syllabus</li>
-<li class="fragment">This Thursday will be a (fun!) synchronous activity</li>
+<li class="fragment">This Thursday will be a (fun!) synchronous
+activity</li>
+<li class="fragment">Bring your computer, if you have one</li>
+<li class="fragment">Make sure you are signed up on Discord</li>
 </ul>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
-</section></section>
-<section>
-<section id="simulation-activity" class="title-slide slide level1">
-<h1>Simulation Activity</h1>
-
-</section>
-<section id="rules" class="slide level2">
-<h2>Rules</h2>
-<ul>
-<li>Only communicate through written messages, to neighbors</li>
-<li>Give resources with ‘$give jdfoote A’</li>
-<li>You can continue playing after you have all resources, if you want</li>
-</ul>
-</section>
-<section id="how-did-it-go" class="slide level2">
-<h2>How did it go?</h2>
-<ul>
-<li class="fragment">What worked well?</li>
-<li class="fragment">What didn’t?</li>
-<li class="fragment">Who was fastest? Why?</li>
-<li class="fragment">What was the longest path a resource traveled?</li>
-</ul>
-</section>
-<section id="global-network" class="slide level2">
-<h2>Global network</h2>
-</section>
-<section id="debrief-topics-to-cover" class="slide level2">
-<h2>Debrief topics to cover</h2>
-<ul>
-<li>Degree centrality</li>
-<li>Reciprocity</li>
-<li>Social capital</li>
-<li>Structural holes</li>
-<li>Reputation and deceit</li>
-<li>Position and power</li>
-<li>Multiplexity</li>
-<li>Number vs. type of ties (centrality measures)</li>
-<li>Global/local networks</li>
-<li>Tie maintenance</li>
-<li>Sponsorship</li>
-<li>Norms and social conventions</li>
-</ul>
-</section>
-<section id="meta-discussion" class="slide level2">
-<h2>Meta discussion</h2>
-<ul>
-<li><p>How does this differ from real-world networks?</p></li>
-<li><p>What does this make you see differently?</p></li>
-</ul>
 </section></section>
     </div>
   </div>
@@ -840,14 +826,39 @@ NOT THIS KIND OF SOCIAL NETWORK!
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

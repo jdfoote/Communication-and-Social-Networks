@@ -15,7 +15,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = './')
-source("resources/preamble.R")
+#source("resources/preamble.R")
 library(tidygraph)
 library(ggraph)
 ```
@@ -51,14 +51,14 @@ Why did the nearsighted man fall in the well?
 
 <div class='container'>
 <div class='col'>
-<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/240px-Facebook_icon.svg.png'/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png'/>
 </div>
 <div class='col'>
-<img src='./images/Twitter_Logo_Blue.png' style='width:270px;' />
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/120px-X_logo_2023.svg.png' style='width:150px;' />
 </div>
 </div>
 
-<div style= "color:orange; transform: rotate(17deg);" class='fragment'>NOT THIS KIND OF SOCIAL NETWORK!</div>
+<div style= "color:darkred; transform: rotate(17deg);" class='fragment'>NOT THIS KIND OF SOCIAL NETWORK!</div>
 
 ## Social networks are much more interesting!
 
@@ -132,8 +132,8 @@ Why did the nearsighted man fall in the well?
 
 ## Class meetings
 
-> - Don't come if you might have COVID (or other transmissible illnesses)!
-> - Otherwise, be here!
+> - I will work hard to make our classes valuable
+> - Do the same; be open and engaged
 
 ## Assignments
 
@@ -141,6 +141,10 @@ Why did the nearsighted man fall in the well?
 >	- Social network concepts
 >	- Programming practice
 >- Reading
+>   - 3-2-1 on Brightspace
+>     - 3 things you learned / connections made
+>     - 2 questions / things that are still confusing
+      - 1 disucssion question for class
 >	- Discussion Questions due Monday at noon
 >- Participation (in-class and online)
 
@@ -157,7 +161,7 @@ Why did the nearsighted man fall in the well?
 >- You will understand what this means! :)
 
 <div class='fragment'>
-```{r, echo = T, message = F, fig.height = 3.5}
+```{r, echo = T, message = F, warning=F, fig.height = 3.5}
 create_notable('zachary') %>%
   activate(nodes) %>%
   mutate(group = as.factor(group_infomap())) %>%
@@ -192,6 +196,7 @@ Options:
 
 > - Schedule
 > - Links to readings
+> - Links to assignments
 
 ## Brightspace
 
@@ -200,7 +205,7 @@ Options:
 
 ## Office Hours
 
-> - Thursdays, 2-4
+> - Tuesdays, 2-4
 >	- Also open to meeting virtually
 
 ## Please be vocal
@@ -211,6 +216,8 @@ Options:
 
 >- Read the syllabus
 > - This Thursday will be a (fun!) synchronous activity
+> - Bring your computer, if you have one
+> - Make sure you are signed up on Discord
 
 
 ## Questions?
