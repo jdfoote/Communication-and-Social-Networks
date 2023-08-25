@@ -45,6 +45,7 @@ Why did the nearsighted man fall in the well?
 - Name
 - Year
 - Major
+- Something fun you did over the summer
 - Closest connection to a famous person 
 
 ## What is Communication and Social Networks?
@@ -62,7 +63,7 @@ Why did the nearsighted man fall in the well?
 
 ## Social networks are much more interesting!
 
-<img class='fragment' src='https://www.researchgate.net/profile/Thiago_Silva8/publication/224946853/figure/fig2/AS:302557231632393@1449146673764/Illustration-of-the-Zacharys-karate-club-network-There-are-34-vertices-divided-into-two.png' height='200px' />
+<img class='fragment' src='./images/zacharay_karate.png' height='200px' />
 
 >- How do groups make decisions?
 >- How do fads and fashions and misinformation and diseases spread?
