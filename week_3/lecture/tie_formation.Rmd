@@ -9,11 +9,12 @@ output:
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
     lib_dir: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning=F)
 knitr::opts_knit$set(root.dir = './')
 source("resources/preamble.R")
 library(igraph)
@@ -26,7 +27,15 @@ library(ggraph)
 ## Why do people form relationships / edges?
 
 > - Psychological explanations
->	- Homophily
+> - Strategic explanations
+> - Exposure explanations
+
+# Psychological explanations
+
+## We are comfortable with people like us
+
+> - Homophily
+>   - People who are like each other are more likely to become friends
 
 <div class='fragment'>
 ```{r, fig.height=3}
@@ -49,28 +58,17 @@ plot
 ```
 </div>
 
-## Triadic closure / transitivity
+
+## We want our relationships to be in balance
+
+> - Balance theory
+>   - The enemy of my enemy is my friend
+>   - The friend of my enemy is my enemy
 
 <div class='fragment'>
 ```{r, fig.height=3}
-
-plot = plot + geom_edge_fan(aes(color = type,
-                         start_cap = label_rect(node1.name),
-                         end_cap = label_rect(node1.name)),
-                     width = .3, 
-                     arrow = arrow(length = unit(3,'mm'))
-				)
-
-plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='white'), guide = F)
-           
-```
-</div>
-
-## Balance Theory
-
-<div class='fragment'>
-```{r, fig.height=3}
-plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='red'), guide = F)
+plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='red'), guide = F) +
+geom_edge_fan(aes(label=type, color=type))
 ```
 </div>
 <aside class='notes'>
@@ -80,20 +78,45 @@ If A is friends with  B and B is friends with C, but A and C are enemies, then b
 This does depend on the type of relationship, though. What if black represents "hates"? If A hates B and B hates C, then maybe A will like C. Or if A is in love with B and B is in love with C, then A may hate C. These triangles are the source of lots of literature!
 </aside>
 
-## Why do people form edges?
+# Strategic explanations
 
-> - Rational explanations
->	- Social capital
->	  - People seek to fill structural holes and obtain powerful positions in the network
->	- Social exchange theory
->	  - Do the benefits of relationship outweigh the costs?
->	  - What resources does each node have and need?
-> - Assumed to operate at the dyad / edge level
+## We want to be in relationships that help us
+
+> - Social exchange theory
+>   - Do the benefits of relationship outweigh the costs?
+>   - What resources does each node have and need?
+> - Social capital
+>   - People seek to make relationships with powerful others
+>   - People seek to obtain powerful positions in the network
+
+# Exposure explanations
+
+## We become friends with our friends' friends
+
+> - Triadic closure / transitivity
+
+<div class='fragment'>
+```{r, fig.height=3}
+
+plot + geom_edge_fan(aes(color = type,
+                         start_cap = label_rect(node1.name),
+                         end_cap = label_rect(node1.name)),
+                     width = .3, 
+                     arrow = arrow(length = unit(3,'mm'))
+				) + scale_edge_color_manual(values = c('enemy'='black', 'friend'='white'), guide = F)
+           
+```
+</div>
+
+<aside class="notes"> 
+It is worth nothing that homophily is another explanation for the ubiquity of triadic closure. Those who are like us are likely to be our friends; those who are like our friends are likely to be like us.
+
+</aside>
 
 
 ## Focus of Activity
 
-> - Partially a pushback against these
->	- People choose activities
+> - Partially a pushback against other explanations
+>	- People choose or are forced into foci (clubs, neighborhoods, classes, etc.)
 >	- Ties are often a function of activities, not dyadic choices
 

@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -464,7 +464,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li class="fragment">Discussion questions
 <ul>
 <li class="fragment">Monday at noon</li>
-<li class="fragment">Good questions this week!</li>
 </ul></li>
 </ul>
 </section>
@@ -484,17 +483,18 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="review" class="slide level2">
 <h2>Review</h2>
 <ul>
-<li class="fragment">How did logging into Scholar go?</li>
 <li class="fragment">Homework review
 <ul>
 <li class="fragment">Encouragement to be prepared</li>
-<li class="fragment">Time to identify confusion - it’s OK to be confused!</li>
+<li class="fragment">Time to identify confusion - it’s OK to be
+confused!</li>
 </ul></li>
 <li class="fragment">Discussion questions review</li>
 </ul>
 </section>
 <section>
-<section id="homework-and-reading-review" class="title-slide slide level1">
+<section id="homework-and-reading-review"
+class="title-slide slide level1">
 <h1>Homework and Reading Review</h1>
 
 </section>
@@ -503,7 +503,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ul>
 <li class="fragment">What is a node?</li>
 <li class="fragment">What is an edge?</li>
-<li class="fragment">What is the “individual” perspective of data and how does it differ from a network perspective?</li>
+<li class="fragment">What is the “individual” perspective of data and
+how does it differ from a network perspective?</li>
 </ul>
 </section>
 <section id="network-representations" class="slide level2">
@@ -511,7 +512,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p><img src="week_2_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
 <ul>
 <li class="fragment">What is the edgelist of this graph?</li>
-<li class="fragment">What is the matrix representation of this graph?</li>
+<li class="fragment">What is the matrix representation of this
+graph?</li>
 </ul>
 </section>
 <section id="discussion-questions" class="slide level2">
@@ -542,14 +544,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

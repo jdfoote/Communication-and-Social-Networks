@@ -443,92 +443,124 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
 
-<section id="todays-dad-joke" class="slide level2">
-<h2>Today’s Dad Joke</h2>
-<p>My neighbor had the nerve to ring my doorbell at 3 o’clock in the morning.</p>
-<p><span class="fragment"> Luckily I was still up playing the drums. </span></p>
+<section>
+<section id="creation-of-edges" class="title-slide slide level1">
+<h1>Creation of edges</h1>
+
 </section>
-<section id="housekeeping" class="slide level2">
-<h2>Housekeeping</h2>
-<ul>
-<li class="fragment">Self Assessment Reflection next week
-<ul>
-<li class="fragment">Goals for the class</li>
-<li class="fragment">Feedback for me</li>
-</ul></li>
-<li class="fragment">R Lab 2</li>
-<li class="fragment">This week was a lot: R + readings</li>
-<li class="fragment">Use Thursdays as R working time</li>
-<li class="fragment">More videos from me</li>
-</ul>
-</section>
-<section id="the-plan-for-r" class="slide level2">
-<h2>The Plan for R</h2>
-<ul>
-<li class="fragment">A short assignment every few weeks</li>
-<li class="fragment">Goals:
-<ul>
-<li class="fragment">Create and import network data</li>
-<li class="fragment">Use visualizations to explore interesting connections</li>
-<li class="fragment">Calculate basic network statistics</li>
-</ul></li>
-</ul>
-</section>
-<section><section id="creation-of-edges" class="title-slide slide level1"><h1>Creation of edges</h1></section><section id="why-do-people-form-relationships-edges" class="slide level2">
+<section id="why-do-people-form-relationships-edges"
+class="slide level2">
 <h2>Why do people form relationships / edges?</h2>
 <ul>
-<li class="fragment">Psychological explanations
+<li class="fragment">Psychological explanations</li>
+<li class="fragment">Strategic explanations</li>
+<li class="fragment">Exposure explanations</li>
+</ul>
+</section></section>
+<section>
+<section id="psychological-explanations"
+class="title-slide slide level1">
+<h1>Psychological explanations</h1>
+
+</section>
+<section id="we-are-comfortable-with-people-like-us"
+class="slide level2">
+<h2>We are comfortable with people like us</h2>
 <ul>
-<li class="fragment">Homophily</li>
+<li class="fragment">Homophily
+<ul>
+<li class="fragment">People who are like each other are more likely to
+become friends</li>
 </ul></li>
 </ul>
 <div class="fragment">
 <p><img src="tie_formation_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
 </div>
-</section><section id="triadic-closure-transitivity" class="slide level2">
-<h2>Triadic closure / transitivity</h2>
+</section>
+<section id="we-want-our-relationships-to-be-in-balance"
+class="slide level2">
+<h2>We want our relationships to be in balance</h2>
+<ul>
+<li class="fragment">Balance theory
+<ul>
+<li class="fragment">The enemy of my enemy is my friend</li>
+<li class="fragment">The friend of my enemy is my enemy</li>
+</ul></li>
+</ul>
 <div class="fragment">
 <p><img src="tie_formation_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
 </div>
-</section><section id="balance-theory" class="slide level2">
-<h2>Balance Theory</h2>
+<aside class="notes">
+<p>Balance theory is a bit more complicated. It says that we want our
+relationships to be in balance If A is friends with B and B is friends
+with C, but A and C are enemies, then balance theory says that this is
+unstable. Ties will dissolve or change valence.</p>
+This does depend on the type of relationship, though. What if black
+represents “hates”? If A hates B and B hates C, then maybe A will like
+C. Or if A is in love with B and B is in love with C, then A may hate C.
+These triangles are the source of lots of literature!
+</aside>
+</section></section>
+<section>
+<section id="strategic-explanations" class="title-slide slide level1">
+<h1>Strategic explanations</h1>
+
+</section>
+<section id="we-want-to-be-in-relationships-that-help-us"
+class="slide level2">
+<h2>We want to be in relationships that help us</h2>
+<ul>
+<li class="fragment">Social exchange theory
+<ul>
+<li class="fragment">Do the benefits of relationship outweigh the
+costs?</li>
+<li class="fragment">What resources does each node have and need?</li>
+</ul></li>
+<li class="fragment">Social capital
+<ul>
+<li class="fragment">People seek to make relationships with powerful
+others</li>
+<li class="fragment">People seek to obtain powerful positions in the
+network</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="exposure-explanations" class="title-slide slide level1">
+<h1>Exposure explanations</h1>
+
+</section>
+<section id="we-become-friends-with-our-friends-friends"
+class="slide level2">
+<h2>We become friends with our friends’ friends</h2>
+<ul>
+<li class="fragment">Triadic closure / transitivity</li>
+</ul>
 <div class="fragment">
 <p><img src="tie_formation_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /></p>
 </div>
 <aside class="notes">
-<p>Balance theory is a bit more complicated. It says that we want our relationships to be in balance If A is friends with B and B is friends with C, but A and C are enemies, then balance theory says that this is unstable. Ties will dissolve or change valence.</p>
-This does depend on the type of relationship, though. What if black represents “hates”? If A hates B and B hates C, then maybe A will like C. Or if A is in love with B and B is in love with C, then A may hate C. These triangles are the source of lots of literature!
+<p>It is worth nothing that homophily is another explanation for the
+ubiquity of triadic closure. Those who are like us are likely to be our
+friends; those who are like our friends are likely to be like us.</p>
 </aside>
-</section><section id="why-do-people-form-edges" class="slide level2">
-<h2>Why do people form edges?</h2>
-<ul>
-<li class="fragment">Rational explanations
-<ul>
-<li class="fragment">Social capital
-<ul>
-<li class="fragment">People seek to fill structural holes and obtain powerful positions in the network</li>
-</ul></li>
-<li class="fragment">Social exchange theory
-<ul>
-<li class="fragment">Do the benefits of relationship outweigh the costs?</li>
-<li class="fragment">What resources does each node have and need?</li>
-</ul></li>
-</ul></li>
-<li class="fragment">Assumed to operate at the dyad / edge level</li>
-</ul>
-</section><section id="focus-of-activity" class="slide level2">
+</section>
+<section id="focus-of-activity" class="slide level2">
 <h2>Focus of Activity</h2>
 <ul>
-<li class="fragment">Partially a pushback against these
+<li class="fragment">Partially a pushback against other explanations
 <ul>
-<li class="fragment">People choose activities</li>
-<li class="fragment">Ties are often a function of activities, not dyadic choices</li>
+<li class="fragment">People choose or are forced into foci (clubs,
+neighborhoods, classes, etc.)</li>
+<li class="fragment">Ties are often a function of activities, not dyadic
+choices</li>
 </ul></li>
 </ul>
 </section></section>
@@ -543,14 +575,39 @@ This does depend on the type of relationship, though. What if black represents �
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

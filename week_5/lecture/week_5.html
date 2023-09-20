@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -468,7 +468,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Housekeeping</h2>
 <ul>
 <li class="fragment">Videos + readings on centrality and power</li>
-<li class="fragment">How do we measure who is important and influential?</li>
+<li class="fragment">How do we measure who is important and
+influential?</li>
 <li class="fragment">Thursday
 <ul>
 <li class="fragment">Ego network activity</li>
@@ -483,17 +484,23 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Review</h2>
 <ul>
 <li class="fragment">What is an “ego network”?</li>
-<li class="fragment">What is the “cognitive activation” of a network?</li>
+<li class="fragment">What is the “cognitive activation” of a
+network?</li>
 </ul>
 </section>
 <section id="review-1" class="slide level2">
 <h2>Review</h2>
 <ul>
-<li class="fragment">What are the benefits of having a dense ego network?</li>
-<li class="fragment">What are the benefits of having a sparse ego network?</li>
-<li class="fragment">What are some reasons that you think friendship can be asymmetrical?</li>
-<li class="fragment">Is there such thing as a “true” social network? How could we find it out?</li>
-<li class="fragment">What are some ways that our perceptions of a network could influence our behaviors?</li>
+<li class="fragment">What are the benefits of having a dense ego
+network?</li>
+<li class="fragment">What are the benefits of having a sparse ego
+network?</li>
+<li class="fragment">What are some reasons that you think friendship can
+be asymmetrical?</li>
+<li class="fragment">Is there such thing as a “true” social network? How
+could we find it out?</li>
+<li class="fragment">What are some ways that our perceptions of a
+network could influence our behaviors?</li>
 </ul>
 </section>
 <section id="discussion-questions" class="slide level2">
@@ -525,7 +532,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="what-do-our-ego-networks-look-like" class="slide level2">
 <h2>What do our ego networks look like?</h2>
 <ul>
-<li class="fragment">From time to time, most people discuss important matters with other people. Looking back over the last 6 months, who are the people with whom you discussed matters important to you?</li>
+<li class="fragment">From time to time, most people discuss important
+matters with other people. Looking back over the last 6 months, who are
+the people with whom you discussed matters important to you?</li>
 </ul>
 </section>
 <section id="making-connections" class="slide level2">
@@ -539,7 +548,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 </ul>
 </section>
-<section id="write-attributes-of-your-connections-to-a-node-attribute-file" class="slide level2">
+<section
+id="write-attributes-of-your-connections-to-a-node-attribute-file"
+class="slide level2">
 <h2>Write attributes of your connections to a node attribute file</h2>
 <ul>
 <li>Sex</li>
@@ -601,14 +612,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 
