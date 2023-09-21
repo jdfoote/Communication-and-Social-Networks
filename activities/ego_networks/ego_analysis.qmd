@@ -1,5 +1,5 @@
 ---
-title: "Ego Network Calculations"
+title: "Ego Networks Activity"
 author: "Your Name Here"
 format: pdf
 ---
@@ -11,24 +11,29 @@ library(igraph)
 library(ggraph) # If you get an error run install.packages('ggraph')
 library(tidygraph) # If you get an error run install.packages('tidygraph')
 library(readxl) # If you get an error run install.packages('tidyverse')
+library(tidyverse)
 #extrafont::loadfonts() 
 set_graph_style(family="sans")
 ```
 
-Create your networks. Make an node attributes file for each person that you have "discussed important matters with" over the last 6 months.
+We read about the ego networks of Americans. In this exercise, you'll create your own ego network and visualize it, using the skills that we've been working on in R.
 
-The file should include:
+First, you should create your network spreadsheets in Excel. Start by making a node attributes file with a row for each person that you have "discussed important matters with" over the last 6 months.
+
+The columns of the spreadsheet should be:
 - sex
 - education (years of education)
 - race
 - age
 - is.kin (are they related to you?)
 
-Then, for each person, make an edge list of which of the other people they are connected to. For each edge, put the edge weight as 0 if they are strangers, 1 if they are especially close, or .5 if they are somewhere in between.
+Then, make a spreadsheet that's an edgelist with a row for each connection in your network. For each edge, put the edge weight as 0 if they are strangers, 1 if they are especially close, or .5 if they are somewhere in between.
+
+Change the code below so that the path points to where you saved the edgelist and node attribute files.
 
 ```{r}
-edges <- read_excel('~/Teaching/communication_and_networks/activities/ego_networks/ego_edges.xlsx')
-nodes <- read_excel('~/Teaching/communication_and_networks/activities/ego_networks/ego_atts.xlsx')
+edges <- read_excel('activities/ego_networks/ego_edges.xlsx')
+nodes <- read_excel('activities/ego_networks/ego_atts.xlsx')
 ```
 
 Code to load the file into R and make it into a network object.
@@ -92,3 +97,23 @@ G |>
 ## YOUR CODE HERE
 
 ```
+
+5. The standard deviation of age in your network.
+
+As a hint, here's how you would get the standard deviation of education
+
+```{r}
+
+G |>
+  activate(nodes) |>
+  as_tibble() |>
+  summarize(education_sd = sd(education))
+
+```
+
+```{r}
+
+## YOUR CODE HERE
+
+```
+
