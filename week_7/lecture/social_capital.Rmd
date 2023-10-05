@@ -9,6 +9,8 @@ output:
     self_contained: false
     css: ../../libs/custom_css.css
     reveal_plugins: ["notes"]
+    lib: ../../libs
+    allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}

@@ -23,18 +23,24 @@ source("resources/preamble.R")
 My landlord texted saying we need to meet up and talk about how high my heating bill is.
 
 <p class='fragment'>
-I replied back: “Sure, my door is always open.”
+I replied : “Sure, my door is always open.”
 </p>
 
 ## Housekeeping
 
 > - Self Assessment Reflections
->   - Hopefully today or tomorrow (Sorry!)
+>   - Please ask questions or reach out
+>   - Generally, people are doing well!
 > - Homework questions in #homework-help on Discord
 >	- Copy and paste code
 
 
 ## Collective Norms Discussion
+
+> - I think our in-person conversations could be better
+> - Too many tech distractions
+> - Coming prepared
+> - How to have more natural conversations?
 
 
 ## Concept Review

@@ -31,7 +31,8 @@ library(ggraph)
 
 ## Housekeeping
 
-> - Social Search assignment (October 18)
+> - Who Dunnit game on Thursday!
+> - Social Search assignment (October 17)
 >	- Try to find someone with driver's license from HI
 >	- No group texts
 >	- Diagram search network

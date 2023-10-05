@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,7 +455,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section id="instructions" class="slide level2">
 <h2>Instructions</h2>
-<p>The boss in your organization has had valuable company secrets stolen from a drawer in his office sometime between when he left the office at 5:00 last night and this morning. You are all in the office now and have seen and heard different things and are trying to figure out who did it. There are five prime suspects and all of you have pieces of critical information that will either draw suspicion to or exonerate one of the suspects. However, because your organization is very hierarchical, you are only allowed to talk with certain people (i.e., the people you directly work with), as shown on the next slide.</p>
+<p>The boss in your organization has had valuable company secrets stolen
+from a drawer in his office sometime between when he left the office at
+5:00 last night and this morning. You are all in the office now and have
+seen and heard different things and are trying to figure out who did it.
+There are five prime suspects and all of you have pieces of critical
+information that will either draw suspicion to or exonerate one of the
+suspects. However, because your organization is very hierarchical, you
+are only allowed to talk with certain people (i.e., the people you
+directly work with), as shown on the next slide.</p>
 </section>
 <section id="the-network" class="slide level2">
 <h2>The network</h2>
@@ -506,11 +514,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </tr>
 <tr class="even">
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">9, 11</td>
+<td style="text-align: left;">9, 11, 12</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">10</td>
+<td style="text-align: left;">10, 12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">10, 11</td>
 </tr>
 </tbody>
 </table>
@@ -520,63 +532,130 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Rules</h2>
 <div style="margin:-1em; font-size:60%;">
 <ul>
-<li class="fragment">The suspects are Adam, Brandon, Erica, Jake, and Lisa. The suspects are not in the room. Nobody here is guilty.</li>
+<li class="fragment">The suspects are Adam, Brandon, Erica, Jake, and
+Lisa. The suspects are not in the room. Nobody here is guilty.</li>
 </ul>
 <ul>
-<li class="fragment">Write down any clues you receive on the Clue Track Sheet, including those you started with. Make sure to note the person they came from (i.e., the person’s node ID) and the clue number.</li>
+<li class="fragment">Write down any clues you receive on the Clue Track
+Sheet, including those you started with. Make sure to note the person
+they came from (i.e., the person’s node ID) and the clue number.</li>
 </ul>
 <ul>
-<li class="fragment">In each round, you can give one piece of information to one other person and receive one piece of information from that same person (that is, two clues will be exchanged per round, but it must occur with the same person). Talk can only occur in dyads (pairs). Make sure your information exchange is only heard by one person at a time and not overheard by anyone else.</li>
+<li class="fragment">In each round, you can give one piece of
+information to one other person and receive one piece of information
+from that same person (that is, two clues will be exchanged per round,
+but it must occur with the same person). Talk can only occur in dyads
+(pairs). Make sure your information exchange is only heard by one person
+at a time and not overheard by anyone else.</li>
 </ul>
 <ul>
-<li class="fragment">The clue you give can be a clue you received from the instructor, or a clue from someone else.</li>
+<li class="fragment">The clue you give can be a clue you received from
+the instructor, or a clue from someone else.</li>
 </ul>
 <ul>
-<li class="fragment">Each round will last 1 to 1.5 min. The instructor will signal when it is time to find a new person to exchange information with. If no one in your nodelist is available to talk, you must sit out that round and wait for the next round to begin.</li>
+<li class="fragment">Each round will last 1 to 1.5 min. The instructor
+will signal when it is time to find a new person to exchange information
+with. If no one in your nodelist is available to talk, you must sit out
+that round and wait for the next round to begin.</li>
 </ul>
 <ul>
-<li class="fragment">The clues can be conveyed either verbally, or by showing your Who Dunnit Clue Track Sheet to the other person. Be sure to cover up the other clues you have recorded on this sheet. If a person gives you information you already have, you may ask them to give you a different clue <em>only once</em> during each round. You do not have to have ‘new’ information to give the person you exchange with in order to get ‘new’ information from them.</li>
+<li class="fragment">The clues can be conveyed either verbally, or by
+showing your Who Dunnit Clue Track Sheet to the other person. Be sure to
+cover up the other clues you have recorded on this sheet. If a person
+gives you information you already have, you may ask them to give you a
+different clue <em>only once</em> during each round. You do not have to
+have ‘new’ information to give the person you exchange with in order to
+get ‘new’ information from them.</li>
 </ul>
 </div>
 </section>
 <section id="clues" class="slide level2">
 <h2>Clues</h2>
-<div style="margin:-1em; font-size:40%;">
+<div style="margin:-1em; font-size:45%;">
 <ol type="1">
-<li>** You have been with Brandon every moment since the boss left the office yesterday and he rode into work with you today. There is no way he could have snuck out and come back without your knowing.</li>
-<li>Adam has previously stolen an idea you sent to him for suggestions and passed it off as his own to the boss. He kind of fits the profile.</li>
-<li>Lisa is always the last to leave and the first to arrive at the office. She could have easily taken the documents when no one was there.</li>
-<li>Brandon and Erica grew up in the same neighborhood and went to high school together.</li>
-<li>Jake is acting a little off and has been distracted lately. There seems to be some sort of problem bugging him, but he will not tell you anything about it.</li>
-<li>* You remember that Erica told you a few months ago that she had started dating someone from a company that is in competition with yours.</li>
-<li>** Jake is a systems administrator. He was given an extensive background check because he works with company secrets and infrastructure every day. With administrator privileges to every single company folder, he already has electronic access to company secrets.</li>
-<li>Brandon has expressed to you a strong desire to leave the company but has been having trouble finding another company that wants to hire him.</li>
-<li>** You know that Lisa is high enough in the company that she has her own copy of the company secrets in question. She would not have needed to steal them from the boss’s office to access them.</li>
-<li>** Adam asked you to cover for him yesterday morning and went home sick. You know that he hasn’t been back in the building since then.</li>
-<li>* Erica came to you for advice a few days ago. She told you that she and her boyfriend were not quite working out and that he wanted her to do something for him that she wasn’t ready to do yet.</li>
-<li>You had lunch with Adam once a few weeks ago and remember how much respect he has for the company and his boss specifically because they were so understanding during his messy divorce.</li>
-<li>Lisa told you in confidence a couple of days ago that the company is going through rough times right now and that it is possible that they might be downsizing.</li>
-<li>Jake is a long-time friend of the boss. They served in Afghanistan together and, when they got back stateside, the boss specifically sought him out to offer him a job with his company.</li>
+<li>** You have been with Brandon every moment since the boss left the
+office yesterday and he rode into work with you today. There is no way
+he could have snuck out and come back without your knowing.</li>
+<li>Adam has previously stolen an idea you sent to him for suggestions
+and passed it off as his own to the boss. He kind of fits the
+profile.</li>
+<li>Lisa is always the last to leave and the first to arrive at the
+office. She could have easily taken the documents when no one was
+there.</li>
+<li>Brandon and Erica grew up in the same neighborhood and went to high
+school together.</li>
+<li>Jake is acting a little off and has been distracted lately. There
+seems to be some sort of problem bugging him, but he will not tell you
+anything about it.</li>
+<li>* You remember that Erica told you a few months ago that she had
+started dating someone from a company that is in competition with
+yours.</li>
+<li>** Jake is a systems administrator. He was given an extensive
+background check because he works with company secrets and
+infrastructure every day. With administrator privileges to every single
+company folder, he already has electronic access to company
+secrets.</li>
+<li>Brandon has expressed to you a strong desire to leave the company
+but has been having trouble finding another company that wants to hire
+him.</li>
+<li>** You know that Lisa is high enough in the company that she has her
+own copy of the company secrets in question. She would not have needed
+to steal them from the boss’s office to access them.</li>
+<li>** Adam asked you to cover for him yesterday morning and went home
+sick. You know that he hasn’t been back in the building since then.</li>
+<li>* Erica came to you for advice a few days ago. She told you that she
+and her boyfriend were not quite working out and that he wanted her to
+do something for him that she wasn’t ready to do yet.</li>
+<li>You had lunch with Adam once a few weeks ago and remember how much
+respect he has for the company and his boss specifically because they
+were so understanding during his messy divorce.</li>
+<li>Lisa told you in confidence a couple of days ago that the company is
+going through rough times right now and that it is possible that they
+might be downsizing.</li>
+<li>Jake is a long-time friend of the boss. They served in Afghanistan
+together and, when they got back stateside, the boss specifically sought
+him out to offer him a job with his company.</li>
 </ol>
 </div>
 </section>
 <section id="clues-1" class="slide level2">
 <h2>Clues</h2>
-<div style="margin:-1em; font-size:40%;">
+<div style="margin:-1em; font-size:45%;">
 <ol start="15" type="1">
-<li>* You saw Erica enter the boss’s office after she left yesterday and emerge with a manila folder. As she is his secretary, it wouldn’t necessarily mean that she was stealing the folder.</li>
-<li>You noticed that Adam was eyeing the boss’s office a lot yesterday.</li>
-<li>Brandon told you this morning before the theft was known that he has a new job lined up and will be leaving the company.</li>
-<li>Adam has been expressing a strong desire to move up in the company as he has been there a long time but is still working an entry-level position.</li>
-<li>Adam told you a few days ago that he has a performance review coming up with the boss, and hopes that it means a promotion is on the way for him.</li>
-<li>You remember that, shortly after Brandon started in the company, the HR person let slip that he had been fired from his last job for corporate espionage.</li>
-<li>* Erica does the best she can and is very eager to please the people that are important to her. She finds it really hard to say no to those people.</li>
-<li>Lisa is well-liked throughout the office. She has always tried to help anyone who has ever asked her for help and you are not sure where you would be without her.</li>
-<li>You overheard Lisa having an animated conversation with the boss yesterday in his office. They seemed to be angry.</li>
-<li>Brandon has been submitting sloppy work to you lately and you know he can do better. You are wondering if he might have been putting his brainpower into other tasks.</li>
-<li>Jake strongly believes in the company’s mission and routinely will vent to you about how other companies that do the same thing as yours are just trying to screw over other people.</li>
-<li>Erica is the boss’s daughter and you suspect that this may be the primary reason that she is employed at all.</li>
-<li>Jake and Lisa went out for dinner together the other day and seem to be getting along well.</li>
+<li>* You saw Erica enter the boss’s office after she left yesterday and
+emerge with a manila folder. As she is his secretary, it wouldn’t
+necessarily mean that she was stealing the folder.</li>
+<li>You noticed that Adam was eyeing the boss’s office a lot
+yesterday.</li>
+<li>Brandon told you this morning before the theft was known that he has
+a new job lined up and will be leaving the company.</li>
+<li>Adam has been expressing a strong desire to move up in the company
+as he has been there a long time but is still working an entry-level
+position.</li>
+<li>Adam told you a few days ago that he has a performance review coming
+up with the boss, and hopes that it means a promotion is on the way for
+him.</li>
+<li>You remember that, shortly after Brandon started in the company, the
+HR person let slip that he had been fired from his last job for
+corporate espionage.</li>
+<li>* Erica does the best she can and is very eager to please the people
+that are important to her. She finds it really hard to say no to those
+people.</li>
+<li>Lisa is well-liked throughout the office. She has always tried to
+help anyone who has ever asked her for help and you are not sure where
+you would be without her.</li>
+<li>You overheard Lisa having an animated conversation with the boss
+yesterday in his office. They seemed to be angry.</li>
+<li>Brandon has been submitting sloppy work to you lately and you know
+he can do better. You are wondering if he might have been putting his
+brainpower into other tasks.</li>
+<li>Jake strongly believes in the company’s mission and routinely will
+vent to you about how other companies that do the same thing as yours
+are just trying to screw over other people.</li>
+<li>Erica is the boss’s daughter and you suspect that this may be the
+primary reason that she is employed at all.</li>
+<li>Jake and Lisa went out for dinner together the other day and seem to
+be getting along well.</li>
 <li>Lisa has never missed a day of work or been late.</li>
 </ol>
 </div>
@@ -591,14 +670,41 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>The full network</h2>
 <p><img src="whodunnit_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
 </section>
+<section id="network-measures" class="slide level2">
+<h2>Network measures</h2>
+<div class='container', style= 'margin-top:-50px'>
+
+<div class='col'>
+
+<img src="whodunnit_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" />
+</div>
+
+
+
+<div class='col'>
+<img src="whodunnit_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" />
+</div>
+</div>
+<div class="container">
+<div class="col">
+<p><img src="whodunnit_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" /></p>
+</div>
+<div class="col">
+<p><img src="whodunnit_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" /></p>
+</div>
+</div>
+</section>
 <section id="debrief" class="slide level2">
 <h2>Debrief</h2>
 <ul>
 <li class="fragment">Who succeeded?</li>
-<li class="fragment">Why? How did network position influence your ability to gather information?</li>
-<li class="fragment">How did you make effort to overcome your constraints?</li>
+<li class="fragment">Why? How did network position influence your
+ability to gather information?</li>
+<li class="fragment">How did you make effort to overcome your
+constraints?</li>
 <li class="fragment">How did you decide who to talk to?</li>
-<li class="fragment">How is this game similar or different from real life situations?</li>
+<li class="fragment">How is this game similar or different from real
+life situations?</li>
 </ul>
 </section>
     </div>
@@ -612,14 +718,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 
