@@ -33,13 +33,10 @@ Times were hard.
 
 ## Housekeeping
 
-> - Thanks for 
-> - Exam
->	- Open book / open note
->	- Begin next Tuesday, due Thursday
->	- Do your own work
->	- Short essay questions
->	  - 2-4 paragraphs
+> - Working on Self Assessments
+> - Exam next week
+>	- Open book / open note / open internet?
+>	- Short response  + multiple choice
 
 ## Final Project
 
@@ -53,15 +50,12 @@ Times were hard.
 ## Plan for Today
 
 > - Exam Review
-> - Networks and tech review
 
 
 ## Exam Review
 >	- Visualization / ggraph
->	  - Load two CSV files (nodes and edges)
->	  - Visualize something about the network (e.g., color the nodes by age)
->     - Explain what you learn from the visualization
->     - Example on the wiki
+>   - Look at code and explain what it will look like
+>   - Find the bug in code
 
 ## Exam Review
 
@@ -69,9 +63,21 @@ Times were hard.
 > - Network representations (Edgelists and matrices)
 > - Network formation
 > - Tie strength and small worlds
+
+## Exam Review
+
 > - Power and social capital
 > - Contagion and diffusion
 > - Centrality
+> - Resilience
+> - Bipartite networks and projections
+
+## Exam Review
+
+> - Questions from readings
+> - Friendship paradox
+> - Strength of weak ties
+> - Paul Revere
 
 ## Review Questions
 

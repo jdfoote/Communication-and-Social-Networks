@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.25.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,7 +455,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section id="todays-dad-joke" class="slide level2">
 <h2>Today’s Dad Joke</h2>
-<p>When I was young, we were really poor. My family could only afford a second-hand calculator, which was missing the “X” button.</p>
+<p>When I was young, we were really poor. My family could only afford a
+second-hand calculator, which was missing the “X” button.</p>
 <p class="fragment">
 Times were hard.
 </p>
@@ -463,16 +464,11 @@ Times were hard.
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
-<li class="fragment">Thanks for</li>
-<li class="fragment">Exam
+<li class="fragment">Working on Self Assessments</li>
+<li class="fragment">Exam next week
 <ul>
-<li class="fragment">Open book / open note</li>
-<li class="fragment">Begin next Tuesday, due Thursday</li>
-<li class="fragment">Do your own work</li>
-<li class="fragment">Short essay questions
-<ul>
-<li class="fragment">2-4 paragraphs</li>
-</ul></li>
+<li class="fragment">Open book / open note / open internet?</li>
+<li class="fragment">Short response + multiple choice</li>
 </ul></li>
 </ul>
 </section>
@@ -493,47 +489,65 @@ Times were hard.
 <h2>Plan for Today</h2>
 <ul>
 <li class="fragment">Exam Review</li>
-<li class="fragment">Networks and tech review</li>
 </ul>
 </section>
 <section id="exam-review" class="slide level2">
 <h2>Exam Review</h2>
 <ul>
-<li class="fragment">Visualization / ggraph
-<ul>
-<li class="fragment">Load two CSV files (nodes and edges)</li>
-<li class="fragment">Visualize something about the network (e.g., color the nodes by age)</li>
-<li class="fragment">Explain what you learn from the visualization</li>
-<li class="fragment">Example on the wiki</li>
-</ul></li>
+<li class="fragment">Visualization / ggraph</li>
+<li class="fragment">Look at code and explain what it will look
+like</li>
+<li class="fragment">Find the bug in code</li>
 </ul>
 </section>
 <section id="exam-review-1" class="slide level2">
 <h2>Exam Review</h2>
 <ul>
 <li class="fragment">Centrality</li>
-<li class="fragment">Network representations (Edgelists and matrices)</li>
+<li class="fragment">Network representations (Edgelists and
+matrices)</li>
 <li class="fragment">Network formation</li>
 <li class="fragment">Tie strength and small worlds</li>
+</ul>
+</section>
+<section id="exam-review-2" class="slide level2">
+<h2>Exam Review</h2>
+<ul>
 <li class="fragment">Power and social capital</li>
 <li class="fragment">Contagion and diffusion</li>
 <li class="fragment">Centrality</li>
+<li class="fragment">Resilience</li>
+<li class="fragment">Bipartite networks and projections</li>
+</ul>
+</section>
+<section id="exam-review-3" class="slide level2">
+<h2>Exam Review</h2>
+<ul>
+<li class="fragment">Questions from readings</li>
+<li class="fragment">Friendship paradox</li>
+<li class="fragment">Strength of weak ties</li>
+<li class="fragment">Paul Revere</li>
 </ul>
 </section>
 <section id="review-questions" class="slide level2">
 <h2>Review Questions</h2>
 <ul>
-<li class="fragment">What is the difference between a filter bubble and an echo chamber?</li>
-<li class="fragment">How do echo chambers relate to social influence?</li>
-<li class="fragment">What did Chris Bail et al.’s research find about breaking out of echo chambers?</li>
-<li class="fragment">How has the internet changed social networks? What are the most important positives and negatives?</li>
+<li class="fragment">What is the difference between a filter bubble and
+an echo chamber?</li>
+<li class="fragment">How do echo chambers relate to social
+influence?</li>
+<li class="fragment">What did Chris Bail et al.’s research find about
+breaking out of echo chambers?</li>
+<li class="fragment">How has the internet changed social networks? What
+are the most important positives and negatives?</li>
 </ul>
 </section>
 <section id="review-questions-1" class="slide level2">
 <h2>Review Questions</h2>
 <ul>
 <li class="fragment">What is context collapse?</li>
-<li class="fragment">How does context collapse relate to network principles we have discussed?</li>
+<li class="fragment">How does context collapse relate to network
+principles we have discussed?</li>
 </ul>
 </section>
 <section id="discussion-questions" class="slide level2">
@@ -550,14 +564,39 @@ Times were hard.
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 
