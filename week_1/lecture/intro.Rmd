@@ -45,7 +45,6 @@ Why did the nearsighted man fall in the well?
 - Name
 - Year
 - Major
-- Something fun you did over the summer
 - Closest connection to a famous person 
 
 ## What is Communication and Social Networks?
@@ -114,18 +113,14 @@ Why did the nearsighted man fall in the well?
 >- 3 times during the semester you will turn in reflection pieces
 >- If I disagree I will reach out
 
-## Dangers of this approach to grading
-
 ## Class Meetings
 
 > - Most content is asynchronous
 >	- Readings
 >	- Video lectures
 > - Tuesdays
->   - Discussion questions due on Mondays (Google Docs link)
->	- Time discussing + reviewing homework
+>	- Time discussing + reviewing concepts and homework
 >	- Random cold calling
->	- I will track whether you are prepared
 > - Thursdays 
 >	- Activities
 >	- R Labs
@@ -134,7 +129,8 @@ Why did the nearsighted man fall in the well?
 ## Class meetings
 
 > - I will work hard to make our classes valuable
-> - Do the same; be open and engaged
+> - Do the same; be prepared, open, and engaged
+> - Class discussions are a fundamental part of the class and I expect you to be at every class
 
 ## Assignments
 
@@ -145,9 +141,9 @@ Why did the nearsighted man fall in the well?
 >   - 3-2-1 on Brightspace
 >     - 3 things you learned / connections made
 >     - 2 questions / things that are still confusing
-      - 1 disucssion question for class
+      - 1 discussion question for class
 >	- Discussion Questions due Monday at noon
->- Participation (in-class and online)
+>- Participation (in class and online)
 
 ## Readings
 > - Academic papers
@@ -180,9 +176,9 @@ create_notable('zachary') %>%
 
 Options:
 
-> - "Pitch" to an organization about how what you have learned could be used to help their organization
 > - Group project: network-based intervention (e.g., spreading an idea on campus)
 > - (Group?) research project: analysis of network data
+> - "Pitch" to an organization about how what you have learned could be used to help their organization
 
 
 # Resources
@@ -215,9 +211,10 @@ Options:
 
 ## Assignments
 
->- Read the syllabus
+> - Read the syllabus
+> - Fill out the reflection on Brightspace
 > - This Thursday will be a (fun!) synchronous activity
-> - Bring your computer, if you have one
+> - Bring your computer, if possible!
 > - Make sure you are signed up on Discord
 
 
