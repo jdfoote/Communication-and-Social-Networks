@@ -44,6 +44,10 @@ Shout out to people wondering what the opposite of 'in' is.
 
 # Homework and Reading Review
 
+## Class Questions
+
+> - What do you want to talk about today?
+
 ## Basic Concepts
 
 > - What is a node?
@@ -62,6 +66,7 @@ plot(G)
 > - What is the edgelist of this graph?
 > - What is the matrix representation of this graph?
 
+## Questions from homework?
 
 ## Discussion Questions
 
@@ -73,4 +78,5 @@ plot(G)
 
 ## Thursday
 
+> - Take ~ an hour to try to install everything, work on R Lab 1
 > - Mostly working on R Lab together
