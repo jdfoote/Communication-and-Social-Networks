@@ -67,6 +67,7 @@ One astronaut says to another, "I can’t find any milk for my coffee"
 
 ## Thursday
 
-> - How are people feeling about R? Can we do an activity instead of co-working on labs?
+> - Visit from Dr. TeBlunthuis
+<!-- > - How are people feeling about R? Can we do an activity instead of co-working on labs?
 > - Watch R videos before class
-> - Work on Lab 2 during class
+> - Work on Lab 2 during class -->
