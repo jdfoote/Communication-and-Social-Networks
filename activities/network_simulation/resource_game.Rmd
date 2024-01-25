@@ -33,7 +33,9 @@ The goal is to get the resources that you need as quickly as possible.
 ## Rules
 
 - Only communicate through written messages, to neighbors
-- Give resources with '$give jdfoote A'
+- Give resources by sending '$give jdfoote A' to the NetworkGameBot
+- If you forget what you have/need, send '$status'
+- If you are an observer, send '$status' to get an updated network graph
 - You can continue playing after you have all resources, if you want
 
 ## How did it go?

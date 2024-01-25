@@ -40,8 +40,8 @@ It was a brief case.
 ## Housekeeping
 
 > - Peer review
-> - Final project due Dec. 14
-> - Self Assessment Reflection due Dec. 14
+> - Final project due Dec. 13
+> - Self Assessment Reflection due Dec. 13
 > - Advanced visualizations
 >   - Faceting
 >   - Grouping

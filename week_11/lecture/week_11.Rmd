@@ -47,19 +47,16 @@ My thoughts are with his family.
 ## Housekeeping
 
 > - Still working on Self Assessment Reflections
->   - More time for R catchup
->   - Final project discussion / group creation
 > - Submit Exam Questions ASAP
-> - Time for exam? Tuesday after class to Thursday before class?
->   - Due November 17 (Thursday)
-> - November 8 - Guest lecture by Dr. Seungyoon Lee on resilient networks
+> - November 7 - Guest lecture by Dr. Seungyoon Lee on resilient networks
 
 ## Plan for today
 
-> - Troubled Lands Discussion
 > - Groups in networks review
 > - Discussion questions
+> - R
 
+<!---
 # Troubled Lands Review
 
 ## Questions from Brightspace Assignment
@@ -83,7 +80,7 @@ My thoughts are with his family.
 > - What role did communication play? How did your group make decisions?
 > - Did you work to make things equal? Why or why not?
 > - What kinds of inequality appeared in the game?
-
+--->
 
 ## Community Detection Review
 

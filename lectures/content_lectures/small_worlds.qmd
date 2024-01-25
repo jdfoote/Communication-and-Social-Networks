@@ -1,0 +1,84 @@
+---
+title: Small worlds
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+# What do human networks look like?
+
+## Hard to measure for a long time
+
+> - Erdos and Reyni came up with random graphs
+> - Each edge has equal probability of existing
+> - This obviously isn't true
+> - Most of us are much more likely to be connected to those near us (along multiple dimensions)
+
+## What do "groupy" networks look like?
+
+> - High clustering (triadic closure)
+> - Long path lengths
+> - High "geodesic distance" (longest path between any two nodes)
+
+## Milgram Experiment and 6 degrees
+
+> - Try to get a letter to Mr. X
+> - Found that (of those that made it) it took ~6 steps
+  > - Similar results found in 2003 using email (Dodds, Muhamad, Watts)
+
+
+## The puzzle
+
+> - We know that we are in "groupy" networks yet all ~8 billion of us seem to be connected within a relatively short number of steps. How?
+
+## Watts and Strogatz big insight
+
+"Groupy" graph:
+
+```{r, fig.height = 4.5, fig.width =4.5}
+G = watts.strogatz.game(1, 40, 2, 0)
+
+G %>% ggraph('circle') + geom_edge_arc() + geom_node_point() + theme_graph()
+```
+
+Average distance: `r mean(distances(G), na.rm=T)`;
+Max distance: `r max(distances(G), na.rm=T)`
+
+## Just a few random "rewirings" make a clustered network with low distances
+
+10% of edges rewired:
+
+```{r, fig.height = 4.5, fig.width =4.5}
+G = watts.strogatz.game(1, 40, 2, .1)
+
+G %>% ggraph('circle') + geom_edge_fan() + geom_node_point() + theme_graph()
+```
+
+Average distance: `r mean(distances(G), na.rm=T)`;
+Max distance: `r max(distances(G), na.rm=T)`
+
+## Where do these "rewirings" appear?
+
+> - Hubs
+> - People who move far from home
+> - People whose interests diverge from those around them
+
+
+## Lots of other networks have these same characteristics
+
+> - Oracle of Bacon
+> - Six Degrees of Wikipedia

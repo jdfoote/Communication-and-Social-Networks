@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.25.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,20 +455,30 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section id="discord-signup" class="slide level2">
 <h2>Discord signup</h2>
-<p><a href="https://discord.gg/WSc5J7stgg" class="uri">https://discord.gg/WSc5J7stgg</a></p>
+<p><a href="https://discord.gg/WSc5J7stgg"
+class="uri">https://discord.gg/WSc5J7stgg</a></p>
 </section>
 <section id="the-game" class="slide level2">
 <h2>The game</h2>
-<p>Each of you needs things that other people in the room have. These resources are represented by letters.</p>
-<p>However, you are only “friends” with a small number of people. These are the people that you can communicate with, ask for resources, and give resources to.</p>
-<p>The goal is to get the resources that you need as quickly as possible.</p>
+<p>Each of you needs things that other people in the room have. These
+resources are represented by letters.</p>
+<p>However, you are only “friends” with a small number of people. These
+are the people that you can communicate with, ask for resources, and
+give resources to.</p>
+<p>The goal is to get the resources that you need as quickly as
+possible.</p>
 </section>
 <section id="rules" class="slide level2">
 <h2>Rules</h2>
 <ul>
 <li>Only communicate through written messages, to neighbors</li>
-<li>Give resources with ‘$give jdfoote A’</li>
-<li>You can continue playing after you have all resources, if you want</li>
+<li>Give resources by sending ‘$give jdfoote A’ to the
+NetworkGameBot</li>
+<li>If you forget what you have/need, send ‘$status’</li>
+<li>If you are an observer, send ‘$status’ to get an updated network
+graph</li>
+<li>You can continue playing after you have all resources, if you
+want</li>
 </ul>
 </section>
 <section id="how-did-it-go" class="slide level2">
@@ -518,14 +528,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

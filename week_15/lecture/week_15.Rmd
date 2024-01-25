@@ -37,7 +37,7 @@ By its bark
 >	- Hopefully a helpful way to review
 >   - Options for making up for a bad exam
 > - Get feedback to your peers! (And upload to Brightspace)
-> - Final draft DUE December 14
+> - Final draft DUE December 13
 > - Self Assessment Reflection
 > - Feedback for me (Purdue / Google Form / email / Discord)
 
@@ -86,6 +86,7 @@ By its bark
 > - In the 90s, people were given vouchers to move to lower poverty areas
 > - Chetty at al. found that children did better as adults the longer they lived in higher income areas
 >	- Why? One (the best!) explanation is that people gain greater social capital
+>   - Additional evidence from Chetty et al (2022), which shows that living somewhere where friendships have high "economic connectedness" predicts upward mobility.
 
 ## Takeaways
 

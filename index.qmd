@@ -1,0 +1,6 @@
+---
+title: "Communication and Social Networks"
+---
+
+I'm working on making this into a real course website. For now, if you've ended up here, you likely either want the [course syllabus](https://wiki.communitydata.science/Communication_and_Social_Networks(Spring_2023)) or the [lecture slides](./lectures.html)
+

@@ -1,0 +1,61 @@
+---
+title: Small Group Networks
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+#source("resources/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+
+## Today's Dad Joke
+
+My neighbor had the nerve to ring my doorbell at 3 o'clock in the morning.
+
+<span class='fragment'>
+Luckily I was still up playing the drums.
+</span>
+
+
+## Housekeeping
+
+> - Self Assessment Reflections
+>	- Goals for the class
+>	- Feedback for me
+> - Afterward, I will
+>	- Report on participation
+>	- Review your HW
+>	- Review your discussion questions
+
+## Homework review
+
+## What concepts are confusing?
+
+## Review Questions
+
+> - What is centralization?
+> - When is a centralized network better?
+> - What is "transactive memory"
+> - According to the Informal Networks article, why is it important to identify different kinds of networks?
+> - What sorts of information can be learned from an advice network?
+>	- A trust network?
+> - Have you thought about the groups that you are in from a network perspective? What insights have you had?
+
+## Discussion Questions
+
+
+## Thursday
+
+- R Lab 3 - Mutating and filtering

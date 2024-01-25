@@ -1,5 +1,6 @@
 <<echo=FALSE, results=hide>>=
 
+print('Running the last one')
 nodes <- sample(c("A","B","C","D"))
 
 G <- make_graph(c(

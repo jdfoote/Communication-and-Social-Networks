@@ -12,11 +12,22 @@ make_matrix <- function(g){
 \begin{question}
 
 Which of the following is the matrix representation of this network? (6 points)
+
+<<results=tex, echo=F>>=
+print(make_matrix(G))
+@
+
 \begin{answerlist}
+
 \item 
 <<echo=F, results=tex>>=
-print(make_matrix(G), floating = F)
+print('test')
+print(make_matrix(G))
 @
+
+\item 
+
+    Test
 
 \item
 <<echo=F, results=tex>>=
@@ -43,5 +54,5 @@ print(make_matrix(bad_graphs[[3]]), floating = F)
 
 \exname{matrix}
 \extype{schoice}
-\exsolution{1000}
+\exsolution{10000}
 \exshuffle{4}

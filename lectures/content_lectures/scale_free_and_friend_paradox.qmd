@@ -1,0 +1,140 @@
+---
+title: Scale-free networks and the friendship paradox
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(tidyverse)
+```
+
+## Scale-free networks
+
+> - What do degree distributions look like?
+>	- In many cases, they are really skewed!
+>	- A few people have many edges, while many have few
+> - Why?
+>	- Rich-get-richer processes (preferential attachment)
+
+## Why are they called scale-free?
+
+> - No matter where you zoom in on the distribution, it has the same shape
+
+<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+set_graph_style()
+
+G = play_barabasi_albert(10000, growth = 1, power = 1)
+
+df = G %>% 
+  as_tbl_graph() %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree(mode='all')) %>%
+  as_tibble() %>%
+  group_by(degree) %>%
+  tally(name = 'count')
+
+
+df %>% 
+  filter(degree > 1) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() +
+  labs(title="All nodes")
+
+```
+
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 2) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 3")
+```
+</div>
+
+<div class='fragment' style="position:absolute;top:0;left:0;">
+```{r}
+df %>% 
+  filter(degree > 3) %>%
+  ggplot(aes(x = degree, y = count)) + 
+  geom_line() + 
+  theme_minimal() + 
+  labs(title="Nodes with degree of at least 4")
+```
+
+</div>
+</div>
+
+## Implications
+
+> - Robust to random failures
+> - Outcomes are "unfair"
+
+
+## Friendship paradox
+
+> - Scott Feld (Purdue Sociologist!)
+> - On average, your friends have more friends than you do
+
+## What?!
+
+> - The key idea is that people who are connected to lots of people are more likely to show up in your friend network.
+> - You are likely to be friends with people who have lots of friends, because they have lots of friends!
+> - This is much more pronounced as the skew of a network changes
+> - E.g., the people you follow on Twitter/Instagram are likely much more popular than you
+
+## Example
+
+```{r, out.width="45%"}
+
+set_graph_style()
+
+G = barabasi.game(10, m = 2)
+
+G = G %>% as_tbl_graph() %>%
+  mutate(degree = centrality_degree(mode='all'),
+         neighbor_degree = local_ave_degree())
+p = G %>% 
+  ggraph(layout = 'kk') +
+  geom_edge_fan() +
+  geom_node_point(color='lightblue', size = 16) +
+  geom_node_text(aes(label=degree), size = 12, fontface='bold')
+
+p
+```
+<span class='fragment'>
+```{r, out.width="45%"}
+
+p + 
+  geom_node_point(aes(color = neighbor_degree > degree), size = 16) +
+  geom_node_text(aes(label=round(neighbor_degree, 2)), nudge_y = -.1, size=9) +
+  geom_node_text(aes(label=degree), nudge_y = .1, size=9) +
+  scale_color_viridis_d("Neighbors have higher degree", begin = .6, end = .85, )
+
+```
+</span>
+
+## Implications
+
+> - In many cases, we can't see who is most popular
+> - Simply choosing a node at random, and then choosing one of their friends will identify a group that is more popular and closer to center
+> - Detect outbreaks
+> - Focus interventions

@@ -5,3 +5,7 @@ readings/
 grades.*
 .Rhistory
 final_project_examples.pdf
+
+/.quarto/
+/_site/
+*_files/

@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/content_lectures.html",
+    "items": [
+      "/content_lectures/week_2_network_types.html",
+      "/content_lectures/week_3_tie_formation.html",
+      "/content_lectures/week_4_small_groups.html"
+    ]
+  },
+  {
+    "listing": "/class_lectures.html",
+    "items": [
+      "/class_lectures/week_1_intro.html",
+      "/class_lectures/week_2.html",
+      "/class_lectures/week_3.html"
+    ]
+  }
+]

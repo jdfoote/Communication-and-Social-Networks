@@ -18,7 +18,7 @@ Which node has the highest betweenness centrality? Explain why. (6 points)
 \begin{solution}
 
 
-\Sexpr{V(g)[which.max(betweenness(G)]}
+\Sexpr{V(G)[which.max(betweenness(G))]}
 
 
 \end{solution}

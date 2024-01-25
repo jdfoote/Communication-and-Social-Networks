@@ -35,6 +35,83 @@ Love means nothing to them.
 
 ## Housekeeping
 
+> EXAM ON THURSDAY!!
+
+## Review Questions
+
+> - What is the difference between a filter bubble and an echo chamber?
+> - How do echo chambers relate to social influence?
+> - What did Chris Bail et al.'s research find about breaking out of echo chambers?
+> - How has the internet changed social networks? What are the most important positives and negatives?
+> - How do you think AI might change social networks?
+
+## Review Questions
+
+> - What is context collapse?
+> - How does context collapse relate to network principles we have discussed?
+
+# Mini-lecture on Wisdom of Crowds
+
+## Wisdom of Crowds Activity
+
+> - Get out a piece of paper
+> - Guess how many pages are in this book and write down your guess
+> - Tell your guess (and no other information) to the two people on either side of you
+> - Guess again how many pages are in the book and write it on a new line (Guess 2)
+
+## Activity 2
+
+> - Guess 3: Guess the pages in this book
+> - Two random people will tell us their guess
+> - Guess 4: Guess the pages again for this book
+
+
+## Collective understanding and decision-making
+
+> - Wisdom of crowds is idea that in many contexts, the average is a really good guess!
+> - What is groupthink? Have you seen examples? How might this relate?
+> - Dr. Josh Becker et al. show that in some cases, communication can help
+>   - Those whose guesses are worst move the most
+>   - Divorced from other social relationships (not multiplex)
+
+## Results
+
+## Decentralized network
+
+```{r}
+df %>%
+  filter(Network_Type == 'Decentralized') %>%
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=181, color = 'red', linetype='dashed') + 
+  theme_minimal() + 
+  scale_fill_viridis_d(name='Round')
+```
+
+## Centralized network
+
+```{r}
+df %>%
+  filter(Network_Type == 'Centralized') %>%
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=222, color = 'red', linetype='dashed') + 
+  theme_minimal() + 
+  scale_fill_viridis_d(name='Round')
+```
+
+## Wisdom and Madness of Crowds
+
+## Questions
+
+> - What is the "majority illusion"?
+> - How does the majority illusion relate to the friendship paradox?
+> - Majority illusion from Nicky Case activity?
+
+## Discussion Questions
+
+## Housekeeping
+
 > - Exam is due on Thursday before class
 > - Under quizzes on Brightspace
 > - Remember, it will give you new random questions if you come back
@@ -55,57 +132,3 @@ Love means nothing to them.
 
 > - What is "collective behavior"?
 > - What does collective behavior have to do with networks?
-> - What is "the wisdom of crowds"?
-> - What is groupthink? Have you seen examples?
-> - In Dr. Becker's experiments, why did groups get better when communicating?
-
-## Wisdom of Crowds Activity
-
-> - Get out a piece of paper
-> - Guess how many pages are in this book and write down your guess
-> - Tell your guess (and no other information) to the two people on either side of you
-> - Guess again how many pages are in the book and write it on a new line (Guess 2)
-
-## Activity 2
-
-> - Guess 3: Guess the pages in this book
-> - Two random people will tell us their guess
-> - Guess 4: Guess the pages again for this book
-
-
-## Results
-
-## Decentralized network
-
-```{r}
-df %>%
-  filter(Network_Type == 'Decentralized') %>%
-  ggplot() +
-  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
-  geom_vline(xintercept=294, color = 'red', linetype='dashed') + 
-  theme_minimal() + 
-  scale_fill_viridis_d(name='Round')
-```
-
-## Centralized network
-
-```{r}
-df %>%
-  filter(Network_Type == 'Centralized') %>%
-  ggplot() +
-  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
-  geom_vline(xintercept=377, color = 'red', linetype='dashed') + 
-  theme_minimal() + 
-  scale_fill_viridis_d(name='Round')
-```
-
-## Wisdom and Madness of Crowds
-
-## Questions
-
-> - What is the "majority illusion"?
-> - How does the majority illusion relate to the friendship paradox?
-> - Majority illusion from Nicky Case activity?
-
-## Discussion Questions
-

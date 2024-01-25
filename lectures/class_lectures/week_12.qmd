@@ -1,0 +1,91 @@
+---
+title: Week 12
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## Today's Dad Joke
+
+When I was young, we were really poor. My family could only afford a second-hand calculator, which was missing the "X" button.
+
+<p class='fragment'>
+Times were hard.
+</p>
+
+## Housekeeping
+
+> - Working on Self Assessments
+> - Exam next week
+>	- Open book / open note / open internet?
+>	- Short response  + multiple choice
+
+## Final Project
+
+> - Timing for final project
+>	- Don't wait - get started now!
+>	- Reach out if you get stuck
+> - Look at example projects from the past
+> - Not all visualizations have to be networks
+> - Concepts + Visualizations
+
+## Plan for Today
+
+> - Exam Review
+
+
+## Exam Review
+>	- Visualization / ggraph
+>   - Look at code and explain what it will look like
+>   - Find the bug in code
+
+## Exam Review
+
+> - Centrality
+> - Network representations (Edgelists and matrices)
+> - Network formation
+> - Tie strength and small worlds
+
+## Exam Review
+
+> - Power and social capital
+> - Contagion and diffusion
+> - Centrality
+> - Resilience
+> - Bipartite networks and projections
+
+## Exam Review
+
+> - Questions from readings
+> - Friendship paradox
+> - Strength of weak ties
+> - Paul Revere
+
+## Review Questions
+
+> - What is the difference between a filter bubble and an echo chamber?
+> - How do echo chambers relate to social influence?
+> - What did Chris Bail et al.'s research find about breaking out of echo chambers?
+> - How has the internet changed social networks? What are the most important positives and negatives?
+
+
+## Review Questions
+
+> - What is context collapse?
+> - How does context collapse relate to network principles we have discussed?
+
+## Discussion Questions

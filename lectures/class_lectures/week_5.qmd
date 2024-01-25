@@ -1,0 +1,129 @@
+---
+title: Week 5
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+```
+
+## Dad Joke
+
+Bro, can you pass me that leaflet?
+
+<span class='fragment'>
+Brochure.
+</span>
+
+
+## Self Reflections and feedback
+
+> - Make sure to get them in
+
+## Housekeeping
+
+> - Videos + readings on centrality and power
+> - How do we measure who is important and influential?
+> - Thursday
+>   - Ego network activity
+>   - More co-working time
+
+## Homework Review
+
+## Review
+
+> - What is an "ego network"?
+> - What is the "cognitive activation" of a network?
+
+
+## Review
+
+> - What are the benefits of having a dense ego network?
+> - What are the benefits of having a sparse ego network?
+> - What are some reasons that you think friendship can be asymmetrical?
+> - Is there such thing as a "true" social network? How could we find it out?
+> - What are some ways that our perceptions of a network could influence our behaviors?
+
+## Discussion Questions
+
+
+## Summary
+
+# Thursday class
+
+## Debugging
+
+Strategies when R code doesn't work:
+
+> - Simplify
+> - print()
+> - Google!
+> - Friends
+
+# Ego Network Activity
+
+## What do our ego networks look like?
+
+> - From time to time, most people discuss important matters with other people. Looking back over the last 6 months, who are the people with whom you discussed matters important to you?
+
+## Making Connections
+
+- Make an edgelist for each connection, with tie strength of:
+	- Total strangers: 0
+	- Especially close: 1
+	- In between: .5
+
+## Write attributes of your connections to a node attribute file
+
+ - Sex
+ - Education (years of education)
+ - Race
+ - Age
+ - Kin or non-kin (are they related to you?)
+
+
+## Calculate your statistics
+
+- Network size
+- Kin network size
+- Non-kin network size
+- Density
+- Age heterogeneity
+- Education heterogeneity
+- Race heterogeneity
+- Sex heterogeneity (proportion in majority)
+
+
+## Importing and visualizing in R
+> - Remember `graph_from_data_frame()`
+
+<!--
+# Old Slides
+
+
+> - Thank you so much for being open and honest!
+> - Some summary thoughts
+>	- Things are going pretty well
+>	- R is hard but people are persisting
+> - Cold calling is scary
+
+## My plans for change
+
+> - Try to make more time for small group discussion
+>	- A few minutes at the beginning of class
+
+
+## Suggestions for success
+
+> - Keep working on assignments that you missed / got wrong
+> - Ask questions on Discord
+> - Come to office hours
+-->

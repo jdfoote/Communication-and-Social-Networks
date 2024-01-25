@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.17.2/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.25.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,15 +455,16 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section id="todays-dad-joke" class="slide level2">
 <h2>Today’s Dad Joke</h2>
-<p>Within minutes, the detective knew exactly what the murder weapon was.</p>
+<p>Within minutes, the detective knew exactly what the murder weapon
+was.</p>
 <p><span class="fragment"> It was a brief case. </span></p>
 </section>
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
 <li class="fragment">Peer review</li>
-<li class="fragment">Final project due Dec. 14</li>
-<li class="fragment">Self Assessment Reflection due Dec. 14</li>
+<li class="fragment">Final project due Dec. 13</li>
+<li class="fragment">Self Assessment Reflection due Dec. 13</li>
 <li class="fragment">Advanced visualizations
 <ul>
 <li class="fragment">Faceting</li>
@@ -479,12 +480,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h1>Network Visualizations</h1>
 
 </section>
-<section id="what-are-network-visualizations-good-for" class="slide level2">
+<section id="what-are-network-visualizations-good-for"
+class="slide level2">
 <h2>What are network visualizations good for?</h2>
 <ul>
-<li class="fragment">Uncover something about the structure of the network
+<li class="fragment">Uncover something about the structure of the
+network
 <ul>
-<li class="fragment">And usually how it relates to the attributes of its members</li>
+<li class="fragment">And usually how it relates to the attributes of its
+members</li>
 </ul></li>
 </ul>
 </section>
@@ -505,30 +509,36 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 <li class="fragment">Shape
 <ul>
-<li class="fragment">Typically categorical (e.g., gender, age range)</li>
+<li class="fragment">Typically categorical (e.g., gender, age
+range)</li>
 </ul></li>
 <li class="fragment">Size
 <ul>
-<li class="fragment">Often a network measure, but can be something about node</li>
+<li class="fragment">Often a network measure, but can be something about
+node</li>
 </ul></li>
 <li class="fragment">Color
 <ul>
-<li class="fragment">Community detection or node attribute or network measure</li>
+<li class="fragment">Community detection or node attribute or network
+measure</li>
 </ul></li>
 </ul>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
+<pre><code>## Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` in the `default_aes` field and elsewhere instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="week_16_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
 </section>
 <section id="with-node-shapes" class="slide level2">
 <h2>With node shapes</h2>
 <p><img src="week_16_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
 </section>
-<section id="nodes-sized-by-betweenness-centrality" class="slide level2">
+<section id="nodes-sized-by-betweenness-centrality"
+class="slide level2">
 <h2>Nodes sized by betweenness centrality</h2>
-<pre><code>## Warning in betweenness(graph = graph, v = V(graph), directed = directed, :
-## &#39;nobigint&#39; is deprecated since igraph 1.3 and will be removed in igraph 1.4</code></pre>
 <p><img src="week_16_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" /></p>
 </section>
 <section id="nodes-colored-by-community" class="slide level2">
@@ -544,7 +554,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 <li class="fragment">Color
 <ul>
-<li class="fragment">Typically represents different types of relationships</li>
+<li class="fragment">Typically represents different types of
+relationships</li>
 </ul></li>
 </ul>
 </section>
@@ -574,11 +585,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 </ul>
 </section>
-<section id="node-placement-can-make-a-big-difference-in-how-a-network-is-perceived" class="slide level2">
-<h2>Node placement can make a big difference in how a network is perceived</h2>
+<section
+id="node-placement-can-make-a-big-difference-in-how-a-network-is-perceived"
+class="slide level2">
+<h2>Node placement can make a big difference in how a network is
+perceived</h2>
 <p><img src="week_16_files/figure-revealjs/unnamed-chunk-7-1.png" width="32%" /><img src="week_16_files/figure-revealjs/unnamed-chunk-7-2.png" width="32%" /><img src="week_16_files/figure-revealjs/unnamed-chunk-7-3.png" width="32%" /><img src="week_16_files/figure-revealjs/unnamed-chunk-7-4.png" width="32%" /></p>
 </section>
-<section id="what-makes-for-a-good-network-visualization" class="slide level2">
+<section id="what-makes-for-a-good-network-visualization"
+class="slide level2">
 <h2>What makes for a good network visualization?</h2>
 <p>Kozo Sugiyama’s rules:</p>
 <div style="font-size:smaller">
@@ -588,8 +603,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Lines should not cross or touch.</li>
 <li>Lines should be easy to follow from one node to another.</li>
 <li>Nodes that connect should be close.</li>
-<li>Nodes that are most central should be close to the center of the graph.</li>
-<li>Nodes that are similar in some way should be placed near one another.</li>
+<li>Nodes that are most central should be close to the center of the
+graph.</li>
+<li>Nodes that are similar in some way should be placed near one
+another.</li>
 </ol>
 </div>
 </section>
@@ -597,17 +614,24 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Activity</h2>
 <p>Find and Assess a network visualization</p>
 <ul>
-<li class="fragment">Use Google Images (or similar) to find an image of a network graphs.</li>
-<li class="fragment">What do you think the image does well and poorly? Does it follow Sugiyama’s rules?</li>
-<li class="fragment">Put the image (and your assessment) on the padlet at <a href="https://padlet.com/jdfoote1/networks" class="uri">https://padlet.com/jdfoote1/networks</a> (link is also on wiki)</li>
+<li class="fragment">Use Google Images (or similar) to find an image of
+a network graphs.</li>
+<li class="fragment">What do you think the image does well and poorly?
+Does it follow Sugiyama’s rules?</li>
+<li class="fragment">Put the image (and your assessment) on the padlet
+at <a href="https://padlet.com/jdfoote1/networks"
+class="uri">https://padlet.com/jdfoote1/networks</a> (link is also on
+wiki)</li>
 </ul>
 </section>
 <section id="discussion" class="slide level2">
 <h2>Discussion</h2>
 <ul>
 <li class="fragment">Did you agree with Sugiyama’s rules?</li>
-<li class="fragment">What types of color/shape/size approaches were effective?</li>
-<li class="fragment">Did this make you want to change any visualizations for your final project?</li>
+<li class="fragment">What types of color/shape/size approaches were
+effective?</li>
+<li class="fragment">Did this make you want to change any visualizations
+for your final project?</li>
 </ul>
 </section>
 <section id="reflection" class="slide level2">
@@ -620,14 +644,19 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="parting-thoughts" class="slide level2">
 <h2>Parting thoughts</h2>
 <ul>
-<li class="fragment">“We shape our [networks]; thereafter they shape us” - Churchill, paraphrased</li>
-<li class="fragment">We are embedded in mostly invisible networks of influence
+<li class="fragment">“We shape our [networks]; thereafter they shape us”
+- Churchill, paraphrased</li>
+<li class="fragment">We are embedded in mostly invisible networks of
+influence
 <ul>
-<li class="fragment">Our beliefs, opportunities, and outcomes are not independently chosen or earned</li>
-<li class="fragment">The choices we make may extend far beyond our vision</li>
+<li class="fragment">Our beliefs, opportunities, and outcomes are not
+independently chosen or earned</li>
+<li class="fragment">The choices we make may extend far beyond our
+vision</li>
 </ul></li>
 <li class="fragment">Cultivate our social capital for good</li>
-<li class="fragment">I am grateful for the edges created during our class. :)</li>
+<li class="fragment">I am grateful for the edges created during our
+class. :)</li>
 </ul>
 </section></section>
     </div>
@@ -641,14 +670,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

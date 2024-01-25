@@ -1,0 +1,79 @@
+---
+title: Networks and Technology
+format: 
+  revealjs:
+    css: ./libs/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = './')
+source("resources/preamble.R")
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+## How has technology changed networks?
+
+> - A lot!
+> - "Civilization" technologies allowed for larger groups
+> - Books create cross-temporal knowledge networks
+
+## The impacts of internet technology
+
+> - Early adopters were optimistic
+>	- Tech could connect everyone
+>	- We would understand/appreciate each other through interaction
+
+## The dark side has become much more apparent
+
+> - Bots
+>	- Put people in "unearned" network positions
+> - Echo chambers
+> - Mis/disinformation
+
+## But also some important benefits
+
+> - Finding people with niche interests
+> - Support groups for those who are different
+>	- More autonomy over who is "in" your network
+> - Niche information
+> - Opportunity to communicate/collaborate without networks
+
+## Technology has huge implications for network research 
+
+> - Social media has made large-scale human networks visible
+>	- Degree distributions
+>	- Network paths (six degrees of separation)
+>	- Communication patterns
+>	- Information and belief diffusion
+
+## Social science is being reshaped by online data
+
+> - We can look at thousands or millions of people
+> - Starting to answer questions like:
+>	- When do people change their minds?
+>	- Why do people choose to cooperate?
+>	- What predicts participating in a new group?
+> - We can finally see global networks instead of just small portions
+
+## But, there are some important caveats
+
+> - Technology doesn't only record interactions, it shapes them
+>	- Is this true of people, or true of Facebook/Reddit/Twitter?
+> - Human systems respond to observation and evolve
+> - Much is unobserved
+>	- These are often "thin slices"
+>	- In what other ways are people communicating?
+>	- What other technologies or circumstances shape their behavior?
+
+## Those who understand networks have an advantage
+
+> - Advertisers, activists, and politicians who understand network principles like homophily, clustering, and complex contagion will see their messages spread farther and faster.
+

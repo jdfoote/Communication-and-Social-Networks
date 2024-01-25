@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.19.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -461,87 +461,84 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
 <ul>
-<li class="fragment">Still working on Self Assessment Reflections
-<ul>
-<li class="fragment">More time for R catchup</li>
-<li class="fragment">Final project discussion / group creation</li>
-</ul></li>
+<li class="fragment">Still working on Self Assessment Reflections</li>
 <li class="fragment">Submit Exam Questions ASAP</li>
-<li class="fragment">Time for exam? Tuesday after class to Thursday before class?
-<ul>
-<li class="fragment">Due November 17 (Thursday)</li>
-</ul></li>
-<li class="fragment">November 8 - Guest lecture by Dr. Seungyoon Lee on resilient networks</li>
+<li class="fragment">November 7 - Guest lecture by Dr. Seungyoon Lee on
+resilient networks</li>
 </ul>
 </section>
 <section id="plan-for-today" class="slide level2">
 <h2>Plan for today</h2>
 <ul>
-<li class="fragment">Troubled Lands Discussion</li>
 <li class="fragment">Groups in networks review</li>
 <li class="fragment">Discussion questions</li>
+<li class="fragment">R</li>
 </ul>
-</section>
-<section>
-<section id="troubled-lands-review" class="title-slide slide level1">
-<h1>Troubled Lands Review</h1>
+<!---
+# Troubled Lands Review
 
-</section>
-<section id="questions-from-brightspace-assignment" class="slide level2">
-<h2>Questions from Brightspace Assignment</h2>
-<ul>
-<li class="fragment">How did you play differently in different versions?</li>
-<li class="fragment">What in real life is similar to each version of the game?</li>
-<li class="fragment">How did you decide whether or not to help others?</li>
-<li class="fragment">What does this have to do with social networks and social capital?!</li>
-</ul>
-</section>
-<section id="debrief" class="slide level2">
-<h2>Debrief</h2>
-<ul>
-<li class="fragment">What did you think about while playing?</li>
-<li class="fragment">How did you feel as you played? Did those feeling change across different versions of the game?</li>
-<li class="fragment">When do you help others in real life?</li>
-</ul>
-</section>
-<section id="debrief-1" class="slide level2">
-<h2>Debrief</h2>
-<ul>
-<li class="fragment">Were resources and abilities distributed fairly?</li>
-<li class="fragment">How should resources be distributed in the real world?</li>
-<li class="fragment">What role did communication play? How did your group make decisions?</li>
-<li class="fragment">Did you work to make things equal? Why or why not?</li>
-<li class="fragment">What kinds of inequality appeared in the game?</li>
-</ul>
+## Questions from Brightspace Assignment
+
+> - How did you play differently in different versions?
+> - What in real life is similar to each version of the game?
+> - How did you decide whether or not to help others?
+> - What does this have to do with social networks and social capital?!
+
+
+## Debrief
+
+> - What did you think about while playing?
+> - How did you feel as you played? Did those feeling change across different versions of the game?
+> - When do you help others in real life?
+
+## Debrief
+
+> - Were resources and abilities distributed fairly?
+> - How should resources be distributed in the real world?
+> - What role did communication play? How did your group make decisions?
+> - Did you work to make things equal? Why or why not?
+> - What kinds of inequality appeared in the game?
+--->
 </section>
 <section id="community-detection-review" class="slide level2">
 <h2>Community Detection Review</h2>
 <ul>
-<li class="fragment">What is a component? (Hint: there’s often one “giant” component)</li>
+<li class="fragment">What is a component? (Hint: there’s often one
+“giant” component)</li>
 <li class="fragment">What is a clique?</li>
-<li class="fragment">What is the weakness of cliques as a way of identifying groups?</li>
+<li class="fragment">What is the weakness of cliques as a way of
+identifying groups?</li>
 <li class="fragment">What is a k-plex? (Hint: related to cliques)</li>
-<li class="fragment">The goal of most community detection algorithms is high modularity. What does that mean?</li>
+<li class="fragment">The goal of most community detection algorithms is
+high modularity. What does that mean?</li>
 </ul>
 </section>
 <section id="core-and-periphery-review" class="slide level2">
 <h2>Core and Periphery Review</h2>
 <ul>
-<li class="fragment">Why do groups often have a core and a periphery?</li>
-<li class="fragment">Given some of the other theories we’ve talked about, how would you expect the periphery to differ from the core?</li>
-<li class="fragment">What role does the periphery have in protests (Barberá et al. reading)?</li>
-<li class="fragment">What is one way to identify who is in the core or periphery?</li>
+<li class="fragment">Why do groups often have a core and a
+periphery?</li>
+<li class="fragment">Given some of the other theories we’ve talked
+about, how would you expect the periphery to differ from the core?</li>
+<li class="fragment">What role does the periphery have in protests
+(Barberá et al. reading)?</li>
+<li class="fragment">What is one way to identify who is in the core or
+periphery?</li>
 </ul>
 </section>
 <section id="coreness-example" class="slide level2">
 <h2>Coreness Example</h2>
 <div class="col fragment">
+<pre><code>## Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` in the `default_aes` field and elsewhere instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="week_11_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
 </div>
 </section>
 <section id="discussion-questions" class="slide level2">
 <h2>Discussion Questions</h2>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -553,14 +550,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 
