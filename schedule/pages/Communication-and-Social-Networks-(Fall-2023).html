@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.552">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Communication and Social Networks - Communication and Social Networks (Fall 2023)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../resources/custom_css.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Communication and Social Networks</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus/syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assignments/assignments.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#course_information" id="toc-course_information" class="nav-link active" data-scroll-target="#course_information">Course Information</a></li>
+  <li><a href="#course_overview_and_learning_objectives" id="toc-course_overview_and_learning_objectives" class="nav-link" data-scroll-target="#course_overview_and_learning_objectives">Course Overview and Learning Objectives</a></li>
+  <li><a href="#required_resources_and_texts" id="toc-required_resources_and_texts" class="nav-link" data-scroll-target="#required_resources_and_texts">Required resources and texts</a>
+  <ul class="collapse">
+  <li><a href="#computing_resources" id="toc-computing_resources" class="nav-link" data-scroll-target="#computing_resources">Computing Resources</a></li>
+  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a>
+  <ul class="collapse">
+  <li><a href="#reading_academic_articles" id="toc-reading_academic_articles" class="nav-link" data-scroll-target="#reading_academic_articles">Reading Academic Articles</a></li>
+  </ul></li>
+  <li><a href="#other_suggested_books" id="toc-other_suggested_books" class="nav-link" data-scroll-target="#other_suggested_books">Other suggested books</a></li>
+  </ul></li>
+  <li><a href="#course_logistics" id="toc-course_logistics" class="nav-link" data-scroll-target="#course_logistics">Course logistics</a>
+  <ul class="collapse">
+  <li><a href="#note_about_this_syllabus" id="toc-note_about_this_syllabus" class="nav-link" data-scroll-target="#note_about_this_syllabus">Note About This Syllabus</a></li>
+  <li><a href="#class_sessions" id="toc-class_sessions" class="nav-link" data-scroll-target="#class_sessions">Class Sessions</a></li>
+  <li><a href="#getting_help" id="toc-getting_help" class="nav-link" data-scroll-target="#getting_help">Getting Help</a>
+  <ul class="collapse">
+  <li><a href="#online_resources" id="toc-online_resources" class="nav-link" data-scroll-target="#online_resources">Online Resources</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a>
+  <ul class="collapse">
+  <li><a href="#participation" id="toc-participation" class="nav-link" data-scroll-target="#participation">Participation</a></li>
+  <li><a href="#reading-review-assignments" id="toc-reading-review-assignments" class="nav-link" data-scroll-target="#reading-review-assignments">Reading Review Assignments</a></li>
+  <li><a href="#homeworklabs" id="toc-homeworklabs" class="nav-link" data-scroll-target="#homeworklabs">Homework/Labs</a></li>
+  <li><a href="#exams" id="toc-exams" class="nav-link" data-scroll-target="#exams">Exams</a></li>
+  <li><a href="#final_project" id="toc-final_project" class="nav-link" data-scroll-target="#final_project">Final Project</a></li>
+  </ul></li>
+  <li><a href="#grades" id="toc-grades" class="nav-link" data-scroll-target="#grades">Grades</a>
+  <ul class="collapse">
+  <li><a href="#extra_credit_for_participating_in_research_studies" id="toc-extra_credit_for_participating_in_research_studies" class="nav-link" data-scroll-target="#extra_credit_for_participating_in_research_studies">Extra Credit for Participating in Research Studies</a></li>
+  </ul></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a>
+  <ul class="collapse">
+  <li><a href="#week_1_introductions_and_the_network_perspective" id="toc-week_1_introductions_and_the_network_perspective" class="nav-link" data-scroll-target="#week_1_introductions_and_the_network_perspective">Week 1: Introductions and the network perspective</a></li>
+  <li><a href="#week_2_network_representations" id="toc-week_2_network_representations" class="nav-link" data-scroll-target="#week_2_network_representations">Week 2: Network representations</a></li>
+  <li><a href="#week_3_how_are_communication_networks_formed" id="toc-week_3_how_are_communication_networks_formed" class="nav-link" data-scroll-target="#week_3_how_are_communication_networks_formed">Week 3: How are communication networks formed?</a></li>
+  <li><a href="#week_4_small_group_networks" id="toc-week_4_small_group_networks" class="nav-link" data-scroll-target="#week_4_small_group_networks">Week 4: Small group networks</a></li>
+  <li><a href="#week_5_ego_networks_and_network_perception" id="toc-week_5_ego_networks_and_network_perception" class="nav-link" data-scroll-target="#week_5_ego_networks_and_network_perception">Week 5: Ego networks and network perception</a></li>
+  <li><a href="#week_6_power_centrality_and_hierarchy" id="toc-week_6_power_centrality_and_hierarchy" class="nav-link" data-scroll-target="#week_6_power_centrality_and_hierarchy">Week 6: Power, centrality, and hierarchy</a></li>
+  <li><a href="#week_7_social_capital_structural_holes_and_weak_ties" id="toc-week_7_social_capital_structural_holes_and_weak_ties" class="nav-link" data-scroll-target="#week_7_social_capital_structural_holes_and_weak_ties">Week 7: Social Capital, structural holes, and weak ties</a></li>
+  <li><a href="#week_8_small_worlds" id="toc-week_8_small_worlds" class="nav-link" data-scroll-target="#week_8_small_worlds">Week 8: Small worlds</a></li>
+  <li><a href="#week_9_scale_free_networks_and_the_friendship_paradox" id="toc-week_9_scale_free_networks_and_the_friendship_paradox" class="nav-link" data-scroll-target="#week_9_scale_free_networks_and_the_friendship_paradox">Week 9: Scale-free networks and the friendship paradox</a></li>
+  <li><a href="#week_10_social_influence_and_diffusion" id="toc-week_10_social_influence_and_diffusion" class="nav-link" data-scroll-target="#week_10_social_influence_and_diffusion">Week 10: Social influence and diffusion</a></li>
+  <li><a href="#week_11_communities_and_core_periphery" id="toc-week_11_communities_and_core_periphery" class="nav-link" data-scroll-target="#week_11_communities_and_core_periphery">Week 11: Communities and Core-periphery</a></li>
+  <li><a href="#week_12_resilient_networks" id="toc-week_12_resilient_networks" class="nav-link" data-scroll-target="#week_12_resilient_networks">Week 12: Resilient networks</a></li>
+  <li><a href="#week_13_technology_and_networks" id="toc-week_13_technology_and_networks" class="nav-link" data-scroll-target="#week_13_technology_and_networks">Week 13: Technology and Networks</a></li>
+  <li><a href="#week_14_networks_and_collaboration" id="toc-week_14_networks_and_collaboration" class="nav-link" data-scroll-target="#week_14_networks_and_collaboration">Week 14: Networks and collaboration</a></li>
+  <li><a href="#week_15_networked_racism" id="toc-week_15_networked_racism" class="nav-link" data-scroll-target="#week_15_networked_racism">Week 15: Networked racism</a></li>
+  <li><a href="#week_16_network_visualization_principles" id="toc-week_16_network_visualization_principles" class="nav-link" data-scroll-target="#week_16_network_visualization_principles">Week 16: Network Visualization Principles</a></li>
+  <li><a href="#finals_week" id="toc-finals_week" class="nav-link" data-scroll-target="#finals_week">Finals week</a></li>
+  </ul></li>
+  <li><a href="#policies" id="toc-policies" class="nav-link" data-scroll-target="#policies">Policies</a>
+  <ul class="collapse">
+  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
+  <li><a href="#classroom_discussions_and_peer_feedback" id="toc-classroom_discussions_and_peer_feedback" class="nav-link" data-scroll-target="#classroom_discussions_and_peer_feedback">Classroom Discussions and Peer Feedback</a></li>
+  <li><a href="#academic_integrity" id="toc-academic_integrity" class="nav-link" data-scroll-target="#academic_integrity">Academic Integrity</a></li>
+  <li><a href="#nondiscrimination" id="toc-nondiscrimination" class="nav-link" data-scroll-target="#nondiscrimination">Nondiscrimination</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility</a></li>
+  <li><a href="#emergency_preparation" id="toc-emergency_preparation" class="nav-link" data-scroll-target="#emergency_preparation">Emergency Preparation</a></li>
+  <li><a href="#mental_health" id="toc-mental_health" class="nav-link" data-scroll-target="#mental_health">Mental Health</a></li>
+  <li><a href="#incompletes" id="toc-incompletes" class="nav-link" data-scroll-target="#incompletes">Incompletes</a></li>
+  <li><a href="#additional_policies" id="toc-additional_policies" class="nav-link" data-scroll-target="#additional_policies">Additional Policies</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7">Communication and Social Networks (Fall 2023)</h1>
+
+</header>
+
+
+<section id="course_information" class="level1">
+<h1>Course Information</h1>
+<dl>
+<dt>: <strong>COM 411: Communication and Social Networks</strong></dt>
+<dd>
+<strong>Location:</strong> BRNG 2273
+</dd>
+<dd>
+<strong>Class Hours:</strong> Tuesdays and Thursdays; 10:30–11:45 AM
+</dd>
+<dt>## Instructor</dt>
+<dd>
+<p><strong>Instructor:</strong> <a href="https://jeremydfoote.com">Jeremy Foote</a></p>
+</dd>
+<dd>
+<strong>Email:</strong> jdfoote@purdue.edu
+</dd>
+<dd>
+<strong><a href="User:Jdfoote/OH" title="wikilink">Office Hours</a>:</strong> BRNG 2156; Tuesdays; 2:00–4:00pm and by appointment
+</dd>
+</dl>
+<div style="float:right;">
+<p>__TOC__</p>
+</div>
+</section>
+<section id="course_overview_and_learning_objectives" class="level1">
+<h1>Course Overview and Learning Objectives</h1>
+<p>Communication is inherently a social process. This class focuses on understanding how the structure of relationships between people influences communication patterns and behavior. This perspective can help us to understand a broad set of phenomena, from online communities to friendships to businesses. The course will also introduce students to using network visualizations to gain and share insights about network phenomena.</p>
+<p>Students who complete this course will be able to:</p>
+<ol type="1">
+<li>Understand the foundations of social network theory and analysis.</li>
+<li>Critically read and comprehend concepts, results, and implications presented in studies of social networks.</li>
+<li>Learn how networks are related to social phenomena in their personal and professional worlds.</li>
+<li>Gain a basic understanding of gathering network data and analyzing them using the programming language R.</li>
+</ol>
+</section>
+<section id="required_resources_and_texts" class="level1">
+<h1>Required resources and texts</h1>
+<section id="computing_resources" class="level2">
+<h2 class="anchored" data-anchor-id="computing_resources">Computing Resources</h2>
+<p>One of the goals of this class is a basic skills in analyzing and visualizing network data in R. This semester, we are going to try using VSCode, an IDE which can write R code, and which includes a plugin to do AI-assisted coding. We will be meeting in a computer lab, and I believe that we will be able to install everything you need on Purdue computers. If you would like, you may also want to install R and VSCode on your personal computer so that you can use it in the future when you no longer have access to Purdue resources. <a href="../../R_Lab_1" title="wikilink">Our first R Lab</a> walks you through how to do that.</p>
+</section>
+<section id="readings" class="level2">
+<h2 class="anchored" data-anchor-id="readings">Readings</h2>
+<ul>
+<li>Required texts:</li>
+<li>Easley, D., &amp; Kleinberg, J. (2010). Networks, crowds, and markets. Cambridge University Press. <a href="https://www.cs.cornell.edu/home/kleinber/networks-book/_web_edition_(free)" title="wikilink">https://www.cs.cornell.edu/home/kleinber/networks-book/ web edition (free)</a> <a href="https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf_pre-print_pdf_(free)" title="wikilink">https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf pre-print pdf (free)</a> <a href="https://smile.amazon.com/Networks-Crowds-Markets-Reasoning-Connected/dp/0521195330/_(print_edition_(Amazon))" title="wikilink">https://smile.amazon.com/Networks-Crowds-Markets-Reasoning-Connected/dp/0521195330/ (print edition (Amazon))</a></li>
+<li>Hanneman, R. A., &amp; Riddle, M. (2005). Introduction to social network methods. Riverside, CA: University of California, Riverside <a href="http://faculty.ucr.edu/~hanneman/nettext/">[web edition(free)</a>]</li>
+</ul>
+<!-- -->
+<ul>
+<li>Other readings: Other readings will be made available on Brightspace.</li>
+</ul>
+<section id="reading_academic_articles" class="level3">
+<h3 class="anchored" data-anchor-id="reading_academic_articles">Reading Academic Articles</h3>
+<p>Many of the readings will be academic articles. I do not expect you to read every word of these articles. Rather, you should practice intentional directed skimming. <a href="https://writingcenter.gmu.edu/guides/strategies-for-reading-academic-articles">This article</a> gives a nice overview. The TL;DR is that you should carefully read the abstract, introduction, and conclusion. For the rest of the article, focus on section headings and topic sentences to extract the main ideas.</p>
+</section>
+</section>
+<section id="other_suggested_books" class="level2">
+<h2 class="anchored" data-anchor-id="other_suggested_books">Other suggested books</h2>
+<ul>
+<li>Barabasi, A-L. (2002). Linked: The new science of networks. Cambridge, MA: Perseus.</li>
+<li>Scott, J. (2000). Social network analysis: A handbook (2nd edition). London: Sage Publications.</li>
+<li>Watts, D. J. (2004). Six degrees: The science of a connected age. WW Norton &amp; Company.</li>
+<li>Christakis, N. and Fowler, J. (2009). <a href="https://archive.org/details/connectedsurpris00chri/">Connected : the surprising power of our social networks and how they shape our lives</a></li>
+</ul>
+</section>
+</section>
+<section id="course_logistics" class="level1">
+<h1>Course logistics</h1>
+<section id="note_about_this_syllabus" class="level2">
+<h2 class="anchored" data-anchor-id="note_about_this_syllabus">Note About This Syllabus</h2>
+<p>Although the core expectations for this class are fixed, the details of readings and assignments may shift based on how the class goes. As a result, there are three important things to keep in mind:</p>
+<ol type="1">
+<li>Although details on this syllabus will change, I will not change readings or assignments less than one week before they are due. If I don't fill in a "<em>To Be Determined</em>" one week before it's due, it is dropped. If you plan to read more than one week ahead, contact me first.</li>
+<li>Closely monitor the class <a href="../../Discord_Signup" title="wikilink">Discord</a>. Because this a wiki, you will be able to track every change by clicking the <em>history</em> button on this page. I will also summarize these changes in an announcement on Discord that should be emailed to everybody in the class if you have notifications turned on.</li>
+<li>I will ask the class for voluntary anonymous feedback frequently. Please let me know what is working and what can be improved.</li>
+</ol>
+</section>
+<section id="class_sessions" class="level2">
+<h2 class="anchored" data-anchor-id="class_sessions">Class Sessions</h2>
+<p>This course will follow "flipped" classroom model. I expect you to learn most of the content of the course asynchronously. The goal of our time together is not to tell you new things, but to consolidate knowledge and to clear up misconceptions.</p>
+<p>The Tuesday meeting will be a collaborative, discussion-centric session. Typically, about two-thirds of each session will be devoted to a discussion of the readings and videos from that week. The remaining third will be used to review the assignments.</p>
+<p>This means that <strong>I expect you to come to Tuesday lectures having read the readings and watched the lecture videos</strong>. There are links to the readings and videos each week. You can also find lecture videos on Brightspace or <a href="https://www.youtube.com/watch?v=dYnzZUP40CQ&amp;list=PLP6zcrJrVWgdQtxeToSPapfFOxC6qtGi0">on this YouTube playlist</a>.</p>
+<p>The Thursday meetings will be more like a lab. Some of these sessions will include synchronous activities; often they will be a time for me to introduce and help with R assignments. Sometimes they will be more of a co-working time, where you can work on assignments and I can be available to answer questions.</p>
+</section>
+<section id="getting_help" class="level2">
+<h2 class="anchored" data-anchor-id="getting_help">Getting Help</h2>
+<p>Your first place to look for help should be each other. By asking and answering questions on Discord, you will not only help to build a repository of shared information, but to reinforce our learning community.</p>
+<p>I will also hold office hours on Tuesdays, from 2-4. If you come with a programming question, I will expect that you have already tried to solve it yourself in multiple ways and that you have discussed it with a classmate. This policy lets me have time to help more students, but it's also a useful strategy. Often <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">just trying to explain your code</a> can help you to recognize where you've gone wrong.</p>
+<p>I will also check Discord at least once a day. I encourage you to post questions there, and to use it as a space where we can help and instruct each other. In general, you should contact me there. I am also available by email. You can reach me at <a href="mailto:jdfoote@purdue.edu" class="email">jdfoote@purdue.edu</a>. I try hard to maintain a boundary between work and home and I typically respond only on weekdays during business hours.</p>
+<section id="online_resources" class="level3">
+<h3 class="anchored" data-anchor-id="online_resources">Online Resources</h3>
+<p>Programming can be difficult and frustrating and confusing, but you will get it! I have put together a few resources to help you with the programming portion of the course. Come back to these when you get stuck.</p>
+<ul>
+<li>Finding and fixing bugs in your code <a href="https://youtu.be/92Gicjnc_tk_Video" title="wikilink">https://youtu.be/92Gicjnc_tk Video</a> <a href="https://jeremydfoote.com/TDIS/week_8/debugging.Rmd_R_Markdown_file" title="wikilink">https://jeremydfoote.com/TDIS/week_8/debugging.Rmd R Markdown file</a> <a href="https://jeremydfoote.com/TDIS/week_8/debugging.html_HTML_file" title="wikilink">https://jeremydfoote.com/TDIS/week_8/debugging.html HTML file</a></li>
+<li>Intro to ggraph and tidygraph <a href="https://youtu.be/geYZ83Aidq4_Video" title="wikilink">https://youtu.be/geYZ83Aidq4 Video</a> <a href="https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd_R_Markdown_file" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd R Markdown file</a> <a href="https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html_HTML_file" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html HTML file</a></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="assignments" class="level1">
+<h1>Assignments</h1>
+<p>There will be multiple types of assignments, designed to encourage learning in different ways.</p>
+<section id="participation" class="level2">
+<h2 class="anchored" data-anchor-id="participation">Participation</h2>
+<p>I expect you to be an active member of our class. This includes paying attention in class, participating in activities, and being actively engaged in learning, thinking about, and trying to understand the material.</p>
+<p>To make sure that everyone has an opportunity to participate and to encourage you to do the assignments, I will randomly select students to discuss readings or to explain portions of homework assignments and labs.</p>
+</section>
+<section id="reading-review-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="reading-review-assignments">Reading Review Assignments</h2>
+<p>In a flipped class like this, it's really important that folks come prepared to discuss, work through misunderstandings, etc. In order to provide some accountability and space for reflection, each week you will have a review/reflection assignment about the readings and video.</p>
+<p>I'm calling this a "3-2-1 Assignment". I'd like you to:</p>
+<ul>
+<li>Write down three concepts that you learned or connections that you made from this week's reading and lecture.</li>
+<li>Write down two questions you have or things that you don't quite understand.</li>
+<li>Share one question that you think would make for a good discussion question.</li>
+</ul>
+<p>You should submit your assignment on Brightspace.</p>
+<p>Take the discussion question (which can be based on the concepts you learned, or the things you don't understand), and submit it (and up to one other question) that you think would be interesting to discuss on Monday by noon. <b>Post your questions on the shared Google Doc at <a href="https://docs.google.com/document/d/1AK4MhWLVwDuxqvTwLomN7hu4aLpo59n5qXgEap8SBNc/edit?usp=sharing" class="uri">https://docs.google.com/document/d/1AK4MhWLVwDuxqvTwLomN7hu4aLpo59n5qXgEap8SBNc/edit?usp=sharing</a></b>; try to group similar questions together.</p>
+<p>Questions should engage with the readings and either connect to other concepts or to the "real world". Here are some good example questions:</p>
+<ul>
+<li>The readings this week talked a lot about how network ties get created. I made a list of my closest friends and I realized that most of them only became friends after we happened to be in the same groups over and over again. What role does repetition have in forming ties?</li>
+<li>I was confused by the reading on social capital. What's the difference between social capital and power? And if they are the same, then why not just call it "network power"?</li>
+<li>Imagine you were asked to analyze the network of a big company to help them to identify people who deserve a raise. What measures would you use to identify them? What would you not use?</li>
+</ul>
+</section>
+<section id="homeworklabs" class="level2">
+<h2 class="anchored" data-anchor-id="homeworklabs">Homework/Labs</h2>
+<p>There will be a number of homework assignments. At the beginning of the class, these will be designed to help you to grasp foundational network concepts. As the class progresses, more and more of them will be analyzing and visualizing networks in R.</p>
+</section>
+<section id="exams" class="level2">
+<h2 class="anchored" data-anchor-id="exams">Exams</h2>
+<p>There will be one exam. It will assess your understanding of core communication and social networks concepts.</p>
+</section>
+<section id="final_project" class="level2">
+<h2 class="anchored" data-anchor-id="final_project">Final Project</h2>
+<p>A Students will work on a <a href="../../Final_project" title="wikilink">Final Project</a> that uses the theories, principles, and skills learned in this class.</p>
+<p>A number of intermediate assignments through the semester will help you to gain the skills and data necessary to be successful.</p>
+</section>
+</section>
+<section id="grades" class="level1">
+<h1>Grades</h1>
+<p>This course will follow a "self-assessment" philosophy. I am more interested in helping you to learn things that will be useful to you than in assigning grades. In general, I think that my time is much better spent in providing better feedback and in being available to work through problems together.</p>
+<p>The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use <a href="Self_Assessment_Reflection" title="wikilink">this form</a> to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work will be the most important factor in final grades.</p>
+<p>We will use the following rubric in our assessment:</p>
+<ul>
+<li>20%: Class participation, including attendance and participation in discussions and group work</li>
+<li>20%: Labs and homework assignments</li>
+<li>25%: Exam</li>
+<li>35%: Final Project</li>
+</ul>
+<p>The exam will be graded like a normal exam and the score will make up 25% of your grade. For the rest of the assignments (and the other 75% of your grade), I will provide feedback which will inform an ongoing conversation about your work.</p>
+<p>My interpretation of grade levels (A, B, C, D/F) is the following:</p>
+<p>A: Reflects work the exceeds expectations on multiple fronts and to a great degree. Students reaching this level of achievement will:</p>
+<ul>
+<li>Do what it takes to learn the principles and techniques of social networks, including looking to outside sources if necessary.</li>
+<li>Engage thoughtfully with an ambitious final project.</li>
+<li>Take intellectual risks, offering interpretations based on synthesizing material and asking for feedback from peers.</li>
+<li>Share work early allowing extra time for engagement with others.</li>
+<li>Write reflections that grapple meaningfully with lessons learned as well as challenges.</li>
+<li>Complete all or nearly all homework assignments at a high level.</li>
+</ul>
+<p>B: Reflects strong work. Work at this level will be of consistently high quality. Students reaching this level of achievement will:</p>
+<ul>
+<li>Be more safe or consistent than the work described above.</li>
+<li>Ask meaningful questions of peers and engage them in fruitful discussion.</li>
+<li>Exceed requirements, but in fairly straightforward ways.</li>
+<li>Compose complete and sufficiently detailed reflections.</li>
+<li>Complete the homework assignments, almost always at a high level.</li>
+</ul>
+<p>C: This reflects meeting the minimum expectations of the course. Students reaching this level of achievement will:</p>
+<ul>
+<li>Turn in and complete the final project on time.</li>
+<li>Be collegial and continue discussion, through asking simple or limited questions.</li>
+<li>Compose reflections with straightforward and easily manageable goals and/or avoid discussions of challenges.</li>
+<li>Not complete homework assignments or complete them in a hasty or incomplete manner.</li>
+</ul>
+<p>D/F: These are reserved for cases in which students do not complete work or participate. Students may also be impeding the ability of others to learn.</p>
+<section id="extra_credit_for_participating_in_research_studies" class="level2">
+<h2 class="anchored" data-anchor-id="extra_credit_for_participating_in_research_studies">Extra Credit for Participating in Research Studies</h2>
+<p>If you feel like you need to earn extra credit in order to earn the grade that you would like, the course is signed up for extra credit through the Brian Lamb School of Communication Research Participation System.</p>
+<ul>
+<li>Please review the instructions before you sign up for studies; to view the instructions go to <a href="https://www.cla.purdue.edu/communication/research/participation/students.html" class="uri">https://www.cla.purdue.edu/communication/research/participation/students.html</a></li>
+<li>You can sign up to participate in studies by logging into <a href="http://purdue-comm.sona-systems.com/" class="uri">http://purdue-comm.sona-systems.com/</a>.</li>
+</ul>
+</section>
+</section>
+<section id="schedule" class="level1">
+<h1>Schedule</h1>
+<p><strong>NOTE</strong> This section may be modified throughout the course to meet the class's needs. Check back in weekly.</p>
+<section id="week_1_introductions_and_the_network_perspective" class="level2">
+<h2 class="anchored" data-anchor-id="week_1_introductions_and_the_network_perspective">Week 1: Introductions and the network perspective</h2>
+<p>August 22</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="../../Discord_Signup" title="wikilink">Sign up for Discord</a> and introduce yourself</li>
+<li>Take <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1EahCFyyZS8ZZTwct1YMwQvfGqTBVK9P6xYjHWOfx8GWboA/viewform">this very brief survey</a></li>
+</ul>
+<p><strong>Required Readings:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Concepts:</strong></p>
+<ul>
+<li>Class overview and expectations — We'll walk through this syllabus.</li>
+<li>What are social networks?</li>
+<li>Why study networks?</li>
+</ul>
+<p>August 24</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Read the entire syllabus (this document)</li>
+</ul>
+<p><strong>Readings:</strong></p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li>Network simulation activity (bring a computer)</li>
+<li>Start work on <a href="../../Homework_1" title="wikilink">Homework 1</a></li>
+</ul>
+</section>
+<section id="week_2_network_representations" class="level2">
+<h2 class="anchored" data-anchor-id="week_2_network_representations">Week 2: Network representations</h2>
+<p>August 29</p>
+<p><strong>Assignment Due (on Monday):</strong></p>
+<ul>
+<li><a href="../../Homework_1" title="wikilink">Homework 1</a></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a> (Due Monday at noon!)</li>
+</ul>
+<p><strong>Lecture Video (before class):</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=dYnzZUP40CQ">Network Data and Network Types Lecture</a> [19:18] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_2/lecture/network_types.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_2/lecture/network_types.html Slides</a></li>
+</ul>
+<p><strong>Readings (before class):</strong></p>
+<ul>
+<li>James M. Cook, <a href="https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/08/WhatIsASocialNetwork.pdf">What is a Social Network?</a></li>
+<li>James M. Cook, <a href="https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/09/IndividualsVersusNetworks.pdf">Individuals versus Networks</a></li>
+<li>(Optional/skim) Freeman, L. C. (2000). <a href="https://www.cmu.edu/joss/content/articles/volume1/Freeman.html">Visualizing social networks</a>. Journal of social structure, 1(1), 4.</li>
+</ul>
+<p><strong>Concepts:</strong></p>
+<ul>
+<li>Complex systems and networks</li>
+<li>Individual and collective behavior</li>
+</ul>
+<p>August 31</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li>Go through <a href="https://ncase.me/polygons/">Parable of the Polygons</a> by Nicky Case</li>
+<li>Start work on <a href="../../R_Lab_1" title="wikilink">R Lab 1</a>
+<ul>
+<li><a href="https://youtu.be/7QKuOHoMoZA">R Lab 1 Walkthrough</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="week_3_how_are_communication_networks_formed" class="level2">
+<h2 class="anchored" data-anchor-id="week_3_how_are_communication_networks_formed">Week 3: How are communication networks formed?</h2>
+<p>September 5</p>
+<p><strong>Assignment Due (on Monday):</strong></p>
+<ul>
+<li><a href="../../R_Lab_1" title="wikilink">R Lab 1</a></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Lecture Video:</strong></p>
+<ul>
+<li><a href="https://youtu.be/bwgd7gIAvb4">Tie Formation</a> [14:55] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/tie_formation.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/tie_formation.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Feld, S. L. (1981). <a href="https://www.jstor.org/stable/2778746">The focused organization of social ties</a>. American Journal of Sociology, 86(5), 1015–1035.</li>
+<li>McPherson, M., Smith-Lovin, L., &amp; Cook, J. M. (2001). <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2678628">Birds of a Feather: Homophily in Social Networks</a>. Annual Review of Sociology, 27, 415–444.</li>
+<li>[Optional] Monge, P. R., &amp; Contractor, N. S. (2003). Theories of communication networks. Oxford, UK: Oxford University Press. (pp. 298--314) - On Brightspace under Content &gt; Readings</li>
+</ul>
+<p><em>Note:</em> This week involves reading two academic articles. <a href="#Reading_Academic_Articles" title="wikilink">Read this</a> to understand my expectations and some tips for reading and understanding these articles.</p>
+<p><strong>Concepts:</strong></p>
+<ul>
+<li>Exposure, formation, maintenance, decay</li>
+<li>Homophily</li>
+<li>Reciprocity</li>
+<li>Triadic closure</li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/week_3.html">Class Slides</a></li>
+</ul>
+<p>September 7</p>
+<p><strong>Supplementary R lectures (watch before class):</strong></p>
+<ul>
+<li><a href="https://youtu.be/6ThBHfg3Dh0">Why R + Programming principles lecture</a> [12:53]</li>
+</ul>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_2_creating_networks.qmd">R Lab 2 - Creating Networks</a></li>
+</ul>
+</section>
+<section id="week_4_small_group_networks" class="level2">
+<h2 class="anchored" data-anchor-id="week_4_small_group_networks">Week 4: Small group networks</h2>
+<p>September 12</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_2_creating_networks.qmd">R Lab 2 - Creating Networks</a>
+<ul>
+<li><a href="https://youtu.be/-JjuL1UwRR0">Homework explanation video</a></li>
+</ul></li>
+</ul>
+<p><strong>Lecture video:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=uraDLo3caXc">Networks in small groups</a> [14:43] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_4/lecture/small_groups.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_4/lecture/small_groups.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Krackhardt, D., &amp; Hanson, J. R. (1993). <a href="https://hbr.org/1993/07/informal-networks-the-company-behind-the-chart">Informal networks: The company behind the chart</a>. Harvard business review, 71(4), 104-111.</li>
+<li>Katz, N., Lazer, D., Arrow, H., &amp; Contractor, N. (2004). <a href="https://libkey.io/libraries/228/articles/5387888/full-text-file?utm_source=api_559">Network theory and small groups</a>. Small Group Research, 35(3), 307–332.</li>
+</ul>
+<p><strong>Concepts:</strong></p>
+<ul>
+<li>Informal networks</li>
+<li>Networks and group outcomes</li>
+</ul>
+<p>September 14</p>
+<ul>
+<li>Work on R Labs 1/2 and intro to <a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd">3 - Mutating and filtering</a>
+<ul>
+<li><a href="https://youtu.be/rfViaH3gSz8">Lab 3 Explanation video</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="week_5_ego_networks_and_network_perception" class="level2">
+<h2 class="anchored" data-anchor-id="week_5_ego_networks_and_network_perception">Week 5: Ego networks and network perception</h2>
+<p>September 19</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+<li>Turn in your <a href="Self_Assessment_Reflection" title="wikilink">Self Assessment Reflection</a> on Brightspace</li>
+</ul>
+<p><strong>Lecture:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=c80su-DECKA">Ego networks and network perceptions lecture</a> [17:14] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_5/lecture/ego_nets.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_5/lecture/ego_nets.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Hanneman, R. A., &amp; Riddle, M. (2005). Introduction to social network methods. University of California. (<a href="https://faculty.ucr.edu/~hanneman/nettext/C9_Ego_networks.html">Chapter 9</a>) - Just read the first 2 sections - Introduction and Ego Network Data</li>
+<li>Marsden, P. V. (1987). <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2095397">Core Discussion Networks of Americans</a>. American Sociological Review, 52(1), 122–131.
+<ul>
+<li><a href="../../marsden_core_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+<li>Pentland, A.S. (2016). <a href="https://hbr.org/2016/05/research-you-have-fewer-friends-than-you-think">Research: You Have Fewer Friends than You Think</a>. (2016, May 12). Harvard Business Review.</li>
+<li>Smith, E. B., Menon, T., &amp; Thompson, L. (2012). <a href="https://pubsonline-informs-org.ezproxy.lib.purdue.edu/doi/full/10.1287/orsc.1100.0643">Status Differences in the Cognitive Activation of Social Networks</a>. Organization Science, 23(1), 67–82.
+<ul>
+<li><a href="../../smith_status_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+</ul>
+<p>September 21</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/activities/ego_networks/ego_analysis.qmd">Ego Network Activity</a></li>
+<li>Finish <a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd">R Lab 3 - Mutating and filtering</a> and start on <a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd">R Lab 4 - Intro to ggraph</a></li>
+</ul>
+</section>
+<section id="week_6_power_centrality_and_hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="week_6_power_centrality_and_hierarchy">Week 6: Power, centrality, and hierarchy</h2>
+<p>September 26</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd">R Lab 3 - Mutating and filtering</a></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Video lecture:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=gaMusAjk0_s">Power, centrality, and hierarchy</a> [18:44] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Hanneman, R. A., &amp; Riddle, M. (2005). Introduction to social network methods. <a href="https://faculty.ucr.edu/~hanneman/nettext/C10_Centrality.html">Chapter 10: Centrality and Power</a></li>
+<li>Healy, K. (2013). <a href="https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/">Using Metadata to find Paul Revere</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=0unzqsPaPk8">Centrality measures</a>. Matthew Jackson. From <a href="https://www.youtube.com/channel/UCCnG8fKY45aH73ahmGK2xcg">Social and Economic Networks course</a></li>
+<li><a href="https://www.youtube.com/watch?v=q8oBWwS2wAQ">Centrality Eigenvector Measures</a>. Matthew Jackson</li>
+<li>(Optional) Holliday, Audrey, Campbell, &amp; Moore, (2016). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4898141/">Identifying well-connected opinion leaders for informal health promotion</a></li>
+</ul>
+<p><strong>Class Schedule:</strong></p>
+<p>September 28</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd">R Lab 4 - Intro to ggraph</a>
+<ul>
+<li><a href="https://youtu.be/GnTSThGhCw0">Lab 4 Explanation Video</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="week_7_social_capital_structural_holes_and_weak_ties" class="level2">
+<h2 class="anchored" data-anchor-id="week_7_social_capital_structural_holes_and_weak_ties">Week 7: Social Capital, structural holes, and weak ties</h2>
+<p>October 3</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd">R Lab 4 - Intro to ggraph</a></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Lecture Video:</strong></p>
+<ul>
+<li><a href="https://youtu.be/22C-3QdzUbA">Capital and Social Capital</a> [16:02] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_7/lecture/social_capital.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_7/lecture/social_capital.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Granovetter, M. S. (1973). <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2776392?sid=primo&amp;seq=1#metadata_info_tab_contents">The Strength of Weak Ties</a>. American Journal of Sociology, 78(6), 1360–1380. <a href="https://doi.org/10.1086/225469" class="uri">https://doi.org/10.1086/225469</a>
+<ul>
+<li><a href="../../granovetter_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+<li>Kadushin, C. (2012). <a href="https://ebookcentral.proquest.com/lib/purdue/reader.action?docID=829477&amp;ppg=175">Networks as Social Capital</a>, in Kadushin, C. (2012). Understanding Social Networks. Theories, Concepts and Findings. Oxford: Oxford University Press.
+<ul>
+<li><a href="../../kadushin_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+<li>Putnam, R.D. (1995). <a href="https://muse.jhu.edu/article/16643">Bowling Alone: America's Declining Social Capital</a>. Journal of Democracy 6(1), 65-78.
+<ul>
+<li><a href="../../Putnam_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>(Optional) Bourdieu, P. (1986). <a href="https://www.marxists.org/reference/subject/philosophy/works/fr/bourdieu-forms-capital.htm">The forms of capital</a>. In J. Richardson (Ed.) Handbook of Theory and Research for the Sociology of Education (New York, Greenwood), 241-258.
+<ul>
+<li><a href="../../Bourdieu_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+<li>(Optional) Rainie, L. and Perrin, A. (2019). <a href="https://www.pewresearch.org/fact-tank/2019/07/22/key-findings-about-americans-declining-trust-in-government-and-each-other/">Key findings about Americans’ declining trust in government and each other</a>. Pew Research Center.</li>
+<li>(Optional) Burt, R. S. (2000). <a href="https://www.sciencedirect.com/science/article/pii/S0191308500220091">The network structure of social capital</a>. Research in Organizational Behavior, 22, 345–423.</li>
+</ul>
+<p>October 5</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li>Who Dunnit Game</li>
+</ul>
+</section>
+<section id="week_8_small_worlds" class="level2">
+<h2 class="anchored" data-anchor-id="week_8_small_worlds">Week 8: Small worlds</h2>
+<p>October 10</p>
+<p><strong>OCTOBER BREAK</strong></p>
+<p>October 12</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_5_aesthetics_in_ggraph.qmd">R Lab 5 - Aesthetics in ggraph</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=hsncjCu2yeo">Lab Explanation Video</a></li>
+</ul></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a> - Just one question this week</li>
+</ul>
+<p><strong>Lecture Video:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=g92nfiyI4rU">Small worlds video</a> [18:45] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_8/lecture/small_worlds.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_8/lecture/small_worlds.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=TcxZSmzPw8k">The Science of Six Degrees of Separation</a>[video][9:22]</li>
+<li>Travers, J. and Milgram, S. (1969). <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2786545">An experimental study of the small world problem</a>. <em>Sociometry</em>, 32(4):425-443
+<ul>
+<li><a href="../../Travers_summary" title="wikilink">Claude.ai summary</a></li>
+</ul></li>
+<li>(Optional but short) Dodds, P. S., Muhamad, R., &amp; Watts, D. J. (2003). <a href="https://science-sciencemag-org.ezproxy.lib.purdue.edu/content/301/5634/827">An Experimental Study of Search in Global Social Networks</a>. <em>Science</em>, 301(5634), 827.</li>
+</ul>
+</section>
+<section id="week_9_scale_free_networks_and_the_friendship_paradox" class="level2">
+<h2 class="anchored" data-anchor-id="week_9_scale_free_networks_and_the_friendship_paradox">Week 9: Scale-free networks and the friendship paradox</h2>
+<p>October 17</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Proposal for <a href="../../Final_Project" title="wikilink">Final Project</a>; this is a few paragraphs about which final project you'd like to do, and what you are planning to do for it.</li>
+<li><a href="../../Social_Search_Assignment" title="wikilink">Social Search Assignment</a></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Lecture Video:</strong></p>
+<ul>
+<li><a href="https://youtu.be/3VfZGUt_tCM">Scale-free networks and the Friendship Paradox</a>[18:21] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_9/lecture/scale_free_and_friend_paradox.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_9/lecture/scale_free_and_friend_paradox.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Feld, Scott L. (1991), <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2781907">Why your friends have more friends than you do</a>. American Journal of Sociology, 96 (6): 1464–1477. <a href="https://doi.org/10.1086%2F229693" class="uri">https://doi.org/10.1086%2F229693</a></li>
+<li><a href="https://www.youtube.com/watch?v=tP2MLp7GL7Q">Early Detection of an Outbreak using the Friendship Paradox</a></li>
+<li><a href="https://www.youtube.com/watch?v=c867FlzxZ9Y">Networks are everywhere with Albert-László Barabási</a></li>
+</ul>
+<p>(Optional)</p>
+<ul>
+<li>Christakis, N. A., &amp; Fowler, J. H. (2010). Social Network Sensors for Early Detection of Contagious Outbreaks. PLOS ONE, 5(9), e12948. <a href="https://doi.org/10.1371/journal.pone.0012948" class="uri">https://doi.org/10.1371/journal.pone.0012948</a></li>
+</ul>
+<p>October 19</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li><a href="../../Six_Degrees_of_Wikipedia_Activity" title="wikilink">Six Degrees of Wikipedia Activity</a></li>
+</ul>
+</section>
+<section id="week_10_social_influence_and_diffusion" class="level2">
+<h2 class="anchored" data-anchor-id="week_10_social_influence_and_diffusion">Week 10: Social influence and diffusion</h2>
+<p>October 24</p>
+<p><strong>Weekly lecture:</strong></p>
+<ul>
+<li><a href="https://youtu.be/_6Wrc_T49GQ">Social Influence and Contagion</a>[22:12] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_10/lecture/influence_and_diffusion.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_10/lecture/influence_and_diffusion.html Slides</a></li>
+</ul>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Turn in your <a href="Self_Assessment_Reflection" title="wikilink">Self Assessment Reflection</a> on Brightspace</li>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_6_visualizing_power.qmd">R Lab 6 - Visualizing Power</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=l18Jd9XCAec">Lab walkthrough</a></li>
+</ul></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Chapter 4, "<a href="https://web.archive.org/web/20191019100528/http://everythingisobvious.com/wp-content/themes/eio/assets/EIO_chapter4.pdf">Special People</a>", in Watts, D. J. (2011). Everything is Obvious: Once you know the answer. New York, NY: Crown Business.</li>
+<li><a href="https://youtu.be/D9XF0QOzWM0">Duncan Watts on Common Sense</a></li>
+<li>[Optional] Centola, D., &amp; Macy, M. (2007). <a href="https://www-journals-uchicago-edu.ezproxy.lib.purdue.edu/doi/full/10.1086/521848">Complex Contagions and the Weakness of Long Ties</a>. American Journal of Sociology, 113(3), 702–734.</li>
+<li>[Optional] Christakis, N. A., &amp; Fowler, J. H. (2012). <a href="https://onlinelibrary-wiley-com.ezproxy.lib.purdue.edu/doi/full/10.1002/sim.5408">Social contagion theory: Examining dynamic social networks and human behavior</a>. Statistics in Medicine, 32, 556–577.</li>
+</ul>
+<p>October 26</p>
+<ul>
+<li>Do <a href="http://ncase.me/crowds/">The Wisdom or Madness of Crowds Simulation</a></li>
+</ul>
+</section>
+<section id="week_11_communities_and_core_periphery" class="level2">
+<h2 class="anchored" data-anchor-id="week_11_communities_and_core_periphery">Week 11: Communities and Core-periphery</h2>
+<p>October 31</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+<li>Submit two exam questions on Brightspace</li>
+<li>[[/Visualization challenge|Visualization</li>
+</ul>
+<p>Challenge]]</p>
+<p><strong>Video Lecture:</strong></p>
+<ul>
+<li><a href="https://youtu.be/7pQMUisgv1U">Communities and Core-periphery</a> [23:15] <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_11/lecture/communities_in_networks.html_Slides" title="wikilink">https://jeremydfoote.com/Communication-and-Social-Networks/week_11/lecture/communities_in_networks.html Slides</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Girvan, M., &amp; Newman, M. E. (2002). <a href="https://www.pnas.org/content/pnas/99/12/7821.full.pdf">Community structure in social and biological networks</a>. Proceedings of the National Academy of Sciences.</li>
+<li>Barberá, P., Wang, N., Bonneau, R., Jost, J. T., Nagler, J., Tucker, J., &amp; González-Bailón, S. (2015). <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143611">The critical periphery in the growth of social protests</a>. PLoS ONE.
+<ul>
+<li><a href="../../Barbera_summary" title="wikilink">Claude.ai Summary</a></li>
+</ul></li>
+<li>(Optional) Hanneman, R. A., &amp; Riddle, M. (2005). <a href="http://faculty.ucr.edu/~hanneman/nettext/C11_Cliques.html">Cliques and sub-groups</a>. In Introduction to social network methods. University of California.</li>
+</ul>
+<p>November 2</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd">R Lab 7 - Finding and visualizing groups in networks</a></li>
+</ul>
+</section>
+<section id="week_12_resilient_networks" class="level2">
+<h2 class="anchored" data-anchor-id="week_12_resilient_networks">Week 12: Resilient networks</h2>
+<p>November 7</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd">R Lab 7 - Finding and visualizing groups in networks</a>
+<ul>
+<li><a href="https://youtu.be/Ob1rxN7_eO4">Lab 7 Walkthrough</a></li>
+</ul></li>
+<li><a href="#reading-review-assignments" title="wikilink">Reading Review</a></li>
+</ul>
+<p><strong>Class Schedule:</strong></p>
+<p>Guest Lecture: Dr.&nbsp;Seungyoon Lee</p>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>[<a href="http://sggpcp.com/wp-content/uploads/2015/11/Social-Networks-and-Disaster-Resilience.-An-introduction" class="uri">http://sggpcp.com/wp-content/uploads/2015/11/Social-Networks-and-Disaster-Resilience.-An-introduction</a>..pdf Social networks and disaster resilience: an introduction] pp.&nbsp;9-13</li>
+</ul>
+<p>November 9</p>
+<ul>
+<li>Exam review</li>
+</ul>
+</section>
+<section id="week_13_technology_and_networks" class="level2">
+<h2 class="anchored" data-anchor-id="week_13_technology_and_networks">Week 13: Technology and Networks</h2>
+<p>November 14</p>
+<p><strong>Lecture Video:</strong></p>
+<ul>
+<li><a href="https://youtu.be/iTiduq9GplU">Technology and networks</a> [19:38]</li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Pariser, E. <a href="https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles">Beware Online Filter Bubbles TED talk</a></li>
+<li>Fletcher, R. <a href="https://reutersinstitute.politics.ox.ac.uk/risj-review/truth-behind-filter-bubbles-bursting-some-myths">The truth behind filter bubbles: Bursting some myths</a>.</li>
+<li>Bail, C. <a href="https://www.youtube.com/watch?v=nwRm_ssTarE">Should we break our echo chambers?</a></li>
+<li>Cohen, M. <a href="https://www.psychologytoday.com/intl/blog/finding-love-the-scientific-take/202012/context-collapse">Context Collapse</a></li>
+</ul>
+<p>(Optional)</p>
+<ul>
+<li>Kleinberg, J. (2012). <a href="https://link-springer-com.ezproxy.lib.purdue.edu/chapter/10.1007%2F978-3-642-29952-0_8">The Convergence of Social and Technological Networks</a>. In M. Agrawal, S. B. Cooper, &amp; A. Li (Eds.), Theory and Applications of Models of Computation.</li>
+<li>Chris Bail, et al.&nbsp;(2018). <a href="https://www.pnas.org/content/115/37/9216">Exposure to opposing views on social media can increase political polarization</a>. PNAS.</li>
+</ul>
+<p>November 16</p>
+<ul>
+<li>In class exam!</li>
+</ul>
+</section>
+<section id="week_14_networks_and_collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="week_14_networks_and_collaboration">Week 14: Networks and collaboration</h2>
+<p>November 21</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Discussion Questions</li>
+</ul>
+<p><strong>Lecture video:</strong></p>
+<ul>
+<li><a href="https://youtu.be/_8gFd0XZJKc">Networks and Collaboration</a>[17:19]</li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Read the <a href="https://en.wikipedia.org/wiki/The_Wealth_of_Networks">Wikipedia Article about The Wealth of Networks</a></li>
+<li>Skim section two of Benkler, Y. (2002). <a href="https://www-jstor-org.ezproxy.lib.purdue.edu/stable/1562247">Coase’s Penguin, or, Linux and "The Nature of the Firm."</a> The Yale Law Journal, 112(3), 369.</li>
+</ul>
+<p>November 23</p>
+<p><strong>THANKSGIVING BREAK</strong></p>
+</section>
+<section id="week_15_networked_racism" class="level2">
+<h2 class="anchored" data-anchor-id="week_15_networked_racism">Week 15: Networked racism</h2>
+<p>November 28</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li><a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_8_network_stats.qmd">R Lab 8 - Calculating network statistics</a></li>
+</ul>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Fernandez, R. M., &amp; Fernandez-Mateo, I. (2006). <a href="https://journals-sagepub-com.ezproxy.lib.purdue.edu/doi/pdf/10.1177/000312240607100103">Networks, Race, and Hiring</a>. American Sociological Review, 71(1), 42–71. <strong>Read the introduction (pp.&nbsp;42–47) and the Summary and Conclusion (pp.&nbsp;65–67)</strong></li>
+<li>Sunstein, C. R. (1991). Why markets don’t stop discrimination. Social Philosophy and Policy, 8(02), 22–37. <a href="https://doi.org/10.1017/S0265052500001114" class="uri">https://doi.org/10.1017/S0265052500001114</a></li>
+</ul>
+<p>November 30</p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Rough draft of <a href="../../Final_project" title="wikilink">Final Project</a> on Brightspace and sent to your "peers"</li>
+</ul>
+<p><strong>No class - work on Final Project</strong></p>
+<ul>
+<li>(Optional) <a href="https://github.com/jdfoote/com_and_social_networks_labs/raw/main/advanced_visualizations.qmd">Advanced network visualizations in R</a></li>
+</ul>
+</section>
+<section id="week_16_network_visualization_principles" class="level2">
+<h2 class="anchored" data-anchor-id="week_16_network_visualization_principles">Week 16: Network Visualization Principles</h2>
+<p>December 5</p>
+<p><strong>No class - work on Final Project</strong></p>
+<p><strong>Assignment Due:</strong></p>
+<ul>
+<li>Peer feedback on final project</li>
+</ul>
+<p>December 7</p>
+<p><strong>Class Schedule:</strong></p>
+<ul>
+<li>Voluntary presentations of final projects</li>
+<li>Review principles of good network visualizations
+<ul>
+<li>Put examples at <a href="https://padlet.com/jdfoote1/networks" class="uri">https://padlet.com/jdfoote1/networks</a> (I will explain in class)</li>
+</ul></li>
+<li>Work on final projects</li>
+</ul>
+</section>
+<section id="finals_week" class="level2">
+<h2 class="anchored" data-anchor-id="finals_week">Finals week</h2>
+<p><strong>Assignment Due (Wednesday, December 13):</strong></p>
+<ul>
+<li><a href="../../Final_project" title="wikilink">Final Project</a></li>
+<li>Turn in your <a href="Final_self_reflection" title="wikilink">Final self reflection</a> on Brightspace</li>
+</ul>
+</section>
+</section>
+<section id="policies" class="level1">
+<h1>Policies</h1>
+<section id="attendance" class="level2">
+<h2 class="anchored" data-anchor-id="attendance">Attendance</h2>
+<p>I try very hard to make our meeting times valuable to you and I expect that you attend. That being said, I know that people get sick, things come up, etc. If you need to miss class, then it is your responsibility to seek out support from classmates for notes, handouts, and other information.</p>
+<p>Only I can excuse a student from a course requirement or responsibility. When conflicts can be anticipated, such as for many University-sponsored activities and religious observations, please inform me of the situation as far in advance as possible. For unanticipated or emergency conflicts, when advance notification is not possible, contact me as soon as possible on Discord or by email. In cases of bereavement, quarantine, or isolation, the student or the student’s representative should contact the Office of the Dean of Students via email or phone at 765-494-1747. Our course on Brightspace includes a link to the Dean of Students under 'Campus Resources.'</p>
+</section>
+<section id="classroom_discussions_and_peer_feedback" class="level2">
+<h2 class="anchored" data-anchor-id="classroom_discussions_and_peer_feedback">Classroom Discussions and Peer Feedback</h2>
+<p>Throughout the course, you may receive, read, collaborate, and/or comment on classmates’ work. These assignments are for class use only. You may not share them with anybody outside of class without explicit written permission from the document’s author and pertaining to the specific piece.</p>
+<p>It is essential to the success of this class that all participants feel comfortable discussing questions, thoughts, ideas, fears, reservations, apprehensions and confusion. Therefore, you may not create any audio or video recordings during class time nor share verbatim comments with those not in class linked to people’s identities unless you get clear and explicit permission. If you want to share general impressions or specifics of in-class discussions with those not in class, please do so without disclosing personal identities or details.</p>
+</section>
+<section id="academic_integrity" class="level2">
+<h2 class="anchored" data-anchor-id="academic_integrity">Academic Integrity</h2>
+<p>While I encourage collaboration, I expect that any work that you submit is your own. Basic guidelines for Purdue students are outlined <a href="https://www.purdue.edu/odos/osrr/academic-integrity/index.html">here</a> but I expect you to be exemplary members of the academic community. Please get in touch if you have any questions or concerns.</p>
+</section>
+<section id="nondiscrimination" class="level2">
+<h2 class="anchored" data-anchor-id="nondiscrimination">Nondiscrimination</h2>
+<p>I strongly support Purdue's policy of nondiscrimination (below). If you feel like any member of our classroom--including me--is not living up to these principles, then please come and talk to me about it.</p>
+<p>Purdue University is committed to maintaining a community which recognizes and values the inherent worth and dignity of every person; fosters tolerance, sensitivity, understanding, and mutual respect among its members; and encourages each individual to strive to reach his or her own potential. In pursuit of its goal of academic excellence, the University seeks to develop and nurture diversity. The University believes that diversity among its many members strengthens the institution, stimulates creativity, promotes the exchange of ideas, and enriches campus life.</p>
+</section>
+<section id="accessibility" class="level2">
+<h2 class="anchored" data-anchor-id="accessibility">Accessibility</h2>
+<p>Purdue University strives to make learning experiences as accessible as possible. If you anticipate or experience physical or academic barriers based on disability, you are welcome to let me know so that we can discuss options. You are also encouraged to contact the Disability Resource Center at: drc@purdue.edu or by phone: 765-494-1247.</p>
+</section>
+<section id="emergency_preparation" class="level2">
+<h2 class="anchored" data-anchor-id="emergency_preparation">Emergency Preparation</h2>
+<p>In the event of a major campus emergency, I will update the requirements and deadlines as needed.</p>
+</section>
+<section id="mental_health" class="level2">
+<h2 class="anchored" data-anchor-id="mental_health">Mental Health</h2>
+<p>If you or someone you know is feeling overwhelmed, depressed, and/or in need of mental health support, services are available. For help, such individuals should contact Counseling and Psychological Services (CAPS) at 765-494-6995 during and after hours, on weekends and holidays, or by going to the CAPS office of the second floor of the Purdue University Student Health Center (PUSH) during business hours.</p>
+</section>
+<section id="incompletes" class="level2">
+<h2 class="anchored" data-anchor-id="incompletes">Incompletes</h2>
+<p>A grade of incomplete (I) will be given only in unusual circumstances. The request must describe the circumstances, along with a proposed timeline for completing the course work. Submitting a request does not ensure that an incomplete grade will be granted. If granted, you will be required to fill out and sign an “Incomplete Contract” form that will be turned in with the course grades. Any requests made after the course is completed will not be considered for an incomplete grade.</p>
+</section>
+<section id="additional_policies" class="level2">
+<h2 class="anchored" data-anchor-id="additional_policies">Additional Policies</h2>
+<p>Links to additional Purdue policies are on our Brightspace page. If you have questions about policies please get in touch.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jdfoote\.github\.io\/Communication-and-Social-Networks\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

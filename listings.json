@@ -1,0 +1,40 @@
+[
+  {
+    "listing": "/class_lectures.html",
+    "items": [
+      "/lectures/class_lectures/week_1.html",
+      "/lectures/class_lectures/week_2.html",
+      "/lectures/class_lectures/week_3.html",
+      "/lectures/class_lectures/week_4.html",
+      "/lectures/class_lectures/week_11.html",
+      "/lectures/class_lectures/week_5.html",
+      "/lectures/class_lectures/week_6.html",
+      "/lectures/class_lectures/week_7.html",
+      "/lectures/class_lectures/week_10.html",
+      "/lectures/class_lectures/week_16.html",
+      "/lectures/class_lectures/week_15.html",
+      "/lectures/class_lectures/week_12.html",
+      "/lectures/class_lectures/week_13.html",
+      "/lectures/class_lectures/week_14.html",
+      "/lectures/class_lectures/week_8.html",
+      "/lectures/class_lectures/week_9.html"
+    ]
+  },
+  {
+    "listing": "/content_lectures.html",
+    "items": [
+      "/lectures/content_lectures/centrality.html",
+      "/lectures/content_lectures/communities_in_networks.html",
+      "/lectures/content_lectures/ego_nets.html",
+      "/lectures/content_lectures/influence_and_diffusion.html",
+      "/lectures/content_lectures/networks_and_collaboration.html",
+      "/lectures/content_lectures/networks_and_tech.html",
+      "/lectures/content_lectures/scale_free_and_friend_paradox.html",
+      "/lectures/content_lectures/small_worlds.html",
+      "/lectures/content_lectures/social_capital.html",
+      "/lectures/content_lectures/tie_formation.html",
+      "/lectures/content_lectures/week_2_network_types.html",
+      "/lectures/content_lectures/week_4_small_groups.html"
+    ]
+  }
+]
