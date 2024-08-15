@@ -95,7 +95,7 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="./libs/custom_css.css">
+  <link rel="stylesheet" href="../../resources/custom_css.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -496,11 +496,11 @@ Times were hard.
 <section id="decentralized-network" class="slide level2">
 <h2>Decentralized network</h2>
 
-<img data-src="week_12_files/figure-html/unnamed-chunk-1-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_12_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
 <section id="centralized-network" class="slide level2">
 <h2>Centralized network</h2>
 
-<img data-src="week_12_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_12_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="connections-to-other-network-concepts" class="slide level2">
 <h2>Connections to other network concepts</h2>
 <ul>
@@ -536,37 +536,34 @@ Times were hard.
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Using "stress" as default layout</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_12_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
+<p><img data-src="week_12_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>G <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a></a>  <span class="fu">mutate</span>(<span class="at">centrality =</span> <span class="fu">centrality_degree</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">activate</span>(edges) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">ggraph</span>() <span class="sc">+</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">geom_edge_fan</span>(<span class="at">color =</span> <span class="st">'purple'</span>) <span class="sc">+</span></span>
-<span id="cb2-6"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> centrality), <span class="at">color =</span> <span class="st">'green'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>G <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">mutate</span>(<span class="at">centrality =</span> <span class="fu">centrality_degree</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">activate</span>(edges) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">ggraph</span>() <span class="sc">+</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">geom_edge_fan</span>(<span class="at">color =</span> <span class="st">'purple'</span>) <span class="sc">+</span></span>
+<span id="cb1-6"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> centrality), <span class="at">color =</span> <span class="st">'green'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exam-review-1" class="slide level2">
 <h2>Exam Review</h2>
 <p>What would this code do?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>G <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">activate</span>(nodes) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">mutate</span>(<span class="at">ec =</span> <span class="fu">centrality_eigen</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">filter</span>(ec <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">ggraph</span>() <span class="sc">+</span></span>
-<span id="cb3-6"><a></a>  <span class="fu">geom_edge_fan</span>(<span class="at">color =</span> <span class="st">'orange'</span>) <span class="sc">+</span></span>
-<span id="cb3-7"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> ec), <span class="at">color =</span> <span class="st">'green'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>G <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">activate</span>(nodes) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">mutate</span>(<span class="at">ec =</span> <span class="fu">centrality_eigen</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">filter</span>(ec <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">ggraph</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">geom_edge_fan</span>(<span class="at">color =</span> <span class="st">'orange'</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> ec), <span class="at">color =</span> <span class="st">'green'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exam-review-2" class="slide level2">
 <h2>Exam Review</h2>
@@ -829,6 +826,44 @@ Times were hard.
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

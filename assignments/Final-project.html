@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.552">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Communication and Social Networks - Final project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../resources/custom_css.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Communication and Social Networks</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus/syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../assignments/assignments.html" aria-current="page"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/assignments.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/Final-project.html">Final project</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/Homework-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/ego_networks_activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ego Networks Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/Final-project.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Final project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">R Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_1_-_installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_2_–_creating_networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 2 – Creating Networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_3_–_mutating_and_filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 3 – Mutating and Filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_4_–_intro_to_ggraph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 4 – Intro to ggraph</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_5_–_aesthetics_in_ggraph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 5 – Aesthetics in ggraph</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_6_–_visualizing_power.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 6 – Visualizing Power</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_7_–_groups_in_networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 7 – Groups in Networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/r_lab_8_–_network_stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Lab 8 – Network Stats</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#network_intervention" id="toc-network_intervention" class="nav-link active" data-scroll-target="#network_intervention">Network Intervention</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
+  <li><a href="#executive_report" id="toc-executive_report" class="nav-link" data-scroll-target="#executive_report">Executive Report</a></li>
+  </ul></li>
+  <li><a href="#network_analysis" id="toc-network_analysis" class="nav-link" data-scroll-target="#network_analysis">Network Analysis</a>
+  <ul class="collapse">
+  <li><a href="#finding_networks" id="toc-finding_networks" class="nav-link" data-scroll-target="#finding_networks">Finding Networks</a></li>
+  <li><a href="#presentation_1" id="toc-presentation_1" class="nav-link" data-scroll-target="#presentation_1">Presentation</a></li>
+  <li><a href="#executive_report_1" id="toc-executive_report_1" class="nav-link" data-scroll-target="#executive_report_1">Executive Report</a></li>
+  </ul></li>
+  <li><a href="#company_pitch" id="toc-company_pitch" class="nav-link" data-scroll-target="#company_pitch">Company Pitch</a>
+  <ul class="collapse">
+  <li><a href="#sample_business_data" id="toc-sample_business_data" class="nav-link" data-scroll-target="#sample_business_data">Sample Business Data</a></li>
+  <li><a href="#examples_1" id="toc-examples_1" class="nav-link" data-scroll-target="#examples_1">Examples</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title display-7">Final project</h1>
+
+</header>
+
+
+<p>You can choose a final project from one of the following options:</p>
+<ol type="1">
+<li>Network Intervention</li>
+<li>Network Analysis</li>
+<li>Company Pitch</li>
+</ol>
+<p>More information about each option is below. For each project, you will produce a research report of some kind. You should write this in a Quarto file, and then export it to a Word document.</p>
+<p>Please turn in two files:</p>
+<ul>
+<li>Your .qmd file that includes your code</li>
+<li>The Word document or PDF version of the report. Figure out to set echo=FALSE, so that it doesn't include all of your code, and just looks like a nice report.</li>
+</ul>
+<section id="network_intervention" class="level2">
+<h2 class="anchored" data-anchor-id="network_intervention">Network Intervention</h2>
+<p>In teams of 3 or 4, you will design, carry out, and measure a network intervention, using principles from this class, like diffusion, contagion, social capital, etc. You will identify a message/product/idea/etc and try to spread it, either within or beyond Purdue.</p>
+<p>I would encourage you to identify a goal that is meaningful to your group; projects should be creative, courageous, and challenging. We will evaluate your work not based on whether your are ultimately successful, but how innovate your approach is, and how grounded it is in the network theories we have learned about.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p><a href="http://brooke-welles.squarespace.com/">Brooke Foucault-Welles</a> has run a similar project in her class. Examples of well-designed projects in her class include:</p>
+<ul>
+<li>A comparison of the diffusion on Twitter of a plain-text and image-and-text message about feminism.</li>
+<li>An alteration intervention that aimed to boost morale in a student organization by creating cross-cohort (year in school) friendship ties.</li>
+<li>A marketing campaign that leveraged the friendship paradox to spread the word about a new student group.</li>
+<li>An intervention that targeted student leaders to lobby University Health and Counseling Services to bring therapy animals to campus during finals week.</li>
+</ul>
+</section>
+<section id="presentation" class="level3">
+<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
+<p>Because this is a group project, I'll expect a lot more than the individual projects. Part of this is in being ambitious in the project that you select, but also in how you present your results.</p>
+<p>In particular, those choosing this option will do a short (5 minute) presentation to the class at the end of the semester, to tell us about your project and your findings. It would be fun for those in the class to learn about what you've been doing.</p>
+</section>
+<section id="executive_report" class="level3">
+<h3 class="anchored" data-anchor-id="executive_report">Executive Report</h3>
+<p>The major part of the assignment, though, is a 5-6 page executive report. This report should have the following sections:</p>
+<ul>
+<li>Introduction
+<ul>
+<li>In the introduction you will describe the motivation for your intervention. You will explain what you did, and why you chose that approach.</li>
+</ul></li>
+<li>Network Theory
+<ul>
+<li>In your introduction, you will likely mention some network theories that helped to motivate your intervention. In this section, you will provide more detail about the theories that guide your work. You should include at least three references to support your approach and analyses.</li>
+</ul></li>
+<li>Approach
+<ul>
+<li>In the introduction you will give a high-level explanation of your intervention. Here you will provide a more detailed description, together with a more extended argument about why this is a good approach to meet your goals.</li>
+</ul></li>
+<li>Analysis
+<ul>
+<li>You will analyze the effect of your intervention. The data to do this can take different forms - e.g., you may survey people to learn about awareness or beliefs, or you might gather data from the web or gather network data. At some point in your report you should include 1) a network analysis and 2) at least 1-2 network visualizations. It's possible that these may come earlier. For example, you might use existing data or simulated data to explain a network theory or to motivate your approach. If you are able to gather network data, then the network analysis and visualizations would probably be part of this Analysis section.</li>
+</ul></li>
+<li>Conclusion
+<ul>
+<li>Finally, write a few paragraphs reflecting on what was learned from your work.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="network_analysis" class="level2">
+<h2 class="anchored" data-anchor-id="network_analysis">Network Analysis</h2>
+<p>Either alone or in groups of up to 4, you will design and carry out a research project based on existing network data. Group projects are expected to be more ambitious than individual projects.</p>
+<p>Basically, you will identify a network and a set of hypotheses/research questions that you would like to answer using data from that network. You will use network analysis and network visualization tools to answer those questions, and then you will report on and discuss your findings.</p>
+<section id="finding_networks" class="level3">
+<h3 class="anchored" data-anchor-id="finding_networks">Finding Networks</h3>
+<p>There are a number of repositories of network datasets. Probably the simplest to use are those found in the <a href="https://github.com/schochastics/networkdata">networkdata</a> package, which we have already been using. If you look at the <a href="https://github.com/schochastics/networkdata">homepage of the package</a>, you can see descriptions of the datasets that are included.</p>
+<p>Another repository I really like is the <a href="https://icon.colorado.edu/#!/networks">Index of Complex Networks</a>. You can filter by type of network, size, etc. One thing to note about these networks is that you will need to load them into R (unlike <code>networkdata</code>). They are in different formats, and you will likely need to do some work to get them to be <code>igraph/tidygraph</code> networks.</p>
+<p>Fortunately, there are a number of tools in <code>igraph</code> designed to help you to import different file types. <a href="https://igraph.org/c/doc/igraph-Foreign.html">This page</a> gives a great overview.</p>
+<p><strong>Early in the semester you should identify the network you want to work with and make sure that 1) it has the attributes you need to answer the questions you want to answer and 2) you are able to load it into tidygraph format.</strong></p>
+</section>
+<section id="presentation_1" class="level3">
+<h3 class="anchored" data-anchor-id="presentation_1">Presentation</h3>
+<p>As with the intervention assignment, I would like you to present a short (5 minute) presentation about your project toward the end of class.</p>
+</section>
+<section id="executive_report_1" class="level3">
+<h3 class="anchored" data-anchor-id="executive_report_1">Executive Report</h3>
+<p>You will prepare a ~5 page report, with the following sections:</p>
+<ul>
+<li>Introduction
+<ul>
+<li>Give a compelling introduction to the project: why is this something worth studying? You may also want to preview some of the results of your research.</li>
+</ul></li>
+<li>Network Theory
+<ul>
+<li>In your introduction, you will likely mention some network theories that helped to motivate your research. In this section, you will provide more detail about the theories, leading up to the development of 2-5 hypotheses or research questions. You should include at least three references to support your arguments.</li>
+</ul></li>
+<li>Method and Data
+<ul>
+<li>You will explain how you are going to answer your research questions / hypotheses. Explain what data you will be using, and describe what analyses you will do, and why those are appropriate for answering your questions.</li>
+</ul></li>
+<li>Analysis
+<ul>
+<li>For each hypothesis / research question, you will perform some sort of analysis. For some questions, this will be an analysis of network measures. For others, this might be a network visualization. Your analysis can include other types of analyses (e.g., statistical analyses) but it should include at least one network analysis and at least one visualization.</li>
+</ul></li>
+<li>Discussion and Conclusion
+<ul>
+<li>Finally, write a few paragraphs 1) summarizing the findings from your analyses and 2) reflecting on how your findings fit in (or don't) with network theories you learned about in the class.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="company_pitch" class="level2">
+<h2 class="anchored" data-anchor-id="company_pitch">Company Pitch</h2>
+<p>Based on your work in this class, you will craft a pitch to help an organization make sense of their own social networks and craft a portfolio of your work with data drawing on the previous labs and readings to support your pitch.</p>
+<ol type="1">
+<li>Select a potential employer, and research them to identify the pressing organizational issues facing them as a company.</li>
+<li>Write a document for a potential employer that
+<ol type="1">
+<li>Introduces you and states your professional objectives. (1 paragraph)</li>
+<li>Makes the case for the most important problems facing this organization or industry based on your research. Be sure to cite any literature that you use. (1 paragraph)</li>
+<li>Explains how a network approach and your expertise in particular can help address the sorts of problems facing their organization and industry
+<ul>
+<li>Include at least three distinctive insights (e.g., my expertise in network analysis can help you identify opinion leaders in this organization).</li>
+<li>Include example visualizations of each insight from your own work (or create new visualizations).</li>
+<li>Include ideas from and references to the class readings to make your case.</li>
+</ul></li>
+<li>Closes with a request for a meeting to learn more about their organization.</li>
+</ol></li>
+<li>Compile and submit your document on Brightspace</li>
+</ol>
+<p>While I want everyone to write and turn in their own document, I encourage you to help each other with the visualization portions and to ask questions on the group Discord channel. I expect that the final document will be ~5 pages long (maybe longer if you want to showcase a lot of visualizations).</p>
+<section id="sample_business_data" class="level3">
+<h3 class="anchored" data-anchor-id="sample_business_data">Sample Business Data</h3>
+<p>If you would like, you can use data from a real organization. There are some great options of network data files already in igraph format at <a href="https://github.com/schochastics/networkdata" class="uri">https://github.com/schochastics/networkdata</a>.</p>
+<p>I created an example of how to load this data, and how to run some simple network metrics and visualizations. There's an <a href="https://github.com/jdfoote/Communication-and-Social-Networks/raw/spring-2021/resources/final_project_example_code.Rmd">RMarkdown file here</a> and the <a href="https://jeremydfoote.com/Communication-and-Social-Networks/resources/final_project_example_code.html">HTML output here</a>.</p>
+</section>
+<section id="examples_1" class="level3">
+<h3 class="anchored" data-anchor-id="examples_1">Examples</h3>
+<p>This project is similar to a final project that Josh Barbour assigns to his class. You can find examples of their projects on Brightspace.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jdfoote\.github\.io\/Communication-and-Social-Networks\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

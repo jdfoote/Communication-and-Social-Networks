@@ -30,9 +30,11 @@ color: LightCoral;
 text-transform: none;
 }
 
-.reveal h1 {
+
+/* .reveal h1 {
 margin-top:200px;
-}
+} */
+
 
 div.footnote {
 font-size: 40%;

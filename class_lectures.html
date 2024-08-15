@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -211,6 +211,9 @@ window.Quarto = {
 <thead>
 <tr>
 <th>
+Date
+</th>
+<th>
 Title
 </th>
 <th>
@@ -219,15 +222,10 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1722729894150" data-listing-reading-time-sort="4" data-listing-word-count-sort="646" data-listing-title-sort="Welcome to COM 411: Communication and Social Networks!" data-listing-filename-sort="week_1.qmd">
+<tr data-index="0" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="1" data-listing-word-count-sort="187" data-listing-title-sort="Week 2 - Network Data and Network Types" data-listing-filename-sort="week_2.qmd">
 <td>
-<a href="./lectures/class_lectures/week_1.html" class="title listing-title">Welcome to COM 411: Communication and Social Networks!</a>
+<span class="listing-date">&nbsp;</span>
 </td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1722734272872" data-listing-reading-time-sort="1" data-listing-word-count-sort="187" data-listing-title-sort="Week 2 - Network Data and Network Types" data-listing-filename-sort="week_2.qmd">
 <td>
 <a href="./lectures/class_lectures/week_2.html" class="title listing-title">Week 2 - Network Data and Network Types</a>
 </td>
@@ -235,7 +233,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1722734281167" data-listing-reading-time-sort="1" data-listing-word-count-sort="174" data-listing-title-sort="Week 3 - Edge Formation" data-listing-filename-sort="week_3.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="1" data-listing-word-count-sort="174" data-listing-title-sort="Week 3 - Edge Formation" data-listing-filename-sort="week_3.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_3.html" class="title listing-title">Week 3 - Edge Formation</a>
 </td>
@@ -243,7 +244,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1722734295515" data-listing-reading-time-sort="1" data-listing-word-count-sort="151" data-listing-title-sort="Week 4 - Small Group Networks" data-listing-filename-sort="week_4.qmd">
+<tr data-index="2" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="1" data-listing-word-count-sort="151" data-listing-title-sort="Week 4 - Small Group Networks" data-listing-filename-sort="week_4.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_4.html" class="title listing-title">Week 4 - Small Group Networks</a>
 </td>
@@ -251,7 +255,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1722733942553" data-listing-reading-time-sort="2" data-listing-word-count-sort="351" data-listing-title-sort="Week 11 - Communities in Networks" data-listing-filename-sort="week_11.qmd">
+<tr data-index="3" data-listing-file-modified-sort="1723746972384" data-listing-reading-time-sort="2" data-listing-word-count-sort="351" data-listing-title-sort="Week 11 - Communities in Networks" data-listing-filename-sort="week_11.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_11.html" class="title listing-title">Week 11 - Communities in Networks</a>
 </td>
@@ -259,7 +266,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1722734318179" data-listing-reading-time-sort="2" data-listing-word-count-sort="378" data-listing-title-sort="Week 5 - Ego Networks" data-listing-filename-sort="week_5.qmd">
+<tr data-index="4" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="2" data-listing-word-count-sort="378" data-listing-title-sort="Week 5 - Ego Networks" data-listing-filename-sort="week_5.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_5.html" class="title listing-title">Week 5 - Ego Networks</a>
 </td>
@@ -267,7 +277,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1722734347179" data-listing-reading-time-sort="1" data-listing-word-count-sort="152" data-listing-title-sort="Week 6 - Centrality and Centralization" data-listing-filename-sort="week_6.qmd">
+<tr data-index="5" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="1" data-listing-word-count-sort="152" data-listing-title-sort="Week 6 - Centrality and Centralization" data-listing-filename-sort="week_6.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_6.html" class="title listing-title">Week 6 - Centrality and Centralization</a>
 </td>
@@ -275,7 +288,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1709057535381" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" data-listing-title-sort="Capital and Social Capital" data-listing-filename-sort="week_7.qmd">
+<tr data-index="6" data-listing-file-modified-sort="1723746972387" data-listing-reading-time-sort="2" data-listing-word-count-sort="209" data-listing-title-sort="Capital and Social Capital" data-listing-filename-sort="week_7.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_7.html" class="title listing-title">Capital and Social Capital</a>
 </td>
@@ -283,7 +299,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-file-modified-sort="1722730009802" data-listing-reading-time-sort="3" data-listing-word-count-sort="446" data-listing-title-sort="Diffusion and Contagion" data-listing-filename-sort="week_10.qmd">
+<tr data-index="7" data-listing-file-modified-sort="1723746972383" data-listing-reading-time-sort="3" data-listing-word-count-sort="446" data-listing-title-sort="Diffusion and Contagion" data-listing-filename-sort="week_10.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_10.html" class="title listing-title">Diffusion and Contagion</a>
 </td>
@@ -291,7 +310,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-file-modified-sort="1707427687466" data-listing-reading-time-sort="4" data-listing-word-count-sort="636" data-listing-title-sort="Network Visualization and Wrap Up" data-listing-filename-sort="week_16.qmd">
+<tr data-index="8" data-listing-file-modified-sort="1723746972386" data-listing-reading-time-sort="4" data-listing-word-count-sort="636" data-listing-title-sort="Network Visualization and Wrap Up" data-listing-filename-sort="week_16.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_16.html" class="title listing-title">Network Visualization and Wrap Up</a>
 </td>
@@ -299,7 +321,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-file-modified-sort="1713880846114" data-listing-reading-time-sort="2" data-listing-word-count-sort="272" data-listing-title-sort="Networks and Inequality" data-listing-filename-sort="week_15.qmd">
+<tr data-index="9" data-listing-file-modified-sort="1723746972385" data-listing-reading-time-sort="2" data-listing-word-count-sort="272" data-listing-title-sort="Networks and Inequality" data-listing-filename-sort="week_15.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_15.html" class="title listing-title">Networks and Inequality</a>
 </td>
@@ -307,7 +332,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="11" data-listing-file-modified-sort="1712775063338" data-listing-reading-time-sort="5" data-listing-word-count-sort="811" data-listing-title-sort="Week 12 - Collective Behavior" data-listing-filename-sort="week_12.qmd">
+<tr data-index="10" data-listing-file-modified-sort="1723746972385" data-listing-reading-time-sort="5" data-listing-word-count-sort="811" data-listing-title-sort="Week 12 - Collective Behavior" data-listing-filename-sort="week_12.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_12.html" class="title listing-title">Week 12 - Collective Behavior</a>
 </td>
@@ -315,7 +343,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="12" data-listing-file-modified-sort="1712774904766" data-listing-reading-time-sort="2" data-listing-word-count-sort="261" data-listing-title-sort="Week 13 - Collective behavior" data-listing-filename-sort="week_13.qmd">
+<tr data-index="11" data-listing-file-modified-sort="1723746972385" data-listing-reading-time-sort="2" data-listing-word-count-sort="261" data-listing-title-sort="Week 13 - Collective behavior" data-listing-filename-sort="week_13.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_13.html" class="title listing-title">Week 13 - Collective behavior</a>
 </td>
@@ -323,7 +354,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="13" data-listing-file-modified-sort="1713276316711" data-listing-reading-time-sort="1" data-listing-word-count-sort="127" data-listing-title-sort="Week 14 - Cooperation" data-listing-filename-sort="week_14.qmd">
+<tr data-index="12" data-listing-file-modified-sort="1723746972385" data-listing-reading-time-sort="1" data-listing-word-count-sort="127" data-listing-title-sort="Week 14 - Cooperation" data-listing-filename-sort="week_14.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_14.html" class="title listing-title">Week 14 - Cooperation</a>
 </td>
@@ -331,7 +365,10 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="14" data-listing-file-modified-sort="1709153657974" data-listing-reading-time-sort="3" data-listing-word-count-sort="428" data-listing-title-sort="Week 8" data-listing-filename-sort="week_8.qmd">
+<tr data-index="13" data-listing-file-modified-sort="1723746972387" data-listing-reading-time-sort="3" data-listing-word-count-sort="428" data-listing-title-sort="Week 8" data-listing-filename-sort="week_8.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_8.html" class="title listing-title">Week 8</a>
 </td>
@@ -339,9 +376,23 @@ Author
 <span class="listing-author">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="15" data-listing-file-modified-sort="1709650750719" data-listing-reading-time-sort="2" data-listing-word-count-sort="334" data-listing-title-sort="Week 9" data-listing-filename-sort="week_9.qmd">
+<tr data-index="14" data-listing-file-modified-sort="1723746972387" data-listing-reading-time-sort="2" data-listing-word-count-sort="334" data-listing-title-sort="Week 9" data-listing-filename-sort="week_9.qmd">
+<td>
+<span class="listing-date">&nbsp;</span>
+</td>
 <td>
 <a href="./lectures/class_lectures/week_9.html" class="title listing-title">Week 9</a>
+</td>
+<td>
+<span class="listing-author">&nbsp;</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-date-sort="978325200000" data-listing-file-modified-sort="1723746972383" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="646" data-listing-title-sort="Welcome to COM 411: Communication and Social Networks!" data-listing-filename-sort="week_1.qmd">
+<td>
+<span class="listing-date">Jan 1, 2001</span>
+</td>
+<td>
+<a href="./lectures/class_lectures/week_1.html" class="title listing-title">Welcome to COM 411: Communication and Social Networks!</a>
 </td>
 <td>
 <span class="listing-author">&nbsp;</span>

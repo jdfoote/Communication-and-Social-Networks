@@ -95,7 +95,7 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="./libs/custom_css.css">
+  <link rel="stylesheet" href="../../resources/custom_css.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -432,38 +432,38 @@
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">as_edgelist</span>(sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      [,1] [,2]
- [1,]    1    9
+ [1,]    1    2
  [2,]    1    5
- [3,]    3    9
- [4,]    2   13
+ [3,]    2   16
+ [4,]    2    6
  [5,]    3    4
- [6,]    3    7
+ [6,]    7   16
  [7,]    1    4
  [8,]    4    8
  [9,]    5    6
-[10,]    4    5
-[11,]    6    7
+[10,]    5    9
+[11,]    7    9
 [12,]    6   10
 [13,]    7    8
-[14,]   11   13
-[15,]    5    8
-[16,]   11   12
-[17,]   12   14
-[18,]    8    9
-[19,]    2   10
+[14,]    4    7
+[15,]    5   12
+[16,]    6   12
+[17,]    9   10
+[18,]    9   13
+[19,]   10   11
 [20,]   10   14
-[21,]    5   11
-[22,]   13   15
+[21,]   11   12
+[22,]    1   11
 [23,]    9   12
-[24,]    8   16
+[24,]   12   16
 [25,]   13   14
-[26,]    1   13
-[27,]    1   14
+[26,]   12   13
+[27,]   14   15
 [28,]    2   14
 [29,]   15   16
-[30,]    6   15
+[30,]    3   15
 [31,]   13   16
-[32,]    5   16</code></pre>
+[32,]    4   16</code></pre>
 </div>
 </div>
 </section>
@@ -474,12 +474,9 @@
 <span id="cb3-2"><a></a><span class="fu">ggraph</span>() <span class="sc">+</span></span>
 <span id="cb3-3"><a></a>  <span class="fu">geom_edge_fan</span>() <span class="sc">+</span></span>
 <span id="cb3-4"><a></a>  <span class="fu">geom_node_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Using "stress" as default layout</code></pre>
-</div>
 
 </div>
-<img data-src="week_2_network_types_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="where-does-social-network-data-come-from" class="slide level2">
 <h2>Where does social network data come from?</h2>
 <ul>
@@ -499,14 +496,14 @@
 <li class="fragment">Typically created from surveys</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">plot</span>(<span class="fu">make_ego_graph</span>(sw, <span class="at">nodes =</span> <span class="dv">1</span>)[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">plot</span>(<span class="fu">make_ego_graph</span>(sw, <span class="at">nodes =</span> <span class="dv">1</span>)[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week_2_network_types_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="extended-ego-networks" class="slide level2">
 <h2>Extended ego networks</h2>
 
-<img data-src="week_2_network_types_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="bipartite-networks" class="slide level2">
 <h2>Bipartite Networks</h2>
 <ul>
@@ -514,14 +511,10 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `graph.data.frame()` was deprecated in igraph 2.0.0.
-ℹ Please use `graph_from_data_frame()` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_2_network_types_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+<p><img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -531,17 +524,17 @@
 <section id="what-does-this-data-look-like" class="slide level2">
 <h2>What does this data look like?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">head</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">head</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
-  author     subreddit            posts
-  &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt;
-1 Sirkul     starcitizen             47
-2 chemtaalib TheWeeknd               26
-3 JWGhetto   HighQualityGifs          1
-4 grafpa     misleadingthumbnails     1
-5 JWGhetto   bodyweightfitness        1
-6 grafpa     conspiracy               1</code></pre>
+  author        subreddit       posts
+  &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;
+1 whats_a_hokie Patriots           21
+2 eratow        MensRights         17
+3 eratow        TwoXChromosomes    38
+4 OzzyKing459   RWBY               65
+5 yakjack55     anything            1
+6 seemls        DataHoarder         1</code></pre>
 </div>
 </div>
 </section>
@@ -555,7 +548,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_2_network_types_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
+<p><img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -569,7 +562,7 @@
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_2_network_types_files/figure-html/unnamed-chunk-10-1.png" width="672"></p>
+<p><img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -579,7 +572,7 @@
 <section id="nodes-and-edges-can-have-attributes" class="slide level2">
 <h2>Nodes and edges can have attributes</h2>
 
-<img data-src="week_2_network_types_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section>
+<img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="edge-attributes" class="slide level2">
 <h2>Edge attributes</h2>
 <ul>
@@ -587,14 +580,10 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `trans` argument of `continuous_scale()` is deprecated as of ggplot2 3.5.0.
-ℹ Please use the `transform` argument instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_2_network_types_files/figure-html/unnamed-chunk-12-1.png" width="672"></p>
+<p><img data-src="week_2_network_types_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -882,6 +871,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

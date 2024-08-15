@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/advanced_visualizations.html">Assignments and labs</a></li><li class="breadcrumb-item"><a href="../assignments/r_lab_1_-_installation.html">R Lab 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/r_lab_1_-_installation.html">R Labs</a></li><li class="breadcrumb-item"><a href="../assignments/r_lab_1_-_installation.html">R Lab 1</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Overview</span></a>
+ <span class="menu-text">Assignments</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -135,30 +135,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">assignments.html</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Assignments and labs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../assignments/advanced_visualizations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advanced Visualization Techniques</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../assignments/assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,6 +144,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Homework 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/ego_networks_activity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ego Networks Activity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/Final-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">R Labs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/r_lab_1_-_installation.html" class="sidebar-item-text sidebar-link active">
@@ -271,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="install_r" class="level3">
 <h3 class="anchored" data-anchor-id="install_r">Install R</h3>
 <ul>
-<li>If you are using a personal computer, <a href="https://cran.r-project.org/">Install R</a>. This is a really old, janky-looking site, but I promise it’s real.</li>
+<li><a href="https://cran.r-project.org/">Install R</a>. This is a really old, janky-looking site, but I promise it’s real.</li>
 </ul>
 </section>
 <section id="try_to_run_the_lab" class="level3">
@@ -284,22 +284,21 @@ ul.task-list li input[type="checkbox"] {
 <li>Search for “quarto” and install the quarto extension</li>
 <li>Search for “R” and install the R extension</li>
 <li>In VSCode, Click File &gt; Open Folder - Navigate to the COM_411_Labs folder that you created earlier</li>
-<li>Click on the lab_1_quarto.qmd file, and it should open in the main window of VSCode</li>
-<li>Click Terminal &gt; New Terminal. This will open a window at the bottom of VSCode. In that window type <code>R</code> and push enter. This will start an “R Interactive shell”</li>
-<li>In the R shell, paste the following:
+<li>Click on the lab_1_quarto.qmd file, and it should open in the main window of VSCode. At this point, it may ask if you want to install “languageserver”. You can click “Install” if it asks.</li>
+<li>Scroll down to line 36. You should see a little button that says “Run Cell”. Push that button, and a terminal will open at the bottom of the screen. This will run the R code in the cell.</li>
+<li>In the R shell at the bottom of VSCode, paste the following:
 <ul>
 <li><code>install.packages(c("rmarkdown","tidyverse","ggraph","tidygraph","igraphdata"))</code></li>
 <li>It will ask you what CRAN mirror you'd like to use. You can choose something in the US.</li>
 <li>If it asks if you want to install from source, you can type “no”</li>
 <li>This will show a bunch of crazy messages for a while. You can probably ignore them.</li>
 </ul></li>
-<li>Click “Render” at the top right, and hopefully it works!</li>
-<li>Read the document, make the changes that you are asked to, and then try clicking the down arrow by Render, and “Render as PDF”. I would like you to turn in all of your assignments as PDFs.</li>
-<li>If that doesn't work, then you probably have to install tinytex. Click the Quarto Preview terminal (in the bottom right) and type:
+<li>Install tinytex. Click the Quarto Preview terminal (in the bottom right) and type:
 <ul>
 <li><code>quarto install tinytex</code></li>
 </ul></li>
-<li>Try rendering a PDF again</li>
+<li>Click the “Preview” icon at the top right, and hopefully it works!</li>
+<li>Read the document, make the changes that you are asked to, and then preview the document again. Notice that there is a new PDF file in the folder.</li>
 <li>Upload the PDF to Brightspace! You did it!!</li>
 </ol>
 <p>If things aren’t working then ask a neighbor for help.</p>
