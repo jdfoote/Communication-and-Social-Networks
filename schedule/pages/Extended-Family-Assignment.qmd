@@ -1,0 +1,33 @@
+---
+title: Extended Family Assignment
+---
+This homework takes the general idea of family networks from Homework #1
+and makes it more formal and exact.
+
+Consider the network representing all family ties within a network walk
+of two steps from you (that is, at a network distance of two from you).
+The only two kinds of family ties you should include and represent in
+your network are 1) the tie between a parent and a child and 2) the tie
+between two spouses or romantic partners. Be sure to include those
+parents and children who may no longer be living. Include only current
+spouses or romantic partners. Here are the steps to follow:
+
+1.  Guess how many people will be contained in your network. Include
+    your guess as part of your homework assignment.
+2.  Create an edge list of all nodes and ties through a method called
+    snowball sampling: Start with yourself and name all the people who
+    are your parent, child, spouse or partner. These are the nodes one
+    step removed from you. Then list all the people who are the parent,
+    child, spouse or partner of your parents, children, and
+    spouse/partner. Some of these people will already have been listed
+    in the prior step; the rest of them are nodes two steps removed from
+    you. Be sure to give each person some kind of a name: it may be a
+    first name only, a pseudonym, or descriptions like "Agatha's Father"
+    if you don't know the person's name.
+3.  Convert this edge list into a matrix. Be sure to label each row and
+    column.
+4.  Convert this edge list into a sociogram (also called a network
+    graph). Draw the sociogram in [Google
+    Drawings](https://docs.google.com/drawings).
+5.  How many people are actually included? Compare that number to your
+    guess.

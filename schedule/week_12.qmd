@@ -1,0 +1,21 @@
+---
+title: "Week 12: Collective behavior"
+date: "2024-11-05"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* [R Lab 7 - Finding and visualizing groups in networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd)
+  * [Lab 7 Walkthrough](https://youtu.be/Ob1rxN7_eO4)
+* [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
+
+**Readings:**
+
+* Becker, J., Brackbill, D., & Centola, D. (2017). [Network dynamics of social influence in the wisdom of crowds](https://doi.org/10.1073/pnas.1615978114). Proceedings of the National Academy of Sciences, 201615978.
+* [Video discussion with Dr. Becker](https://youtu.be/sdI-b5mfjH4) (watch after reading paper)
+
+### Thursday
+
+* Exam review

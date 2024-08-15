@@ -1,0 +1,35 @@
+---
+title: "Week 7: Social Capital, structural holes, and weak ties"
+date: "2024-10-01"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* [R Lab 4 - Intro to ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
+* [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
+
+**Lecture Video:**
+
+* [Capital and Social Capital](https://youtu.be/22C-3QdzUbA) [16:02] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_7/lecture/social_capital.html)
+
+**Readings:** 
+
+* Granovetter, M. S. (1973). [The Strength of Weak Ties](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2776392?sid=primo&seq=1#metadata_info_tab_contents). American Journal of Sociology, 78(6), 1360–1380. https://doi.org/10.1086/225469
+  * [Claude.ai summary](.pages/granovetter_summary.html)
+* Kadushin, C. (2012).  [Networks as Social Capital](https://ebookcentral.proquest.com/lib/purdue/reader.action?docID=829477&ppg=175), in Kadushin, C. (2012). Understanding Social Networks. Theories, Concepts and Findings. Oxford: Oxford University Press.
+  * [Claude.ai summary](.pages/kadushin_summary.html)
+* Putnam, R.D. (1995). [Bowling Alone: America's Declining Social Capital](https://muse.jhu.edu/article/16643). Journal of Democracy 6(1), 65-78.
+  * [Claude.ai summary](.pages/Putnam_summary.html)
+
+* (Optional) Bourdieu, P. (1986). [The forms of capital](https://www.marxists.org/reference/subject/philosophy/works/fr/bourdieu-forms-capital.htm). In J. Richardson (Ed.) Handbook of Theory and Research for the Sociology of Education (New York, Greenwood), 241-258.
+  * [Claude.ai summary](.pages/Bourdieu_summary.html)
+* (Optional) Rainie, L. and Perrin, A. (2019). [Key findings about Americans’ declining trust in government and each other](https://www.pewresearch.org/fact-tank/2019/07/22/key-findings-about-americans-declining-trust-in-government-and-each-other/). Pew Research Center.
+* (Optional) Burt, R. S. (2000). [The network structure of social capital](https://www.sciencedirect.com/science/article/pii/S0191308500220091). Research in Organizational Behavior, 22, 345–423.
+
+### Thursday
+
+**Class Schedule:**
+
+* Who Dunnit Game

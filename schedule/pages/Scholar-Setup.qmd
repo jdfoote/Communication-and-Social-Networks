@@ -1,0 +1,81 @@
+---
+title: Scholar Setup
+---
+R is a statistical programming language. People use it for lots of
+things, but in this class we will focus on using it to analyze and
+visualize social networks.
+
+To help you to learn how to do this, we will go through a number of
+labs. The first ones will be really basic, but by the end you will be
+able to create complex, compelling visualizations from network data.
+
+In the past, I have had students use R on their own computers. You are
+welcome to do that, if you would like. But I have also requested access
+for our class on the [Scholar
+cluster](https://www.rcac.purdue.edu/compute/scholar) run by Purdue
+research computing. Basically, there are a bunch of high-powered
+computers that our class has access to, and you can do your work there.
+
+In this tutorial, you will learn how to log in to Scholar, and will get
+set up so you are ready for the labs.
+
+### Step 1: Log in {#step_1_log_in}
+
+1.  Go to <https://gateway.scholar.rcac.purdue.edu/pun/sys/dashboard>
+2.  Log in with your BoilerKey
+3.  Click on Interactive Apps: R Studio Server
+4.  For the options select \"scholar\", \"4.05\", 1 hour, 1 core (you
+    can change this to up to 4 hours later when you\'re actually using
+    it for work)
+5.  Click Launch
+6.  When the job starts, click \"Connect to R Studio Server\"
+
+### Step 2: Install packages {#step_2_install_packages}
+
+1.  Go back to the console tab
+2.  Run the following:
+
+`   install.packages("dplyr")`\
+`   install.packages("ggraph")`
+
+1.  Note: If you run into problems try the following:
+    -   Stop R (Session: Terminate R)
+    -   Click on the Terminal tab (right next to \"Console\" in the
+        bottom right of RStudio)
+    -   Copy the following and right-click to paste it into the
+        terminal:
+
+`   rm -rf ~/R/x86_64-pc-linux-gnu-library/4.0/*`
+
+### Step 3: Load the Labs {#step_3_load_the_labs}
+
+1\. Download all of the labs [by clicking this
+link](https://jeremydfoote.com/Communication-and-Social-Networks/r_lab_assignments/r_labs.zip).
+
+2\. Go back into RStudio; in the bottom right pane click \"Files\", then
+\"New Folder\" and create a new folder for our class - something like
+\"COM 411 R Labs\".
+
+3\. In that bottom right pane click \"Upload\", and upload the ZIP file.
+It should extract all of the labs for the class.
+
+### Step 4: Testing {#step_4_testing}
+
+-   In the bottom right pane, click Files, then click on
+    lab_1_r_markdown.Rmd. A weird looking file should show up in the top
+    left pane.
+-   In the top left pane, click \"Knit\". Some text should appear in the
+    bottom left panel, and after 20 seconds or so, you should see a new
+    window appear with a document titled \"Markdown and Network
+    Plotting\".
+-   It is fairly likely that you will get a bug when knitting about not
+    having pandoc installed. If so, you will need to run the following
+    in the Terminal tab:
+
+`   module load anaconda`
+
+-   Then restart R (Session : Restart R)
+
+We\'ll talk about what all of this means soon, but for now, if that
+document appears, then you have done everything right and you\'re ready
+to go!

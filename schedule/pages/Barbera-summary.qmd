@@ -1,0 +1,54 @@
+---
+title: Barbera summary
+---
+This paper analyzes the role of peripheral online participants during
+protest movements. The authors examine Twitter communication networks
+during 3 different protests:
+
+1.  2013 Gezi Park protests in Turkey
+2.  2012 Occupy movement
+3.  2012 Spanish Indignados movement
+
+They also analyze 2 non-protest Twitter networks for comparison:
+
+1.  2014 Academy Awards
+2.  2014 Minimum wage debates in the US
+
+The authors are interested in understanding the contribution of
+peripheral users - those who are less active or committed - compared to
+the core protest participants. They utilize k-core decomposition to
+identify core and peripheral users based on their position in the
+retweet networks.
+
+Key Findings:
+
+-   Peripheral users had similar audience reach (number of followers) as
+    core users, but were less active in posting protest-related tweets
+    individually.
+-   However, due to their large numbers, peripheral users contributed as
+    much total activity (tweets) as core users and expanded the audience
+    reach of protest messages.
+-   Removal of outer k-cores in the protest networks decreased reach by
+    \~50% but had less effect on total activity level. This suggests the
+    periphery increased the core\'s audience.
+-   In non-protest networks, the core and periphery contributed more
+    equally to activity and reach.
+-   The critical periphery seems especially important for amplification
+    during protests compared to non-protest events.
+
+In summary, the authors find that despite low individual activity,
+peripheral users as a collective contribute valuable resources for
+spreading protest messages and reaching a wider audience. This
+highlights the importance of the periphery in propelling protest
+visibility, even if they are less committed than core activists.
+
+Table of Key Questions and Answers:
+
+  Question                                              Answer
+  ----------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  What was the purpose of this study?                   To analyze the role and importance of peripheral online participants compared to core users during protest movements.
+  How were core and peripheral users defined?           Using k-core decomposition on retweet networks to identify core position versus peripheral shells.
+  How did core and peripheral users differ?             Peripheral users had lower individual activity but much greater aggregate activity and reach due to larger numbers.
+  What was the main finding?                            Despite having low individual impact, peripheral users as a collective contribute as much or more than core users for spreading protest messages and expanding audience reach.
+  How were protest and non-protest networks compared?   The critical periphery was more important for audience amplification in protest versus non-protest networks.
+  What is the significance of the findings?             The large periphery of low-activity users plays a critical role in propelling protest visibility through their collective reach and activity.

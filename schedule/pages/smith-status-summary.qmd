@@ -1,0 +1,54 @@
+---
+title: smith status summary
+---
+Here is the summary with the table converted to wiki markup:
+
+The paper examines how people of different socioeconomic status activate
+their social networks when faced with job loss threat. It defines
+network activation as the subset of a person\'s full potential network
+that comes to mind in a given situation.
+
+Study 1 analyzed data from the General Social Survey, finding that when
+facing job threat, high status people activated larger, less constrained
+networks while low status people did the opposite. This supports the
+idea that threat causes people to defend their identities, with high
+status people asserting agency and low status people turning inward.
+
+Study 2 was an experiment manipulating job threat. It replicated the
+finding that under threat, high status people activate larger, less
+redundant networks while low status people activate smaller, denser
+networks. This ruled out reverse causality as an explanation.
+
+The studies support a cognitive perspective where networks are dynamic
+mental structures that shift cross-situationally. The activated network
+is key for subsequent mobilization of contacts for help. Activation and
+mobilization are distinct steps.
+
+People appear to activate networks that align with and support their
+perceived status. Threat amplifies these tendencies as people defend
+their identities. High status people expand networks to assert
+competence, low status people withdraw to core supporters.
+
+The research complements structural explanations by showing
+within-person cognitive shifts in network activation. It also has
+methodological implications for studying networks, as \"errors\" in
+recall may reflect legitimate situational differences.
+
+For low status people, inward network response to threat could reduce
+access to novel job information and worsen inequality. For
+organizations, broad socialization could help combat factionalism.
+
+Limitations include network contacts being passive, and activation as a
+one-time event rather than a recurrent process subject to learning over
+time. Future research could address these.
+
+  Study Question                                                                   Answer
+  -------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
+  How is network activation defined?                                               The subset of a person\'s full potential network that comes to mind in a given situation.
+  What did Study 1 find about how different status people respond to job threat?   High status activate larger, less constrained networks. Low status activate smaller, more constrained networks.
+  How did Study 2 complement Study 1?                                              Used an experiment to show the causal effect of threat on network activation differences.
+  What is the proposed cognitive perspective?                                      Networks are dynamic mental structures that shift with situations as different aspects become accessible.
+  How does threat affect high vs low status people?                                High status people defend competence by expanding networks. Low status withdraw to core supporters.
+  How does the research complement structural explanations?                        Shows within-person shifts not explained fully by stable network structure.
+  What are some implications discussed?                                            For low status, inward response could reduce job information and worsen inequality. Factionalism risks for organizations.
+  What are some limitations?                                                       Contacts are passive, activation studied as one-time event rather than a process.

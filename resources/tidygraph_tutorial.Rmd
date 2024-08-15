@@ -127,15 +127,15 @@ We choose the spreadsheet we want to edit using either `activate(nodes)` or `act
 
 For example, this loads the `law_advice` data and creates a new variable called `is_older` based on whether someone is older than the median age.
 
-(Note the use of `%>%` - this just takes the output of one function and makes it the first input of the next function)
+(Note the use of `|>` - this just takes the output of one function and makes it the first input of the next function)
 
 ```{r}
 # Load the data and convert it to tidygraph format
 G = as_tbl_graph(law_advice)
 
 # Mutate the data by adding a new column to identify the older half of the nodes
-G = G %>%
-  activate(nodes) %>% # Activate nodes
+G = G |>
+  activate(nodes) |> # Activate nodes
   mutate(is_older = age > median(age)) 
 
 G
@@ -146,9 +146,9 @@ The other thing we often want to do is add a column for network statistics, so t
 For example, this code creates two new columns: `eigen_centrality` and `group` from two functions given by `tidygraph`.
 
 ```{r}
-G = G %>% 
-  activate(nodes) %>% 
-  mutate(eigen_centrality = centrality_eigen()) %>%
+G = G |> 
+  activate(nodes) |> 
+  mutate(eigen_centrality = centrality_eigen()) |>
   mutate(group = group_spinglass())
 
 G
@@ -171,8 +171,8 @@ Sometimes we may want to just look at a subset of the nodes or edges. We can use
 This example code gives us only nodes whose age is less than 40, and saves it as `G_young`
 
 ```{r}
-G_young = G %>%
-  activate(nodes) %>%
+G_young = G |>
+  activate(nodes) |>
   filter(age < 40)
 
 G_young
@@ -203,7 +203,7 @@ The layout is where the nodes appear on the screen. Most layouts have nodes with
 Note that if all we do is include `ggraph` and the layout, as below, we won't actually get a plot. That's because all that `ggraph()` does is tell R where to put each node. But we haven't told it to draw any nodes!
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk')
 ```
 
@@ -212,7 +212,7 @@ We'll talk in a minute about what these do, but let's draw nodes and edges.
 First, we can add edges.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link()
 ```
@@ -220,7 +220,7 @@ G %>%
 Each time we add a `+` and a new line, it draws another layer on the chart. So, now we'll draw nodes on the top.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link() +
   geom_node_point()
@@ -229,14 +229,14 @@ G %>%
 We will make this look a lot prettier in a minute, but let's take a look at a few other layouts.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'grid') +
   geom_edge_link() +
   geom_node_point()
 ```
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'drl') +
   geom_edge_link() +
   geom_node_point()
@@ -259,7 +259,7 @@ The next concept is edges. Usually, you will want to make edges the next layer t
 I think that default width of the edges is too wide, so let's change that first.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(width=.1) +
   geom_node_point()
@@ -275,11 +275,11 @@ For example, this code shows all of the reciprocated/mutual relationships as a d
 
 ```{r}
 # First, let's save is_mutual as its own column
-G = G %>%
-  activate(edges) %>%
+G = G |>
+  activate(edges) |>
   mutate(is_mutual = edge_is_mutual())
 
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(aes(color=is_mutual), width = .1) +
   geom_node_point() + 
@@ -300,7 +300,7 @@ Instead of changing the width, change the `alpha` of the edges. What is the diff
 When changing colors, you may not want to use the default colors. The following code uses `scale_edge_color_viridis()` to use my favorite color pallette, but the yellos is a bit too light. See if you can figure out how to change where the scale begins and ends to make the colors a bit nicer ([confusing documentation here](https://ggraph.data-imaginist.com/reference/scale_edge_colour.html)).
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(aes(color=is_mutual), width = .1) +
   geom_node_point() + 
@@ -316,7 +316,7 @@ Like edges, when we want to visualize something about nodes the most common oper
 It is often instructive to simply show attributes of the nodes. For example, we may want to know whether there is homophily by seniority in this company, which is what this plot does. As with edges, we put mappings inside of `aes()`.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(width = .05) +
   geom_node_point(aes(color = seniority))
@@ -327,7 +327,7 @@ Not surprisingly, it appears that the most senior people are near the center.
 One other comparison we may want to make is across networks. This is the advice network, but let's see if frienship patterns look similar.
 
 ```{r}
-law_friends %>%
+law_friends |>
   ggraph(layout = 'kk') +
   geom_edge_link(width = .05) +
   geom_node_point(aes(color = seniority))
@@ -363,7 +363,7 @@ For example, if we wanted to understand whether people go to advice to people wi
 (Note 2: If you want to knit this document, then this error will stop it from working. You can just comment out the code by putting a `#` before each line.)
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(width = .05) +
   geom_node_point(aes(color = group, shape=office))
@@ -379,7 +379,7 @@ In this case, the `office` variable really is a category, so we can change it to
 We can change them in the plotting code like this:
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(width=.05) +
   geom_node_point(aes(color = as.factor(group), shape = as.factor(office)),
@@ -390,12 +390,12 @@ G %>%
 Or, if we wanted, we could actually change them in the network object, like this:
 
 ```{r}
-G = G %>% 
-  activate(nodes) %>% 
-  mutate(group = as.factor(group)) %>% 
+G = G |> 
+  activate(nodes) |> 
+  mutate(group = as.factor(group)) |> 
   mutate(office = as.factor(office))
 
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(width=.05) +
   geom_node_point(aes(color = group, shape = office), size = 6)
@@ -431,7 +431,7 @@ By defualt, legend titles match up with the variable name. If you want to change
 For nodes, you can just put the aesthetic you want to change. For edges, you have to include `edge_` before it. Here's an example:
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'kk') +
   geom_edge_link(aes(color = is_mutual), width=.05) +
   geom_node_point(aes(color = group, shape = office), size = 6) +

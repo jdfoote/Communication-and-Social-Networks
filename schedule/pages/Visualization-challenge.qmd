@@ -1,0 +1,112 @@
+---
+title: Visualization challenge
+---
+## The goal {#the_goal}
+
+So far, the exercises have done a lot of hand-holding in helping you to
+import and visualize networks. For this project, you will identify a
+network-based question that you think a visualization could help to
+answer, and create a visualization.
+
+There are three parts of the assignment:
+
+1\) First, I want you to think about a question and draw on a piece of
+paper what you want the outcome to look like. For example, if you want
+to visualize whether people who have a certain attribute are more
+popular, you may decide to color nodes by in-degree and change their
+size or shape based on that attribute.
+
+2\) Second, you will do your best to recreate your idea using tidygraph
+and ggraph. I would like you to turn in both your drawing and your
+visualization.
+
+3\) Write a paragraph or two explaining what the visualization tells us
+about the question that you asked.
+
+You are welcome to work with a partner if you would like. Just make it
+clear who you worked with and I would encourage you to be a bit more
+ambitious in what you try to do.
+
+## Dutch School Data {#dutch_school_data}
+
+In 2003 and 2004, researchers repeatedly surveyed a number of Dutch
+school students about their friendships and their behavior. They were
+particularly interested in the relationship between friendships and
+drinking behavior. They recorded information about alcohol use, gender,
+age, ethnicity (whether Dutch or not), and religion.
+
+You may want to ask questions like:
+
+-   Are people who drink more more popular?
+-   Are males or females more likely to have the same drinking behavior
+    as their friends?
+-   Are people of the dominant religion more likely to be popular? More
+    likely to be friends with each other?
+
+### Resources
+
+The [Introduction to ggraph and tidygraph
+reading](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.html)
+actually uses this dataset. You can look to that for examples to build
+on (Here is the [R Markdown
+file](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.Rmd)
+that I used to create the web page).
+
+Data:
+
+-   [Node
+    data](https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_nodes.csv)
+-   [Edge
+    data](https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_edges.csv)
+
+Descriptions of what each measure means are at [this
+site](http://www.stats.ox.ac.uk/~snijders/siena/tutorial2010_data.htm),
+maintained by the people who collected the data.
+
+To import the data you can right-click on and save the edge and node
+data files above to your computer and then import them into R.
+
+Alternatively, the following code will download the files and create a
+graph object. You are welcome to reuse it.
+
+``` R
+library(tidyverse)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+
+nodes = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_nodes.csv')
+edges = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_edges.csv')
+
+G = graph_from_data_frame(d=edges, v=nodes) %>% as_tbl_graph()
+```
+
+## Harry Potter Data {#harry_potter_data}
+
+The authors of [this paper](http://dx.doi.org/10.4236/ojapps.2013.32024)
+coded all of the peer support relationships in Harry Potter books. For
+each student, they also recorded their school year, gender and house.
+
+You may want to ask questions like:
+
+-   Are students of the same gender more likely to provide support?
+-   Are Slytherins less likely to provide support?
+-   Are older students more likely to provide support to younger
+    students?
+
+As with the Dutch school data, I\'ve prepared some files and some code
+to get you started. These data files are for the fifth book. You may
+want to remove nodes who don\'t have any edges (since they might not
+even appear in the book).
+
+``` R
+library(tidyverse)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+
+nodes = read_csv('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/harry_potter_files/hp_node_atts.csv')
+edges = read_csv('https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/resources/harry_potter_files/hp_edgelist.csv')
+
+G = graph_from_data_frame(d=edges, v=nodes) %>% as_tbl_graph()
+```

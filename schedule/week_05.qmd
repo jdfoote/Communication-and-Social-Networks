@@ -1,0 +1,31 @@
+---
+title: "Week 5: Ego networks and network perception"
+date: "2024-09-17"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
+* Turn in your [Self Assessment Reflection](Self-Assessment-Reflection) on Brightspace
+
+**Lecture:**
+
+* [Ego networks and network perceptions lecture](https://www.youtube.com/watch?v=c80su-DECKA) [17:14] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_5/lecture/ego_nets.html)
+
+**Readings:**
+
+* Hanneman, R. A., & Riddle, M. (2005). Introduction to social network methods. University of California. ([Chapter 9](https://faculty.ucr.edu/~hanneman/nettext/C9_Ego_networks.html)) - Just read the first 2 sections - Introduction and Ego Network Data
+* Marsden, P. V. (1987). [Core Discussion Networks of Americans](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2095397). American Sociological Review, 52(1), 122–131. 
+  * [Claude.ai summary](.pages/marsden_core_summary.html)
+* Pentland, A.S. (2016). [Research: You Have Fewer Friends than You Think](https://hbr.org/2016/05/research-you-have-fewer-friends-than-you-think). (2016, May 12). Harvard Business Review. 
+* Smith, E. B., Menon, T., & Thompson, L. (2012). [Status Differences in the Cognitive Activation of Social Networks](https://pubsonline-informs-org.ezproxy.lib.purdue.edu/doi/full/10.1287/orsc.1100.0643). Organization Science, 23(1), 67–82. 
+  * [Claude.ai summary](.pages/smith_status_summary.html)
+
+### Thursday
+
+**Class Schedule:**
+
+* [Ego Network Activity](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/activities/ego_networks/ego_analysis.qmd)
+* Finish [R Lab 3 - Mutating and filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd) and start on [R Lab 4 - Intro to ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)

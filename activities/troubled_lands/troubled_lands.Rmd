@@ -8,7 +8,7 @@ output:
     progress: true
     transition: convex
     self_contained: false
-    css: ../../libs/custom_css.css
+    css: .././resources/custom_css.css
     lib: ../../libs
     allow_uptree_lib_dir: true
 ---
@@ -42,9 +42,9 @@ output:
   - 2 Fields
   - 2 Pasture
 
-- Eroded if rain > forests
-  - 2 become eroded
-  - Fallows, field, pasture, forest
+- Eroded if more rain than forests
+  - *2* become eroded
+  - Erosion order: Fallows, field, pasture, forest
 
 Can't plant on eroded, have to turn it to fallows first
 

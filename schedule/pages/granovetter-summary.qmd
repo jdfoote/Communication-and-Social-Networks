@@ -1,0 +1,59 @@
+---
+title: granovetter summary
+---
+This 1973 paper by Mark Granovetter discusses the strength of weak ties
+in social networks. Granovetter argues that weak social ties,
+connections between individuals who do not interact frequently, play an
+important role in diffusion of information and opportunities. Weak ties
+act as bridges between densely knit cliques and groups, allowing ideas
+and information to spread beyond tightly knit social circles.
+
+Granovetter defines the strength of an interpersonal tie as a
+combination of time invested, emotional intensity, intimacy, and
+reciprocity. Strong ties are characterized by substantial time
+commitment, deep emotional attachment, and frequent reciprocal services.
+Weak ties require less time, intensity, intimacy and reciprocity.
+
+The author hypothesizes that the stronger the tie between two
+individuals, the larger the proportion of mutual contacts they will
+share. This is because strong ties involve greater time commitment,
+leading to more overlap in social circles. Similarity also breeds
+connection -- if A and B are both close to C, A and B are likely to
+become friends.
+
+Granovetter argues that weak ties play an essential bridging role in
+social networks. Information and ideas diffuse more rapidly across weak
+ties due to their bridging function. Weak ties provide shortcuts across
+social distance and allow ideas to permeate different social circles.
+
+The paper explores the role of weak ties in job mobility, showing that
+many people find jobs through weak acquaintances rather than close
+friends. This illustrates how weak ties provide access to non-redundant
+information and opportunities.
+
+At the community level, Granovetter suggests networks rich in local
+bridges (weak ties) lead to greater social cohesion and capacity for
+collective action. Fragmented communities composed solely of isolated
+cliques will struggle to organize effectively.
+
+The author contrasts his model of weak ties to the
+Davis-Holland-Leinhardt model of transitivity in small groups.
+Granovetter claims transitivity depends on tie strength, being more
+likely when ties are strong, less likely when weak.
+
+Overall, the paper highlights the crucial bridging role played by weak
+social ties in diffusion, mobility, and community organization.
+Granovetter demonstrates the importance of linkage between micro and
+macro levels of sociological theory.
+
+## Study Questions and Answers {#study_questions_and_answers}
+
+  Study Question                                                                 Answer
+  ------------------------------------------------------------------------------ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  What is the main hypothesis of the paper?                                      The main hypothesis is that the stronger the tie between two individuals, the greater the overlap in their friendship circles and contacts.
+  How does Granovetter define the strength of an interpersonal tie?              Granovetter defines tie strength as a combination of time invested, emotional intensity, intimacy, and reciprocity between two individuals.
+  What is the role of weak ties in diffusion processes?                          Weak ties act as bridges between densely knit social groups, allowing information and ideas to diffuse more rapidly. Weak ties provide connections across social distance.
+  How do weak ties connect to social mobility and job opportunities?             Many individuals find out about job opportunities through weak acquaintances rather than close friends. Weak ties provide access to nonredundant information and resources.
+  What is the relationship between weak ties and community organization?         Communities rich in weak ties that bridge cliques are better able to organize collectively. Fragmented communities solely composed of isolated groups struggle to mobilize.
+  How does Granovetter\'s model differ from the Davis-Holland-Leinhardt model?   Granovetter argues transitivity depends on tie strength, while DHL propose transitivity as a general feature of social structures. Granovetter focuses more on weak ties.
+  What is the major implication of the paper?                                    The major implication is demonstrating the importance of weak social ties in linking micro and macro levels of sociological theory and analysis.

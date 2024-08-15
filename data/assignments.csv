@@ -1,0 +1,8 @@
+"name","due date"," video url"," file location"
+"R Lab 2 – Creating Networks",2024-09-09,"https://youtu.be/-JjuL1UwRR0","/assignments/r_labs/lab_2_creating_networks.qmd"
+"R Lab 3 – Mutating and Filtering",2024-09-23,,"/assignments/r_labs/lab_3_mutating_and_filtering.qmd"
+"R Lab 4 – Intro to ggraph",2024-09-30,"https://youtu.be/GnTSThGhCw0","/assignments/r_labs/lab_4_intro_to_ggraph.qmd"
+"R Lab 5 – Aesthetics in ggraph",2024-10-09,"https://www.youtube.com/watch?v=hsncjCu2yeo","/assignments/r_labs/lab_5_aesthetics_in_ggraph.qmd"
+"R Lab 6 – Visualizing Power",2024-10-21,"https://www.youtube.com/watch?v=l18Jd9XCAec","/assignments/r_labs/lab_6_visualizing_power.qmd"
+"R Lab 7 – Groups in Networks",2024-11-04,"https://youtu.be/Ob1rxN7_eO4","/assignments/r_labs/lab_7_groups_in_networks.qmd"
+"R Lab 8 – Network Stats",2024-11-18,,"/assignments/r_labs/lab_8_network_stats.qmd"

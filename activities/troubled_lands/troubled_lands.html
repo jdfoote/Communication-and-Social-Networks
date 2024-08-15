@@ -59,7 +59,7 @@
 
     <style type="text/css">code{white-space: pre;}</style>
 
-    <link rel="stylesheet" href="../../libs/custom_css.css"/>
+    <link rel="stylesheet" href=".././resources/custom_css.css"/>
 
 <!-- Printing and PDF exports -->
 <script id="paper-css" type="application/dynamic-css">
@@ -443,7 +443,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="../../libs/header-attrs-2.14.1.9000/header-attrs.js"></script>
+    <script src="../../libs/header-attrs-2.25.2/header-attrs.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -466,10 +466,14 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li class="fragment">Talking is fine</li>
 <li class="fragment">No talking/interacting with other groups</li>
 <li class="fragment">Can see other people’s cards</li>
-<li class="fragment">Each person does one thing each turn (before drawing the weather card)</li>
-<li class="fragment">Eroded -&gt; Fallow -&gt; Forest/Fields/Pasture</li>
-<li class="fragment">Weather are 1-10 (plus extra 6,8), sorted randomly</li>
-<li class="fragment">6/9 are tough to distinguish - make sure raindrops are falling down</li>
+<li class="fragment">Each person does one thing each turn (before
+drawing the weather card)</li>
+<li class="fragment">Eroded -&gt; Fallow -&gt;
+Forest/Fields/Pasture</li>
+<li class="fragment">Weather are 1-10 (plus extra 6,8), sorted
+randomly</li>
+<li class="fragment">6/9 are tough to distinguish - make sure raindrops
+are falling down</li>
 </ul></li>
 </ul>
 </section>
@@ -478,7 +482,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ul>
 <li class="fragment">8 turns</li>
 <li class="fragment">Group with highest total score wins</li>
-<li class="fragment">When done, bring weather cards to me for reshuffling and write your score on the board</li>
+<li class="fragment">When done, bring weather cards to me for
+reshuffling and write your score on the board</li>
 </ul>
 </section>
 <section id="reminder" class="slide level2">
@@ -491,10 +496,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>2 Fields</li>
 <li>2 Pasture</li>
 </ul></li>
-<li>Eroded if rain &gt; forests
+<li>Eroded if more rain than forests
 <ul>
-<li>2 become eroded</li>
-<li>Fallows, field, pasture, forest</li>
+<li><em>2</em> become eroded</li>
+<li>Erosion order: Fallows, field, pasture, forest</li>
 </ul></li>
 </ul>
 <p>Can’t plant on eroded, have to turn it to fallows first</p>
@@ -504,7 +509,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ul>
 <li class="fragment">8 turns</li>
 <li class="fragment">Person in group with highest score wins</li>
-<li class="fragment">When done, bring weather cards to me for reshuffling</li>
+<li class="fragment">When done, bring weather cards to me for
+reshuffling</li>
 <li class="fragment">Write your score and role on the board</li>
 </ul>
 </section>
@@ -514,30 +520,40 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li class="fragment">Person of each type with highest score wins</li>
 </ul>
 </section>
-<section id="take-a-few-minutes-to-thinkwrite-about" class="slide level2">
+<section id="take-a-few-minutes-to-thinkwrite-about"
+class="slide level2">
 <h2>Take a few minutes to think/write about:</h2>
 <ul>
-<li class="fragment">How did you play differently in different versions?</li>
-<li class="fragment">What in real life is similar to each version of the game?</li>
-<li class="fragment">How did you decide whether or not to help others?</li>
-<li class="fragment">What does this have to do with social networks and social capital?!</li>
+<li class="fragment">How did you play differently in different
+versions?</li>
+<li class="fragment">What in real life is similar to each version of the
+game?</li>
+<li class="fragment">How did you decide whether or not to help
+others?</li>
+<li class="fragment">What does this have to do with social networks and
+social capital?!</li>
 </ul>
 </section>
 <section id="debrief" class="slide level2">
 <h2>Debrief</h2>
 <ul>
 <li class="fragment">What did you think about while playing?</li>
-<li class="fragment">How did you feel as you played? Did those feeling change across different versions of the game?</li>
+<li class="fragment">How did you feel as you played? Did those feeling
+change across different versions of the game?</li>
 <li class="fragment">When do you help others in real life?</li>
 </ul>
 </section>
 <section id="debrief-1" class="slide level2">
 <h2>Debrief</h2>
 <ul>
-<li class="fragment">Were resources and abilities distributed fairly?</li>
-<li class="fragment">How should resources be distributed in the real world?</li>
-<li class="fragment">What role did communication play? How did your group make decisions?</li>
-<li class="fragment">Did you work to make things equal? Why or why not?</li>
+<li class="fragment">Were resources and abilities distributed
+fairly?</li>
+<li class="fragment">How should resources be distributed in the real
+world?</li>
+<li class="fragment">What role did communication play? How did your
+group make decisions?</li>
+<li class="fragment">Did you work to make things equal? Why or why
+not?</li>
 <li class="fragment">What kinds of inequality appeared in the game?</li>
 </ul>
 </section>
@@ -558,14 +574,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
         // Vertical centering of slides
         center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
         // Transition style
         transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
 
 

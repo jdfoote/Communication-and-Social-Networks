@@ -1,0 +1,36 @@
+---
+title: TikTok Assignment
+---
+We talked about social influence and Duncan Watts\'s argument that
+popularity is largely a function of luck. We\'re going to do our own
+little experiment. If you\'d like to participate, then here are the
+steps:
+
+Start a brand new TikTok account and send Dr. Foote the link.
+
+Make a plan for what kind of content you will share - no negativity:
+create joy, not pain. Just don\'t create anything that will get you or
+me in trouble: no harassment, pornography, objectionable material,
+bullying, etc. If you have an idea that you think might be over the
+line, talk to me.
+
+Churn out that content! Try to get as many followers as you can by our
+last class day - April 28.
+
+Write up a 1-2 page paper and turn it in by May 4. The paper should
+contain the following:
+
+-   What did you focus your account on? Describe how you made that
+    decision.
+-   Explain your strategy for getting people to follow you. How did you
+    spread the word? Who did you target and why? Use network principles
+    to explain these choices.
+-   Once a week, track how many people have followed you and make a plot
+    of your followers over time.
+-   Analyze your success. What worked and what didn\'t? What could you
+    have done differently? What were the best steps you took to get
+    followers? Justify this with network principles.
+
+Many thanks to [Jen Golbeck](https://www.cs.umd.edu/~golbeck/) and
+[Michael Bernstein](https://hci.stanford.edu/msb/) for sharing versions
+of similar assignments, which this assignment is based on.

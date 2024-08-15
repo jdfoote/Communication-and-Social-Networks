@@ -1,0 +1,45 @@
+---
+title: Putnam summary
+---
+Robert Putnam argues that civic engagement and social connectedness in
+the United States has declined over the past few decades. He presents
+evidence of declining political participation, including decreasing
+voter turnout and public meeting attendance since the 1960s. Putnam also
+shows declining membership in organizations like churches, labor unions,
+parent-teacher associations, civic and fraternal organizations since the
+1950s and 1960s. More people are bowling alone rather than in leagues.
+Neighborliness and social trust have declined as well based on survey
+data.
+
+Putnam considers some potential countertrends like the growth of
+national advocacy groups and support groups. However, he argues these
+tertiary groups do not necessarily foster the same kind of social
+capital, networks and norms of reciprocity, as traditional civic
+organizations. Analyzing General Social Survey data confirms the decline
+in associational memberships across educational levels since the 1960s
+and 1970s. International comparisons also show that despite still
+ranking relatively high in social capital, the U.S. has been
+experiencing notable erosion compared to other countries.
+
+In examining why social capital is declining, Putnam considers factors
+like women entering the workforce, mobility, other demographic shifts,
+and the privatizing effect of television and electronic entertainment.
+He calls for further research to analyze the dimensions of social
+capital, effects of technology, social capital in the workplace, and
+costs/benefits of community engagement. Putnam also suggests exploring
+how public policy could aim to reverse these adverse trends.
+
+The concept of social capital has relevance for democracies and
+democratizing societies. Putnam argues the decline of civic engagement
+in the U.S. may signify a democratic disarray that links to the erosion
+of social capital. He concludes by calling for ways to restore civic
+engagement and trust.
+
+  Study Question                                                                           Answer
+  ---------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  What evidence does Putnam provide for the decline of civic engagement in the U.S.?       Decreasing voter turnout, reduced public meeting attendance, declining membership in groups like churches, unions, PTAs, etc. since the 1960s. Rise of solo bowling instead of league bowling.
+  What are some potential countertrends Putnam considers?                                  Growth of advocacy groups like Sierra Club and support groups, though he argues these do not necessarily foster social capital like traditional civic groups.
+  What factors does Putnam analyze as potentially causing the decline in social capital?   Women entering workforce, mobility, demographic shifts, technology privatizing leisure time.
+  What is Putnam\'s main conclusion?                                                       That the erosion of civic engagement and social connectedness in the U.S. since the 1960s signifies a democratic disarray and loss of social capital that needs to be addressed.
+  What types of additional research does Putnam call for?                                  Analyzing dimensions of social capital, impact of technology, social capital in workplace, costs/benefits of community engagement.
+  What is the relevance of social capital for democracy?                                   Social capital is seen as important for democracies and democratizing societies to function effectively.

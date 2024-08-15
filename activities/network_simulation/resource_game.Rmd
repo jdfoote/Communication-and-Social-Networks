@@ -7,7 +7,7 @@ output:
     transition: convex
     self_contained: false
     reveal_plugins: ['notes']
-    css: ../../libs/custom_css.css
+    css: .././resources/custom_css.css
     lib_dir: ../../libs
     allow_uptree_lib_dir: True
 ---

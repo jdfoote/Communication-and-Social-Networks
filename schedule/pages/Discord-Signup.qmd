@@ -1,0 +1,26 @@
+---
+title: Discord Signup
+---
+We will be using [Discord](wikipedia:Discord_(software) "wikilink") for
+most of the asynchronous communication needs in our class. If you are
+confused about something please ask here first - chances are, others
+have the same confusion.
+
+Signing up for Discord is pretty straightforward. You will need to go to
+<https://discord.com/> and create an account. I suggest downloading the
+app but you can also use the browser-based version.
+
+Once you have an account, open Discord and click the \"plus\" icon to
+add a server, and the \"Join a Server\" and enter the following URL:
+<https://discord.gg/WSc5J7stgg>
+
+This should bring you to our server. There\'s one more thing you need to
+do in order to get access to the class.
+
+
+Click the Firework/Network icon (🎆) and you should then see the COM 411
+category on the left side.
+
+I also made a video to walk you through how to do this if you get stuck.
+
+{{< video https://youtu.be/pz047i5HtII >}}

@@ -43,6 +43,16 @@ text-align: right;
 width: 180px;
 }
 
+.date-block{
+  background-color: darkcyan;
+
+}
+
+.slide-deck{
+  width: 800px;
+  height: 600px;
+}
+
 /*.reveal .slides section .fragment.fade-in-then-out,
 /*.reveal .slides section .fragment.current-visible {
 /*  opacity: 0;

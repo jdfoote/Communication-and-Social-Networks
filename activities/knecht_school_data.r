@@ -46,12 +46,12 @@ friend_net = subgraph.edges(G, E(G)[E(G)$type=='friendship'])
 
 save(G, friend_net, file = '~/Teaching/communication_and_networks/activities/school_graph.Rdata')
 
-G %>% as_tbl_graph() %>% 
-  activate(nodes) %>% 
-  as.data.frame() %>% 
+G |> as_tbl_graph() |> 
+  activate(nodes) |> 
+  as.data.frame() |> 
   write_csv('~/Teaching/communication_and_networks/resources/school_graph_nodes.csv')
 
-G %>% as_tbl_graph() %>% 
-  activate(edges) %>% 
-  as.data.frame() %>% 
+G |> as_tbl_graph() |> 
+  activate(edges) |> 
+  as.data.frame() |> 
   write_csv('~/Teaching/communication_and_networks/resources/school_graph_edges.csv')

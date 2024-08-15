@@ -1,0 +1,222 @@
+---
+title: Final project
+---
+You can choose a final project from one of the following options:
+
+1.  Network Intervention
+2.  Network Analysis
+3.  Company Pitch
+
+More information about each option is below. For each project, you will
+produce a research report of some kind. You should write this in a
+Quarto file, and then export it to a Word document.
+
+Please turn in two files:
+
+-   Your .qmd file that includes your code
+-   The Word document or PDF version of the report. Figure out to set
+    echo=FALSE, so that it doesn\'t include all of your code, and just
+    looks like a nice report.
+
+## Network Intervention {#network_intervention}
+
+In teams of 3 or 4, you will design, carry out, and measure a network
+intervention, using principles from this class, like diffusion,
+contagion, social capital, etc. You will identify a
+message/product/idea/etc and try to spread it, either within or beyond
+Purdue.
+
+I would encourage you to identify a goal that is meaningful to your
+group; projects should be creative, courageous, and challenging. We will
+evaluate your work not based on whether your are ultimately successful,
+but how innovate your approach is, and how grounded it is in the network
+theories we have learned about.
+
+### Examples
+
+[Brooke Foucault-Welles](http://brooke-welles.squarespace.com/) has run
+a similar project in her class. Examples of well-designed projects in
+her class include:
+
+-   A comparison of the diffusion on Twitter of a plain-text and
+    image-and-text message about feminism.
+-   An alteration intervention that aimed to boost morale in a student
+    organization by creating cross-cohort (year in school) friendship
+    ties.
+-   A marketing campaign that leveraged the friendship paradox to spread
+    the word about a new student group.
+-   An intervention that targeted student leaders to lobby University
+    Health and Counseling Services to bring therapy animals to campus
+    during finals week.
+
+### Presentation
+
+Because this is a group project, I\'ll expect a lot more than the
+individual projects. Part of this is in being ambitious in the project
+that you select, but also in how you present your results.
+
+In particular, those choosing this option will do a short (5 minute)
+presentation to the class at the end of the semester, to tell us about
+your project and your findings. It would be fun for those in the class
+to learn about what you\'ve been doing.
+
+### Executive Report {#executive_report}
+
+The major part of the assignment, though, is a 5-6 page executive
+report. This report should have the following sections:
+
+-   Introduction
+    -   In the introduction you will describe the motivation for your
+        intervention. You will explain what you did, and why you chose
+        that approach.
+-   Network Theory
+    -   In your introduction, you will likely mention some network
+        theories that helped to motivate your intervention. In this
+        section, you will provide more detail about the theories that
+        guide your work. You should include at least three references to
+        support your approach and analyses.
+-   Approach
+    -   In the introduction you will give a high-level explanation of
+        your intervention. Here you will provide a more detailed
+        description, together with a more extended argument about why
+        this is a good approach to meet your goals.
+-   Analysis
+    -   You will analyze the effect of your intervention. The data to do
+        this can take different forms - e.g., you may survey people to
+        learn about awareness or beliefs, or you might gather data from
+        the web or gather network data. At some point in your report you
+        should include 1) a network analysis and 2) at least 1-2 network
+        visualizations. It\'s possible that these may come earlier. For
+        example, you might use existing data or simulated data to
+        explain a network theory or to motivate your approach. If you
+        are able to gather network data, then the network analysis and
+        visualizations would probably be part of this Analysis section.
+-   Conclusion
+    -   Finally, write a few paragraphs reflecting on what was learned
+        from your work.
+
+## Network Analysis {#network_analysis}
+
+Either alone or in groups of up to 4, you will design and carry out a
+research project based on existing network data. Group projects are
+expected to be more ambitious than individual projects.
+
+Basically, you will identify a network and a set of hypotheses/research
+questions that you would like to answer using data from that network.
+You will use network analysis and network visualization tools to answer
+those questions, and then you will report on and discuss your findings.
+
+### Finding Networks {#finding_networks}
+
+There are a number of repositories of network datasets. Probably the
+simplest to use are those found in the
+[networkdata](https://github.com/schochastics/networkdata) package,
+which we have already been using. If you look at the [homepage of the
+package](https://github.com/schochastics/networkdata), you can see
+descriptions of the datasets that are included.
+
+Another repository I really like is the [Index of Complex
+Networks](https://icon.colorado.edu/#!/networks). You can filter by type
+of network, size, etc. One thing to note about these networks is that
+you will need to load them into R (unlike `networkdata`). They are in
+different formats, and you will likely need to do some work to get them
+to be `igraph/tidygraph` networks.
+
+Fortunately, there are a number of tools in `igraph` designed to help
+you to import different file types. [This
+page](https://igraph.org/c/doc/igraph-Foreign.html) gives a great
+overview.
+
+**Early in the semester you should identify the network you want to work
+with and make sure that 1) it has the attributes you need to answer the
+questions you want to answer and 2) you are able to load it into
+tidygraph format.**
+
+### Presentation {#presentation_1}
+
+As with the intervention assignment, I would like you to present a short
+(5 minute) presentation about your project toward the end of class.
+
+### Executive Report {#executive_report_1}
+
+You will prepare a \~5 page report, with the following sections:
+
+-   Introduction
+    -   Give a compelling introduction to the project: why is this
+        something worth studying? You may also want to preview some of
+        the results of your research.
+-   Network Theory
+    -   In your introduction, you will likely mention some network
+        theories that helped to motivate your research. In this section,
+        you will provide more detail about the theories, leading up to
+        the development of 2-5 hypotheses or research questions. You
+        should include at least three references to support your
+        arguments.
+-   Method and Data
+    -   You will explain how you are going to answer your research
+        questions / hypotheses. Explain what data you will be using, and
+        describe what analyses you will do, and why those are
+        appropriate for answering your questions.
+-   Analysis
+    -   For each hypothesis / research question, you will perform some
+        sort of analysis. For some questions, this will be an analysis
+        of network measures. For others, this might be a network
+        visualization. Your analysis can include other types of analyses
+        (e.g., statistical analyses) but it should include at least one
+        network analysis and at least one visualization.
+-   Discussion and Conclusion
+    -   Finally, write a few paragraphs 1) summarizing the findings from
+        your analyses and 2) reflecting on how your findings fit in (or
+        don\'t) with network theories you learned about in the class.
+
+## Company Pitch {#company_pitch}
+
+Based on your work in this class, you will craft a pitch to help an
+organization make sense of their own social networks and craft a
+portfolio of your work with data drawing on the previous labs and
+readings to support your pitch.
+
+1.  Select a potential employer, and research them to identify the
+    pressing organizational issues facing them as a company.
+2.  Write a document for a potential employer that
+    1.  Introduces you and states your professional objectives. (1
+        paragraph)
+    2.  Makes the case for the most important problems facing this
+        organization or industry based on your research. Be sure to cite
+        any literature that you use. (1 paragraph)
+    3.  Explains how a network approach and your expertise in particular
+        can help address the sorts of problems facing their organization
+        and industry
+        -   Include at least three distinctive insights (e.g., my
+            expertise in network analysis can help you identify opinion
+            leaders in this organization).
+        -   Include example visualizations of each insight from your own
+            work (or create new visualizations).
+        -   Include ideas from and references to the class readings to
+            make your case.
+    4.  Closes with a request for a meeting to learn more about their
+        organization.
+3.  Compile and submit your document on Brightspace
+
+While I want everyone to write and turn in their own document, I
+encourage you to help each other with the visualization portions and to
+ask questions on the group Discord channel. I expect that the final
+document will be \~5 pages long (maybe longer if you want to showcase a
+lot of visualizations).
+
+### Sample Business Data {#sample_business_data}
+
+If you would like, you can use data from a real organization. There are
+some great options of network data files already in igraph format at
+<https://github.com/schochastics/networkdata>.
+
+I created an example of how to load this data, and how to run some
+simple network metrics and visualizations. There\'s an [RMarkdown file
+here](https://github.com/jdfoote/Communication-and-Social-Networks/raw/spring-2021/resources/final_project_example_code.Rmd)
+and the [HTML output
+here](https://jeremydfoote.com/Communication-and-Social-Networks/resources/final_project_example_code.html).
+
+### Examples {#examples_1}
+
+This project is similar to a final project that Josh Barbour assigns to
+his class. You can find examples of their projects on Brightspace.

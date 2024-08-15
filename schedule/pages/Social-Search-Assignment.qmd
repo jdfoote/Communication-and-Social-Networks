@@ -1,0 +1,39 @@
+---
+title: Social Search Assignment
+---
+## Social Search {#social_search}
+
+We\'ve read about how people in Stanley Milgram\'s experiments used
+their personal networks to find a target person. You\'re going to use
+your personal networks to find a Purdue student who has a driver's
+license from Hawaii. If you personally have one, you'll need to find
+someone else that has one too.
+
+The rules:
+
+1.  You can only ask one person at a time (i.e., no using social media
+    or group texts)
+2.  You can only contact people that you know on a first-name basis and
+    who know you on a first-name basis
+3.  You can\'t contact other people in this class
+4.  For those you ask, ask them who they asked and build a diagram of
+    your network search
+5.  Once your network finds someone, trace that entire path
+
+Write up a brief report of your experience, including the following
+information:
+
+1\) Include your search diagram.
+
+2\) How many fresh starts were there in your search?
+
+3\) How many people were involved in total?
+
+4\) What was the longest search chain that you had?
+
+5\) How long was the chain -- measured in links -- that ultimately lead
+you to a target person?
+
+6\) What strategy did you use in your search? When writing up your
+search strategy, try to describe them in terms of ideas that we have
+learned about in class.

@@ -1,17 +1,63 @@
 project:
   type: website
+  output-dir: _site
+  render: 
+    - "*.qmd"
+    - "!assignments/r_labs/*.qmd"
+
+ 
+resources:
+    - "assignments/r_labs/*.qmd"
+
+pre-render:
+  - python scripts/create_assignment_files.py
+
+#post-render:
+#  - mkdir _site/assignments/r_labs/pdfs
+#  - mv _site/assignments/r_labs/*.pdf _site/assignments/r_labs/pdfs
+
+preview:
+  port: 4200
+
+execute:
+  freeze: auto
 
 website:
   title: "Communication and Social Networks"
   navbar:
-    left:
-      - href: class_lectures.qmd
-        text: In-class Lecture Slides
-      - href: content_lectures.qmd
-        text: Slides for Class Videos
+    right:
+      - href: syllabus/syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: assignments/assignments.qmd
+        text: Assignments
+
+  sidebar:
+    - title: "Schedule"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Overview"
+          contents:
+            - schedule.qmd
+        - section: "Course content"
+          contents: 
+            - "schedule/*.qmd"
+
+    - title: "Assignments"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Assignments"
+          contents: "assignments/*.qmd"
+        - section: "R Labs"
+          contents: "assignments/r_lab_*.qmd"
 
 format:
   html:
-    theme: flatly
-    css: styles.css
+    theme: litera
+    css: resources/custom_css.css
     toc: true

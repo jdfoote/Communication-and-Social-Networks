@@ -1,0 +1,18 @@
+---
+title: Practice R Exercise
+---
+This is data about friendships between members of the French elite.
+Download the files and import them into R as a tidygraph tbl_graph.
+
+Node data:
+<https://jeremydfoote.com/Communication-and-Social-Networks/exams/r_practice_nodes.csv>\
+Edge data:
+<https://jeremydfoote.com/Communication-and-Social-Networks/exams/r_practice_edges.csv>
+
+Once you have the data loaded into R, I want you to create a
+visualization that shows how friendships relate to the religion that a
+person belongs to.
+
+Put the code that you used below, and write a few sentences analyzing
+the visualization that you created and explaining what we can learn from
+it.

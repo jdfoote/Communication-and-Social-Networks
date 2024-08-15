@@ -2,6 +2,7 @@
 title: "Ego Networks Activity"
 author: "Your Name Here"
 format: pdf
+pdf-engine: pdflatex
 ---
 
 ```{r setup, message=FALSE, include=FALSE}
@@ -21,6 +22,7 @@ We read about the ego networks of Americans. In this exercise, you'll create you
 First, you should create your network spreadsheets in Excel. Start by making a node attributes file with a row for each person that you have "discussed important matters with" over the last 6 months.
 
 The columns of the spreadsheet should be:
+- name
 - sex
 - education (years of education)
 - race
@@ -32,22 +34,23 @@ Then, make a spreadsheet that's an edgelist with a row for each connection in yo
 Change the code below so that the path points to where you saved the edgelist and node attribute files.
 
 ```{r}
-edges <- read_excel('activities/ego_networks/ego_edges.xlsx')
-nodes <- read_excel('activities/ego_networks/ego_atts.xlsx')
+edges <- read_excel('/home/jeremy/Teaching/communication_and_networks/activities/ego_networks/ego_edges.xlsx')
+#nodes <- read_excel('/home/jeremy/Teaching/communication_and_networks/activities/ego_networks/ego_atts.xlsx', col_types = c("text", "text", "numeric", "text", "numeric", "logical"))
+nodes <- read_excel('/home/jeremy/Teaching/communication_and_networks/activities/ego_networks/ego_atts.xlsx')#, col_types = c("text", "text", "numeric", "text", "numeric", "logical"))
 ```
 
 Code to load the file into R and make it into a network object.
 
 ```{r}
-G <- graph_from_data_frame(d=edges, vertices = nodes, directed = F) %>% as_tbl_graph()
+G <- graph_from_data_frame(d=edges, vertices = nodes, directed = F) |> as_tbl_graph()
 ```
 
 Code to filter out the edges that have a weight of 0.
 
 ```{r}
-G <- G %>%
-  activate(edges) %>%
-  filter(!is.na(weight)) %>%
+G <- G |>
+  activate(edges) |>
+  filter(!is.na(weight)) |>
   filter(weight != 0)
 ```
 
@@ -59,7 +62,7 @@ G |>
   geom_edge_link(aes(width = weight), alpha = .5) +
   geom_node_point(aes(color = is.kin), size = 5) +
   geom_node_text(aes(label = name), repel = TRUE, size = 8) +
-  scale_color_viridis()
+  scale_color_viridis_d()
 ```
 
 

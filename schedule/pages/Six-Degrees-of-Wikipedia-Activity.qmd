@@ -1,0 +1,73 @@
+---
+title: Six Degrees of Wikipedia Activity
+---
+So far we have read about how social networks often have short average
+path lengths, and we are all much closer than we might assume. To an
+even greater extent than human networks, online networks display small
+world properties, in that there is high clustering but also short
+average path lengths. In this assignment, you will explore the network
+of links between Wikipedia pages.
+
+For this assignment you will look for those short paths in the links
+between entries in Wikipedia. For example, imagine trying to get from
+the page of Purdue University to the page Brigham Young University (my
+alma mater) moving only through links on Wikipedia. That is pretty
+straight forward. One path is:
+
+` Purdue University → NCAA → West Coast Conference → Brigham Young University`
+
+This path has 3 links. In general, there may be many paths, but always
+try to find the shortest. Finding a path between two universities is
+pretty easy. Sometimes things are harder and you make wrong turns. For
+example, if you tried to go from West Lafayette, Indiana to Abraham
+Lincoln you might go:
+
+` West Lafayette, Indiana → Purdue University → West Lafayette, Indiana → Indiana → Illinois → Abraham Lincoln`
+
+Note that you can go backwards in your search, as above. This path had 5
+links.
+
+Please describe the paths that you find for the following pairs (and
+keep track of wrong turns).
+
+1.  Purdue University → Kevin Bacon
+2.  Kevin Bacon → Purdue University
+3.  Purdue University → Henry VIII of England
+4.  Henry VIII of England → Purdue University
+5.  Purdue University → Moon
+6.  Moon → Purdue University
+7.  Purdue University → Reno, Nevada (my hometown)
+8.  Reno, Nevada → Purdue University
+
+Go to the website [Six Degrees of
+Wikipedia](https://www.sixdegreesofwikipedia.com/) and find the actual
+shortest paths.
+
+Work together with your partner to discuss and write brief answers for
+the following questions:
+
+1.  Were you closer to the true shortest paths when you going from
+    Purdue University or when you were going to Purdue University? Be
+    specific and cite data.
+2.  Travers and Milgram (1969) noted that of the 64 chains that reached
+    the target 16 were sent by Mr. Jacobs, a clothing merchant in the
+    town.
+    -   Did you observe funneling in your searches to Purdue University?
+        Why do you think this happened?
+    -   Did you funnel in your searches from Purdue University? Why do
+        you think this happened?
+3.  Imagine that you were going to advise a friend about how to get to
+    the Purdue University page from a random Wikipedia page. What
+    algorithm/strategy/approach would you advise them to use?
+4.  The diameter of a graph is the longest possible shortest path in a
+    graph. For example, if you calculated the shortest path between all
+    points on Wikipedia, the diameter would be the longest of these
+    shortest paths. Try to find two pages that have a very long shortest
+    path connecting them (remember you can find the degrees of
+    separation [here](https://www.sixdegreesofwikipedia.com/)). However,
+    there are a few rules: you can't use the pages of asteroids; you
+    can't use any of the paths that are already listed on the web; and
+    you can't use brute force trial and error (i.e., just trying lots
+    and lots of different random pages).
+    -   What is the longest path you found?
+    -   What was the process you went through to find this pair?

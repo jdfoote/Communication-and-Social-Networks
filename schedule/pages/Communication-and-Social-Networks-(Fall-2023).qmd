@@ -1,0 +1,1089 @@
+---
+title: Communication and Social Networks (Fall 2023)
+---
+```{=mediawiki}
+{{Old Class}}
+```
+# Course Information {#course_information}
+
+:   **COM 411: Communication and Social Networks**
+:   **Location:** BRNG 2273
+:   **Class Hours:** Tuesdays and Thursdays; 10:30--11:45 AM
+
+## Instructor
+
+:   **Instructor:** [Jeremy Foote](https://jeremydfoote.com)
+:   **Email:** jdfoote@purdue.edu
+:   **[Office Hours](User:Jdfoote/OH "wikilink"):** BRNG 2156; Tuesdays;
+    2:00--4:00pm and by appointment
+
+```{=html}
+<div style="float:right;">
+```
+\_\_TOC\_\_
+
+```{=html}
+</div>
+```
+# Course Overview and Learning Objectives {#course_overview_and_learning_objectives}
+
+Communication is inherently a social process. This class focuses on
+understanding how the structure of relationships between people
+influences communication patterns and behavior. This perspective can
+help us to understand a broad set of phenomena, from online communities
+to friendships to businesses. The course will also introduce students to
+using network visualizations to gain and share insights about network
+phenomena.
+
+Students who complete this course will be able to:
+
+1.  Understand the foundations of social network theory and analysis.
+2.  Critically read and comprehend concepts, results, and implications
+    presented in studies of social networks.
+3.  Learn how networks are related to social phenomena in their personal
+    and professional worlds.
+4.  Gain a basic understanding of gathering network data and analyzing
+    them using the programming language R.
+
+# Required resources and texts {#required_resources_and_texts}
+
+## Computing Resources {#computing_resources}
+
+One of the goals of this class is a basic skills in analyzing and
+visualizing network data in R. This semester, we are going to try using
+VSCode, an IDE which can write R code, and which includes a plugin to do
+AI-assisted coding. We will be meeting in a computer lab, and I believe
+that we will be able to install everything you need on Purdue computers.
+If you would like, you may also want to install R and VSCode on your
+personal computer so that you can use it in the future when you no
+longer have access to Purdue resources. [Our first R
+Lab](/R_Lab_1 "wikilink") walks you through how to do that.
+
+## Readings
+
+-   Required texts:
+-   Easley, D., & Kleinberg, J. (2010). Networks, crowds, and markets.
+    Cambridge University Press.
+    [https://www.cs.cornell.edu/home/kleinber/networks-book/ web edition
+    (free)](https://www.cs.cornell.edu/home/kleinber/networks-book/_web_edition_(free) "wikilink")
+    [https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf
+    pre-print pdf
+    (free)](https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf_pre-print_pdf_(free) "wikilink")
+    [https://smile.amazon.com/Networks-Crowds-Markets-Reasoning-Connected/dp/0521195330/
+    (print edition
+    (Amazon))](https://smile.amazon.com/Networks-Crowds-Markets-Reasoning-Connected/dp/0521195330/_(print_edition_(Amazon)) "wikilink")
+-   Hanneman, R. A., & Riddle, M. (2005). Introduction to social network
+    methods. Riverside, CA: University of California, Riverside [\[web
+    edition(free)](http://faculty.ucr.edu/~hanneman/nettext/)\]
+
+```{=html}
+<!-- -->
+```
+-   Other readings: Other readings will be made available on
+    Brightspace.
+
+### Reading Academic Articles {#reading_academic_articles}
+
+Many of the readings will be academic articles. I do not expect you to
+read every word of these articles. Rather, you should practice
+intentional directed skimming. [This
+article](https://writingcenter.gmu.edu/guides/strategies-for-reading-academic-articles)
+gives a nice overview. The TL;DR is that you should carefully read the
+abstract, introduction, and conclusion. For the rest of the article,
+focus on section headings and topic sentences to extract the main ideas.
+
+## Other suggested books {#other_suggested_books}
+
+-   Barabasi, A-L. (2002). Linked: The new science of networks.
+    Cambridge, MA: Perseus.
+-   Scott, J. (2000). Social network analysis: A handbook (2nd edition).
+    London: Sage Publications.
+-   Watts, D. J. (2004). Six degrees: The science of a connected age. WW
+    Norton & Company.
+-   Christakis, N. and Fowler, J. (2009). [Connected : the surprising
+    power of our social networks and how they shape our
+    lives](https://archive.org/details/connectedsurpris00chri/)
+
+# Course logistics {#course_logistics}
+
+## Note About This Syllabus {#note_about_this_syllabus}
+
+Although the core expectations for this class are fixed, the details of
+readings and assignments may shift based on how the class goes. As a
+result, there are three important things to keep in mind:
+
+1.  Although details on this syllabus will change, I will not change
+    readings or assignments less than one week before they are due. If I
+    don\'t fill in a \"*To Be Determined*\" one week before it\'s due,
+    it is dropped. If you plan to read more than one week ahead, contact
+    me first.
+2.  Closely monitor the class [Discord](/Discord_Signup "wikilink").
+    Because this a wiki, you will be able to track every change by
+    clicking the *history* button on this page. I will also summarize
+    these changes in an announcement on Discord that should be emailed
+    to everybody in the class if you have notifications turned on.
+3.  I will ask the class for voluntary anonymous feedback frequently.
+    Please let me know what is working and what can be improved.
+
+## Class Sessions {#class_sessions}
+
+This course will follow \"flipped\" classroom model. I expect you to
+learn most of the content of the course asynchronously. The goal of our
+time together is not to tell you new things, but to consolidate
+knowledge and to clear up misconceptions.
+
+The Tuesday meeting will be a collaborative, discussion-centric session.
+Typically, about two-thirds of each session will be devoted to a
+discussion of the readings and videos from that week. The remaining
+third will be used to review the assignments.
+
+This means that **I expect you to come to Tuesday lectures having read
+the readings and watched the lecture videos**. There are links to the
+readings and videos each week. You can also find lecture videos on
+Brightspace or [on this YouTube
+playlist](https://www.youtube.com/watch?v=dYnzZUP40CQ&list=PLP6zcrJrVWgdQtxeToSPapfFOxC6qtGi0).
+
+The Thursday meetings will be more like a lab. Some of these sessions
+will include synchronous activities; often they will be a time for me to
+introduce and help with R assignments. Sometimes they will be more of a
+co-working time, where you can work on assignments and I can be
+available to answer questions.
+
+## Getting Help {#getting_help}
+
+Your first place to look for help should be each other. By asking and
+answering questions on Discord, you will not only help to build a
+repository of shared information, but to reinforce our learning
+community.
+
+I will also hold office hours on Tuesdays, from 2-4. If you come with a
+programming question, I will expect that you have already tried to solve
+it yourself in multiple ways and that you have discussed it with a
+classmate. This policy lets me have time to help more students, but
+it\'s also a useful strategy. Often [just trying to explain your
+code](https://en.wikipedia.org/wiki/Rubber_duck_debugging) can help you
+to recognize where you\'ve gone wrong.
+
+I will also check Discord at least once a day. I encourage you to post
+questions there, and to use it as a space where we can help and instruct
+each other. In general, you should contact me there. I am also available
+by email. You can reach me at <jdfoote@purdue.edu>. I try hard to
+maintain a boundary between work and home and I typically respond only
+on weekdays during business hours.
+
+### Online Resources {#online_resources}
+
+Programming can be difficult and frustrating and confusing, but you will
+get it! I have put together a few resources to help you with the
+programming portion of the course. Come back to these when you get
+stuck.
+
+-   Finding and fixing bugs in your code [https://youtu.be/92Gicjnc_tk
+    Video](https://youtu.be/92Gicjnc_tk_Video "wikilink")
+    [https://jeremydfoote.com/TDIS/week_8/debugging.Rmd R Markdown
+    file](https://jeremydfoote.com/TDIS/week_8/debugging.Rmd_R_Markdown_file "wikilink")
+    [https://jeremydfoote.com/TDIS/week_8/debugging.html HTML
+    file](https://jeremydfoote.com/TDIS/week_8/debugging.html_HTML_file "wikilink")
+-   Intro to ggraph and tidygraph [https://youtu.be/geYZ83Aidq4
+    Video](https://youtu.be/geYZ83Aidq4_Video "wikilink")
+    [https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd
+    R Markdown
+    file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd_R_Markdown_file "wikilink")
+    [https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html
+    HTML
+    file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html_HTML_file "wikilink")
+
+# Assignments
+
+There will be multiple types of assignments, designed to encourage
+learning in different ways.
+
+## Participation
+
+I expect you to be an active member of our class. This includes paying
+attention in class, participating in activities, and being actively
+engaged in learning, thinking about, and trying to understand the
+material.
+
+To make sure that everyone has an opportunity to participate and to
+encourage you to do the assignments, I will randomly select students to
+discuss readings or to explain portions of homework assignments and
+labs.
+
+## Reading Review Assignments {#reading-review-assignments}
+
+In a flipped class like this, it\'s really important that folks come
+prepared to discuss, work through misunderstandings, etc. In order to
+provide some accountability and space for reflection, each week you will
+have a review/reflection assignment about the readings and video.
+
+I\'m calling this a \"3-2-1 Assignment\". I\'d like you to:
+
+-   Write down three concepts that you learned or connections that you
+    made from this week\'s reading and lecture.
+-   Write down two questions you have or things that you don\'t quite
+    understand.
+-   Share one question that you think would make for a good discussion
+    question.
+
+You should submit your assignment on Brightspace.
+
+Take the discussion question (which can be based on the concepts you
+learned, or the things you don\'t understand), and submit it (and up to
+one other question) that you think would be interesting to discuss on
+Monday by noon. `<b>`{=html}Post your questions on the shared Google Doc
+at
+<https://docs.google.com/document/d/1AK4MhWLVwDuxqvTwLomN7hu4aLpo59n5qXgEap8SBNc/edit?usp=sharing>`</b>`{=html};
+try to group similar questions together.
+
+Questions should engage with the readings and either connect to other
+concepts or to the \"real world\". Here are some good example questions:
+
+-   The readings this week talked a lot about how network ties get
+    created. I made a list of my closest friends and I realized that
+    most of them only became friends after we happened to be in the same
+    groups over and over again. What role does repetition have in
+    forming ties?
+-   I was confused by the reading on social capital. What\'s the
+    difference between social capital and power? And if they are the
+    same, then why not just call it \"network power\"?
+-   Imagine you were asked to analyze the network of a big company to
+    help them to identify people who deserve a raise. What measures
+    would you use to identify them? What would you not use?
+
+## Homework/Labs
+
+There will be a number of homework assignments. At the beginning of the
+class, these will be designed to help you to grasp foundational network
+concepts. As the class progresses, more and more of them will be
+analyzing and visualizing networks in R.
+
+## Exams
+
+There will be one exam. It will assess your understanding of core
+communication and social networks concepts.
+
+## Final Project {#final_project}
+
+A Students will work on a [Final Project](/Final_project "wikilink")
+that uses the theories, principles, and skills learned in this class.
+
+A number of intermediate assignments through the semester will help you
+to gain the skills and data necessary to be successful.
+
+# Grades
+
+This course will follow a \"self-assessment\" philosophy. I am more
+interested in helping you to learn things that will be useful to you
+than in assigning grades. In general, I think that my time is much
+better spent in providing better feedback and in being available to work
+through problems together.
+
+The university still requires grades, so you will be leading the
+evaluation of your work. This will be completed with me in three stages,
+at the end of weeks 5, 10, and 16. In each stage, you will use [this
+form](Self_Assessment_Reflection "wikilink") to reflect on what you have
+accomplished thus far, how it has met, not met, or exceeded
+expectations, based both on rubrics and personal goals and objectives.
+At each of these stages you will receive feedback on your assessments.
+By the end of the semester, you should have a clear vision of your
+accomplishments and growth, which you will turn into a grade. As the
+instructor-of-record, I maintain the right to disagree with your
+assessment and alter grades as I see fit, but any time that I do this it
+will be accompanied by an explanation and discussion. These personal
+assessments, reflecting both honest and meaningful reflection of your
+work will be the most important factor in final grades.
+
+We will use the following rubric in our assessment:
+
+-   20%: Class participation, including attendance and participation in
+    discussions and group work
+-   20%: Labs and homework assignments
+-   25%: Exam
+-   35%: Final Project
+
+The exam will be graded like a normal exam and the score will make up
+25% of your grade. For the rest of the assignments (and the other 75% of
+your grade), I will provide feedback which will inform an ongoing
+conversation about your work.
+
+My interpretation of grade levels (A, B, C, D/F) is the following:
+
+A: Reflects work the exceeds expectations on multiple fronts and to a
+great degree. Students reaching this level of achievement will:
+
+-   Do what it takes to learn the principles and techniques of social
+    networks, including looking to outside sources if necessary.
+-   Engage thoughtfully with an ambitious final project.
+-   Take intellectual risks, offering interpretations based on
+    synthesizing material and asking for feedback from peers.
+-   Share work early allowing extra time for engagement with others.
+-   Write reflections that grapple meaningfully with lessons learned as
+    well as challenges.
+-   Complete all or nearly all homework assignments at a high level.
+
+B: Reflects strong work. Work at this level will be of consistently high
+quality. Students reaching this level of achievement will:
+
+-   Be more safe or consistent than the work described above.
+-   Ask meaningful questions of peers and engage them in fruitful
+    discussion.
+-   Exceed requirements, but in fairly straightforward ways.
+-   Compose complete and sufficiently detailed reflections.
+-   Complete the homework assignments, almost always at a high level.
+
+C: This reflects meeting the minimum expectations of the course.
+Students reaching this level of achievement will:
+
+-   Turn in and complete the final project on time.
+-   Be collegial and continue discussion, through asking simple or
+    limited questions.
+-   Compose reflections with straightforward and easily manageable goals
+    and/or avoid discussions of challenges.
+-   Not complete homework assignments or complete them in a hasty or
+    incomplete manner.
+
+D/F: These are reserved for cases in which students do not complete work
+or participate. Students may also be impeding the ability of others to
+learn.
+
+## Extra Credit for Participating in Research Studies {#extra_credit_for_participating_in_research_studies}
+
+If you feel like you need to earn extra credit in order to earn the
+grade that you would like, the course is signed up for extra credit
+through the Brian Lamb School of Communication Research Participation
+System.
+
+-   Please review the instructions before you sign up for studies; to
+    view the instructions go to
+    <https://www.cla.purdue.edu/communication/research/participation/students.html>
+-   You can sign up to participate in studies by logging into
+    <http://purdue-comm.sona-systems.com/>.
+
+# Schedule
+
+**NOTE** This section may be modified throughout the course to meet the
+class\'s needs. Check back in weekly.
+
+## Week 1: Introductions and the network perspective {#week_1_introductions_and_the_network_perspective}
+
+August 22
+
+**Assignment Due:**
+
+-   [Sign up for Discord](/Discord_Signup "wikilink") and introduce
+    yourself
+-   Take [this very brief
+    survey](https://docs.google.com/forms/d/e/1FAIpQLSd1EahCFyyZS8ZZTwct1YMwQvfGqTBVK9P6xYjHWOfx8GWboA/viewform)
+
+**Required Readings:**
+
+-   None
+
+**Concepts:**
+
+-   Class overview and expectations --- We\'ll walk through this
+    syllabus.
+-   What are social networks?
+-   Why study networks?
+
+August 24
+
+**Assignment Due:**
+
+-   Read the entire syllabus (this document)
+
+**Readings:**
+
+**Class Schedule:**
+
+-   Network simulation activity (bring a computer)
+-   Start work on [Homework 1](/Homework_1 "wikilink")
+
+## Week 2: Network representations {#week_2_network_representations}
+
+August 29
+
+**Assignment Due (on Monday):**
+
+-   [Homework 1](/Homework_1 "wikilink")
+-   [Reading Review](#reading-review-assignments "wikilink") (Due Monday
+    at noon!)
+
+**Lecture Video (before class):**
+
+-   [Network Data and Network Types
+    Lecture](https://www.youtube.com/watch?v=dYnzZUP40CQ) \[19:18\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_2/lecture/network_types.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_2/lecture/network_types.html_Slides "wikilink")
+
+**Readings (before class):**
+
+-   James M. Cook, [What is a Social
+    Network?](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/08/WhatIsASocialNetwork.pdf)
+-   James M. Cook, [Individuals versus
+    Networks](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/09/IndividualsVersusNetworks.pdf)
+-   (Optional/skim) Freeman, L. C. (2000). [Visualizing social
+    networks](https://www.cmu.edu/joss/content/articles/volume1/Freeman.html).
+    Journal of social structure, 1(1), 4.
+
+**Concepts:**
+
+-   Complex systems and networks
+-   Individual and collective behavior
+
+August 31
+
+**Class Schedule:**
+
+-   Go through [Parable of the Polygons](https://ncase.me/polygons/) by
+    Nicky Case
+-   Start work on [R Lab 1](/R_Lab_1 "wikilink")
+    -   [R Lab 1 Walkthrough](https://youtu.be/7QKuOHoMoZA)
+
+## Week 3: How are communication networks formed? {#week_3_how_are_communication_networks_formed}
+
+September 5
+
+**Assignment Due (on Monday):**
+
+-   [R Lab 1](/R_Lab_1 "wikilink")
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Lecture Video:**
+
+-   [Tie Formation](https://youtu.be/bwgd7gIAvb4) \[14:55\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/tie_formation.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/tie_formation.html_Slides "wikilink")
+
+**Readings:**
+
+-   Feld, S. L. (1981). [The focused organization of social
+    ties](https://www.jstor.org/stable/2778746). American Journal of
+    Sociology, 86(5), 1015--1035.
+-   McPherson, M., Smith-Lovin, L., & Cook, J. M. (2001). [Birds of a
+    Feather: Homophily in Social
+    Networks](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2678628).
+    Annual Review of Sociology, 27, 415--444.
+-   \[Optional\] Monge, P. R., & Contractor, N. S. (2003). Theories of
+    communication networks. Oxford, UK: Oxford University Press. (pp.
+    298\--314) - On Brightspace under Content \> Readings
+
+*Note:* This week involves reading two academic articles. [Read
+this](#Reading_Academic_Articles "wikilink") to understand my
+expectations and some tips for reading and understanding these articles.
+
+**Concepts:**
+
+-   Exposure, formation, maintenance, decay
+-   Homophily
+-   Reciprocity
+-   Triadic closure
+
+```{=html}
+<!-- -->
+```
+-   [Class
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_3/lecture/week_3.html)
+
+September 7
+
+**Supplementary R lectures (watch before class):**
+
+-   [Why R + Programming principles
+    lecture](https://youtu.be/6ThBHfg3Dh0) \[12:53\]
+
+**Class Schedule:**
+
+-   [R Lab 2 - Creating
+    Networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_2_creating_networks.qmd)
+
+## Week 4: Small group networks {#week_4_small_group_networks}
+
+September 12
+
+**Assignment Due:**
+
+-   [Reading Review](#reading-review-assignments "wikilink")
+-   [R Lab 2 - Creating
+    Networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_2_creating_networks.qmd)
+    -   [Homework explanation video](https://youtu.be/-JjuL1UwRR0)
+
+**Lecture video:**
+
+-   [Networks in small
+    groups](https://www.youtube.com/watch?v=uraDLo3caXc) \[14:43\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_4/lecture/small_groups.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_4/lecture/small_groups.html_Slides "wikilink")
+
+**Readings:**
+
+-   Krackhardt, D., & Hanson, J. R. (1993). [Informal networks: The
+    company behind the
+    chart](https://hbr.org/1993/07/informal-networks-the-company-behind-the-chart).
+    Harvard business review, 71(4), 104-111.
+-   Katz, N., Lazer, D., Arrow, H., & Contractor, N. (2004). [Network
+    theory and small
+    groups](https://libkey.io/libraries/228/articles/5387888/full-text-file?utm_source=api_559).
+    Small Group Research, 35(3), 307--332.
+
+**Concepts:**
+
+-   Informal networks
+-   Networks and group outcomes
+
+September 14
+
+-   Work on R Labs 1/2 and intro to [3 - Mutating and
+    filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
+    -   [Lab 3 Explanation video](https://youtu.be/rfViaH3gSz8)
+
+## Week 5: Ego networks and network perception {#week_5_ego_networks_and_network_perception}
+
+September 19
+
+**Assignment Due:**
+
+-   [Reading Review](#reading-review-assignments "wikilink")
+-   Turn in your [Self Assessment
+    Reflection](Self_Assessment_Reflection "wikilink") on Brightspace
+
+**Lecture:**
+
+-   [Ego networks and network perceptions
+    lecture](https://www.youtube.com/watch?v=c80su-DECKA) \[17:14\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_5/lecture/ego_nets.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_5/lecture/ego_nets.html_Slides "wikilink")
+
+**Readings:**
+
+-   Hanneman, R. A., & Riddle, M. (2005). Introduction to social network
+    methods. University of California. ([Chapter
+    9](https://faculty.ucr.edu/~hanneman/nettext/C9_Ego_networks.html)) -
+    Just read the first 2 sections - Introduction and Ego Network Data
+-   Marsden, P. V. (1987). [Core Discussion Networks of
+    Americans](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2095397).
+    American Sociological Review, 52(1), 122--131.
+    -   [Claude.ai summary](/marsden_core_summary "wikilink")
+-   Pentland, A.S. (2016). [Research: You Have Fewer Friends than You
+    Think](https://hbr.org/2016/05/research-you-have-fewer-friends-than-you-think).
+    (2016, May 12). Harvard Business Review.
+-   Smith, E. B., Menon, T., & Thompson, L. (2012). [Status Differences
+    in the Cognitive Activation of Social
+    Networks](https://pubsonline-informs-org.ezproxy.lib.purdue.edu/doi/full/10.1287/orsc.1100.0643).
+    Organization Science, 23(1), 67--82.
+    -   [Claude.ai summary](/smith_status_summary "wikilink")
+
+September 21
+
+**Class Schedule:**
+
+-   [Ego Network
+    Activity](https://github.com/jdfoote/Communication-and-Social-Networks/raw/master/activities/ego_networks/ego_analysis.qmd)
+-   Finish [R Lab 3 - Mutating and
+    filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
+    and start on [R Lab 4 - Intro to
+    ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
+
+## Week 6: Power, centrality, and hierarchy {#week_6_power_centrality_and_hierarchy}
+
+September 26
+
+**Assignment Due:**
+
+-   [R Lab 3 - Mutating and
+    filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Video lecture:**
+
+-   [Power, centrality, and
+    hierarchy](https://www.youtube.com/watch?v=gaMusAjk0_s) \[18:44\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html_Slides "wikilink")
+
+**Readings:**
+
+-   Hanneman, R. A., & Riddle, M. (2005). Introduction to social network
+    methods. [Chapter 10: Centrality and
+    Power](https://faculty.ucr.edu/~hanneman/nettext/C10_Centrality.html)
+-   Healy, K. (2013). [Using Metadata to find Paul
+    Revere](https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/).
+-   [Centrality measures](https://www.youtube.com/watch?v=0unzqsPaPk8).
+    Matthew Jackson. From [Social and Economic Networks
+    course](https://www.youtube.com/channel/UCCnG8fKY45aH73ahmGK2xcg)
+-   [Centrality Eigenvector
+    Measures](https://www.youtube.com/watch?v=q8oBWwS2wAQ). Matthew
+    Jackson
+-   (Optional) Holliday, Audrey, Campbell, & Moore, (2016). [Identifying
+    well-connected opinion leaders for informal health
+    promotion](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4898141/)
+
+**Class Schedule:**
+
+September 28
+
+**Class Schedule:**
+
+-   [R Lab 4 - Intro to
+    ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
+    -   [Lab 4 Explanation Video](https://youtu.be/GnTSThGhCw0)
+
+## Week 7: Social Capital, structural holes, and weak ties {#week_7_social_capital_structural_holes_and_weak_ties}
+
+October 3
+
+**Assignment Due:**
+
+-   [R Lab 4 - Intro to
+    ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Lecture Video:**
+
+-   [Capital and Social Capital](https://youtu.be/22C-3QdzUbA) \[16:02\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_7/lecture/social_capital.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_7/lecture/social_capital.html_Slides "wikilink")
+
+**Readings:**
+
+-   Granovetter, M. S. (1973). [The Strength of Weak
+    Ties](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2776392?sid=primo&seq=1#metadata_info_tab_contents).
+    American Journal of Sociology, 78(6), 1360--1380.
+    <https://doi.org/10.1086/225469>
+    -   [ Claude.ai summary](/granovetter_summary "wikilink")
+-   Kadushin, C. (2012). [Networks as Social
+    Capital](https://ebookcentral.proquest.com/lib/purdue/reader.action?docID=829477&ppg=175),
+    in Kadushin, C. (2012). Understanding Social Networks. Theories,
+    Concepts and Findings. Oxford: Oxford University Press.
+    -   [Claude.ai summary](/kadushin_summary "wikilink")
+-   Putnam, R.D. (1995). [Bowling Alone: America\'s Declining Social
+    Capital](https://muse.jhu.edu/article/16643). Journal of Democracy
+    6(1), 65-78.
+    -   [ Claude.ai summary](/Putnam_summary "wikilink")
+
+```{=html}
+<!-- -->
+```
+-   (Optional) Bourdieu, P. (1986). [The forms of
+    capital](https://www.marxists.org/reference/subject/philosophy/works/fr/bourdieu-forms-capital.htm).
+    In J. Richardson (Ed.) Handbook of Theory and Research for the
+    Sociology of Education (New York, Greenwood), 241-258.
+    -   [ Claude.ai summary](/Bourdieu_summary "wikilink")
+-   (Optional) Rainie, L. and Perrin, A. (2019). [Key findings about
+    Americans' declining trust in government and each
+    other](https://www.pewresearch.org/fact-tank/2019/07/22/key-findings-about-americans-declining-trust-in-government-and-each-other/).
+    Pew Research Center.
+-   (Optional) Burt, R. S. (2000). [The network structure of social
+    capital](https://www.sciencedirect.com/science/article/pii/S0191308500220091).
+    Research in Organizational Behavior, 22, 345--423.
+
+October 5
+
+**Class Schedule:**
+
+-   Who Dunnit Game
+
+## Week 8: Small worlds {#week_8_small_worlds}
+
+October 10
+
+**OCTOBER BREAK**
+
+October 12
+
+**Assignment Due:**
+
+-   [R Lab 5 - Aesthetics in
+    ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_5_aesthetics_in_ggraph.qmd)
+    -   [Lab Explanation
+        Video](https://www.youtube.com/watch?v=hsncjCu2yeo)
+-   [Reading Review](#reading-review-assignments "wikilink") - Just one
+    question this week
+
+**Lecture Video:**
+
+-   [Small worlds video](https://www.youtube.com/watch?v=g92nfiyI4rU)
+    \[18:45\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_8/lecture/small_worlds.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_8/lecture/small_worlds.html_Slides "wikilink")
+
+**Readings:**
+
+-   [The Science of Six Degrees of
+    Separation](https://www.youtube.com/watch?v=TcxZSmzPw8k)\[video\]\[9:22\]
+-   Travers, J. and Milgram, S. (1969). [An experimental study of the
+    small world
+    problem](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2786545).
+    *Sociometry*, 32(4):425-443
+    -   [Claude.ai summary](/Travers_summary "wikilink")
+-   (Optional but short) Dodds, P. S., Muhamad, R., & Watts, D. J.
+    (2003). [An Experimental Study of Search in Global Social
+    Networks](https://science-sciencemag-org.ezproxy.lib.purdue.edu/content/301/5634/827).
+    *Science*, 301(5634), 827.
+
+## Week 9: Scale-free networks and the friendship paradox {#week_9_scale_free_networks_and_the_friendship_paradox}
+
+October 17
+
+**Assignment Due:**
+
+-   Proposal for [ Final Project](/Final_Project "wikilink"); this is a
+    few paragraphs about which final project you\'d like to do, and what
+    you are planning to do for it.
+-   [Social Search Assignment](/Social_Search_Assignment "wikilink")
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Lecture Video:**
+
+-   [Scale-free networks and the Friendship
+    Paradox](https://youtu.be/3VfZGUt_tCM)\[18:21\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_9/lecture/scale_free_and_friend_paradox.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_9/lecture/scale_free_and_friend_paradox.html_Slides "wikilink")
+
+**Readings:**
+
+-   Feld, Scott L. (1991), [Why your friends have more friends than you
+    do](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2781907).
+    American Journal of Sociology, 96 (6): 1464--1477.
+    <https://doi.org/10.1086%2F229693>
+-   [Early Detection of an Outbreak using the Friendship
+    Paradox](https://www.youtube.com/watch?v=tP2MLp7GL7Q)
+-   [Networks are everywhere with Albert-László
+    Barabási](https://www.youtube.com/watch?v=c867FlzxZ9Y)
+
+(Optional)
+
+-   Christakis, N. A., & Fowler, J. H. (2010). Social Network Sensors
+    for Early Detection of Contagious Outbreaks. PLOS ONE, 5(9), e12948.
+    <https://doi.org/10.1371/journal.pone.0012948>
+
+October 19
+
+**Class Schedule:**
+
+-   [Six Degrees of Wikipedia
+    Activity](/Six_Degrees_of_Wikipedia_Activity "wikilink")
+
+## Week 10: Social influence and diffusion {#week_10_social_influence_and_diffusion}
+
+October 24
+
+**Weekly lecture:**
+
+-   [Social Influence and
+    Contagion](https://youtu.be/_6Wrc_T49GQ)\[22:12\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_10/lecture/influence_and_diffusion.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_10/lecture/influence_and_diffusion.html_Slides "wikilink")
+
+**Assignment Due:**
+
+-   Turn in your [Self Assessment
+    Reflection](Self_Assessment_Reflection "wikilink") on Brightspace
+-   [R Lab 6 - Visualizing
+    Power](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_6_visualizing_power.qmd)
+    -   [Lab walkthrough](https://www.youtube.com/watch?v=l18Jd9XCAec)
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Readings:**
+
+-   Chapter 4, \"[Special
+    People](https://web.archive.org/web/20191019100528/http://everythingisobvious.com/wp-content/themes/eio/assets/EIO_chapter4.pdf)\",
+    in Watts, D. J. (2011). Everything is Obvious: Once you know the
+    answer. New York, NY: Crown Business.
+-   [Duncan Watts on Common Sense](https://youtu.be/D9XF0QOzWM0)
+-   \[Optional\] Centola, D., & Macy, M. (2007). [Complex Contagions and
+    the Weakness of Long
+    Ties](https://www-journals-uchicago-edu.ezproxy.lib.purdue.edu/doi/full/10.1086/521848).
+    American Journal of Sociology, 113(3), 702--734.
+-   \[Optional\] Christakis, N. A., & Fowler, J. H. (2012). [Social
+    contagion theory: Examining dynamic social networks and human
+    behavior](https://onlinelibrary-wiley-com.ezproxy.lib.purdue.edu/doi/full/10.1002/sim.5408).
+    Statistics in Medicine, 32, 556--577.
+
+October 26
+
+-   Do [The Wisdom or Madness of Crowds
+    Simulation](http://ncase.me/crowds/)
+
+## Week 11: Communities and Core-periphery {#week_11_communities_and_core_periphery}
+
+October 31
+
+**Assignment Due:**
+
+-   [Reading Review](#reading-review-assignments "wikilink")
+-   Submit two exam questions on Brightspace
+-   \[\[/Visualization challenge\|Visualization
+
+Challenge\]\]
+
+**Video Lecture:**
+
+-   [Communities and Core-periphery](https://youtu.be/7pQMUisgv1U)
+    \[23:15\]
+    [https://jeremydfoote.com/Communication-and-Social-Networks/week_11/lecture/communities_in_networks.html
+    Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_11/lecture/communities_in_networks.html_Slides "wikilink")
+
+**Readings:**
+
+-   Girvan, M., & Newman, M. E. (2002). [Community structure in social
+    and biological
+    networks](https://www.pnas.org/content/pnas/99/12/7821.full.pdf).
+    Proceedings of the National Academy of Sciences.
+-   Barberá, P., Wang, N., Bonneau, R., Jost, J. T., Nagler, J., Tucker,
+    J., & González-Bailón, S. (2015). [The critical periphery in the
+    growth of social
+    protests](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143611).
+    PLoS ONE.
+    -   [Claude.ai Summary](/Barbera_summary "wikilink")
+-   (Optional) Hanneman, R. A., & Riddle, M. (2005). [Cliques and
+    sub-groups](http://faculty.ucr.edu/~hanneman/nettext/C11_Cliques.html).
+    In Introduction to social network methods. University of California.
+
+November 2
+
+**Class Schedule:**
+
+-   [R Lab 7 - Finding and visualizing groups in
+    networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd)
+
+## Week 12: Resilient networks {#week_12_resilient_networks}
+
+November 7
+
+**Assignment Due:**
+
+-   [R Lab 7 - Finding and visualizing groups in
+    networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd)
+    -   [Lab 7 Walkthrough](https://youtu.be/Ob1rxN7_eO4)
+-   [Reading Review](#reading-review-assignments "wikilink")
+
+**Class Schedule:**
+
+Guest Lecture: Dr. Seungyoon Lee
+
+**Readings:**
+
+-   \[<http://sggpcp.com/wp-content/uploads/2015/11/Social-Networks-and-Disaster-Resilience.-An-introduction>..pdf
+    Social networks and disaster resilience: an introduction\] pp. 9-13
+
+November 9
+
+-   Exam review
+
+## Week 13: Technology and Networks {#week_13_technology_and_networks}
+
+November 14
+
+**Lecture Video:**
+
+-   [Technology and networks](https://youtu.be/iTiduq9GplU) \[19:38\]
+
+**Readings:**
+
+-   Pariser, E. [Beware Online Filter Bubbles TED
+    talk](https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles)
+-   Fletcher, R. [The truth behind filter bubbles: Bursting some
+    myths](https://reutersinstitute.politics.ox.ac.uk/risj-review/truth-behind-filter-bubbles-bursting-some-myths).
+-   Bail, C. [Should we break our echo
+    chambers?](https://www.youtube.com/watch?v=nwRm_ssTarE)
+-   Cohen, M. [Context
+    Collapse](https://www.psychologytoday.com/intl/blog/finding-love-the-scientific-take/202012/context-collapse)
+
+(Optional)
+
+-   Kleinberg, J. (2012). [The Convergence of Social and Technological
+    Networks](https://link-springer-com.ezproxy.lib.purdue.edu/chapter/10.1007%2F978-3-642-29952-0_8).
+    In M. Agrawal, S. B. Cooper, & A. Li (Eds.), Theory and Applications
+    of Models of Computation.
+-   Chris Bail, et al. (2018). [Exposure to opposing views on social
+    media can increase political
+    polarization](https://www.pnas.org/content/115/37/9216). PNAS.
+
+November 16
+
+-   In class exam!
+
+## Week 14: Networks and collaboration {#week_14_networks_and_collaboration}
+
+November 21
+
+**Assignment Due:**
+
+-   Discussion Questions
+
+**Lecture video:**
+
+-   [Networks and Collaboration](https://youtu.be/_8gFd0XZJKc)\[17:19\]
+
+**Readings:**
+
+-   Read the [Wikipedia Article about The Wealth of
+    Networks](https://en.wikipedia.org/wiki/The_Wealth_of_Networks)
+-   Skim section two of Benkler, Y. (2002). [Coase's Penguin, or, Linux
+    and \"The Nature of the
+    Firm.\"](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/1562247)
+    The Yale Law Journal, 112(3), 369.
+
+November 23
+
+**THANKSGIVING BREAK**
+
+## Week 15: Networked racism {#week_15_networked_racism}
+
+November 28
+
+**Assignment Due:**
+
+-   [R Lab 8 - Calculating network
+    statistics](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_8_network_stats.qmd)
+
+**Readings:**
+
+-   Fernandez, R. M., & Fernandez-Mateo, I. (2006). [Networks, Race, and
+    Hiring](https://journals-sagepub-com.ezproxy.lib.purdue.edu/doi/pdf/10.1177/000312240607100103).
+    American Sociological Review, 71(1), 42--71. **Read the introduction
+    (pp. 42--47) and the Summary and Conclusion (pp. 65--67)**
+-   Sunstein, C. R. (1991). Why markets don't stop discrimination.
+    Social Philosophy and Policy, 8(02), 22--37.
+    <https://doi.org/10.1017/S0265052500001114>
+
+November 30
+
+**Assignment Due:**
+
+-   Rough draft of [Final Project](/Final_project "wikilink") on
+    Brightspace and sent to your \"peers\"
+
+**No class - work on Final Project**
+
+-   (Optional) [Advanced network visualizations in
+    R](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/advanced_visualizations.qmd)
+
+## Week 16: Network Visualization Principles {#week_16_network_visualization_principles}
+
+December 5
+
+**No class - work on Final Project**
+
+**Assignment Due:**
+
+-   Peer feedback on final project
+
+December 7
+
+**Class Schedule:**
+
+-   Voluntary presentations of final projects
+-   Review principles of good network visualizations
+    -   Put examples at <https://padlet.com/jdfoote1/networks> (I will
+        explain in class)
+-   Work on final projects
+
+## Finals week {#finals_week}
+
+**Assignment Due (Wednesday, December 13):**
+
+-   [Final Project](/Final_project "wikilink")
+-   Turn in your [Final self
+    reflection](Final_self_reflection "wikilink") on Brightspace
+
+# Policies
+
+## Attendance
+
+I try very hard to make our meeting times valuable to you and I expect
+that you attend. That being said, I know that people get sick, things
+come up, etc. If you need to miss class, then it is your responsibility
+to seek out support from classmates for notes, handouts, and other
+information.
+
+Only I can excuse a student from a course requirement or responsibility.
+When conflicts can be anticipated, such as for many University-sponsored
+activities and religious observations, please inform me of the situation
+as far in advance as possible. For unanticipated or emergency conflicts,
+when advance notification is not possible, contact me as soon as
+possible on Discord or by email. In cases of bereavement, quarantine, or
+isolation, the student or the student's representative should contact
+the Office of the Dean of Students via email or phone at 765-494-1747.
+Our course on Brightspace includes a link to the Dean of Students under
+\'Campus Resources.\'
+
+## Classroom Discussions and Peer Feedback {#classroom_discussions_and_peer_feedback}
+
+Throughout the course, you may receive, read, collaborate, and/or
+comment on classmates' work. These assignments are for class use only.
+You may not share them with anybody outside of class without explicit
+written permission from the document's author and pertaining to the
+specific piece.
+
+It is essential to the success of this class that all participants feel
+comfortable discussing questions, thoughts, ideas, fears, reservations,
+apprehensions and confusion. Therefore, you may not create any audio or
+video recordings during class time nor share verbatim comments with
+those not in class linked to people's identities unless you get clear
+and explicit permission. If you want to share general impressions or
+specifics of in-class discussions with those not in class, please do so
+without disclosing personal identities or details.
+
+## Academic Integrity {#academic_integrity}
+
+While I encourage collaboration, I expect that any work that you submit
+is your own. Basic guidelines for Purdue students are outlined
+[here](https://www.purdue.edu/odos/osrr/academic-integrity/index.html)
+but I expect you to be exemplary members of the academic community.
+Please get in touch if you have any questions or concerns.
+
+## Nondiscrimination
+
+I strongly support Purdue\'s policy of nondiscrimination (below). If you
+feel like any member of our classroom\--including me\--is not living up
+to these principles, then please come and talk to me about it.
+
+Purdue University is committed to maintaining a community which
+recognizes and values the inherent worth and dignity of every person;
+fosters tolerance, sensitivity, understanding, and mutual respect among
+its members; and encourages each individual to strive to reach his or
+her own potential. In pursuit of its goal of academic excellence, the
+University seeks to develop and nurture diversity. The University
+believes that diversity among its many members strengthens the
+institution, stimulates creativity, promotes the exchange of ideas, and
+enriches campus life.
+
+## Accessibility
+
+Purdue University strives to make learning experiences as accessible as
+possible. If you anticipate or experience physical or academic barriers
+based on disability, you are welcome to let me know so that we can
+discuss options. You are also encouraged to contact the Disability
+Resource Center at: drc@purdue.edu or by phone: 765-494-1247.
+
+## Emergency Preparation {#emergency_preparation}
+
+In the event of a major campus emergency, I will update the requirements
+and deadlines as needed.
+
+## Mental Health {#mental_health}
+
+If you or someone you know is feeling overwhelmed, depressed, and/or in
+need of mental health support, services are available. For help, such
+individuals should contact Counseling and Psychological Services (CAPS)
+at 765-494-6995 during and after hours, on weekends and holidays, or by
+going to the CAPS office of the second floor of the Purdue University
+Student Health Center (PUSH) during business hours.
+
+## Incompletes
+
+A grade of incomplete (I) will be given only in unusual circumstances.
+The request must describe the circumstances, along with a proposed
+timeline for completing the course work. Submitting a request does not
+ensure that an incomplete grade will be granted. If granted, you will be
+required to fill out and sign an "Incomplete Contract" form that will be
+turned in with the course grades. Any requests made after the course is
+completed will not be considered for an incomplete grade.
+
+## Additional Policies {#additional_policies}
+
+Links to additional Purdue policies are on our Brightspace page. If you
+have questions about policies please get in touch.

@@ -1,7 +1,10 @@
 ---
 title: "In-class Lecture Slides"
 listing:
-  contents: class_lectures
+  contents: lectures/class_lectures
   type: table
-  sort: "date"
+  sort:
+    - sort
+    - title
+  sort-ui: false
 ---

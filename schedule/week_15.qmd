@@ -1,0 +1,25 @@
+---
+title: "Week 15: Networked racism"
+date: "2024-12-03"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* Feedback on final project to peers
+
+**Readings:**
+
+* Fernandez, R. M., & Fernandez-Mateo, I. (2006). [Networks, Race, and Hiring](https://journals-sagepub-com.ezproxy.lib.purdue.edu/doi/pdf/10.1177/000312240607100103). American Sociological Review, 71(1), 42–71. **Read the introduction (pp. 42–47) and the Summary and Conclusion (pp. 65–67)**
+* Sunstein, C. R. (1991). Why markets don’t stop discrimination. Social Philosophy and Policy, 8(02), 22–37. [https://doi.org/10.1017/S0265052500001114](https://doi.org/10.1017/S0265052500001114)
+
+### Thursday
+
+**Class Schedule:**
+
+* Final project presentations (optional)
+
+**Resources:**
+
+* (Optional) [Advanced network visualizations in R](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/advanced_visualizations.qmd)

@@ -1,0 +1,199 @@
+---
+title: Whodunnit Activity
+format: 
+  revealjs:
+    css: ../resources/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+set.seed(0121)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(tidyverse)
+nodes = read_csv('/home/jeremy/Teaching/communication_and_networks/resources/activities/who_dunnit/whodunnit_node_atts.csv')
+edges = read_csv('/home/jeremy/Teaching/communication_and_networks/resources/activities/who_dunnit/whodunnit_edgelist.csv')
+
+## DON'T FORGET TO CHANGE THIS
+
+num_players = 16
+
+G <- graph_from_data_frame(edges, v=nodes, directed = F) %>% as_tbl_graph() %>%
+  activate(nodes) %>%
+  mutate(name = as.numeric(name)) %>%
+  filter(name <= num_players)
+```
+
+## Instructions
+
+The boss in your organization has had valuable company secrets stolen from a drawer in his office sometime between when he left the office at 5:00 last night and this morning. You are all in the office now and have seen and heard different things and are trying to figure out who did it. There are five prime suspects and all of you have pieces of critical information that will either draw suspicion to or exonerate one of the suspects. However, because your organization is very hierarchical, you are only allowed to talk with certain people (i.e., the people you directly work with), as shown on the next slide.
+
+## The network
+
+<small>
+
+```{r}
+x = G %>% as_adj_list()
+df = tibble(id = 1:length(x), neighbors = sapply(x, paste, collapse=', '))
+knitr::kable(df)
+```
+
+</small>
+
+## Rules
+
+<div style='margin:-1em; font-size:60%;'>
+
+> - The suspects are Adam, Brandon, Erica, Jake, and Lisa. The suspects are not in the room. Nobody here is guilty.
+
+> - Write down any clues you receive on the Clue Track Sheet, including those you started with. Make sure to note the person they came from (i.e., the person's node ID) and the clue number.
+
+> - In each round, you can give one piece of information to one other person and receive one piece of information from that same person (that is, two clues will be exchanged per round, but it must occur with the same person). Talk can only occur in dyads (pairs). Make sure your information exchange is only heard by one person at a time and not overheard by anyone else.
+
+> - The clue you give can be a clue you received from the instructor, or a clue from someone else.
+
+> - Each round will last 1 to 1.5 min. The instructor will signal when it is time to find a new person to exchange information with. If no one in your nodelist is available to talk, you must sit out that round and wait for the next round to begin.
+
+> - The clues can be conveyed either verbally, or by showing your Who Dunnit Clue Track Sheet to the other person. Be sure to cover up the other clues you have recorded on this sheet. If a person gives you information you already have, you may ask them to give you a different clue _only once_ during each round. You do not have to have 'new' information to give the person you exchange with in order to get 'new' information from them.
+
+</div>
+
+
+## Clues
+
+<div style='margin:-1em; font-size:45%;'>
+
+1. ** You have been with Brandon every moment since the boss left the office yesterday and he rode into work with you today. There is no way he could have snuck out and come back without your knowing.
+2. Adam has previously stolen an idea you sent to him for suggestions and passed it off as his own to the boss. He kind of fits the profile.
+3. Lisa is always the last to leave and the first to arrive at the office. She could have easily taken the documents when no one was there.
+4. Brandon and Erica grew up in the same neighborhood and went to high school together. 
+5. Jake is acting a little off and has been distracted lately. There seems to be some sort of problem bugging him, but he will not tell you anything about it.
+6. \* You remember that Erica told you a few months ago that she had started dating someone from a company that is in competition with yours.
+7. ** Jake is a systems administrator. He was given an extensive background check because he works with company secrets and infrastructure every day. With administrator privileges to every single company folder, he already has electronic access to company secrets.
+8. Brandon has expressed to you a strong desire to leave the company but has been having trouble finding another company that wants to hire him.
+9. ** You know that Lisa is high enough in the company that she has her own copy of the company secrets in question. She would not have needed to steal them from the boss's office to access them.
+10. ** Adam asked you to cover for him yesterday morning and went home sick. You know that he hasn't been back in the building since then.
+11. \* Erica came to you for advice a few days ago. She told you that she and her boyfriend were not quite working out and that he wanted her to do something for him that she wasn't ready to do yet.
+12. You had lunch with Adam once a few weeks ago and remember how much respect he has for the company and his boss specifically because they were so understanding during his messy divorce.
+13. Lisa told you in confidence a couple of days ago that the company is going through rough times right now and that it is possible that they might be downsizing.
+14. Jake is a long-time friend of the boss. They served in Afghanistan together and, when they got back stateside, the boss specifically sought him out to offer him a job with his company.
+</div>
+
+## Clues
+
+
+<div style='margin:-1em; font-size:45%;'>
+15. \* You saw Erica enter the boss's office after he left yesterday and emerge with a manila folder. As she is his secretary, it wouldn't necessarily mean that she was stealing the folder.
+16. You noticed that Adam was eyeing the boss's office a lot yesterday.
+17. Brandon told you this morning before the theft was known that he has a new job lined up and will be leaving the company.
+18. Adam has been expressing a strong desire to move up in the company as he has been there a long time but is still working an entry-level position.
+19. Adam told you a few days ago that he has a performance review coming up with the boss, and hopes that it means a promotion is on the way for him.
+20. You remember that, shortly after Brandon started in the company, the HR person let slip that he had been fired from his last job for corporate espionage.
+21. \* Erica does the best she can and is very eager to please the people that are important to her. She finds it really hard to say no to those people.
+22. Lisa is well-liked throughout the office. She has always tried to help anyone who has ever asked her for help and you are not sure where you would be without her.
+23. You overheard Lisa having an animated conversation with the boss yesterday in his office. They seemed to be angry.
+24. Brandon has been submitting sloppy work to you lately and you know he can do better. You are wondering if he might have been putting his brainpower into other tasks. 
+25. Jake strongly believes in the company's mission and routinely will vent to you about how other companies that do the same thing as yours are just trying to screw over other people.
+26. Erica is the boss's daughter and you suspect that this may be the primary reason that she is employed at all. 
+27. Jake and Lisa went out for dinner together the other day and seem to be getting along well.
+28. Lisa has never missed a day of work or been late.  
+
+</div>
+
+## And the culprit was:
+
+> - Erica!!
+
+## The full network
+
+```{r, message=F, warning=F}
+G %>% 
+ggraph() + 
+geom_edge_fan(alpha=.4) + 
+geom_node_label(aes(label=name), color = 'gold') + 
+theme_graph()
+```
+
+## Network measures
+
+
+```{r, message=F, warning=F}
+G |>
+activate(nodes) |>
+mutate(degree = centrality_degree()) |>
+ggraph() + 
+geom_edge_fan(alpha=.4) + 
+geom_node_point(aes(size=degree*2), color='gold') +
+geom_node_text(aes(label=name), color = 'black', alpha = 1) + 
+theme_graph() +
+ggtitle('Degree Centrality') +
+theme(legend.position = 'none')
+
+```
+
+## Network measures
+
+```{r, message=F, warning=F}
+G |>
+activate(nodes) |>
+mutate(betweenness = centrality_betweenness()) |>
+ggraph() + 
+geom_edge_fan(alpha=.4) + 
+geom_node_point(aes(size=betweenness), color='gold') +
+geom_node_text(aes(label=name), color = 'black', alpha = 1) + 
+theme_graph() + 
+ggtitle('Betweenness Centrality') +
+theme(legend.position = 'none')
+
+```
+
+
+## Network measures
+
+```{r, message=F, warning=F}
+G |>
+activate(nodes) |>
+mutate(closeness = centrality_closeness()) |>
+ggraph() + 
+geom_edge_fan(alpha=.4) + 
+geom_node_point(aes(size=closeness), color='gold') +
+geom_node_text(aes(label=name), color = 'black', alpha = 1) + 
+theme_graph() + 
+ggtitle('Closeness Centrality') +
+theme(legend.position = 'none')
+
+```
+
+## Network measures
+
+
+```{r, message=F, warning=F}
+G |>
+activate(nodes) |>
+mutate(eigenvector = centrality_eigen()) |>
+ggraph() + 
+geom_edge_fan(alpha=.4) + 
+geom_node_point(aes(size=eigenvector), color='gold') +
+geom_node_text(aes(label=name), color = 'black', alpha = 1) + 
+theme_graph() +
+ggtitle('Eigenvector Centrality') +
+theme(legend.position = 'none')
+
+
+```
+
+
+## Debrief
+
+> - Who succeeded?
+> - Why? How did network position influence your ability to gather information?
+> - How did you make effort to overcome your constraints?
+> - How did you decide who to talk to?
+> - How is this game similar or different from real life situations?

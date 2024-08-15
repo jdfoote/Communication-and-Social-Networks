@@ -1,0 +1,229 @@
+---
+title: "Syllabus"
+---
+
+# Course Information
+
+**COM 411: Communication and Social Networks**  
+**Location:** BRNG 2275
+**Class Hours:** Tuesdays and Thursdays; 12:00–1:15 PM
+
+## Instructor
+
+**Instructor:** [Jeremy Foote](https://jeremydfoote.com)  
+**Email:** jdfoote@purdue.edu  
+**Office Hours:** BRNG 2156; Tuesdays; 2:00–4:00pm and by appointment
+
+
+# Course Overview and Learning Objectives
+
+Communication is inherently a social process. This class focuses on understanding how the structure of relationships between people influences communication patterns and behavior. This perspective can help us to understand a broad set of phenomena, from online communities to friendships to businesses. The course will also introduce students to using network visualizations to gain and share insights about network phenomena.
+
+Students who complete this course will be able to:
+1. Understand the foundations of social network theory and analysis.
+2. Critically read and comprehend concepts, results, and implications presented in studies of social networks.
+3. Learn how networks are related to social phenomena in their personal and professional worlds.
+4. Gain a basic understanding of gathering network data and analyzing them using the programming language R.
+
+# Required resources and texts
+
+## Computing Resources
+
+One of the goals of this class is a basic skills in analyzing and visualizing network data in R. **You will need access to a computer for this course.** You shouldn't need anything especially new or powerful, but it needs to have room to install a few programs and enough memory to run them.
+
+This semester, we are going to try using VSCode, an IDE which can write R code, and which includes a plugin to do AI-assisted coding. [Our first R Lab](pages/R-Lab-1.html) will walk you through installing everything you need.
+
+## Readings
+
+* Required texts:
+  * Easley, D., & Kleinberg, J. (2010). Networks, crowds, and markets. Cambridge University Press. [web edition (free)](https://www.cs.cornell.edu/home/kleinber/networks-book/) [pre-print pdf (free)](https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf) [print edition (Amazon)](https://smile.amazon.com/Networks-Crowds-Markets-Reasoning-Connected/dp/0521195330/)
+  * Hanneman, R. A., & Riddle, M. (2005). Introduction to social network methods. Riverside, CA: University of California, Riverside [web edition (free)](http://faculty.ucr.edu/~hanneman/nettext/)
+
+* Other readings: Other readings will be made available on Brightspace.
+
+### Reading Academic Articles
+
+Many of the readings will be academic articles. I do not expect you to read every word of these articles. Rather, you should practice intentional directed skimming. [This article](https://writingcenter.gmu.edu/guides/strategies-for-reading-academic-articles) gives a nice overview. The TL;DR is that you should carefully read the abstract, introduction, and conclusion. For the rest of the article, focus on section headings and topic sentences to extract the main ideas.
+
+## Other suggested books
+
+* Barabasi, A-L. (2002). Linked: The new science of networks. Cambridge, MA: Perseus.
+* Scott, J. (2000). Social network analysis: A handbook (2nd edition). London: Sage Publications.
+* Watts, D. J. (2004). Six degrees: The science of a connected age. WW Norton & Company.
+* Christakis, N. and Fowler, J. (2009). [Connected: The surprising power of our social networks and how they shape our lives](https://archive.org/details/connectedsurpris00chri/)
+
+# Course logistics
+
+## Note About This Syllabus
+
+Although the core expectations for this class are fixed, the details of readings and assignments may shift based on how the class goes. As a result, there are three important things to keep in mind:
+
+1. Although details on this syllabus will change, I will not change readings or assignments less than one week before they are due. If I don't fill in a "To Be Determined" one week before it's due, it is dropped. If you plan to read more than one week ahead, contact me first.
+2. Closely monitor the class [Discord](pages/Discord-Signup.html). Because this is a wiki, you will be able to track every change by clicking the 'history' button on this page. I will also summarize these changes in an announcement on Discord that should be emailed to everybody in the class if you have notifications turned on.
+3. I will ask the class for voluntary anonymous feedback frequently. Please let me know what is working and what can be improved.
+
+## Class Sessions
+
+This course will follow a "flipped" classroom model. I expect you to learn most of the content of the course asynchronously. The goal of our time together is not to tell you new things, but to consolidate knowledge and to clear up misconceptions.
+
+The Tuesday meeting will be a collaborative, discussion-centric session. Typically, about two-thirds of each session will be devoted to a discussion of the readings and videos from that week. The remaining third will be used to review the assignments.
+
+This means that **I expect you to come to Tuesday lectures having read the readings and watched the lecture videos**. There are links to the readings and videos each week. You can also find lecture videos on Brightspace or [on this YouTube playlist](https://www.youtube.com/watch?v=dYnzZUP40CQ&list=PLP6zcrJrVWgdQtxeToSPapfFOxC6qtGi0).
+
+The Thursday meetings will be more like a lab. Some of these sessions will include synchronous activities; often they will be a time for me to introduce and help with R assignments. Sometimes they will be more of a co-working time, where you can work on assignments and I can be available to answer questions.
+
+## Getting Help
+
+Your first place to look for help should be each other. By asking and answering questions on Discord, you will not only help to build a repository of shared information but also reinforce our learning community.
+
+I will also hold office hours on Tuesdays, from 2-4. If you come with a programming question, I will expect that you have already tried to solve it yourself in multiple ways and that you have discussed it with a classmate. This policy lets me have time to help more students, but it's also a useful strategy. Often [just trying to explain your code](https://en.wikipedia.org/wiki/Rubber_duck_debugging) can help you to recognize where you've gone wrong.
+
+I will also check Discord at least once a day. I encourage you to post questions there, and to use it as a space where we can help and instruct each other. In general, you should contact me there. I am also available by email. You can reach me at [jdfoote@purdue.edu](mailto:jdfoote@purdue.edu). I try hard to maintain a boundary between work and home and I typically respond only on weekdays during business hours.
+
+### Online Resources
+
+Programming can be difficult and frustrating and confusing, but you will get it! I have put together a few resources to help you with the programming portion of the course. Come back to these when you get stuck.
+
+* Finding and fixing bugs in your code: [Video](https://youtu.be/92Gicjnc_tk) [R Markdown file](https://jeremydfoote.com/TDIS/week_8/debugging.Rmd) [HTML file](https://jeremydfoote.com/TDIS/week_8/debugging.html)
+* Intro to ggraph and tidygraph: [Video](https://youtu.be/geYZ83Aidq4) [R Markdown file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd) [HTML file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html)
+
+# Assignments
+
+There will be multiple types of assignments, designed to encourage learning in different ways.
+
+## Participation
+
+I expect you to be an active member of our class. This includes paying attention in class, participating in activities, and being actively engaged in learning, thinking about, and trying to understand the material.
+
+To make sure that everyone has an opportunity to participate and to encourage you to do the assignments, I will randomly select students to discuss readings or to explain portions of homework assignments and labs.
+
+## Reading Review Assignments
+
+In a flipped class like this, it's really important that folks come prepared to discuss, work through misunderstandings, etc. In order to provide some accountability and space for reflection, each week you will have a review/reflection assignment about the readings and video.
+
+I'm calling this a "3-2-1 Assignment". I'd like you to:
+
+* Write down three concepts that you learned or connections that you made from this week's reading and lecture.
+* Write down two questions you have or things that you don't quite understand.
+* Share one question that you think would make for a good discussion question.
+
+You should submit your assignment on Brightspace.
+
+Take the discussion question (which can be based on the concepts you learned, or the things you don't understand), and submit it (and up to one other question) that you think would be interesting to discuss on Monday by noon. **Post your questions on the shared Google Doc at [this link](https://docs.google.com/document/d/1AK4MhWLVwDuxqvTwLomN7hu4aLpo59n5qXgEap8SBNc/edit?usp=sharing)**; try to group similar questions together.
+
+Questions should engage with the readings and either connect to other concepts or to the "real world". Here are some good example questions:
+
+* The readings this week talked a lot about how network ties get created. I made a list of my closest friends and I realized that most of them only became friends after we happened to be in the same groups over and over again. What role does repetition have in forming ties?
+* I was confused by the reading on social capital. What's the difference between social capital and power? And if they are the same, then why not just call it "network power"?
+* Imagine you were asked to analyze the network of a big company to help them to identify people who deserve a raise. What measures would you use to identify them? What would you not use?
+
+## Homework/Labs
+
+There will be a number of homework assignments. At the beginning of the class, these will be designed to help you grasp foundational network concepts. As the class progresses, more and more of them will be analyzing and visualizing networks in R.
+
+## Exams
+
+There will be one exam. It will assess your understanding of core communication and social networks concepts.
+
+## Final Project
+
+Students will complete a [Final Project](pages/Final-project.html) that uses the theories, principles, and skills learned in this class.
+
+A number of intermediate assignments through the semester will help you to gain the skills and data necessary to be successful.
+
+# Grades
+
+This course will follow a "self-assessment" philosophy. I am more interested in helping you to learn things that will be useful to you than in assigning grades. In general, I think that my time is much better spent in providing better feedback and in being available to work through problems together.
+
+The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use [this form](pages/Self-Assessment-Reflection.html) to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages, you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work, will be the most important factor in final grades.
+
+We will use the following rubric in our assessment:
+
+* 20%: Class participation, including attendance and participation in discussions and group work
+* 20%: Labs and homework assignments
+* 25%: Exam
+* 35%: Final Project
+
+The exam will be graded like a normal exam and the score will make up 25% of your grade. For the rest of the assignments (and the other 75% of your grade), I will provide feedback which will inform an ongoing conversation about your work.
+
+My interpretation of grade levels (A, B, C, D/F) is the following:
+
+**A:** Reflects work that exceeds expectations on multiple fronts and to a great degree. Students reaching this level of achievement will:
+* Do what it takes to learn the principles and techniques of social networks, including looking to outside sources if necessary.
+* Read all of the assigned readings and work to understand how they fit with other concepts from the class and other classes.
+* Come to class every day, having done the background work. Be an active, engaged participant in our discussions.
+* Engage thoughtfully with an ambitious final project.
+* Take intellectual risks, offering interpretations based on synthesizing material and asking for feedback from peers.
+* Share work early, allowing extra time for engagement with others.
+* Write reflections that grapple meaningfully with lessons learned as well as challenges.
+* Complete all homework assignments at a high level.
+
+**B:** Reflects strong work. Work at this level will be of consistently high quality. Students reaching this level of achievement will:
+* Be more safe or consistent than the work described above.
+* Ask meaningful questions of peers and engage them in fruitful discussion.
+* Exceed requirements, but in fairly straightforward ways.
+* Compose complete and sufficiently detailed reflections.
+* Complete the homework assignments, almost always at a high level.
+
+**C:** This reflects meeting the minimum expectations of the course. Students reaching this level of achievement will:
+* Turn in and complete the final project on time.
+* Be collegial and continue discussion, through asking simple or limited questions.
+* Compose reflections with straightforward and easily manageable goals and/or avoid discussions of challenges.
+* Not complete homework assignments or complete them in a hasty or incomplete manner.
+
+**D/F:** These are reserved for cases in which students do not complete work or participate. Students may also be impeding the ability of others to learn.
+
+## Extra Credit for Participating in Research Studies
+
+If you feel like you need to earn extra credit in order to earn the grade that you would like, the course is signed up for extra credit through the Brian Lamb School of Communication Research Participation System.
+
+* Please review the instructions before you sign up for studies; to view the instructions go to [this link](https://www.cla.purdue.edu/communication/research/participation/students.html).
+* You can sign up to participate in studies by logging into [this site](http://purdue-comm.sona-systems.com/).
+
+# Schedule
+
+See the [schedule](/schedule.qmd) for a detailed list of topics, readings, and assignments.
+
+# Policies
+
+## Attendance
+
+I try very hard to make our meeting times valuable to you and I expect that you attend. That being said, I know that people get sick, things come up, etc. If you need to miss class, then it is your responsibility to seek out support from classmates for notes, handouts, and other information.
+
+Only I can excuse a student from a course requirement or responsibility. When conflicts can be anticipated, such as for many University-sponsored activities and religious observations, please inform me of the situation as far in advance as possible. For unanticipated or emergency conflicts, when advance notification is not possible, contact me as soon as possible on Discord or by email. In cases of bereavement, quarantine, or isolation, the student or the student’s representative should contact the Office of the Dean of Students via email or phone at 765-494-1747. Our course on Brightspace includes a link to the Dean of Students under 'Campus Resources.'
+
+## Classroom Discussions and Peer Feedback
+
+Throughout the course, you may receive, read, collaborate, and/or comment on classmates’ work. These assignments are for class use only. You may not share them with anybody outside of class without explicit written permission from the document’s author and pertaining to the specific piece.
+
+It is essential to the success of this class that all participants feel comfortable discussing questions, thoughts, ideas, fears, reservations, apprehensions, and confusion. Therefore, you may not create any audio or video recordings during class time nor share verbatim comments with those not in class linked to people’s identities unless you get clear and explicit permission. If you want to share general impressions or specifics of in-class discussions with those not in class, please do so without disclosing personal identities or details.
+
+## Academic Integrity
+
+While I encourage collaboration, I expect that any work that you submit is your own. Basic guidelines for Purdue students are outlined [here](https://www.purdue.edu/odos/osrr/academic-integrity/index.html), but I expect you to be exemplary members of the academic community. Please get in touch if you have any questions or concerns.
+
+## Nondiscrimination
+
+I strongly support Purdue's policy of nondiscrimination (below). If you feel like any member of our classroom--including me--is not living up to these principles, then please come and talk to me about it.
+
+Purdue University is committed to maintaining a community which recognizes and values the inherent worth and dignity of every person; fosters tolerance, sensitivity, understanding, and mutual respect among its members; and encourages each individual to strive to reach his or her own potential. In pursuit of its goal of academic excellence, the University seeks to develop and nurture diversity. The University believes that diversity among its many members strengthens the institution, stimulates creativity, promotes the exchange of ideas, and enriches campus life.
+
+## Accessibility
+
+Purdue University strives to make learning experiences as accessible as possible. If you anticipate or experience physical or academic barriers based on disability, you are welcome to let me know so that we can discuss options. You are also encouraged to contact the Disability Resource Center at: drc@purdue.edu or by phone: 765-494-1247.
+
+## Emergency Preparation
+
+In the event of a major campus emergency, I will update the requirements and deadlines as needed.
+
+## Mental Health
+
+If you or someone you know is feeling overwhelmed, depressed, and/or in need of mental health support, services are available. For help, such individuals should contact Counseling and Psychological Services (CAPS) at 765-494-6995 during and after hours, on weekends and holidays, or by going to the CAPS office on the second floor of the Purdue University Student Health Center (PUSH) during business hours.
+
+## Incompletes
+
+A grade of incomplete (I) will be given only in unusual circumstances. The request must describe the circumstances, along with a proposed timeline for completing the course work. Submitting a request does not ensure that an incomplete grade will be granted. If granted, you will be required to fill out and sign an “Incomplete Contract” form that will be turned in with the course grades. Any requests made after the course is completed will not be considered for an incomplete grade.
+
+## Additional Policies
+
+Links to additional Purdue policies are on our Brightspace page. If you have questions about policies please get in touch.

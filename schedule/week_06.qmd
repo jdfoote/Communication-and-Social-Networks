@@ -1,0 +1,30 @@
+---
+title: "Week 6: Power, centrality, and hierarchy"
+date: "2024-09-24"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* [R Lab 3 - Mutating and filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
+* [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
+
+**Video lecture:**
+
+* [Power, centrality, and hierarchy](https://www.youtube.com/watch?v=gaMusAjk0_s) [18:44] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html)
+
+**Readings:** 
+
+* Hanneman, R. A., & Riddle, M. (2005). Introduction to social network methods. [Chapter 10: Centrality and Power](https://faculty.ucr.edu/~hanneman/nettext/C10_Centrality.html)
+* Healy, K. (2013). [Using Metadata to find Paul Revere](https://kieranhealy.org/blog/archives/2013/06/09/using-metadata-to-find-paul-revere/).
+* [Centrality measures](https://www.youtube.com/watch?v=0unzqsPaPk8). Matthew Jackson. From [Social and Economic Networks course](https://www.youtube.com/channel/UCCnG8fKY45aH73ahmGK2xcg)
+* [Centrality Eigenvector Measures](https://www.youtube.com/watch?v=q8oBWwS2wAQ). Matthew Jackson
+* (Optional) Holliday, Audrey, Campbell, & Moore, (2016). [Identifying well-connected opinion leaders for informal health promotion](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4898141/)
+
+### Thursday
+
+**Class Schedule:**
+
+* [R Lab 4 - Intro to ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
+  * [Lab 4 Explanation Video](https://youtu.be/GnTSThGhCw0)

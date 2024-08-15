@@ -49,12 +49,12 @@ Because a network is really composed of two tibbles, we can perform many `tidyve
 
 For example, the code below activates the nodes table and then uses `mutate` to create a variable called `degree`.
 
-(Note that the code throughout this tutorial uses "[pipes](https://r4ds.had.co.nz/pipes.html?q=pipe#pipes)". Pipes (`%>%`) let you express a sequence of operations, by taking the output of the previous operation and using it as the input of the next operation.)
+(Note that the code throughout this tutorial uses "[pipes](https://r4ds.had.co.nz/pipes.html?q=pipe#pipes)". Pipes (`|>`) let you express a sequence of operations, by taking the output of the previous operation and using it as the input of the next operation.)
 
 
 ```{r}
-create_notable('zachary') %>%
-  activate(nodes) %>%
+create_notable('zachary') |>
+  activate(nodes) |>
   mutate(degree = centrality_degree())
   
 ```
@@ -63,10 +63,10 @@ Because the networks are just stored as data frames, that means that we can expo
 
 
 ```{r}
-create_notable('zachary') %>%
-  activate(edges) %>%
-  mutate(bw = centrality_edge_betweenness()) %>%
-  as_tibble() %>%
+create_notable('zachary') |>
+  activate(edges) |>
+  mutate(bw = centrality_edge_betweenness()) |>
+  as_tibble() |>
   ggplot() +
   geom_histogram(aes(x=bw)) +
   theme_minimal()
@@ -97,9 +97,9 @@ For example, in this graph the `geom_edge_fan` has `color` and `width` set to `.
 On the other hand, the `geom_node_point` has `color` set to `group`. This means that the color should vary based on what the `group` variable is set to for each node.
 
 ```{r}
-create_notable('zachary') %>%
-  activate(nodes) %>% 
-  mutate(group = as.factor(group_infomap())) %>% # Creates a `group` variable based on the infomap algorithm
+create_notable('zachary') |>
+  activate(nodes) |> 
+  mutate(group = as.factor(group_infomap())) |> # Creates a `group` variable based on the infomap algorithm
   ggraph(layout = 'stress') +
   geom_edge_fan(width = .2, color = 'lightblue') + 
   geom_node_point(aes(color = group)) + 
@@ -117,7 +117,7 @@ This code downloads these CSV files and creates a network from them called `G`. 
 nodes = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/spring-2021/resources/school_graph_nodes.csv')
 edges = read_csv('https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/spring-2021/resources/school_graph_edges.csv')
 
-G = graph_from_data_frame(d=edges, v = nodes) %>% as_tbl_graph()
+G = graph_from_data_frame(d=edges, v = nodes) |> as_tbl_graph()
 
 G
 ```
@@ -126,7 +126,7 @@ G
 For example, we may want to visualize alcohol use. This is how you would change the color of nodes based on alcohol use. The `scale_color_viridis()` at the bottom changes from the default color scale to the [viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) pallette which is prettier and easier to read.
 
 ```{r, message=F}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(width = .5, color = 'gray') +
   geom_node_point(aes(color=alcohol_use), size = 3) +
@@ -136,7 +136,7 @@ G %>%
 You may notice that there are as many as four edges between nodes. This is because this is actually a directed graph with two different types of relationships - whether two people went to primary school together and whether they are friends. We can enhance the graph by adding color based on the type of relationship.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type),width = .5) +
   geom_node_point(aes(color=alcohol_use), size = 3) +
@@ -152,7 +152,7 @@ Notice that this also includes `scale_color_viridis`, which changes the color sc
 You can learn a lot more about color, color palettes, etc.  [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/)
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type),width = .5) +
   geom_node_point(aes(color=alcohol_use), size = 3) +
@@ -164,7 +164,7 @@ The other common approach to highlighting aspects of a graph is to change the si
 
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type), width = .5) +
   geom_node_point(aes(color=alcohol_use, size = delinquency)) +
@@ -179,7 +179,7 @@ There are lots of layout options included with ggraph. You can let ggraph pick f
 Layouts are defined inside the `ggraph()` function, which has to be called before making any plot. The code below makes a tidy graph of the Zachary karate network using `create_notable('zachary')`. It then sets `'kk'` as the layout, and adds a layer for the nodes and a layer for the edges.
 
 ```{r}
-create_notable('zachary') %>%
+create_notable('zachary') |>
   ggraph(layout = 'kk') +
   geom_node_point() +
   geom_edge_fan()
@@ -188,7 +188,7 @@ create_notable('zachary') %>%
 The following few plots show how changes the layout can really change the look and the interpretation of the plot. These all show the same data.
 
 ```{r}
-create_notable('zachary') %>%
+create_notable('zachary') |>
   ggraph(layout = 'circle') +
   geom_node_point() +
   geom_edge_fan()
@@ -197,8 +197,8 @@ create_notable('zachary') %>%
 In this one, we get very fancy. This shows an ego network for node `3`. We will get to what some of the different commands in this code mean but like a good programmer what I really did was just find [an example](https://ggraph.data-imaginist.com/articles/Layouts.html#focal-layouts-1) that was sort of like what I wanted to do, and played around with adding and changing things until I made it look like what I wanted.
 
 ```{r}
-create_notable('zachary') %>%
-  mutate(d = distances(.G(), to=3)) %>%
+create_notable('zachary') |>
+  mutate(d = distances(.G(), to=3)) |>
   ggraph(layout = 'focus', focus = 3) +
   geom_edge_fan() +
   ggforce::geom_circle(aes(x0 = 0, y0 = 0, r = r), data.frame(r = 1:3), colour = 'grey') + 
@@ -221,7 +221,7 @@ You need to add an `arrow` parameter with an `arrow()` function that gives the l
 
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(arrow = arrow(length = unit(3, 'mm')),
                 end_cap = circle(1,'mm'),
@@ -233,7 +233,7 @@ G %>%
 The better way to show direction is by adjusting the `alpha` of edges. `geom_edge_fan(aes(alpha = stat(index)))` will draw a gradient from the start node to the end node. If you want a leged, you need to make sure to include the final line as a layer - `scale_edge_alpha('Edge direction', guide = 'edge_direction')`
 
 ```{r}
-G %>%
+G |>
   ggraph(layout='stress') +
   geom_edge_fan(aes(alpha = stat(index))) + # This does gradients for directed edges
   geom_node_point(color = '#ceb888', size = 5) + 
@@ -245,7 +245,7 @@ G %>%
 Finally, one strategy for visualization that `ggraph` makes really easy is the ability to "facet" the data. This basically means splitting apart the data based on some measure and visualizing each part of the data with that measure. For example, this code facets the graph into two subgraphs - one for females and one for males (Note that this is just one more layer - we can keep all of the crazy fancy visualizations we already added):
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type), width = .5) +
   geom_node_point(aes(color=alcohol_use, size = delinquency)) +
@@ -257,7 +257,7 @@ G %>%
 Or if you wanted to facet based on the edge type:
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type), width = .5) +
   geom_node_point(aes(color=alcohol_use, size = delinquency)) +
@@ -269,7 +269,7 @@ G %>%
 Facets use a strange new syntax. The tilde (`~`) can be read as "by", and facets can have two dimensions. Typically you will just want one, then you just put the tilde before the measure (like we did with `facet_edges(~type)` above). However, you can also facet across multiple dimensions, in which case you put one measure on either side of the tilde. For example, it's not a very useful plot but this plot facets by sex and ethnicity:
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type), width = .5) +
   geom_node_point(aes(color=alcohol_use, size = delinquency)) +
@@ -287,9 +287,9 @@ G %>%
 First, we need to "activate" the edges dataframe, then we filter it. For numeric measures, you can filter using less than, greater than, etc. (`<, >, >=, <=`). There are complicated things you can do with text measures but we'll focus on the two simplest. `==` filters only to those items where the value is an exact match and `!=` filters only to those where it isn't. So, the code below keeps only those edges where the type is equal to `'friendship'`.
 
 ```{r}
-G %>%
-  activate(edges) %>% # Remember to activate whatever you want to filter
-  filter(type == 'friendship') %>%
+G |>
+  activate(edges) |> # Remember to activate whatever you want to filter
+  filter(type == 'friendship') |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(color=alcohol_use), size = 3) + 
@@ -307,11 +307,11 @@ In this example I color nodes by "coreness", which is one of my favorite measure
 There are lots and lots of different measures that you can calculate - you can learn about them [here](https://tidygraph.data-imaginist.com/reference/index.html)
 
 ```{r}
-G %>%
-  activate(edges) %>% # Remember to activate whatever you want to filter
-  filter(type == 'friendship') %>%
-  activate(nodes) %>%
-  mutate(coreness = node_coreness(mode = 'all')) %>%
+G |>
+  activate(edges) |> # Remember to activate whatever you want to filter
+  filter(type == 'friendship') |>
+  activate(nodes) |>
+  mutate(coreness = node_coreness(mode = 'all')) |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(color=coreness), size = 3) + 
@@ -326,14 +326,14 @@ There are similar measures for edges, and we can mix and match filter and mutate
 
 
 ```{r}
-G %>%
-  activate(edges) %>% # Remember to activate whatever you want to filter
-  filter(type == 'friendship') %>%
-  filter(edge_is_mutual()) %>%
-  activate(nodes) %>%
-  mutate(coreness = node_coreness(mode = 'all')) %>%
-  as.undirected() %>% # This line and the following line collapse the edges into one edge
-  simplify() %>%
+G |>
+  activate(edges) |> # Remember to activate whatever you want to filter
+  filter(type == 'friendship') |>
+  filter(edge_is_mutual()) |>
+  activate(nodes) |>
+  mutate(coreness = node_coreness(mode = 'all')) |>
+  as.undirected() |> # This line and the following line collapse the edges into one edge
+  simplify() |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(color=coreness), size = 3) + 
@@ -349,10 +349,10 @@ So, we use `mutate` to create a new edge variable based on the absolute distance
 
 
 ```{r}
-G %>% 
-  activate(edges) %>%
-  filter(type == 'friendship') %>%
-  mutate(drinking_diff = abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])) %>%
+G |> 
+  activate(edges) |>
+  filter(type == 'friendship') |>
+  mutate(drinking_diff = abs(.N()$alcohol_use[from] - .N()$alcohol_use[to])) |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(aes(color = drinking_diff), width = .5) +
   geom_node_point(aes(color=alcohol_use), size = 3) + 
@@ -380,9 +380,9 @@ You do this by saving a plot as a variable.
 For example, this saves a plot with just edges to the variable `p`
 
 ```{r}
-p <- G %>%
-  activate(edges) %>%
-  filter(type == 'friendship') %>%
+p <- G |>
+  activate(edges) |>
+  filter(type == 'friendship') |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5)
 p
@@ -401,8 +401,8 @@ Note that all we can do is add layers - we can't take away or alter layers that 
 We can do a similar thing by saving a filtered or mutated version of a network. For example, we keep filtering to just the friendship edges. Let's just save a new version of that graph that is already filtered.
 
 ```{r}
-friend_G <- G %>%
-  activate(edges) %>%
+friend_G <- G |>
+  activate(edges) |>
   filter(type == 'friendship')
 ```
 
@@ -414,7 +414,7 @@ One thing that's worth keeping in mind is that later layers will be drawn over t
 Edges drawn last :(
 
 ```{r}
-friend_G %>%
+friend_G |>
   ggraph(layout = 'stress') + 
   geom_node_point(aes(color=alcohol_use), size = 3) + 
   geom_edge_fan(color = 'gray', width = .5) +
@@ -424,7 +424,7 @@ friend_G %>%
 Edges drawn first =)
 
 ```{r}
- friend_G %>%
+ friend_G |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(color=alcohol_use), size = 3) + 
@@ -440,7 +440,7 @@ You can also change the title with the `labs` command.
 For example, we take our super complicated plot above and add some labels for each of the legends, plus a title.
 
 ```{r}
-G %>%
+G |>
   ggraph(layout = 'stress') +
   geom_edge_fan(aes(color=type), width = .5) +
   geom_node_point(aes(color=alcohol_use, size = delinquency)) +
@@ -462,7 +462,7 @@ Typically, we will still want to display that person in a plot. If we are using 
 However, if we resize nodes based on `alcohol_use` we get an error. `ggraph` doesn't have a default to fall back on when size is missing, so it gives us a warning and makes them size 0.
 
 ```{r}
- friend_G %>%
+ friend_G |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(size=alcohol_use))
@@ -472,9 +472,9 @@ There isn't a clear way to fix this problem. One option is to filter out the mis
 
 Filtering out nodes with missing `alcohol_use`
 ```{r}
-friend_G %>%
-  activate(nodes) %>%
-  filter(!is.na(alcohol_use)) %>%
+friend_G |>
+  activate(nodes) |>
+  filter(!is.na(alcohol_use)) |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(size=alcohol_use))
@@ -482,9 +482,9 @@ friend_G %>%
 
 Adding size "1" for all of the missing data
 ```{r}
-friend_G %>% 
-  activate(nodes) %>% 
-  mutate(alcohol_use = replace_na(alcohol_use, 1)) %>%
+friend_G |> 
+  activate(nodes) |> 
+  mutate(alcohol_use = replace_na(alcohol_use, 1)) |>
   ggraph(layout = 'stress') + 
   geom_edge_fan(color = 'gray', width = .5) +
   geom_node_point(aes(size=alcohol_use))
@@ -498,19 +498,19 @@ Finally, when we filter out edges we may want to keep the nodes in the same plac
 
 ```{r}
 
-l = create_layout(G, 'stress') %>% select(x,y) %>% as.matrix()
+l = create_layout(G, 'stress') |> select(x,y) |> as.matrix()
 
-G %>%
-  activate(edges) %>%
+G |>
+  activate(edges) |>
   ggraph(layout = l) + 
   geom_edge_fan() + 
   geom_node_point()
 ```
 
 ```{r}
-G %>%
-  activate(edges) %>%
-  filter(type == 'friendship') %>%
+G |>
+  activate(edges) |>
+  filter(type == 'friendship') |>
   ggraph(layout = l) + 
   geom_edge_fan() + 
   geom_node_point()

@@ -1,0 +1,58 @@
+---
+title: Bourdieu summary
+---
+In his essay, Bourdieu argues that capital exists in three primary
+forms: economic capital, cultural capital, and social capital. Economic
+capital refers directly to money and assets that can be immediately
+converted into money. Cultural capital exists in three states: embodied,
+objectified, and institutionalized. The embodied state refers to the
+dispositions of the mind and body, which require time and effort to
+accumulate. The objectified state consists of material cultural goods
+like artworks, books, or instruments. The institutionalized state
+involves formal educational qualifications that credentialize cultural
+competence.
+
+Social capital is comprised of the actual and potential resources
+accrued through relationships, social networks, and group membership. It
+depends on mutual recognition and obligation. Bourdieu contends that the
+different types of capital are convertible into one another, but
+conversions require varying degrees of effort and result in some loss of
+capital. Economic capital serves as the ultimate root of the other types
+of capital.
+
+Strategies of capital accumulation and reproduction are aimed at
+legitimating exclusive possession and transmitting advantage. Economic
+capital reproduces itself most directly. Cultural capital disguises its
+reproduction through indirect transmission in the education system.
+Social capital concentrates itself through delegation and
+representation. As direct transmission of capital is obstructed,
+indirect cultural reproduction through education becomes more important.
+
+Cultural capital in its embodied state cannot be transmitted
+instantaneously. It declines with the passage of generations.
+Objectified cultural capital in the form of goods can be transmitted
+materially through inheritance or purchase. But it can only be
+symbolically appropriated by those possessing the necessary embodied
+capital. Institutionalized cultural capital in the form of educational
+credentials allows indirect conversion into economic capital.
+
+Social capital depends on mutual recognition within social networks. It
+requires maintenance through continuous social exchanges and
+obligations. Social capital multiplies the value of the capital
+possessed by associated individuals. It is most easily accumulated by
+those whose relationships are automatically recognized as valuable. The
+convertibility of different capital types enables reproduction
+strategies but also incurs losses in the process. Concealed modes of
+transmission, like those for cultural and social capital, incur greater
+risks of loss.
+
+  Study Question                                                           Answer
+  ------------------------------------------------------------------------ ---------------------------------------------------------------------------------
+  What are the three fundamental forms of capital according to Bourdieu?   Economic capital, cultural capital, and social capital.
+  How does cultural capital exist?                                         In an embodied state, an objectified state, and an institutionalized state.
+  What does social capital depend upon?                                    Networks of relationships and group membership.
+  How does capital reproduce itself?                                       Through legitimation strategies that vary for different forms of capital.
+  Why is cultural capital's reproduction often disguised?                  Because it happens through the education system rather than direct inheritance.
+  What enables strategies of capital reproduction?                         The convertibility between different forms of capital.
+  Why do capital conversions also incur losses?                            Because transformations between capital forms require effort.
+  When does indirect cultural reproduction become more important?          When direct transmission of capital is prevented or hindered.

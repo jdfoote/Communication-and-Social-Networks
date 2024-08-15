@@ -181,19 +181,19 @@ select(filter(flights, arr_delay > 5), year:arr_delay)
 
 ## With piping, the output from one function becomes the first argument passed
 # to the next function
-latearr = flights %>% 
-            filter(arr_delay > 5) %>% 
+latearr = flights |> 
+            filter(arr_delay > 5) |> 
             select(year:arr_delay)
 
 # Compare am and pm flights for delays
-am_stats = flights %>%
-              filter(sched_arr_time < 1200) %>%
+am_stats = flights |>
+              filter(sched_arr_time < 1200) |>
               summarize(mn_arr_delay = mean(arr_delay, na.rm=T),
                         mn_dep_delay = mean(dep_delay, na.rm=T),
                         p_delay = mean(as.integer(dep_delay > 5), na.rm=T))
 
-pm_stats = flights %>%
-  filter(sched_arr_time >= 1200) %>%
+pm_stats = flights |>
+  filter(sched_arr_time >= 1200) |>
   summarize(mn_arr_delay = mean(arr_delay, na.rm=T),
             mn_dep_delay = mean(dep_delay, na.rm=T),
             p_delay = mean(as.integer(dep_delay > 5), na.rm=T))
@@ -207,20 +207,20 @@ am_stats - pm_stats
 
 ## group_by: puts rows into groups so that they can be summarized
 
-flights %>% 
-  group_by(carrier) %>% 
-  tally() %>% # tally counts how many are in each group and puts the count in a column called 'n'
+flights |> 
+  group_by(carrier) |> 
+  tally() |> # tally counts how many are in each group and puts the count in a column called 'n'
   arrange(desc(n)) # and this sorts by the n column
 
 # The summarize function becomes particularly useful with group_by
-planes %>% 
-  group_by(manufacturer) %>% 
-  summarize(mn_age = mean(2017 - year, na.rm=T), mn_size=mean(seats, na.rm=T)) %>%
+planes |> 
+  group_by(manufacturer) |> 
+  summarize(mn_age = mean(2017 - year, na.rm=T), mn_size=mean(seats, na.rm=T)) |>
   arrange(desc(mn_age))
 
 # Weather by airport
-weather %>% 
-  group_by(origin) %>%
+weather |> 
+  group_by(origin) |>
   summarize(max_gust = max(wind_gust, na.rm=T),
             mn_wind = mean(wind_speed, na.rm=T),
             mn_tmp = mean(temp, na.rm=T),
@@ -241,35 +241,35 @@ theme_set(theme_minimal())
 #   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
 
 # Scatterplot
-flights %>% 
-  sample_n(3000) %>% # Random sample to make it faster
+flights |> 
+  sample_n(3000) |> # Random sample to make it faster
   ggplot() + 
   geom_point(aes(x=dep_delay, y=arr_delay))
 
 # With colors by category
-flights %>% 
-  sample_n(3000) %>%
+flights |> 
+  sample_n(3000) |>
   ggplot() + 
   geom_point(aes(x=dep_delay, y=arr_delay, color=carrier))
 
 # You can also layer additional plots, like the linear fit
-flights %>% 
-  sample_n(3000) %>% 
+flights |> 
+  sample_n(3000) |> 
   ggplot() + 
   geom_point(aes(x=dep_delay, y=arr_delay, color=carrier)) +
   geom_smooth(mapping=aes(x=dep_delay, y=arr_delay), method = 'lm')
 
 # Note: If you'll be reusing the same aesthetics over and over,
 # you can put them in the ggplot() call, like so:
-flights %>% 
-  sample_n(3000) %>%
+flights |> 
+  sample_n(3000) |>
   ggplot(mapping = aes(x=dep_delay, y=arr_delay)) + 
   geom_point(mapping=aes(color=carrier)) + # The color only applies here, so it has to be here
   geom_smooth( method = 'lm')
 
 
 # Histograms and density plots
-flights %>%
+flights |>
   ggplot(mapping = aes(x=dep_time)) +
   geom_histogram(fill='blue', alpha=.7) +
   xlab('Departure time') + # Label for x-axis
@@ -277,19 +277,19 @@ flights %>%
 
 
 # And a density plot
-flights %>%
+flights |>
   ggplot(mapping = aes(x=dep_time)) +
   geom_density(fill='blue', alpha=.7, bw = 50)
 
 
 # When plotting skewed data you can log the axis
-flights %>%
+flights |>
   ggplot(mapping = aes(x=dep_delay)) +
   geom_histogram(fill='orange', alpha=.7) +
   scale_y_log10(breaks=c(10,100,1000,10000))
 
 # Faceting lets you look at the same plot, with data broken up by group
-flights %>%
+flights |>
   ggplot(mapping = aes(x=dep_time)) +
   geom_histogram(fill='blue', alpha=.7) +
   xlab('Departure time') + # Label for x-axis
@@ -299,7 +299,7 @@ flights %>%
 # Joyplots / ridge plots are another approach
 # (to try this one run install.packages('ggridges') and library(ggridges))
 library(ggridges)
-flights %>%
+flights |>
   ggplot(mapping = aes(x=dep_time)) +
   geom_density_ridges(mapping=aes(y=carrier,fill=carrier), alpha=.7) +
   xlab('Departure time') + # Label for x-axis
@@ -309,33 +309,33 @@ flights %>%
 # Boxplots
 
 # Let's look at delays by time of day
-flights %>%
+flights |>
   ggplot(mapping=aes(y=dep_delay, 
                      x=as.factor(hour))) + 
   geom_boxplot()
 
 # We can clean this up by breaking the day into chunks
 
-flights %>%
+flights |>
   mutate(time_of_day=cut(hour, 
                          breaks=c(-1,6,12,18,24), 
                          labels=c('early morning',
                                   'morning',
                                   'afternoon',
-                                  'night'))) %>%
+                                  'night'))) |>
   ggplot(mapping=aes(y=dep_delay, 
                      x=time_of_day))+ 
   geom_boxplot()
 
 # We can also compare carriers
-flights %>%
-  filter(carrier == 'UA' | carrier == 'AA') %>%
+flights |>
+  filter(carrier == 'UA' | carrier == 'AA') |>
   mutate(time_of_day=cut(hour, 
                          breaks=c(-1,6,12,18,24), 
                          labels=c('early morning',
                                   'morning',
                                   'afternoon',
-                                  'night'))) %>%
+                                  'night'))) |>
   ggplot(mapping=aes(y=dep_delay, 
                      x=time_of_day,
                      color=as.factor(carrier))) + 
@@ -347,8 +347,8 @@ flights %>%
 # For a bunch of plots we got an error message about rows being removed. What's that about?
 
 # This shows us summary information about the dep_time column
-flights %>%
-  select(dep_time) %>%
+flights |>
+  select(dep_time) |>
   summary()
 
 # It looks like the original data has a bunch of NA's - this is missing data.
@@ -356,7 +356,7 @@ flights %>%
 # influence conlclusions.
 
 # For example, we might check if they were all from the same carrier
-flights %>%
+flights |>
   ggplot(aes(x=carrier, fill=is.na(dep_time))) + # The color is whether it's missing or not
   geom_bar(position = position_dodge()) # position_dodge() makes them show up next to each other
 
@@ -374,7 +374,7 @@ flights %>%
 
 # First, let's make a variable
 
-tmp = flights %>%
+tmp = flights |>
   mutate(long_delay = dep_delay > 60)
 
 # Let's make sure there are enough instances for prediction to be useful
@@ -386,7 +386,7 @@ summary(tmp$long_delay)
 # There is also a shorthand 'y ~ .' will try to predict y using all other variables
 
 # Note that glm isn't part of dplyr and so we can't pipe to it directly
-tmp2 = tmp %>%
+tmp2 = tmp |>
   select(-time_hour, -dep_delay, -tailnum, -dest,-arr_delay)
 
 # Let's start with a really simple model. Summary gives a nice output

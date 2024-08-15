@@ -1,0 +1,38 @@
+---
+title: "Week 1: Introductions and the network perspective"
+date: "2024-08-20"
+---
+
+
+### Tuesday
+
+**Assignment Due:**
+
+* [Sign up for Discord](pages/Discord-Signup.html) and introduce yourself
+* Take [this very brief survey](https://docs.google.com/forms/d/e/1FAIpQLSd1EahCFyyZS8ZZTwct1YMwQvfGqTBVK9P6xYjHWOfx8GWboA/viewform)
+
+**Required Readings:**
+
+* None
+
+**Concepts:**
+
+* Class overview and expectations — We'll walk through this syllabus.
+* What are social networks?
+* Why study networks?
+
+**Class Slides:**
+
+<iframe class='slide-deck' src='/lectures/class_lectures/week_1.html'></iframe>
+
+### Thursday
+
+**Assignment Due:**
+
+* Read the entire [syllabus](/syllabus/syllabus.qmd)
+* Initial Reflection Assignment (on Brightspace)
+
+**Class Schedule:**
+
+* Network simulation activity (bring a computer)
+* Start work on [Homework 1](pages/Homework-1.html)

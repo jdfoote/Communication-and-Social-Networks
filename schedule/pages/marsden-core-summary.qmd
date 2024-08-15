@@ -1,0 +1,53 @@
+---
+title: marsden core summary
+---
+This article analyzes data from the 1985 General Social Survey to
+provide a descriptive overview of the structure of core discussion
+networks in America. The networks examined are those alters that
+respondents named when asked to identify people \"with whom you
+discussed matters important to you\" over the last 6 months. The goal is
+to establish benchmark descriptions of major aspects of networks using a
+nationally representative sample.
+
+The article examines measures of network size, density, and
+heterogeneity, as well as composition in terms of kin versus non-kin
+ties. Network size indicates social integration. Density, defined as the
+mean strength of ties between alters, measures network closure and
+potential for normative influence. Heterogeneity in characteristics like
+age and education reflect diversity of contacts.
+
+The results show Americans\' core networks are small (mean size around
+3), kin-centered (55% kin on average), and dense (mean 0.61 on 0-1
+scale). Nearly a quarter of respondents have marginal networks of 0-1
+contacts. Networks are homogeneous compared to the population,
+especially racially/ethnically. Age and education diversity are 50-60%
+of sample diversity.
+
+There is substantial variation across networks in size and
+heterogeneity. In 25% of networks, alter age diversity is less than 5
+years; in 26% it exceeds 15 years. 30% of networks have education
+diversity less than 1 year; 27% exceed 2.5 years. Only 8% contain any
+race/ethnic diversity. Sex diversity is greater.
+
+Differences are most pronounced by age and education. Network range is
+greatest for the young and middle-aged. Size drops with age, as does
+diversity. Education is positively associated with size, diversity, and
+non-kin composition. Blacks have smaller, less diverse networks than
+whites. Residents of larger places have lower density and more
+diversity.
+
+The homogeneity relative to the population supports the characterization
+of these networks as \"core\" - they provide a small, dense, homogeneous
+environment centered on kinship. But the variability shows network range
+is constrained for older, less educated, rural respondents.
+
+The data suggest the young, educated and urban have greater access to
+diverse contacts that may be beneficial for outcomes like information
+gathering. The standardized network measures allow examining links to
+outcomes like wellbeing.
+
+In conclusion, the article provides a foundational descriptive analysis
+of core discussion networks using high-quality, nationally
+representative data. It establishes benchmark measures and documents
+subgroup differences relevant to research on social environments. The
+data will enable further network research.

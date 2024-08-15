@@ -1,0 +1,33 @@
+---
+title: Travers summary
+---
+The paper reports on an experimental study by Jeffrey Travers and
+Stanley Milgram investigating the \"small world problem\" - the idea
+that society is highly interconnected with short paths linking any two
+people. The study tested this by tracing acquaintance chains from
+arbitrarily selected \"starting persons\" to a designated \"target
+person\" in Boston. The starters were from Nebraska and Boston. Each
+starter received a document to mail to the target. They could only send
+it to a first-name acquaintance who might advance it closer to the
+target.
+
+64 of the 296 chains reached the target, demonstrating the feasibility
+of the method. The mean chain length was 5.2 intermediaries, indicating
+a high level of social interconnectedness. Chains from the Boston
+starters were significantly shorter than Nebraska ones, showing the
+effect of geographic proximity.
+
+Funneling of chains through common intermediaries was observed - 3
+people accounted for 48% of completions. Participants also showed strong
+tendencies to select demographically similar recipients based on age,
+sex and occupation.
+
+The results provide insight into the structure of acquaintance networks
+and interconnectedness in a large population. The method appears useful
+for empirically studying social networks. Extensions could involve
+varying starter and target characteristics.
+
+Overall, the paper makes both a methodological contribution in
+demonstrating the viability of tracing acquaintance chains, and provides
+empirical evidence for the small world hypothesis that society is highly
+interconnected.

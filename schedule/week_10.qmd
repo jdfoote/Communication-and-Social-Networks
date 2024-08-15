@@ -1,0 +1,38 @@
+---
+title: "Week 10: Social influence and diffusion"
+date: "2024-10-22"
+---
+
+### Tuesday
+
+**Assignment Due:**
+
+* Turn in your [Self Assessment Reflection](Self-Assessment-Reflection) on Brightspace
+* [R Lab 6 - Visualizing Power](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_6_visualizing_power.qmd)
+  * [Lab walkthrough](https://www.youtube.com/watch?v=l18Jd9XCAec)
+* [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
+
+**Readings:** 
+
+* Chapter 4, "[Special People](https://web.archive.org/web/20191019100528/http://everythingisobvious.com/wp-content/themes/eio/assets/EIO_chapter4.pdf)", in Watts, D. J. (2011). Everything is Obvious: Once you know the answer. New York, NY: Crown Business.
+* [Duncan Watts on Common Sense](https://youtu.be/D9XF0QOzWM0)
+* (Optional) Centola, D., & Macy, M. (2007). [Complex Contagions and the Weakness of Long Ties](https://www-journals-uchicago-edu.ezproxy.lib.purdue.edu/doi/full/10.1086/521848). American Journal of Sociology, 113(3), 702–734. 
+* (Optional) Christakis, N. A., & Fowler, J. H. (2012). [Social contagion theory: Examining dynamic social networks and human behavior](https://onlinelibrary-wiley-com.ezproxy.lib.purdue.edu/doi/full/10.1002/sim.5408). Statistics in Medicine, 32, 556–577.
+
+
+**Weekly lecture:**
+
+* Social Influence and Contagion [22:12]
+
+{{< video https://youtu.be/_6Wrc_T49GQ >}} 
+
+* Slides
+
+<iframe class="slide-deck" src="/lectures/content_lectures/influence_and_diffusion.html"></iframe> 
+
+
+### Thursday
+
+**Class Schedule:**
+
+* Do [The Wisdom or Madness of Crowds Simulation](http://ncase.me/crowds/)

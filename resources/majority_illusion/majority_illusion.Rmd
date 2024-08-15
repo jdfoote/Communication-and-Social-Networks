@@ -23,20 +23,20 @@ In many situations, this can lead us to make incorrect inferences about the glob
 Here, we set up a skewed network with 20 people, 
 ```{r initial}
 set.seed(2021)
-G = barabasi.game(30, m = 2, directed = F) %>% as_tbl_graph()
+G = barabasi.game(30, m = 2, directed = F) |> as_tbl_graph()
 
 weighted_party <- sapply(1:30, function(x) sample(c('R','D'), 1, replace = T, prob = c(x/30, 1-x/30)))
 
-G <- G %>% 
-    activate(nodes) %>% 
-  mutate(d = centrality_degree()) %>%
-  arrange(d) %>%
-    print() %>%
+G <- G |> 
+    activate(nodes) |> 
+  mutate(d = centrality_degree()) |>
+  arrange(d) |>
+    print() |>
   mutate(party = weighted_party)
 
 
 set_graph_style(plot_margin = margin(1,1,1,1))
-G %>% ggraph(layout = 'stress') +
+G |> ggraph(layout = 'stress') +
   geom_node_point(aes(color = party)) +
   geom_edge_link(width = .25) +
   scale_color_manual(values = c("R" = "red", "D" = "blue"))
@@ -58,7 +58,7 @@ get_prop_r <- function(G, x){
 
 V(G)$neighbor_prop_r <- sapply(V(G), function(x) get_prop_r(G, x))
 
-G %>% as_tbl_graph(G) %>%
+G |> as_tbl_graph(G) |>
   ggraph(layout = 'fr') +
   geom_node_point(aes(color = cut(neighbor_prop_r, breaks = c(0,.34,.5,.68,1))
                       )) +
