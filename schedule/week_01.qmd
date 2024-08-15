@@ -21,6 +21,7 @@ date: "2024-08-20"
 * What are social networks?
 * Why study networks?
 
+
 **Class Slides:**
 
 <iframe class='slide-deck' src='/lectures/class_lectures/week_1.html'></iframe>

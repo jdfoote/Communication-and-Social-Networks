@@ -31,7 +31,7 @@ Students who complete this course will be able to:
 
 One of the goals of this class is a basic skills in analyzing and visualizing network data in R. **You will need access to a computer for this course.** You shouldn't need anything especially new or powerful, but it needs to have room to install a few programs and enough memory to run them.
 
-This semester, we are going to try using VSCode, an IDE which can write R code, and which includes a plugin to do AI-assisted coding. [Our first R Lab](pages/R-Lab-1.html) will walk you through installing everything you need.
+This semester, we are going to try using VSCode, an IDE which can write R code, and which includes a plugin to do AI-assisted coding. [Our first R Lab](/assignments/r_lab_1_-_installation.qmd) will walk you through installing everything you need.
 
 ## Readings
 
@@ -59,7 +59,7 @@ Many of the readings will be academic articles. I do not expect you to read ever
 Although the core expectations for this class are fixed, the details of readings and assignments may shift based on how the class goes. As a result, there are three important things to keep in mind:
 
 1. Although details on this syllabus will change, I will not change readings or assignments less than one week before they are due. If I don't fill in a "To Be Determined" one week before it's due, it is dropped. If you plan to read more than one week ahead, contact me first.
-2. Closely monitor the class [Discord](pages/Discord-Signup.html). Because this is a wiki, you will be able to track every change by clicking the 'history' button on this page. I will also summarize these changes in an announcement on Discord that should be emailed to everybody in the class if you have notifications turned on.
+2. Closely monitor the class [Discord](/schedule/pages/Discord-Signup.html). Because this is a wiki, you will be able to track every change by clicking the 'history' button on this page. I will also summarize these changes in an announcement on Discord that should be emailed to everybody in the class if you have notifications turned on.
 3. I will ask the class for voluntary anonymous feedback frequently. Please let me know what is working and what can be improved.
 
 ## Class Sessions
@@ -84,8 +84,8 @@ I will also check Discord at least once a day. I encourage you to post questions
 
 Programming can be difficult and frustrating and confusing, but you will get it! I have put together a few resources to help you with the programming portion of the course. Come back to these when you get stuck.
 
-* Finding and fixing bugs in your code: [Video](https://youtu.be/92Gicjnc_tk) [R Markdown file](https://jeremydfoote.com/TDIS/week_8/debugging.Rmd) [HTML file](https://jeremydfoote.com/TDIS/week_8/debugging.html)
-* Intro to ggraph and tidygraph: [Video](https://youtu.be/geYZ83Aidq4) [R Markdown file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.Rmd) [HTML file](https://jeremydfoote.com/Communication-and-Social-Networks/resources/ggraph_walkthrough.html)
+* Finding and fixing bugs in your code: [Video](https://youtu.be/92Gicjnc_tk) [HTML file](https://jeremydfoote.com/TDIS/week_8/debugging.html)
+* Intro to ggraph and tidygraph: [Video](https://youtu.be/geYZ83Aidq4) [HTML file](/resources/ggraph_walkthrough.html)
 
 # Assignments
 
@@ -127,7 +127,7 @@ There will be one exam. It will assess your understanding of core communication 
 
 ## Final Project
 
-Students will complete a [Final Project](pages/Final-project.html) that uses the theories, principles, and skills learned in this class.
+Students will complete a [Final Project](/schedule/pages/Final-project.html) that uses the theories, principles, and skills learned in this class.
 
 A number of intermediate assignments through the semester will help you to gain the skills and data necessary to be successful.
 
@@ -135,7 +135,7 @@ A number of intermediate assignments through the semester will help you to gain 
 
 This course will follow a "self-assessment" philosophy. I am more interested in helping you to learn things that will be useful to you than in assigning grades. In general, I think that my time is much better spent in providing better feedback and in being available to work through problems together.
 
-The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use [this form](pages/Self-Assessment-Reflection.html) to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages, you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work, will be the most important factor in final grades.
+The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use [this form](/schedule/pages/Self-Assessment-Reflection.html) to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages, you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work, will be the most important factor in final grades.
 
 We will use the following rubric in our assessment:
 
@@ -149,6 +149,7 @@ The exam will be graded like a normal exam and the score will make up 25% of you
 My interpretation of grade levels (A, B, C, D/F) is the following:
 
 **A:** Reflects work that exceeds expectations on multiple fronts and to a great degree. Students reaching this level of achievement will:
+
 * Do what it takes to learn the principles and techniques of social networks, including looking to outside sources if necessary.
 * Read all of the assigned readings and work to understand how they fit with other concepts from the class and other classes.
 * Come to class every day, having done the background work. Be an active, engaged participant in our discussions.
@@ -159,6 +160,7 @@ My interpretation of grade levels (A, B, C, D/F) is the following:
 * Complete all homework assignments at a high level.
 
 **B:** Reflects strong work. Work at this level will be of consistently high quality. Students reaching this level of achievement will:
+
 * Be more safe or consistent than the work described above.
 * Ask meaningful questions of peers and engage them in fruitful discussion.
 * Exceed requirements, but in fairly straightforward ways.
@@ -166,6 +168,7 @@ My interpretation of grade levels (A, B, C, D/F) is the following:
 * Complete the homework assignments, almost always at a high level.
 
 **C:** This reflects meeting the minimum expectations of the course. Students reaching this level of achievement will:
+
 * Turn in and complete the final project on time.
 * Be collegial and continue discussion, through asking simple or limited questions.
 * Compose reflections with straightforward and easily manageable goals and/or avoid discussions of challenges.
