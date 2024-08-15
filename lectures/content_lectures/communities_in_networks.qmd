@@ -2,7 +2,7 @@
 title: Communities in Networks
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -27,11 +27,11 @@ data("UKfaculty")
 
 UK <- as_tbl_graph(UKfaculty)
 
-UK <- UK %>%
-  activate(edges) %>%
-  filter(edge_is_mutual()) %>%
-  to_undirected() %>%
-  simplify() %>%
+UK <- UK |>
+  activate(edges) |>
+  filter(edge_is_mutual()) |>
+  to_undirected() |>
+  simplify() |>
   as_tbl_graph()
 ```
 
@@ -48,8 +48,8 @@ UK <- UK %>%
 
 <div class='col'>
 ```{r,message=F}
-UK %>%
-  activate(edges) %>%
+UK |>
+  activate(edges) |>
   ggraph() +
   geom_edge_fan(alpha=.4) +
   geom_node_point(aes(color=as.factor(Group))) +
@@ -80,10 +80,10 @@ UK %>%
 <div class='fragment'>
 ```{r,message=F}
 clique_nodes <- largest_cliques(UK)[[1]]
-UK %>% 
-  activate(nodes) %>%
-  mutate(idx = 1:nrow(.N())) %>% # Create an index for the nodes
-  mutate(in_clique = idx %in% clique_nodes) %>% # If the index is one of the clique nodes
+UK |> 
+  activate(nodes) |>
+  mutate(idx = 1:nrow(.N())) |> # Create an index for the nodes
+  mutate(in_clique = idx %in% clique_nodes) |> # If the index is one of the clique nodes
 ggraph(layout = 'stress') +
   geom_edge_fan(alpha=.3) +
   geom_node_point(aes(color=in_clique)) + # Color by whether the node is in the clique
@@ -114,9 +114,9 @@ ggraph(layout = 'stress') +
 
 <div class='fragment'>
 ```{r,message=F}
-UK %>%
-  activate(nodes) %>%
-  mutate(community = as.factor(group_fast_greedy())) %>%
+UK |>
+  activate(nodes) |>
+  mutate(community = as.factor(group_fast_greedy())) |>
 ggraph(layout = 'stress') +
   geom_edge_fan(alpha=.3) +
   geom_node_point(aes(color=community)) +
@@ -159,9 +159,9 @@ ggraph(layout = 'stress') +
 <div class='col fragment'>
 ```{r,message=F}
 
-UK %>%
-  activate(nodes) %>%
-  mutate(coreness = node_coreness()) %>%
+UK |>
+  activate(nodes) |>
+  mutate(coreness = node_coreness()) |>
 ggraph(layout='stress') +
   geom_edge_fan(alpha=.3) +
   geom_node_point(aes(color=coreness)) +

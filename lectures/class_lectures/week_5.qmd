@@ -1,8 +1,9 @@
 ---
-title: Week 5
+title: Week 5 - Ego Networks
+sort: 5
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -27,6 +28,8 @@ Brochure.
 ## Self Reflections and feedback
 
 > - Make sure to get them in
+> - Overall, things are going well
+> - AI discussion (not a trick!)
 
 ## Housekeeping
 
@@ -65,6 +68,7 @@ Strategies when R code doesn't work:
 
 > - Simplify
 > - print()
+> - ChatGPT
 > - Google!
 > - Friends
 

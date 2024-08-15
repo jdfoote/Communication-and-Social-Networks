@@ -2,7 +2,7 @@
 title: Networks in small groups
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -39,20 +39,20 @@ library(ggraph)
 > - Which network do you think would be most effective?
 <div class='fragment'>
 ```{r fig.width=2, fig.height=2}
-make_star(6) %>%
-  as_tbl_graph() %>%
+make_star(6) |>
+  as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()
 
-make_ring(6) %>%
-  as_tbl_graph() %>%
+make_ring(6) |>
+  as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()
 
-make_full_graph(6) %>%
-  as_tbl_graph() %>%
+make_full_graph(6) |>
+  as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()

@@ -2,7 +2,7 @@
 title: Week 14 - Cooperation
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -29,11 +29,10 @@ Now I'm in hot water with the Japanese mafia.
 
 ## Housekeeping
 
-> - Draft of final project to peers on Tuesday
+> - Draft of final project to peers on Thursday
 >	- I will make assignments and send a Brightspace + discord announcement
->	- Feedback by next Thursday
+>	- Feedback by next Tuesday
 >   - May want to look at the Advanced R Rmd file
-> - Is anyone doing TikTok challenge?
 
 
 ## Plan for today
@@ -68,4 +67,3 @@ Shared mental models
 
 ## Exam Review
 
-> - Before I grade them, what questions do you have?

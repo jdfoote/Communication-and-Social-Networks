@@ -1,8 +1,8 @@
 ---
-title: "COM 411: Networked Racism"
+title: "Networks and Inequality"
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -29,34 +29,18 @@ By its bark
 
 ## Housekeeping
 
-> - Exam
->	- Overall, quite good!
->	- Hopefully a helpful way to review
->   - Options for making up for a bad exam
 > - Get feedback to your peers! (And upload to Brightspace)
-> - Final draft DUE December 13
+> - Final draft DUE April 29th
 > - Self Assessment Reflection
 > - Feedback for me (Purdue / Google Form / email / Discord)
-
-## Housekeeping
-
-> - Last class is next Tuesday
 > - Tell me if you want to present your project
-> - Worth looking at the Advanced Visualizations lab
-
-
-## Plan for today
-
-> - Networks and Racism lecture
-> - Discussion
-> - Time for final project, etc.
 
 
 # Networks and Race
 
 ## Racism in America
 
-> - Overt, animus-based racism is (probably) declining
+> - Overt, animus-based racism has declined a lot
 <img class='fragment' src='https://content.gallup.com/origin/gallupinc/GallupSpaces/Production/Cms/POLL/9r8-rc0zn0eloptdnsbl3a.png'/>
 
 ## But there is still lots of racism

@@ -2,7 +2,7 @@
 title: Social Influence
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -41,9 +41,9 @@ library(ggraph)
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -53,12 +53,12 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   mutate(neigh_2 = index %in% neighbors(.G(), 2),
-         neigh_3 = index %in% neighbors(.G(), 3)) %>%
-  mutate(infected = infected | neigh_2 | neigh_3) %>%
+         neigh_3 = index %in% neighbors(.G(), 3)) |>
+  mutate(infected = infected | neigh_2 | neigh_3) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -81,9 +81,9 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -93,12 +93,12 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   mutate(neigh_2 = index %in% neighbors(.G(), 2),
-         neigh_3 = index %in% neighbors(.G(), 3)) %>%
-  mutate(infected = infected | (neigh_2 & neigh_3)) %>%
+         neigh_3 = index %in% neighbors(.G(), 3)) |>
+  mutate(infected = infected | (neigh_2 & neigh_3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +

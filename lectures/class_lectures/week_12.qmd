@@ -1,8 +1,8 @@
 ---
-title: Week 12
+title: Week 12 - Collective Behavior
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -17,6 +17,11 @@ set.seed(0121)
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
+library(networkdata)
+# Set graph theme
+df = read_csv('./resources/wisdom_of_crowds_activity.csv')
+
 ```
 
 ## Today's Dad Joke
@@ -29,10 +34,10 @@ Times were hard.
 
 ## Housekeeping
 
-> - Working on Self Assessments
 > - Exam next week
 >	- Open book / open note / open internet?
 >	- Short response  + multiple choice
+> - Review on Thursday
 
 ## Final Project
 
@@ -43,21 +48,155 @@ Times were hard.
 > - Not all visualizations have to be networks
 > - Concepts + Visualizations
 
+# Mini-lecture on Wisdom of Crowds and Collective Intelligence
+
+## Collective Intelligence
+
+> - Idea that groups can be smarter than the smartest person in the group
+> - Sometimes it's simple; e.g, aggregating information from multiple sources
+> - Sometimes there is an emergent property, where the group thinks and behaves differently
+
+## Ants
+
+{{< video https://www.youtube.com/watch?v=IQW_K8rq1N4 height="85%" width="100%" >}}
+
+## Organizations
+
+> - While organizations are much more hierarchical than ants, they can still have emergent properties
+> - Partially a function of history, partially of the structure of the organization
+> - Even a culture everyone dislikes can be hard to change
+> - E.g., metric system, QWERTY keyboards
+
+## Cities
+
+> - High-level decisions about zoning, infrastructure, etc. but the character of a city is emergent
+> - Jane Jacobs: "The Death and Life of Great American Cities"
+
+
+## Wisdom of Crowds Activity
+
+> - Get out a piece of paper
+> - Guess how many pages are in this book and write down your guess
+> - Tell your guess (and no other information) to the two people on either side of you
+> - Guess again how many pages are in the book and write it on a new line (Guess 2)
+
+## Activity 2
+
+> - Guess 3: Guess the pages in this book
+> - Two random people will tell us their guess
+> - Guess 4: Guess the pages again for this book
+
+
+## Collective understanding and decision-making
+
+> - Wisdom of crowds is idea that in many contexts, the average is a really good guess!
+> - What is groupthink? Have you seen examples? How might this relate?
+> - Dr. Josh Becker et al. show that in some cases, communication can help
+>   - Those whose guesses are worst move the most
+>   - Divorced from other social relationships (not multiplex)
+
+
+## Results
+
+## Decentralized network
+
+```{r}
+df |>
+  filter(Network_Type == 'Decentralized') |>
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=294, color = 'red', linetype='dashed') + 
+  theme_minimal() + 
+  scale_fill_viridis_d(name='Round')
+```
+
+## Centralized network
+
+```{r}
+df |>
+  filter(Network_Type == 'Centralized') |>
+  ggplot() +
+  geom_density(aes(x = Guess, fill = as_factor(Round)), alpha = .3) + #, position='dodge', bins = 5) + 
+  geom_vline(xintercept=374, color = 'red', linetype='dashed') + 
+  theme_minimal() + 
+  scale_fill_viridis_d(name='Round')
+```
+
+## Connections to other network concepts
+
+> - How does this relate to our week on small group networks?
+>   - Transactive memory
+>   - Hierarchy
+>   - Centralization
+> - How could you design a group / network to get the benefits of the wisdom of crowds?
+> - When would you expect a wisdom of crowds approach to work well?
+> - When would you expect it to fail?
+
 ## Plan for Today
 
 > - Exam Review
 
 
 ## Exam Review
+
 >	- Visualization / ggraph
 >   - Look at code and explain what it will look like
 >   - Find the bug in code
+
+## Example
+
+> - What code produces this graph?
+
+<div class='fragment'>
+
+```{r, echo=FALSE}
+G <- play_gnp(18, .15, directed = F) |> as_tbl_graph()
+set_graph_style(family='sans')
+
+G |>
+  mutate(centrality = centrality_degree()) |>
+  activate(edges) |>
+  ggraph() +
+  geom_edge_fan(color = 'purple') +
+  geom_node_point(aes(size = centrality), color = 'green')
+```
+
+</div>
+
+<div class='fragment'>
+
+```r
+G |>
+  mutate(centrality = centrality_degree()) |>
+  activate(edges) |>
+  ggraph() +
+  geom_edge_fan(color = 'purple') +
+  geom_node_point(aes(size = centrality), color = 'green')
+  ```
+
+</div>
+
+## Exam Review
+
+What would this code do?
+
+```r
+G |>
+  activate(nodes) |>
+  mutate(ec = centrality_eigen()) |>
+  filter(ec > 1) |>
+  ggraph() +
+  geom_edge_fan(color = 'orange') +
+  geom_node_point(aes(size = ec), color = 'green')
+
+```
 
 ## Exam Review
 
 > - Centrality
 > - Network representations (Edgelists and matrices)
 > - Network formation
+>   - Homophily, focus theory, transitivity, social exchange theory, etc.
 > - Tie strength and small worlds
 
 ## Exam Review
@@ -70,11 +209,10 @@ Times were hard.
 
 ## Exam Review
 
-> - Questions from readings
 > - Friendship paradox
 > - Strength of weak ties
-> - Paul Revere
 
+<!--
 ## Review Questions
 
 > - What is the difference between a filter bubble and an echo chamber?
@@ -89,3 +227,4 @@ Times were hard.
 > - How does context collapse relate to network principles we have discussed?
 
 ## Discussion Questions
+-->

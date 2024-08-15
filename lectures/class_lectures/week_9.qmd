@@ -2,7 +2,7 @@
 title: Week 9
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -12,7 +12,7 @@ format:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = './')
-source("resources/preamble.R")
+#source("resources/preamble.R")
 set.seed(0121)
 library(igraph)
 library(tidygraph)
@@ -30,8 +30,8 @@ Because he couldn't find a date.
 
 ## Housekeeping
 
-> - Thursday - 6 Degrees of Wikipedia + R Review
-> - Self-assessment reflections and Lab 6 due next week
+> - Thursday - 6 Degrees of Wikipedia
+> - Self-assessment reflections and Lab 6 due after Spring Break
 
 ## Review Questions
 
@@ -44,17 +44,17 @@ set_graph_style()
 
 G = play_barabasi_albert(10000, growth = 1, power = 1)
 
-df = G %>% 
-  as_tbl_graph() %>%
-  activate(nodes) %>%
-  mutate(degree = centrality_degree(mode='all')) %>%
-  as_tibble() %>%
-  group_by(degree) %>%
+df = G |> 
+  as_tbl_graph() |>
+  activate(nodes) |>
+  mutate(degree = centrality_degree(mode='all')) |>
+  as_tibble() |>
+  group_by(degree) |>
   tally(name = 'count')
 
 
-df %>% 
-  filter(degree > 1) %>%
+df |> 
+  filter(degree > 1) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() +
@@ -66,8 +66,8 @@ df %>%
 
 <div class='fragment' style="position:absolute;top:0;left:0;">
 ```{r}
-df %>% 
-  filter(degree > 2) %>%
+df |> 
+  filter(degree > 2) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() + 
@@ -77,8 +77,8 @@ df %>%
 
 <div class='fragment' style="position:absolute;top:0;left:0;">
 ```{r}
-df %>% 
-  filter(degree > 3) %>%
+df |> 
+  filter(degree > 3) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() + 
@@ -100,17 +100,19 @@ df %>%
 > - What is the "friendship paradox"?
 > - How is the friendship paradox useful?
 
-<span class='fragment'>
+## Friendship Paradox Example
+
+<div class='fragment'>
 ```{r, out.width="45%"}
 
 set_graph_style()
 
 G = barabasi.game(10, m = 2)
 
-G = G %>% as_tbl_graph() %>%
+G = G |> as_tbl_graph() |>
   mutate(degree = centrality_degree(mode='all'),
          neighbor_degree = local_ave_degree())
-p = G %>% 
+p = G |> 
   ggraph(layout = 'kk') +
   geom_edge_fan() +
   geom_node_point(color='lightblue', size = 16) +
@@ -118,8 +120,10 @@ p = G %>%
  
 p
 ```
-</span>
-<span class='fragment'>
+
+</div>
+<div class='fragment'>
+
 ```{r, out.width="45%"}
 
 p + 
@@ -129,7 +133,8 @@ p +
   scale_color_viridis_d("Neighbors have higher degree", begin = .6, end = .85, )
 
 ```
-</span>
+
+</div>
 
 ## Discussion Questions
 

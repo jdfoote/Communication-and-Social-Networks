@@ -2,7 +2,7 @@
 title: Network Visualization and Wrap Up
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -74,12 +74,12 @@ It was a brief case.
 
 ```{r}
 #G = graph_from_data_frame(read.csv('../one_k_redittors.csv'))
-G = random.graph.game(15, .4) %>% as_tbl_graph()
-G = G %>% activate(nodes) %>%
-mutate(age = sample(c(19,20,21,22,23), 15, replace=T)) %>%
+G = random.graph.game(15, .4) |> as_tbl_graph()
+G = G |> activate(nodes) |>
+mutate(age = sample(c(19,20,21,22,23), 15, replace=T)) |>
 mutate(major = sample(c('Communication', 'Computer Science', 'Sociology'), 15, replace=T))
 
-G %>%
+G |>
 ggraph(layout='stress') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(size = 5)
@@ -88,7 +88,7 @@ geom_node_point(size = 5)
 ## With node shapes
 
 ```{r}
-G %>%
+G |>
 ggraph(layout='stress') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(aes(shape=major), size = 5)
@@ -98,8 +98,8 @@ geom_node_point(aes(shape=major), size = 5)
 
 ```{r}
 
-G %>%
-mutate(bc = centrality_betweenness()) %>%
+G |>
+mutate(bc = centrality_betweenness()) |>
 ggraph(layout='stress') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(aes(size = bc))
@@ -109,8 +109,8 @@ geom_node_point(aes(size = bc))
 ## Nodes colored by community
 
 ```{r}
-G %>%
-mutate(community = as_factor(group_fast_greedy())) %>%
+G |>
+mutate(community = as_factor(group_fast_greedy())) |>
 ggraph(layout='stress') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(aes(color = community), size=5) +
@@ -129,12 +129,12 @@ scale_color_viridis_d()
 ## Edge width as weight
 ```{r}
 
-G = G %>%
-activate(edges) %>%
+G = G |>
+activate(edges) |>
 mutate(weight = sample(1:20, nrow(.E()), replace=T),
       type = sample(c('friendship', 'hatred'), nrow(.E()), replace=T))
 
-G %>%
+G |>
 ggraph(layout='stress') + 
 geom_edge_fan(aes(width=weight)) + 
 geom_node_point(size=5)
@@ -145,7 +145,7 @@ geom_node_point(size=5)
 
 
 ```{r}
-G %>%
+G |>
 ggraph(layout='stress') + 
 geom_edge_fan(aes(width=weight, color=type)) + 
 geom_node_point(size=5)
@@ -165,22 +165,22 @@ geom_node_point(size=5)
 
 ```{r, out.width='32%'}
 G = play_islands(3, 5, .7, 2)
-G %>%
+G |>
 ggraph(layout='stress') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(size=5)
 
-G %>%
+G |>
 ggraph(layout='circle') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(size=5)
 
-G %>%
+G |>
 ggraph(layout='randomly') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(size=5)
 
-G %>%
+G |>
 ggraph(layout='fr') + 
 geom_edge_fan(width=.5) + 
 geom_node_point(size=5)

@@ -1,13 +1,13 @@
 ---
 title: Week 11 - Communities in Networks
+sort: 5
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
     reveal_plugins: ['notes']
-   allow_uptree_lib_dir: true
 ---
 
 ```{r setup, include=FALSE}
@@ -24,11 +24,11 @@ data("UKfaculty")
 
 UK <- as_tbl_graph(UKfaculty)
 
-UK <- UK %>%
-  activate(edges) %>%
-  filter(edge_is_mutual()) %>%
-  to_undirected() %>%
-  simplify() %>%
+UK <- UK |>
+  activate(edges) |>
+  filter(edge_is_mutual()) |>
+  to_undirected() |>
+  simplify() |>
   as_tbl_graph()
 ```
 
@@ -43,9 +43,8 @@ My thoughts are with his family.
 
 ## Housekeeping
 
-> - Still working on Self Assessment Reflections
+> - Make an appointment for Self Assessment Reflection review
 > - Submit Exam Questions ASAP
-> - November 7 - Guest lecture by Dr. Seungyoon Lee on resilient networks
 
 ## Plan for today
 
@@ -98,9 +97,9 @@ My thoughts are with his family.
 
 <div class='col fragment'>
 ```{r,message=F}
-UK %>%
-  activate(nodes) %>%
-  mutate(coreness = node_coreness()) %>%
+UK |>
+  activate(nodes) |>
+  mutate(coreness = node_coreness()) |>
 ggraph(layout='stress') +
   geom_edge_fan(alpha=.3) +
   geom_node_point(aes(color=coreness)) +

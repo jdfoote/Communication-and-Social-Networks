@@ -1,8 +1,9 @@
 ---
-title: Week 6
+title: Week 6 - Centrality and Centralization
+sort: 6
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -17,27 +18,26 @@ source("resources/preamble.R")
 
 ## Dad Joke
 
-My landlord texted saying we need to meet up and talk about how high my heating bill is.
+Can you believe my wife told me to quit acting like a flamingo?
 
 <p class='fragment'>
-I replied : “Sure, my door is always open.”
+I had to put my foot down.
 </p>
 
 ## Housekeeping
 
-> - Self Assessment Reflections
->   - Please ask questions or reach out
->   - Generally, people are doing well!
 > - Homework questions in #homework-help on Discord
->	- Copy and paste code
+>	- How to copy and paste code
 
 
+<!--
 ## Collective Norms Discussion
 
 > - I think our in-person conversations could be better
 > - Too many tech distractions
 > - Coming prepared
 > - How to have more natural conversations?
+-->
 
 
 ## Concept Review
@@ -62,28 +62,3 @@ I replied : “Sure, my door is always open.”
 
 ## R Review
 
-
-## Anatomy of ggraph
-
-<pre>
-
-<span class='fragment highlight-current-red' data-fragment-index="1">G %>% </span>
-<span class='fragment highlight-current-red' data-fragment-index="2">activate(nodes) %>% </span>
-<span class='fragment highlight-current-red' data-fragment-index="3">mutate(centrality = centrality_eigen()) %>% </span>
-<span class='fragment highlight-current-red' data-fragment-index="4">ggraph(layout = 'kk') + </span>
-<span class='fragment highlight-current-red' data-fragment-index="5">geom_edge_fan</span><span class='fragment highlight-current-red' data-fragment-index="6">(aes(width=weight)</span>, <span class='fragment highlight-current-red' data-fragment-index="7">color = 'gray'</span>) + 
-<span class='fragment highlight-current-red' data-fragment-index="8">geom_node_point(aes(size=centrality), color = 'gold')</span>
-
-</pre>
-
-<div class="r-stack">
-<p class="fragment step-fade-in-then-out" data-fragment-index="1"> Loads the graph, which is stored as the variable `G` (the `%>%` sends the output to the next line)</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="2"> Selects the nodes "spreadsheet" to edit. To activate the edges, run `activate(edges)`</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="3"> Calculates the eigenvector centrality and saves it as a new column in the nodes spreadsheet. Note that we keep using `%>%` until we get to `ggraph()`</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="4"> Tells R we want to take the network and make a plot from it. This is where we set the layout</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="5"> Remember to add edges first.</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="6"> The first argument is the "aesthetic mapping" - this maps aspects of the plot to variables in your data. In this case, we change the width of the edges based on the variable "weight", which must be in our edges "spreadsheet"</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="7"> We can also change the look of the plot universally. These options go _outside_ of `aes()`</p>
-<p class="fragment step-fade-in-then-out" data-fragment-index="8"> This code does similar operations to the nodes. It changes the size based on the centrality (which we calculated and defined in line 3) and changes the color of all nodes to `gold`</p>
-
-</div>

@@ -3,7 +3,7 @@ pagetitle: Welcome to COM 411!
 date: Week 1
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex

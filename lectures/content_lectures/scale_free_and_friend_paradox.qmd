@@ -2,7 +2,7 @@
 title: Scale-free networks and the friendship paradox
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -39,17 +39,17 @@ set_graph_style()
 
 G = play_barabasi_albert(10000, growth = 1, power = 1)
 
-df = G %>% 
-  as_tbl_graph() %>%
-  activate(nodes) %>%
-  mutate(degree = centrality_degree(mode='all')) %>%
-  as_tibble() %>%
-  group_by(degree) %>%
+df = G |> 
+  as_tbl_graph() |>
+  activate(nodes) |>
+  mutate(degree = centrality_degree(mode='all')) |>
+  as_tibble() |>
+  group_by(degree) |>
   tally(name = 'count')
 
 
-df %>% 
-  filter(degree > 1) %>%
+df |> 
+  filter(degree > 1) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() +
@@ -61,8 +61,8 @@ df %>%
 
 <div class='fragment' style="position:absolute;top:0;left:0;">
 ```{r}
-df %>% 
-  filter(degree > 2) %>%
+df |> 
+  filter(degree > 2) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() + 
@@ -72,8 +72,8 @@ df %>%
 
 <div class='fragment' style="position:absolute;top:0;left:0;">
 ```{r}
-df %>% 
-  filter(degree > 3) %>%
+df |> 
+  filter(degree > 3) |>
   ggplot(aes(x = degree, y = count)) + 
   geom_line() + 
   theme_minimal() + 
@@ -109,10 +109,10 @@ set_graph_style()
 
 G = barabasi.game(10, m = 2)
 
-G = G %>% as_tbl_graph() %>%
+G = G |> as_tbl_graph() |>
   mutate(degree = centrality_degree(mode='all'),
          neighbor_degree = local_ave_degree())
-p = G %>% 
+p = G |> 
   ggraph(layout = 'kk') +
   geom_edge_fan() +
   geom_node_point(color='lightblue', size = 16) +

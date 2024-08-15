@@ -2,7 +2,7 @@
 title: Power, centrality, and hierarchy
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -45,13 +45,13 @@ Brochure.
 ```{r, out.width="45%", message=F}
 set.seed(23)
 G = random.graph.game(8, .35)
-G <- G %>% as_tbl_graph() %>%
+G <- G |> as_tbl_graph() |>
   mutate(name = LETTERS[1:8])
 
-G <- create_notable("Zachary") %>%
+G <- create_notable("Zachary") |>
   mutate(name = 1:34)
 
- G %>%
+ G |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(size=9, color='gold') +
@@ -72,7 +72,7 @@ Average distance to all other nodes
 <div class="container">
 <div class='fragment col'>
 ```{r}
-G %>%
+G |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(size=9, color='gold') +
@@ -82,8 +82,8 @@ G %>%
 
 <div class='fragment col'>
 ```{r}
-G %>%
-  mutate(closeness = centrality_closeness(normalized = T)) %>%
+G |>
+  mutate(closeness = centrality_closeness(normalized = T)) |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(aes(size=closeness), color='gold') +
@@ -101,7 +101,7 @@ Which of these has the highest betweenness?
 <div class="container">
 <div class='fragment col'>
 ```{r}
-G %>%
+G |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(size=9, color='gold') +
@@ -111,8 +111,8 @@ G %>%
 
 <div class='fragment col'>
 ```{r}
-G %>%
-  mutate(betweenness = centrality_betweenness(normalized = T)) %>%
+G |>
+  mutate(betweenness = centrality_betweenness(normalized = T)) |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(aes(size=betweenness), color='gold') +
@@ -129,8 +129,8 @@ It's not what you know, it's who you know
 <div class="container">
 <div class='fragment col'>
 ```{r}
-G %>%
-  mutate(eigenvector_centrality = centrality_eigen()) %>%
+G |>
+  mutate(eigenvector_centrality = centrality_eigen()) |>
   ggraph() +
   geom_edge_fan() +
   geom_node_point(aes(size=eigenvector_centrality), color='gold') +
@@ -165,10 +165,10 @@ set.seed(23)
 x = random.graph.game(8, .3)
 
 make_bw_plot <- function(G) {
-  plot <- G %>%
-    as_tbl_graph() %>%
-  mutate(name = LETTERS[1:nrow(.N())]) %>%
-  mutate(betweenness = centrality_betweenness()) %>%
+  plot <- G |>
+    as_tbl_graph() |>
+  mutate(name = LETTERS[1:nrow(.N())]) |>
+  mutate(betweenness = centrality_betweenness()) |>
   ggraph(layout='stress') +
   geom_edge_fan() +
   geom_node_point(aes(size=betweenness), color='gold') +
@@ -177,10 +177,10 @@ make_bw_plot <- function(G) {
   return(plot)
 }
 
-x %>% make_bw_plot()
+x |> make_bw_plot()
 
-create_star(8, mode='undirected') %>% make_bw_plot()
-create_lattice(8, circular = T) %>% make_bw_plot()
+create_star(8, mode='undirected') |> make_bw_plot()
+create_lattice(8, circular = T) |> make_bw_plot()
 ```
 Betweenness Centralization scores:
 ```{r}
@@ -198,8 +198,8 @@ library(sna)
 library(intergraph)
 library(networkdata)
 
-ht_advice %>%
-  as_tbl_graph() %>% 
+ht_advice |>
+  as_tbl_graph() |> 
   ggraph() +
   #geom_edge_fan(aes(alpha = stat(index))) + 
   #scale_edge_alpha_identity() +

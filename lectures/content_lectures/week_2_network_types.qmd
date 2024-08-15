@@ -2,7 +2,7 @@
 title: Network Data and Network Types
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -15,6 +15,12 @@ knitr::opts_knit$set(root.dir = './')
 #source("resources/preamble.R")
 
 library(igraph)
+library(tidygraph)
+library(ggraph)
+library(tidyverse)
+library(here)
+set_graph_style(family='sans')
+
 ```
 
 ## What is a social network?
@@ -35,8 +41,9 @@ library(igraph)
 
 ## Matrices
 
-```{r, include = T}
-sw = watts.strogatz.game(2, 4, 1, .2)
+```{r, include = F}
+sw = watts.strogatz.game(2, 4, 1, .2) |> as_tbl_graph() |>
+mutate(name = 1:n())
 as_adjacency_matrix(sw)
 ```
 
@@ -50,9 +57,10 @@ as_edgelist(sw)
 ## Graphs/plots/sociograms
 
 ```{r, include = T}
-plot(sw,
-     vertex.label.cex = .5
-     )
+sw |>
+ggraph() +
+  geom_edge_fan() +
+  geom_node_label(aes(label = name))
 ```
 
 ## Where does social network data come from?
@@ -87,19 +95,27 @@ plot(
 >- 20 random reddittors and their communities
 
 <div class='fragment'>
-```{r, echo = F, message=F, echo=F}
-library(tidyverse)
-r = read_csv('../../resources/one_k_redittors.csv')
-r = r %>% filter(author %in% sample(unique(r$author), 50))
-r = r %>% filter(! subreddit %in% r$author)
-G = graph.data.frame(r, directed = T)
-V(G)$type = TRUE
-V(G)[name %in% r$subreddit]$type = FALSE
 
-l = layout.bipartite(G, )
-colors = c('steelblue', 'orange')
-shapes = c('circle', 'square')
+```{r, echo = F, message=F, echo=F}
+
+r = read_csv(here('resources/one_k_redittors.csv'))
+r = r |> filter(author %in% sample(unique(r$author), 30))
+r = r |> filter(! subreddit %in% r$author)
+G = graph.data.frame(r, directed = T) |> as_tbl_graph()
+G <- G|>
+  activate(nodes) |>
+  mutate(type = ifelse(name %in% r$subreddit, FALSE, TRUE))
+
+G |>
+  ggraph(layout="bipartite") +
+  geom_edge_fan() +
+  geom_node_point(aes(color = type, shape=type), size = 4) +
+  scale_color_manual(values = c('steelblue', 'orange')) +
+  # remove legend
+  theme(legend.position = 'none')
+
 ```
+
 ```{r, echo=F}
 
 plot_graph = function(g){
@@ -112,15 +128,6 @@ plot_graph = function(g){
        )
 }
 
-G %>% induced_subgraph(unlist(sapply(1:20, subcomponent, graph = G, mode = 'out'))) %>%
-  plot(
-     layout = layout.bipartite(.),
-     vertex.color = colors[V(.)$type + 1],
-     vertex.shape = shapes[V(.)$type + 1],
-     vertex.size = 4,
-     vertex.label = ""
-     #edge.width = log1p(E(G)$posts)
-     )
 ```
 </div>
 
@@ -138,10 +145,11 @@ head(r)
 <div class='fragment'>
 ```{r, echo=F}
 projections = bipartite_projection(G)
-sr = projections[[1]]
-people = projections[[2]]
+sr = projections[[1]] |> as_tbl_graph()
+people = projections[[2]] |> as_tbl_graph()
 
-people %>% delete.vertices(degree(.) < 1) %>%
+people |> 
+  filter(centrality_degree() > 1) |>
   plot_graph()
 ```
 </div>
@@ -150,7 +158,8 @@ people %>% delete.vertices(degree(.) < 1) %>%
 
 <div class='fragment'>
 ```{r, echo = F}
-sr %>% delete.vertices(degree(.) < 1) %>%
+sr |>
+  filter(centrality_degree() > 1) |>
   plot_graph()
 ```
 </div>
@@ -173,15 +182,13 @@ plot(sw)
 
 <div class='fragment'>
 ```{r, echo = F}
-tmp = delete.edges(people, which(E(people)$weight < 2))
-tmp %>%
-  delete.vertices(degree(.) < 1) %>%
-  plot(
-    layout = layout_with_fr(.),
-    vertex.size = 9,
-    vertex.label.cex = .4,
-    edge.width = E(.)$weight
-  )
+sr |>
+  activate(edges) |>
+  #filter(weight > 2) |>
+ggraph(layout = 'fr') +
+  geom_edge_fan(aes(width = weight)) +
+  geom_node_point()
+  #geom_node_label(aes(label = name))
 ```
 </div>
 

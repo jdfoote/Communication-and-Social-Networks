@@ -1,8 +1,9 @@
 ---
-title: Small Group Networks
+title: Week 4 - Small Group Networks
+sort: 4
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -32,12 +33,12 @@ Luckily I was still up playing the drums.
 ## Housekeeping
 
 > - Self Assessment Reflections
->	- Goals for the class
->	- Feedback for me
-> - Afterward, I will
->	- Report on participation
->	- Review your HW
->	- Review your discussion questions
+> 	- Goals for the class
+> 	- Feedback for me
+> - I will also
+> 	- Review the report on participation
+> 	- Review your HW
+> 	- Review your discussion questions
 
 ## Homework review
 
@@ -47,7 +48,7 @@ Luckily I was still up playing the drums.
 
 > - What is centralization?
 > - When is a centralized network better?
-> - What is "transactive memory"
+> - What is "transactive memory"?
 > - According to the Informal Networks article, why is it important to identify different kinds of networks?
 > - What sorts of information can be learned from an advice network?
 >	- A trust network?
@@ -58,4 +59,5 @@ Luckily I was still up playing the drums.
 
 ## Thursday
 
+- Group structure activity
 - R Lab 3 - Mutating and filtering

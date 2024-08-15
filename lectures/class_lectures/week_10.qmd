@@ -2,7 +2,7 @@
 title: Diffusion and Contagion
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -17,6 +17,7 @@ set.seed(0121)
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(tidyverse)
 ```
 
 ## Dad Joke
@@ -30,9 +31,8 @@ Me: "Listening. I would say listening is my biggest weakness."
 ## Housekeeping
 
 > - Self-assessment reflections due today
->	- Feedback by next week (hopefully)
-> - (Probably) Troubled Lands game on Thursday
-> - Folks are falling behind on R labs; what's going on?
+>	- In-person feedback; sign up for spot on my calendar
+> - Wisdom or Madness of Crowds simulation + R on Thursday
 
 ## Upcoming Assignments
 
@@ -41,10 +41,12 @@ Me: "Listening. I would say listening is my biggest weakness."
 > - Visualization Challenge due next week
 
 ## Example questions
-> - How does one gain social capital from other forms of capital? Give three examples with explanations.
-> - What does "centrality" measure? How do "betweenness centrality", "degree centrality", and "eigenvector centrality" differ, and when might one be a better measure than the other?
-> - What is the “Friendship Paradox”?  How does it work? How does it relate to information flow and contagion?
-> - What is a "multiplex" (or multidimensional) network? Give an example where thinking of a network as multiplex could help you to understand it better.
+> - What is a "multiplex" (or multidimensional) network?
+  > - A network where there are multiple types of nodes
+  > - A network with high centralization
+  > - A network with a high clustering coefficient
+  > - A network with multiple types of edges
+> - Give an example of how social capital can be exchanged for economic capital.
 
 ## Plan for today
 
@@ -62,9 +64,9 @@ Me: "Listening. I would say listening is my biggest weakness."
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -74,12 +76,12 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   mutate(neigh_2 = index %in% neighbors(.G(), 2),
-         neigh_3 = index %in% neighbors(.G(), 3)) %>%
-  mutate(infected = infected | neigh_2 | neigh_3) %>%
+         neigh_3 = index %in% neighbors(.G(), 3)) |>
+  mutate(infected = infected | neigh_2 | neigh_3) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -96,9 +98,9 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -108,12 +110,12 @@ create_notable('zachary') %>%
 
 <div class='fragment'>
 ```{r, message=F}
-create_notable('zachary') %>%
-  mutate(index = 1:nrow(.N())) %>%
-  mutate(infected = index %in% c(2,3)) %>%
+create_notable('zachary') |>
+  mutate(index = 1:nrow(.N())) |>
+  mutate(infected = index %in% c(2,3)) |>
   mutate(neigh_2 = index %in% neighbors(.G(), 2),
-         neigh_3 = index %in% neighbors(.G(), 3)) %>%
-  mutate(infected = infected | (neigh_2 & neigh_3)) %>%
+         neigh_3 = index %in% neighbors(.G(), 3)) |>
+  mutate(infected = infected | (neigh_2 & neigh_3)) |>
   ggraph() +
   geom_edge_fan(width = .1) + 
   geom_node_point(aes(color = infected), size = 3) +
@@ -133,3 +135,16 @@ create_notable('zachary') %>%
 
 
 ## Wisdom / Madness of Crowds
+
+```{r}
+G = play_erdos_renyi(100, .1, directed=T) 
+G |>
+mutate(in_d = centrality_degree(mode = "in"),
+      out_d = centrality_degree(mode = "out")) |>
+mutate(ratio = in_d / out_d) |>
+as_tibble() |>
+# Get median
+summarize(median = mean(ratio))
+
+
+```

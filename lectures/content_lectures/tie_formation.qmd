@@ -1,0 +1,119 @@
+---
+pagetitle: Tie formation
+format: 
+  revealjs:
+    css: /resources/custom_css.css
+    theme: white
+    progress: true
+    transition: convex
+    reveal_plugins: ['notes']
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=F)
+knitr::opts_knit$set(root.dir = './')
+source("libs/preamble.R")
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+# Creation of edges
+
+## Why do people form relationships / edges?
+
+> - Psychological explanations
+> - Strategic explanations
+> - Exposure explanations
+
+# Psychological explanations
+
+## We are comfortable with people like us
+
+> - Homophily
+>   - People who are like each other are more likely to become friends
+
+<div class='fragment'>
+```{r, fig.height=3}
+theme_set(theme_graph())
+df = data.frame(from = c("A","B","C"), to = c("B","C","A"), type=c('enemy','enemy','friend'))
+colors = data.frame(name=c("A","B","C"), color = c("gold", "black", "black"))
+
+G = graph_from_data_frame(d = df, vertices = colors) |> as_tbl_graph()
+
+plot = G |>
+  activate(nodes) |>
+  mutate(size = centrality_betweenness()) |>
+  ggraph(layout = 'linear', circular= T) +
+  #geom_node_point(aes(color = color), size = 8) + 
+  geom_node_text(aes(label = name, color = color), size = 10) +
+  scale_color_manual(values = c("gold"='gold',"black"='black'), guide = F) +
+  #scale_edge_color_manual(values = c('enemy' = 'white', 'friend'='white'), guide = F)
+  coord_cartesian(clip = 'off')
+plot
+```
+</div>
+
+
+## We want our relationships to be in balance
+
+> - Balance theory
+>   - The enemy of my enemy is my friend
+>   - The friend of my enemy is my enemy
+
+<div class='fragment'>
+```{r, fig.height=3}
+plot + scale_edge_color_manual(values = c('enemy'='black', 'friend'='red'), guide = F) +
+geom_edge_fan(aes(label=type, color=type))
+```
+</div>
+<aside class='notes'>
+Balance theory is a bit more complicated. It says that we want our relationships to be in balance
+If A is friends with  B and B is friends with C, but A and C are enemies, then balance theory says that this is unstable. Ties will dissolve or change valence.
+
+This does depend on the type of relationship, though. What if black represents "hates"? If A hates B and B hates C, then maybe A will like C. Or if A is in love with B and B is in love with C, then A may hate C. These triangles are the source of lots of literature!
+</aside>
+
+# Strategic explanations
+
+## We want to be in relationships that help us
+
+> - Social exchange theory
+>   - Do the benefits of relationship outweigh the costs?
+>   - What resources does each node have and need?
+> - Social capital
+>   - People seek to make relationships with powerful others
+>   - People seek to obtain powerful positions in the network
+
+# Exposure explanations
+
+## We become friends with our friends' friends
+
+> - Triadic closure / transitivity
+
+<div class='fragment'>
+```{r, fig.height=3}
+
+plot + geom_edge_fan(aes(color = type,
+                         start_cap = label_rect(node1.name),
+                         end_cap = label_rect(node1.name)),
+                     width = .3, 
+                     arrow = arrow(length = unit(3,'mm'))
+				) + scale_edge_color_manual(values = c('enemy'='black', 'friend'='white'), guide = F)
+           
+```
+</div>
+
+<aside class="notes"> 
+It is worth nothing that homophily is another explanation for the ubiquity of triadic closure. Those who are like us are likely to be our friends; those who are like our friends are likely to be like us.
+
+</aside>
+
+
+## Focus of Activity
+
+> - Partially a pushback against other explanations
+>	- People choose or are forced into foci (clubs, neighborhoods, classes, etc.)
+>	- Ties are often a function of activities, not dyadic choices
+

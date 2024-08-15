@@ -1,9 +1,9 @@
 ---
-title: Network Data and Network Types
-date: Week 2
+title: Week 2 - Network Data and Network Types
+sort: 2
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex

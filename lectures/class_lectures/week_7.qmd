@@ -2,7 +2,7 @@
 pagetitle: Capital and Social Capital
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
@@ -28,11 +28,6 @@ library(ggraph)
 ## Housekeeping
 
 > - Who Dunnit game on Thursday!
-> - Social Search assignment (October 17)
->	- Try to find someone with driver's license from HI
->	- No group texts
->	- Diagram search network
->	- Instructions on wiki
 
 ## Final Project
 
@@ -56,9 +51,9 @@ library(ggraph)
 ## Reading Questions
 
 > - We can exchange forms of capital for goods, services, or for other kinds of capital.
-> - What's an example of exchanging cultural capital for social capital and vice versa.
-> - What's an example of exchanging social capital for economic capital and vice versa.
-> - What's an example of exchanging economic capital for cultural capital and vice versa.
+> - What's an example of exchanging cultural capital for social capital and vice versa?
+> - What's an example of exchanging social capital for economic capital and vice versa?
+> - What's an example of exchanging economic capital for cultural capital and vice versa?
 
 ## Criticism
 

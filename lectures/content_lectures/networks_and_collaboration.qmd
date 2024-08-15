@@ -2,7 +2,7 @@
 title: Networks and Collaboration
 format: 
   revealjs:
-    css: ./libs/custom_css.css
+    css: /resources/custom_css.css
     theme: white
     progress: true
     transition: convex
