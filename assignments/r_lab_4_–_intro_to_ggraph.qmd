@@ -1,0 +1,16 @@
+---
+title: "R Lab 4 – Intro to ggraph"
+date: 2024-09-30
+---
+
+
+## Video Explanation
+
+{{< video https://youtu.be/GnTSThGhCw0 >}}
+
+
+
+## Assignment File
+
+[Download Assignment (right-click and save)](/assignments/r_labs/lab_4_intro_to_ggraph.qmd)
+

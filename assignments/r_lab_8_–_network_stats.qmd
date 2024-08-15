@@ -1,0 +1,11 @@
+---
+title: "R Lab 8 – Network Stats"
+date: 2024-11-18
+---
+
+
+
+## Assignment File
+
+[Download Assignment (right-click and save)](/assignments/r_labs/lab_8_network_stats.qmd)
+

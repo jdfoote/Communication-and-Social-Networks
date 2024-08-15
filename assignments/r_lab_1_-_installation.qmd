@@ -1,0 +1,81 @@
+---
+title: R Lab 1
+date: "2024-09-09"
+---
+
+This lab has three goals:
+
+1.  Get your R environment is set up correctly
+2.  Introduce you to the idea of Quarto files
+3.  Create your first network graph
+
+You can either do your homework on your own computer, or you can use the
+lab computers. In general, you should be able to get most of the labs
+done on Thursdays, but you will need to do work outside of class for
+some labs, and for the final project.
+
+This semester, we are going to try using VSCode. This is a popular, open
+source Interactive Development Environment. One of the cool features is
+that it has an AI plugin which will automatically suggest code for you.
+I\'m hopeful that this will let you do more, faster.
+
+### Install Quarto {#install_quarto}
+
+-   [Install Quarto](https://quarto.org/docs/get-started/)
+
+### Install VSCode {#install_vscode}
+
+-   [Install VSCode](https://code.visualstudio.com/Download)
+
+### Install R {#install_r}
+
+- [Install R](https://cran.r-project.org/). This is a really old, janky-looking site, but I promise it's real.
+
+### Try to run the lab {#try_to_run_the_lab}
+
+1.  Create a folder on your computer called COM_411_Labs
+2.  Right-click on [this link to Lab 1](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_1_r_markdown.qmd) and save it into the COM_411_Labs folder
+3.  Open VSCode
+4.  Click on the Extensions icon on the left (it's 3 attached squares and one floating square)
+5.  Search for "quarto" and install the quarto extension
+6.  Search for "R" and install the R extension
+7.  In VSCode, Click File \> Open Folder - Navigate to the COM_411_Labs
+    folder that you created earlier
+8.  Click on the lab_1_quarto.qmd file, and it should open in the main
+    window of VSCode. At this point, it may ask if you want to install "languageserver". You can click "Install" if it asks.
+9. Scroll down to line 36. You should see a little button that says "Run Cell". Push that button, and a terminal will open at the bottom of the screen. This will run the R code in the cell.
+10. In the R shell at the bottom of VSCode, paste the following:
+    -   `install.packages(c("rmarkdown","tidyverse","ggraph","tidygraph","igraphdata"))`
+    -   It will ask you what CRAN mirror you\'d like to use. You can
+        choose something in the US.
+    -   If it asks if you want to install from source, you can type
+        "no"
+    -   This will show a bunch of crazy messages for a while. You can
+        probably ignore them.
+11. Install tinytex.
+    Click the Quarto Preview terminal (in the bottom right) and type:
+    -   `quarto install tinytex`
+11. Click the "Preview" icon at the top right, and hopefully it works!
+12. Read the document, make the changes that you are asked to, and then
+preview the document again. Notice that there is a new PDF file in the folder.
+15. Upload the PDF to Brightspace! You did it!!
+
+If things aren't working then ask a neighbor for help.
+
+### Video Walkthrough {#video_walkthrough}
+
+This was from an older version of VSCode, but should still be helpful:
+
+{{< video https://youtu.be/7QKuOHoMoZA >}}
+
+
+### Set up Github Copilot {#set_up_github_copilot}
+
+If you want to use Github Copilot
+
+1.  Sign up for an account at [Github
+    education](https://education.github.com/students)
+2.  Install the GitHub Copilot extension in VSCode
+3.  Authenticate using the popup that shows up in the bottom right
+
+We will talk more about how to use Copilot in class.

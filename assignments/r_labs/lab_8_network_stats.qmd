@@ -1,0 +1,188 @@
+---
+title: "Calculating Network Statistics"
+author: "Your Name Here"
+format: pdf
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# import the libraries needed
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(tidyverse)
+library(networkdata)
+set_graph_style()
+```
+
+So far, we have focused on visualizing the network itself. This lesson will focus on calculating and visualizing statistics about the network.
+
+## Network statistics
+
+There are a lot of statistics that we might care about, and `tidygraph` and `igraph` have a number of functions to calculate them.
+
+Let's start with some simple graph-level measures, for our `ffe_elite` network.
+
+```{r}
+G <- ffe_elite |> as_tbl_graph()
+```
+
+Number of nodes:
+```{r}
+G |> gorder()
+```
+
+Number of edges:
+```{r}
+G |> gsize()
+```
+
+Number of mutual edges:
+
+```{r}
+G |> activate(edges) |> filter(edge_is_mutual()) |> gsize()
+```
+Centralization:
+
+```{r}
+G |> centralization.degree()
+```
+
+### Exercise
+
+Figure out how to calculate the betweenness centralization
+
+```{r}
+
+## Your code here
+```
+
+## Identifying the most central nodes
+
+We can also show the most central nodes in a table. We already know how to calculate centrality measures. After we calculate them, we have to take a step that's a bit more complicated---basically, we take our node spreadsheet and temporarily convert it back to a "normal" R spreadsheet (a.k.a., `tibble`), and then manipulate the spreadsheet. That's what the `as_tibble()` line below does.
+
+After it's in a spreadsheet, the `select` command is the list of columns we want to keep for our table, the `arrange` command sorts the table (the `-` before `bw_centrality` sorts it in reverse order, from highest to lowest). Finally, the `head` command shows the top N nodes.
+
+```{r}
+G |>
+  activate(nodes) |>
+  mutate(bw_centrality = centrality_betweenness()) |>
+  as_tibble() |>
+  select(vertex.names, bw_centrality) |>
+  arrange(-bw_centrality) |>
+  head(10)
+
+```
+
+### Exercise
+
+Calculate the closeness centrality and save it as `close_centrality`; add it to the table so that it shows both types of centrality, and sort by closeness centrality.
+
+```{r}
+## Your code here
+```
+
+
+## Visualizing node or edge-level statistics
+
+The other thing I want to show you how to do is to visualize attributes of the nodes or the edges. There are entire courses on visualizations, but I want to show you how to do a few.
+
+
+### Histograms
+
+We may want to visualize the distribution of attributes or network statistics. 
+
+We'll use tibbles again, and then instead of using `ggraph`, we use `ggplot`, which is one of R's general plotting packages.
+
+`geom_histogram` tells it to create a histogram, in this case with the `x` axis mapped to the `birthdate` variable.
+
+Finally, `theme_minimal()` adds the axes and tick marks to the graph (try it without that line to see what I mean).
+
+```{r}
+G |>
+  activate(nodes) |>
+  as_tibble() |>
+  ggplot() +
+  geom_histogram(aes(x=birthdate), binwidth=1) + 
+  theme_minimal()
+
+```
+
+If we want to visualize how centralized a network is, a good way to do that is to show the distribution of degree (or betweenness or another centrality measure.) As we have done in a few previous labs, we'll first need to create the column using `mutate` and then we'll visualize it in the same way, using `ggplot` and `geom_histogram`.
+
+Note: You'll need to calculate networks statistics before calling `as_tibble`. R knows how to get the centrality of a node spreadsheet, but once it's converted to a `tibble`, it doesn't know what to do.
+
+```{r}
+G |>
+  activate(nodes) |>
+  mutate(degree = centrality_degree(mode='all')) |> 
+  as_tibble() |>
+  ggplot() +
+  geom_histogram(aes(x=degree)) + 
+  theme_minimal()
+```
+
+### Exercise
+
+Visualize the betweenness centrality of the `bkfrab` dataset as a histogram.
+
+Hint: You need to load the data using `as_tbl_graph`
+
+
+```{r}
+
+# Your code here 
+
+```
+
+### Challenge Exercise
+
+Visualize the edge `weight` variable from `bkfrab` as a histogram.
+
+Hint: Remember to activate the edges spreadsheet.
+
+```{r}
+
+# Your code here
+
+```
+
+
+### Boxplots
+
+The other thing we might want to do is compare the distributions of some network measure for different groups. There are lots of ways to do this, but the one I'll show here is a "boxplot". This shows where the "typical" values are for each group.
+
+For example, this shows the degree distribution for each of the different religions in the `ffe_elite` dataset. 
+
+```{r}
+ffe_elite |> as_tbl_graph() |>
+  activate(nodes) |>
+  mutate(degree = centrality_degree(mode='all')) |>
+  mutate(religion = as_factor(religion)) |> # Change religion to a factor
+  as_tibble() |> # convert to a tibble
+  ggplot() + 
+  geom_boxplot(aes(x=religion, fill=religion, y=degree)) + # `fill` changes the filled in color. Try changing this to `color` instead
+  theme_minimal()
+
+```
+
+### Exercise
+
+Visualize the betweenness centrality of the `ffe_elite` data by the university that people attended, as boxplots.
+
+
+```{r}
+
+```
+
+
+### Challenge exercise
+
+Come up with something else that you want to visualize, either as a histogram or as boxplots and create a visualization below.
+
+```{r}
+
+# Your code here
+
+```
+

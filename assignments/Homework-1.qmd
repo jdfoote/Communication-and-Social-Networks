@@ -1,0 +1,28 @@
+---
+title: Homework 1
+---
+**Before starting, read through [Individuals versus Networks](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/08/WhatIsASocialNetwork.pdf) by James Cook**. This will help you to finish the assignment.
+
+1.  Define a set of people who you consider to be your \"family.\"
+2.  Describe your family using an individual-level approach (e.g., \# of
+    adults and children, locations, etc.). The easiest way to do this is
+    probably as a table. E.g., the start of the table of my family might
+    look like this. Be creative in the variables that you measure. :)
+
++---------+-----+--------+-------------+
+| Name    | Age | Gender | Hair color  |
++=========+=====+========+=============+
+| Rebecca | 11  | F      | Blond       |
++---------+-----+--------+-------------+
+| William | 9   | M      | Brown       |
++---------+-----+--------+-------------+
+| Owen    | 6   | M      | Blond       |
++---------+-----+--------+-------------+
+
+3.  Describe your family in each of the following ways:
+
+-   drawing a social network graph
+-   writing out a social network edge list
+-   creating a social network matrix
+
+4. Turn in your assignment on BrightSpace.

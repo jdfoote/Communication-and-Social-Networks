@@ -1,0 +1,7 @@
+---
+title: Overview of Assignments
+---
+
+Here's where you will find all of the assignments. Most of them are R Labs, which will include a Quarto (.qmd) file which you should download and open in VSCode. The first homework includes instructions on how to download and install Quarto and VSCode.
+
+Most of the assignments have video walkthroughs to help explain them and get you set up.

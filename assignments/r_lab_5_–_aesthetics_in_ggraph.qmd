@@ -1,0 +1,16 @@
+---
+title: "R Lab 5 – Aesthetics in ggraph"
+date: 2024-10-09
+---
+
+
+## Video Explanation
+
+{{< video https://www.youtube.com/watch?v=hsncjCu2yeo >}}
+
+
+
+## Assignment File
+
+[Download Assignment (right-click and save)](/assignments/r_labs/lab_5_aesthetics_in_ggraph.qmd)
+

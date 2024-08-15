@@ -1,0 +1,16 @@
+---
+title: "R Lab 7 – Groups in Networks"
+date: 2024-11-04
+---
+
+
+## Video Explanation
+
+{{< video https://youtu.be/Ob1rxN7_eO4 >}}
+
+
+
+## Assignment File
+
+[Download Assignment (right-click and save)](/assignments/r_labs/lab_7_groups_in_networks.qmd)
+
