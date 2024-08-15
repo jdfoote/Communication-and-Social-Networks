@@ -9,6 +9,15 @@ date: "2024-09-03"
 
 * [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
 
+
+**Readings:** 
+
+* Feld, S. L. (1981). [The focused organization of social ties](https://www.jstor.org/stable/2778746). American Journal of Sociology, 86(5), 1015–1035.
+* McPherson, M., Smith-Lovin, L., & Cook, J. M. (2001). [Birds of a Feather: Homophily in Social Networks](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2678628). Annual Review of Sociology, 27, 415–444.
+* [Optional] Monge, P. R., & Contractor, N. S. (2003). Theories of communication networks. Oxford, UK: Oxford University Press. (pp. 298–314) - On Brightspace under Content > Readings
+
+*Note:* This week involves reading two academic articles. [Read this](/syllabus/syllabus.qmd#Reading_Academic_Articles) to understand my expectations and some tips for reading and understanding these articles. [This video](https://www.youtube.com/watch?v=IX8eGg_7gF4) goes over how you can use Claude.ai to understand papers better.
+
 **Lecture Video:**
 
 
@@ -19,14 +28,6 @@ date: "2024-09-03"
 * Slides
 
 <iframe class='slide-deck' src="/lectures/content_lectures/tie_formation.html"> </iframe>
-
-**Readings:** 
-
-* Feld, S. L. (1981). [The focused organization of social ties](https://www.jstor.org/stable/2778746). American Journal of Sociology, 86(5), 1015–1035.
-* McPherson, M., Smith-Lovin, L., & Cook, J. M. (2001). [Birds of a Feather: Homophily in Social Networks](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2678628). Annual Review of Sociology, 27, 415–444.
-* [Optional] Monge, P. R., & Contractor, N. S. (2003). Theories of communication networks. Oxford, UK: Oxford University Press. (pp. 298–314) - On Brightspace under Content > Readings
-
-*Note:* This week involves reading two academic articles. [Read this](#Reading_Academic_Articles) to understand my expectations and some tips for reading and understanding these articles. [This video](https://www.youtube.com/watch?v=IX8eGg_7gF4) goes over how you can use Claude.ai to understand papers better.
 
 **Concepts:**
 
@@ -54,4 +55,4 @@ date: "2024-09-03"
 
 **Class Schedule:**
 
-* [R Lab 2 - Creating Networks](/assignments/r_lab_assignments/lab_2_creating_networks.qmd)
+* [R Lab 2 - Creating Networks](/assignments/r_lab_2_%E2%80%93_creating_networks.qmd)

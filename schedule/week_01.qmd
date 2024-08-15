@@ -36,4 +36,4 @@ date: "2024-08-20"
 **Class Schedule:**
 
 * Network simulation activity (bring a computer)
-* Start work on [Homework 1](pages/Homework-1.html)
+* Start work on [Homework 1](/assignments/Homework-1.html)

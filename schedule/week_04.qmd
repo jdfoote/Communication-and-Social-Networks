@@ -8,18 +8,23 @@ date: "2024-09-10"
 **Assignment Due:**
 
 * [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
-* [R Lab 1](/assignments/R-Lab-1.html)
-* [R Lab 2 - Creating Networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_2_creating_networks.qmd)
-  * [Homework explanation video](https://youtu.be/-JjuL1UwRR0)
+* [R Lab 1](/assignments/r_lab_1_-_installation.qmd)
+* [R Lab 2 - Creating Networks](/assignments/r_lab_2_%E2%80%93_creating_networks.qmd)
 
-**Lecture video:**
-
-* [Networks in small groups](https://www.youtube.com/watch?v=uraDLo3caXc) [14:43] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_4/lecture/small_groups.html)
 
 **Readings:** 
 
 * Krackhardt, D., & Hanson, J. R. (1993). [Informal networks: The company behind the chart](https://hbr.org/1993/07/informal-networks-the-company-behind-the-chart). Harvard business review, 71(4), 104-111.
 * Katz, N., Lazer, D., Arrow, H., & Contractor, N. (2004). [Network theory and small groups](https://libkey.io/libraries/228/articles/5387888/full-text-file?utm_source=api_559). Small Group Research, 35(3), 307–332.
+
+**Lecture video:**
+
+{{< video https://www.youtube.com/watch?v=uraDLo3caXc >}} [14:43]
+
+* Slides
+
+<iframe class='slide-deck' src="/lectures/content_lectures/week_4_small_groups.html"></iframe>
+
 
 **Concepts:**
 
@@ -28,5 +33,5 @@ date: "2024-09-10"
 
 ### Thursday
 
-* Work on R Labs 1/2 and intro to [3 - Mutating and filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
-  * [Lab 3 Explanation video](https://youtu.be/rfViaH3gSz8)
+* If needed, finish R Labs 1/2 
+* Start [R Lab 3 - Mutating and filtering](/assignments/r_lab_3_%E2%80%93_mutating_and_filtering.qmd)

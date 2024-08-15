@@ -7,12 +7,8 @@ date: "2024-09-24"
 
 **Assignment Due:**
 
-* [R Lab 3 - Mutating and filtering](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_3_mutating_and_filtering.qmd)
+* [R Lab 3 - Mutating and filtering](/assignments/r_lab_3_%E2%80%93_mutating_and_filtering.qmd)
 * [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
-
-**Video lecture:**
-
-* [Power, centrality, and hierarchy](https://www.youtube.com/watch?v=gaMusAjk0_s) [18:44] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/lecture/centrality.html)
 
 **Readings:** 
 
@@ -22,9 +18,17 @@ date: "2024-09-24"
 * [Centrality Eigenvector Measures](https://www.youtube.com/watch?v=q8oBWwS2wAQ). Matthew Jackson
 * (Optional) Holliday, Audrey, Campbell, & Moore, (2016). [Identifying well-connected opinion leaders for informal health promotion](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4898141/)
 
+**Video lecture:**
+
+{{< video https://www.youtube.com/watch?v=gaMusAjk0_s >}} [18:44]
+
+* Slides
+
+<iframe class='slide-deck' src="/lectures/content_lectures/centrality.html"></iframe>
+
+
 ### Thursday
 
 **Class Schedule:**
 
-* [R Lab 4 - Intro to ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_4_intro_to_ggraph.qmd)
-  * [Lab 4 Explanation Video](https://youtu.be/GnTSThGhCw0)
+* [R Lab 4 - Intro to ggraph](/assignments/r_lab_4_%E2%80%93_intro_to_ggraph.qmd)

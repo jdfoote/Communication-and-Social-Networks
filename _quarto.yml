@@ -4,10 +4,12 @@ project:
   render: 
     - "*.qmd"
     - "!assignments/r_labs/*.qmd"
+    - "!assignments/ego_networks/*.qmd"
 
  
 resources:
     - "assignments/r_labs/*.qmd"
+    - "assignments/ego_networks/*.qmd"
 
 pre-render:
   - python scripts/create_assignment_files.py
@@ -51,9 +53,25 @@ website:
       background: dark
       contents:
         - section: "Assignments"
-          contents: "assignments/*.qmd"
+          contents: 
+            - text: "Overview"
+              href: assignments/assignments.qmd
+            - assignments/Homework-1.qmd
+            - assignments/ego_networks_activity.qmd
+            - assignments/Final-project.qmd
         - section: "R Labs"
-          contents: "assignments/r_lab_*.qmd"
+          contents: 
+            - assignments/r_lab_1_-_installation.qmd
+            - assignments/r_lab_2_–_creating_networks.qmd
+            - assignments/r_lab_3_–_mutating_and_filtering.qmd
+            - assignments/r_lab_4_–_intro_to_ggraph.qmd
+            - assignments/r_lab_5_–_aesthetics_in_ggraph.qmd
+            - assignments/r_lab_6_–_visualizing_power.qmd
+            - assignments/r_lab_7_–_groups_in_networks.qmd
+            - assignments/r_lab_8_–_network_stats.qmd
+
+            
+
 
 format:
   html:

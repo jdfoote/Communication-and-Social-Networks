@@ -9,10 +9,6 @@ date: "2024-11-12"
 
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
 
-**Lecture Video:**
-
-* [Technology and networks](https://youtu.be/iTiduq9GplU) [19:38]
-
 **Readings:**
 
 * Pariser, E. [Beware Online Filter Bubbles TED talk](https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles)
@@ -22,6 +18,15 @@ date: "2024-11-12"
 
 * (Optional) Kleinberg, J. (2012). [The Convergence of Social and Technological Networks](https://link-springer-com.ezproxy.lib.purdue.edu/chapter/10.1007%2F978-3-642-29952-0_8). In M. Agrawal, S. B. Cooper, & A. Li (Eds.), Theory and Applications of Models of Computation.
 * Chris Bail, et al. (2018). [Exposure to opposing views on social media can increase political polarization](https://www.pnas.org/content/115/37/9216). PNAS.
+
+**Lecture Video:**
+
+{{< video https://www.youtube.com/watch?v=iTiduq9GplU >}} [19:38]
+
+* Slides
+
+<iframe class='slide-deck' src="/lectures/content_lectures/networks_and_tech.html"></iframe>
+
 
 ### Thursday
 

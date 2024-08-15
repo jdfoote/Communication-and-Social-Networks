@@ -7,7 +7,7 @@ date: "2024-10-15"
 
 **Assignment Due:**
 
-* Proposal for [Final Project](Final-Project); this is a few paragraphs about which final project you'd like to do, and what you are planning to do for it.
+* Proposal for [Final Project](/assignments/Final-project.qmd); this is a few paragraphs about which final project you'd like to do, and what you are planning to do for it.
 * Troubled Lands Reflection
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
 
@@ -34,8 +34,8 @@ date: "2024-10-15"
 
 **Assignments Due:**
 
-* [Social Search Assignment](Social-Search-Assignment)
+* [Social Search Assignment](/assignments/Social-Search-Assignment.qmd)
 
 **Class Schedule:**
 
-* [Six Degrees of Wikipedia Activity](Six-Degrees-of-Wikipedia-Activity)
+* [Six Degrees of Wikipedia Activity](/assignments/Six-Degrees-of-Wikipedia-Activity.qmd)

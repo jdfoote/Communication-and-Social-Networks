@@ -19,14 +19,6 @@ library(tidygraph)
 library(ggraph)
 ```
 
-## Test
-
-<div class="r-stack">
-  <img class="fragment" src="https://placekitten.com/450/300" width="450" height="300">
-  <img class="fragment" src="https://placekitten.com/300/450" width="300" height="450">
-  <img class="fragment" src="https://placekitten.com/400/400" width="400" height="400">
-</div>
-
 ## We are surrounded by "collective goods"
 
 <ul>
@@ -56,13 +48,41 @@ Group projects
 </li>
 </ul>
 </div>
-<div class="col r-stack">
+
+::: {.r-stack .col}
+
   <img class="fragment" src="images/park.jpg" width="450" height="200" data-fragment-index="2">
   <img class="fragment" src="images/road.jpg" width="450" height="300" data-fragment-index="3">
   <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="4">
   <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="5">
   <img class="fragment" src="images/park.jpg" width="450" height="300" data-fragment-index="6">
+:::
+
 </div>
+
+##
+
+<div class="r-stack">
+  <img
+    class="fragment fade-out"
+    data-fragment-index="0"
+    src="https://picsum.photos/450/300"
+    width="450"
+    height="300"
+  />
+  <img
+    class="fragment current-visible"
+    data-fragment-index="0"
+    src="https://picsum.photos/300/450"
+    width="300"
+    height="450"
+  />
+  <img
+    class="fragment"
+    src="https://picsum.photos/400/400"
+    width="400"
+    height="400"
+  />
 </div>
 
 

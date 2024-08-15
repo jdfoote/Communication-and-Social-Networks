@@ -11,17 +11,21 @@ date: "2024-10-08"
 
 **Assignment Due (Wednesday):**
 
-* [R Lab 5 - Aesthetics in ggraph](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_5_aesthetics_in_ggraph.qmd)
-  * [Lab Explanation Video](https://www.youtube.com/watch?v=hsncjCu2yeo)
+* [R Lab 5 - Aesthetics in ggraph](/assignments/r_lab_5_%E2%80%93_aesthetics_in_ggraph.qmd)
 * [Reading Review Assignments](/syllabus/syllabus.qmd#reading-review-assignments)
-
-**Lecture Video:**
-
-* [Small worlds video](https://www.youtube.com/watch?v=g92nfiyI4rU) [18:45] [Slides](https://jeremydfoote.com/Communication-and-Social-Networks/week_8/lecture/small_worlds.html)
 
 **Readings:** 
 
 * [The Science of Six Degrees of Separation](https://www.youtube.com/watch?v=TcxZSmzPw8k) [video][9:22]
 * Travers, J. and Milgram, S. (1969). [An experimental study of the small world problem](https://www-jstor-org.ezproxy.lib.purdue.edu/stable/2786545). *Sociometry*, 32(4):425-443
-  * [Claude.ai summary](.pages/Travers-summary.html)
+  * [Claude.ai summary](./pages/Travers-summary.qmd)
 * (Optional but short) Dodds, P. S., Muhamad, R., & Watts, D. J. (2003). [An Experimental Study of Search in Global Social Networks](https://science-sciencemag-org.ezproxy.lib.purdue.edu/content/301/5634/827). *Science*, 301(5634), 827.
+
+**Lecture Video:**
+
+{{< video https://www.youtube.com/watch?v=g92nfiyI4rU >}} [18:45]
+
+* Slides
+
+<iframe class='slide-deck' src="/lectures/content_lectures/small_worlds.html"></iframe>
+

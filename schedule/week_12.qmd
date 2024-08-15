@@ -7,8 +7,7 @@ date: "2024-11-05"
 
 **Assignment Due:**
 
-* [R Lab 7 - Finding and visualizing groups in networks](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_7_groups_in_networks.qmd)
-  * [Lab 7 Walkthrough](https://youtu.be/Ob1rxN7_eO4)
+* [R Lab 7 - Finding and visualizing groups in networks](/assignments/r_lab_7_%E2%80%93_groups_in_networks.qmd)
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
 
 **Readings:**

@@ -7,9 +7,8 @@ date: "2024-10-22"
 
 **Assignment Due:**
 
-* Turn in your [Self Assessment Reflection](Self-Assessment-Reflection) on Brightspace
-* [R Lab 6 - Visualizing Power](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/lab_6_visualizing_power.qmd)
-  * [Lab walkthrough](https://www.youtube.com/watch?v=l18Jd9XCAec)
+* Turn in your [Self Assessment Reflection](/assignments/Self-Assessment-Reflection.qmd) on Brightspace
+* [R Lab 6 - Visualizing Power](/assignments/r_lab_6_%E2%80%93_visualizing_power.qmd)
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments)
 
 **Readings:** 

@@ -17,6 +17,7 @@ knitr::opts_knit$set(root.dir = './')
 library(igraph)
 library(tidygraph)
 library(ggraph)
+library(patchwork)
 ```
 
 ## Much of our lives are lived in the context of small groups
@@ -37,27 +38,33 @@ library(ggraph)
 ## Research has also focused on what makes groups effective at meeting their goals
 
 > - Which network do you think would be most effective?
+
 <div class='fragment'>
-```{r fig.width=2, fig.height=2}
-make_star(6) |>
+
+```{r fig.width=8, fig.height=4}
+
+star <- make_star(6) |>
   as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()
 
-make_ring(6) |>
+ring <- make_ring(6) |>
   as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()
 
-make_full_graph(6) |>
+complete <- make_full_graph(6) |>
   as_tbl_graph() |>
   ggraph(layout='fr') +
   geom_edge_fan() + 
   geom_node_point() + theme_void()
+
+star + plot_spacer() + ring + plot_spacer() + complete
 
 ```
+
 </div>
 
 ## It depends on the task!

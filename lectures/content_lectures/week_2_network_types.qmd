@@ -13,6 +13,7 @@ format:
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = './')
 #source("resources/preamble.R")
+set.seed(1981)
 
 library(igraph)
 library(tidygraph)

@@ -127,7 +127,7 @@ There will be one exam. It will assess your understanding of core communication 
 
 ## Final Project
 
-Students will complete a [Final Project](/schedule/pages/Final-project.html) that uses the theories, principles, and skills learned in this class.
+Students will complete a [Final Project](/assignments/Final-project.html) that uses the theories, principles, and skills learned in this class.
 
 A number of intermediate assignments through the semester will help you to gain the skills and data necessary to be successful.
 
@@ -135,7 +135,7 @@ A number of intermediate assignments through the semester will help you to gain 
 
 This course will follow a "self-assessment" philosophy. I am more interested in helping you to learn things that will be useful to you than in assigning grades. In general, I think that my time is much better spent in providing better feedback and in being available to work through problems together.
 
-The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use [this form](/schedule/pages/Self-Assessment-Reflection.html) to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages, you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work, will be the most important factor in final grades.
+The university still requires grades, so you will be leading the evaluation of your work. This will be completed with me in three stages, at the end of weeks 5, 10, and 16. In each stage, you will use [this form](/assignments/Self-Assessment-Reflection.qmd) to reflect on what you have accomplished thus far, how it has met, not met, or exceeded expectations, based both on rubrics and personal goals and objectives. At each of these stages, you will receive feedback on your assessments. By the end of the semester, you should have a clear vision of your accomplishments and growth, which you will turn into a grade. As the instructor-of-record, I maintain the right to disagree with your assessment and alter grades as I see fit, but any time that I do this it will be accompanied by an explanation and discussion. These personal assessments, reflecting both honest and meaningful reflection of your work, will be the most important factor in final grades.
 
 We will use the following rubric in our assessment:
 

@@ -11,6 +11,13 @@ date: "2024-08-27"
 * [Homework 1](/assignments/Homework-1.html)
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments) (Due Monday at noon!)
 
+
+**Readings (before class):**
+
+* James M. Cook, [What is a Social Network?](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/08/WhatIsASocialNetwork.pdf)
+* James M. Cook, [Individuals versus Networks](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/09/IndividualsVersusNetworks.pdf)
+* (Optional/skim) Freeman, L. C. (2000). [Visualizing social networks](https://www.cmu.edu/joss/content/articles/volume1/Freeman.html). Journal of social structure, 1(1), 4.
+
 **Lecture Video (before class):**
 
 
@@ -21,12 +28,6 @@ date: "2024-08-27"
 * Slides
 
 <iframe class='slide-deck' src="/lectures/content_lectures/week_2_network_types.html"></iframe>
-
-**Readings (before class):**
-
-* James M. Cook, [What is a Social Network?](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/08/WhatIsASocialNetwork.pdf)
-* James M. Cook, [Individuals versus Networks](https://web.archive.org/web/20210617083354/http://www.umasocialmedia.com/socialnetworks/wp-content/uploads/2016/09/IndividualsVersusNetworks.pdf)
-* (Optional/skim) Freeman, L. C. (2000). [Visualizing social networks](https://www.cmu.edu/joss/content/articles/volume1/Freeman.html). Journal of social structure, 1(1), 4.
 
 **Concepts:**
 
@@ -45,5 +46,4 @@ date: "2024-08-27"
 **Class Schedule:**
 
 * Go through [Parable of the Polygons](https://ncase.me/polygons/) by Nicky Case
-* Start work on [R Lab 1](pages/R-Lab-1.html)
-* [R Lab 1 Walkthrough](https://youtu.be/7QKuOHoMoZA)
+* Start work on [R Lab 1](/assignments/r_lab_1_-_installation.qmd)
