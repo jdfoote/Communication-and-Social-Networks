@@ -1,5 +1,5 @@
 ---
-title: granovetter summary
+title: Claude.AI summary of Granovetter's Strength of Weak Ties
 ---
 This 1973 paper by Mark Granovetter discusses the strength of weak ties
 in social networks. Granovetter argues that weak social ties,

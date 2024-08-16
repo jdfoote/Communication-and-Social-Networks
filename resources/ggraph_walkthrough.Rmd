@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = T)
 knitr::opts_knit$set(root.dir = './')
 ```
 
-In this tutorial, I'm going to introduce you to two of my favorite packages for working with and visualizing networks - [tidygraph](tidygraph.data-imaginist.com/) and [ggraph]([ggraph.data-imaginist.com/), both developed by [Thomas Lin Pederson](https://www.data-imaginist.com/).
+In this tutorial, I'm going to introduce you to two of my favorite packages for working with and visualizing networks - [tidygraph](https://tidygraph.data-imaginist.com/) and [ggraph](https://ggraph.data-imaginist.com/), both developed by [Thomas Lin Pederson](https://www.data-imaginist.com/).
 
 These packages take `igraph` networks, and then use tools from the `tidyverse` to make it easier to manipulate and visualize them. An `igraph` network is a complicated object. `tidygraph` extends the `tidy` paradigm to networks by representing networks as two tables---a table of nodes and node attributes and a table of edges and edge attributes.
 

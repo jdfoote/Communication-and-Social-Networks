@@ -212,9 +212,9 @@ some great options of network data files already in igraph format at
 
 I created an example of how to load this data, and how to run some
 simple network metrics and visualizations. There\'s an [RMarkdown file
-here](https://github.com/jdfoote/Communication-and-Social-Networks/raw/spring-2021/resources/final_project_example_code.Rmd)
+here](/resources/final_project_example_code.Rmd)
 and the [HTML output
-here](https://jeremydfoote.com/Communication-and-Social-Networks/resources/final_project_example_code.html).
+here](/resources/final_project_example_code.html).
 
 ### Examples {#examples_1}
 

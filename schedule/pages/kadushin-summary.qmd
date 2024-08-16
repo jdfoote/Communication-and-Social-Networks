@@ -1,7 +1,6 @@
 ---
-title: kadushin summary
+title: "Claude.ai summary of Kadushin, C. (2012). Networks as Social Capital, in Kadushin, C. (2012). Understanding Social Networks. Theories, Concepts and Findings. Oxford: Oxford University Press."
 ---
-### Claude.ai summary of Kadushin, C. (2012). Networks as Social Capital, in Kadushin, C. (2012). Understanding Social Networks. Theories, Concepts and Findings. Oxford: Oxford University Press. {#claude.ai_summary_of_kadushin_c._2012._networks_as_social_capital_in_kadushin_c._2012._understanding_social_networks._theories_concepts_and_findings._oxford_oxford_university_press.}
 
 Social capital refers to the resources and benefits that accrue to
 individuals and groups through their social networks. The concept has

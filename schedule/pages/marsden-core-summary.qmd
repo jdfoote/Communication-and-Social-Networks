@@ -1,5 +1,5 @@
 ---
-title: marsden core summary
+title: Claude.AI summary of Marsden (1987)
 ---
 This article analyzes data from the 1985 General Social Survey to
 provide a descriptive overview of the structure of core discussion

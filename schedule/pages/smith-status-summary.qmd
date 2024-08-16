@@ -1,5 +1,5 @@
 ---
-title: smith status summary
+title: Claude.AI summary of Smith et al.
 ---
 Here is the summary with the table converted to wiki markup:
 

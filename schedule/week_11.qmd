@@ -18,7 +18,7 @@ date: "2024-10-29"
 
 * Girvan, M., & Newman, M. E. (2002). [Community structure in social and biological networks](https://www.pnas.org/content/pnas/99/12/7821.full.pdf). Proceedings of the National Academy of Sciences.
 * Barberá, P., Wang, N., Bonneau, R., Jost, J. T., Nagler, J., Tucker, J., & González-Bailón, S. (2015). [The critical periphery in the growth of social protests](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143611). PLoS ONE.
-  * [Claude.ai Summary](Barbera-summary)
+  * [Claude.ai Summary](pages/Barbera-summary.qmd)
 * (Optional) Hanneman, R. A., & Riddle, M. (2005). [Cliques and sub-groups](http://faculty.ucr.edu/~hanneman/nettext/C11_Cliques.html). In Introduction to social network methods. University of California.
 
 **Video Lecture:**
