@@ -1,5 +1,5 @@
 ---
-title: R Lab 1
+title: R Lab 1 - Setting up your environment
 date: "2024-09-09"
 ---
 

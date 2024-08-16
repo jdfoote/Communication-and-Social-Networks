@@ -75,6 +75,6 @@ website:
 
 format:
   html:
-    theme: zephyr
+    theme: yeti
     css: resources/custom_css.css
     toc: true

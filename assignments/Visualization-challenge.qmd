@@ -10,18 +10,9 @@ answer, and create a visualization.
 
 There are three parts of the assignment:
 
-1\) First, I want you to think about a question and draw on a piece of
-paper what you want the outcome to look like. For example, if you want
-to visualize whether people who have a certain attribute are more
-popular, you may decide to color nodes by in-degree and change their
-size or shape based on that attribute.
-
-2\) Second, you will do your best to recreate your idea using tidygraph
-and ggraph. I would like you to turn in both your drawing and your
-visualization.
-
-3\) Write a paragraph or two explaining what the visualization tells us
-about the question that you asked.
+1. First, I want you to think about a question and draw on a piece of paper what you want the outcome to look like. For example, if you want to visualize whether people who have a certain attribute are more popular, you may decide to color nodes by in-degree and change their size or shape based on that attribute.
+2.  Second, you will do your best to recreate your idea using tidygraph and ggraph. I would like you to turn in both your drawing and your visualization.
+3. Write a paragraph or two explaining what the visualization tells us about the question that you asked.
 
 You are welcome to work with a partner if you would like. Just make it
 clear who you worked with and I would encourage you to be a bit more
@@ -45,23 +36,14 @@ You may want to ask questions like:
 
 ### Resources
 
-The [Introduction to ggraph and tidygraph
-reading](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.html)
-actually uses this dataset. You can look to that for examples to build
-on (Here is the [R Markdown
-file](https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.Rmd)
-that I used to create the web page).
+The [Introduction to ggraph and tidygraph reading](/resources/ggraph_walkthrough.html) actually uses this dataset. You can look to that for examples to build on.
 
 Data:
 
--   [Node
-    data](https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_nodes.csv)
--   [Edge
-    data](https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_edges.csv)
+-   [Node data](/resources/school_graph_nodes.csv)
+-   [Edge data](/resources/school_graph_edges.csv)
 
-Descriptions of what each measure means are at [this
-site](http://www.stats.ox.ac.uk/~snijders/siena/tutorial2010_data.htm),
-maintained by the people who collected the data.
+Descriptions of what each measure means are at [this site](http://www.stats.ox.ac.uk/~snijders/siena/tutorial2010_data.htm), maintained by the people who collected the data.
 
 To import the data you can right-click on and save the edge and node
 data files above to your computer and then import them into R.
