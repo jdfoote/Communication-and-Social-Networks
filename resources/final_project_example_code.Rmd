@@ -1,0 +1,101 @@
+---
+title: "Final Project Example Code"
+author: "Jeremy Foote - COM 411"
+output:
+  html_document:
+    df_print: paged
+---
+
+For the final project, you might want to use some data from an actual company to showcase the sort of analysis that you could do for the organization that you choose to focus on.
+
+There is a great set of network data at https://github.com/schochastics/networkdata. You can install all of them with the following (you will only need to run this once - uncomment these lines, run them, and after that comment them out with # like I do below).
+
+```{r}
+#install.packages('drat')
+#drat::addRepo("schochastics")
+#install.packages("networkdata")
+```
+
+After it's installed, we load it and set options
+
+```{r setup, message=F}
+knitr::opts_chunk$set(echo = TRUE)
+library(networkdata)
+library(igraph)
+library(tidyverse)
+library(ggraph)
+library(tidygraph)
+```
+
+The data we want is stored in three igraph networks that came from observing and surveying managers in a high-tec company. They are called `ht_advice`, `ht_friends`, and `ht_reports`.
+
+There are a few other data sources that might be interesting to you - you can look at all of them by running `data(package = "networkdata")`
+
+I am giving some basic examples of some simple things you could do. I expect you to be creative and insightful, and to build on what I am doing.
+
+Not all of your "visualizations" need to be network graphs. For example, this is one way to prepare a report about who is influential.
+
+```{r}
+ht_advice <- ht_advice |> as_tbl_graph() |>
+  activate(nodes) |>
+  mutate(betweenness = centrality_betweenness(),
+         degree = centrality_degree(mode='in'),
+         closeness = centrality_closeness(mode='in', normalized=T)
+         )
+
+ht_advice |>
+  select(betweenness, degree, closeness) |>
+  data.frame() |>
+  arrange(desc(betweenness))
+```
+
+You already know how to change the size/color of nodes based on one of these measures.
+
+```{r}
+
+ht_advice |>
+  ggraph() + 
+  geom_edge_fan(color='gray') +
+  geom_node_point(aes(color=betweenness), size = 3) +
+  scale_color_viridis_c() +
+  theme_graph()
+
+```
+
+Or you might look at whether younger members are being integrated... (remember, you can view attributes using this code):
+
+```{r}
+ht_advice
+```
+
+
+For example, this shows those under the median age as a different color, and uses the friendship network.
+
+```{r}
+ht_friends |> 
+  as_tbl_graph() |> # Convert to a graph that ggraph can use
+  mutate(young = age < median(age)) |> # Create a new variable for whether someone is "young"
+  ggraph() + 
+  geom_edge_fan(color='gray') +
+  geom_node_point(aes(color=young), size=3)+
+  theme_graph() + 
+  scale_color_viridis_d() # Change the color scale to make it prettier
+```
+
+Finally, we might look for cross-departmental ties. Here's one way to do that, using custom colors:
+
+```{r}
+
+# Set a color for each department (0-4)
+dept_colors = c('orange','green','tomato','royalblue', 'purple')
+
+ht_advice |>
+  as_tbl_graph() |>
+  mutate(dept = as.factor(dept)) |>
+  ggraph() +
+  geom_edge_fan(color='gray') +
+  geom_node_point(aes(color=dept), size=3)+
+  theme_graph() + 
+  scale_color_manual(values = dept_colors) # Set the manual colors
+```
+
