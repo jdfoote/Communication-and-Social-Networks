@@ -172,9 +172,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the_goal">The goal</h2>
 <p>So far, the exercises have done a lot of hand-holding in helping you to import and visualize networks. For this project, you will identify a network-based question that you think a visualization could help to answer, and create a visualization.</p>
 <p>There are three parts of the assignment:</p>
-<p>1) First, I want you to think about a question and draw on a piece of paper what you want the outcome to look like. For example, if you want to visualize whether people who have a certain attribute are more popular, you may decide to color nodes by in-degree and change their size or shape based on that attribute.</p>
-<p>2) Second, you will do your best to recreate your idea using tidygraph and ggraph. I would like you to turn in both your drawing and your visualization.</p>
-<p>3) Write a paragraph or two explaining what the visualization tells us about the question that you asked.</p>
+<ol type="1">
+<li>First, I want you to think about a question and draw on a piece of paper what you want the outcome to look like. For example, if you want to visualize whether people who have a certain attribute are more popular, you may decide to color nodes by in-degree and change their size or shape based on that attribute.</li>
+<li>Second, you will do your best to recreate your idea using tidygraph and ggraph. I would like you to turn in both your drawing and your visualization.</li>
+<li>Write a paragraph or two explaining what the visualization tells us about the question that you asked.</li>
+</ol>
 <p>You are welcome to work with a partner if you would like. Just make it clear who you worked with and I would encourage you to be a bit more ambitious in what you try to do.</p>
 </section>
 <section id="dutch_school_data" class="level2">
@@ -188,11 +190,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="resources" class="level3">
 <h3 class="anchored" data-anchor-id="resources">Resources</h3>
-<p>The <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.html">Introduction to ggraph and tidygraph reading</a> actually uses this dataset. You can look to that for examples to build on (Here is the <a href="https://jeremydfoote.com/Communication-and-Social-Networks/week_6/ggraph_walkthrough.Rmd">R Markdown file</a> that I used to create the web page).</p>
+<p>The <a href="../resources/ggraph_walkthrough.html">Introduction to ggraph and tidygraph reading</a> actually uses this dataset. You can look to that for examples to build on.</p>
 <p>Data:</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_nodes.csv">Node data</a></li>
-<li><a href="https://raw.githubusercontent.com/jdfoote/Communication-and-Social-Networks/fall-2022/resources/school_graph_edges.csv">Edge data</a></li>
+<li><a href="../resources/school_graph_nodes.csv">Node data</a></li>
+<li><a href="../resources/school_graph_edges.csv">Edge data</a></li>
 </ul>
 <p>Descriptions of what each measure means are at <a href="http://www.stats.ox.ac.uk/~snijders/siena/tutorial2010_data.htm">this site</a>, maintained by the people who collected the data.</p>
 <p>To import the data you can right-click on and save the edge and node data files above to your computer and then import them into R.</p>
