@@ -2,7 +2,7 @@
 title: "Communication and Social Networks"
 ---
 
-<img src="https://jeremydfoote.com/images/FacebookSNA.jpg" />
+<img src="https://jeremydfoote.com/images/FacebookSNA.jpg" style='width:100%' />
 
 Welcome to Communication and Social Networks! 
 

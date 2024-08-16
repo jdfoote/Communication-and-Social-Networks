@@ -5,8 +5,8 @@ date: "2024-12-09"
 
 **Assignments Due (December 11):**
 
-* [Final Project](./pages/Final-project.html)
-* Turn in your [Final self reflection](Final-self-reflection) on Brightspace
+* [Final Project](/assignments/Final-project.qmd)
+* Turn in your [Final self reflection](/assignments/Final-Self-Assessment-Reflection.qmd) on Brightspace
 
 * Sign up for a Final Reflection Discussion on my calendar at [https://jeremydfoote.com/calendar/](https://jeremydfoote.com/calendar/) (15 minutes)
   * Must happen before December 14th

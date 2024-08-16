@@ -22,4 +22,4 @@ date: "2024-12-03"
 
 **Resources:**
 
-* (Optional) [Advanced network visualizations in R](https://github.com/jdfoote/com_and_social_networks_labs/raw/main/advanced_visualizations.qmd)
+* (Optional) [Advanced network visualizations in R](/assignments/advanced_visualizations.qmd)
