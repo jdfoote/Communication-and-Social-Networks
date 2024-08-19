@@ -1151,13 +1151,6 @@
     "text": "Who you are connected to can be more important than who you are"
   },
   {
-    "objectID": "lectures/class_lectures/week_1.html#who-you-are-connected-to-can-be-more-important-than-who-you-are-2",
-    "href": "lectures/class_lectures/week_1.html#who-you-are-connected-to-can-be-more-important-than-who-you-are-2",
-    "title": "Communication and Social Networks",
-    "section": "Who you are connected to can be more important than who you are",
-    "text": "Who you are connected to can be more important than who you are"
-  },
-  {
     "objectID": "lectures/class_lectures/week_1.html#goals",
     "href": "lectures/class_lectures/week_1.html#goals",
     "title": "Communication and Social Networks",
@@ -1190,7 +1183,7 @@
     "href": "lectures/class_lectures/week_1.html#class-meetings",
     "title": "Communication and Social Networks",
     "section": "Class Meetings",
-    "text": "Class Meetings\n\nMost content is asynchronous\n\nReadings\nVideo lectures\n\nTuesdays\n\nTime discussing + reviewing concepts and homework\nRandom cold calling\n\nThursdays\n\nActivities\nR Labs\nCo-working / Office Hours"
+    "text": "Class Meetings\n\nMost content is asynchronous\n\nReadings + Video lectures\n\nTuesdays\n\nTime discussing + reviewing concepts and homework\nRandom cold calling\n\nThursdays\n\nActivities\nR Labs\nCo-working / Office Hours"
   },
   {
     "objectID": "lectures/class_lectures/week_1.html#class-meetings-1",
@@ -1204,7 +1197,7 @@
     "href": "lectures/class_lectures/week_1.html#assignments",
     "title": "Communication and Social Networks",
     "section": "Assignments",
-    "text": "Assignments\n\nHomework\n\nSocial network concepts\nProgramming practice\n\nReading\n\n3-2-1 on Brightspace\n\n3 things you learned / connections made\n2 questions / things that are still confusing\n\n\n1 discussion question for class\n\nDiscussion Questions due Monday at noon\n\nParticipation (in class and online)"
+    "text": "Assignments\n\nHomework\n\nSocial network concepts\nProgramming practice\n\nReading\n\n3-2-1 on Brightspace\n\n3 things you learned / connections made\n2 questions / things that are still confusing\n1 discussion question for class\n\nDiscussion Questions due Monday at noon"
   },
   {
     "objectID": "lectures/class_lectures/week_1.html#readings",
@@ -1218,7 +1211,7 @@
     "href": "lectures/class_lectures/week_1.html#programming",
     "title": "Communication and Social Networks",
     "section": "Programming",
-    "text": "Programming\n\nYou will understand what this means! :)\n\n\n\ncreate_notable('zachary') %&gt;%\n  activate(nodes) %&gt;%\n  mutate(group = as.factor(group_infomap())) %&gt;%\n  ggraph(layout = 'kk') +\n  geom_edge_fan(width=.2) + \n  geom_node_point(aes(color = group), size = 5)"
+    "text": "Programming\n\nYou will understand what this means! :)\n\n\n\ncreate_notable('zachary') %&gt;%\n  activate(nodes) %&gt;%\n  mutate(group = as.factor(group_infomap())) %&gt;%\n  ggraph(layout = 'kk') +\n  geom_edge_fan(width=.2) + \n  geom_node_point(aes(color = group), size = 5) +\n  theme_graph()"
   },
   {
     "objectID": "lectures/class_lectures/week_1.html#exam",
@@ -1242,11 +1235,11 @@
     "text": "Discord\n\nConversation and questions\nHelp\n\nIn general, ask publicly so others can answer / see the answer"
   },
   {
-    "objectID": "lectures/class_lectures/week_1.html#wiki",
-    "href": "lectures/class_lectures/week_1.html#wiki",
+    "objectID": "lectures/class_lectures/week_1.html#course-website",
+    "href": "lectures/class_lectures/week_1.html#course-website",
     "title": "Communication and Social Networks",
-    "section": "Wiki",
-    "text": "Wiki\n\nSchedule\nLinks to readings\nLinks to assignments"
+    "section": "Course Website",
+    "text": "Course Website\n\nSyllabus\nSchedule\nLecture videos and slides\nLinks to readings\nLinks to assignments\nLet me know what’s broken"
   },
   {
     "objectID": "lectures/class_lectures/week_1.html#brightspace",
@@ -1646,7 +1639,7 @@
     "href": "assignments/r_lab_1_-_installation.html",
     "title": "R Lab 1 - Setting up your environment",
     "section": "",
-    "text": "This lab has three goals:\n\nGet your R environment is set up correctly\nIntroduce you to the idea of Quarto files\nCreate your first network graph\n\nYou can either do your homework on your own computer, or you can use the lab computers. In general, you should be able to get most of the labs done on Thursdays, but you will need to do work outside of class for some labs, and for the final project.\nThis semester, we are going to try using VSCode. This is a popular, open source Interactive Development Environment. One of the cool features is that it has an AI plugin which will automatically suggest code for you. I'm hopeful that this will let you do more, faster.\n\nInstall Quarto\n\nInstall Quarto\n\n\n\nInstall VSCode\n\nInstall VSCode\n\n\n\nInstall R\n\nInstall R. This is a really old, janky-looking site, but I promise it’s real.\n\n\n\nTry to run the lab\n\nCreate a folder on your computer called COM_411_Labs\nRight-click on this link to Lab 1 and save it into the COM_411_Labs folder\nOpen VSCode\nClick on the Extensions icon on the left (it’s 3 attached squares and one floating square)\nSearch for “quarto” and install the quarto extension\nSearch for “R” and install the R extension\nIn VSCode, Click File &gt; Open Folder - Navigate to the COM_411_Labs folder that you created earlier\nClick on the lab_1_quarto.qmd file, and it should open in the main window of VSCode. At this point, it may ask if you want to install “languageserver”. You can click “Install” if it asks.\nScroll down to line 36. You should see a little button that says “Run Cell”. Push that button, and a terminal will open at the bottom of the screen. This will run the R code in the cell.\nIn the R shell at the bottom of VSCode, paste the following:\n\ninstall.packages(c(\"rmarkdown\",\"tidyverse\",\"ggraph\",\"tidygraph\",\"igraphdata\"))\nIt will ask you what CRAN mirror you'd like to use. You can choose something in the US.\nIf it asks if you want to install from source, you can type “no”\nThis will show a bunch of crazy messages for a while. You can probably ignore them.\n\nInstall tinytex. Click the Quarto Preview terminal (in the bottom right) and type:\n\nquarto install tinytex\n\nClick the “Preview” icon at the top right, and hopefully it works!\nRead the document, make the changes that you are asked to, and then preview the document again. Notice that there is a new PDF file in the folder.\nUpload the PDF to Brightspace! You did it!!\n\nIf things aren’t working then ask a neighbor for help.\n\n\nVideo Walkthrough\nThis was from an older version of VSCode, but should still be helpful:\n\n\n\nSet up Github Copilot\nIf you want to use Github Copilot\n\nSign up for an account at Github education\nInstall the GitHub Copilot extension in VSCode\nAuthenticate using the popup that shows up in the bottom right\n\nWe will talk more about how to use Copilot in class.",
+    "text": "This lab has three goals:\n\nGet your R environment is set up correctly\nIntroduce you to the idea of Quarto files\nCreate your first network graph\n\nYou can either do your homework on your own computer, or you can use the lab computers. In general, you should be able to get most of the labs done on Thursdays, but you will need to do work outside of class for some labs, and for the final project.\nThis semester, we are going to try using VSCode. This is a popular, open source Interactive Development Environment. One of the cool features is that it has an AI plugin which will automatically suggest code for you. I'm hopeful that this will let you do more, faster.\n\nInstall Quarto\n\nInstall Quarto\n\n\n\nInstall VSCode\n\nInstall VSCode\n\n\n\nInstall R\n\nInstall R. This is a really old, janky-looking site, but I promise it’s real.\n\n\n\nTry to run the lab\n\nCreate a folder on your computer called COM_411_Labs\nRight-click on this link to Lab 1 and save it into the COM_411_Labs folder\nOpen VSCode\nClick on the Extensions icon on the left (it’s 3 attached squares and one floating square)\nSearch for “quarto” and install the quarto extension\nSearch for “R” and install the R extension\nIn VSCode, Click File &gt; Open Folder - Navigate to the COM_411_Labs folder that you created earlier\nClick on the lab_1_quarto.qmd file, and it should open in the main window of VSCode. At this point, it may ask if you want to install “languageserver”. You can click “Install” if it asks.\nScroll down to line 36. You should see a little button that says “Run Cell”. Push that button, and a terminal will open at the bottom of the screen. This will run the R code in the cell.\nIn the R shell at the bottom of VSCode, paste the following:\n\ninstall.packages(c(\"rmarkdown\",\"tidyverse\",\"ggraph\",\"tidygraph\",\"igraphdata\"))\nIt will ask you what CRAN mirror you'd like to use. You can choose something in the US.\nIf it asks if you want to install from source, you can type “no”\nThis will show a bunch of crazy messages for a while. You can probably ignore them.\nWINDOWS USERS: There’s a chance that this won’t work because VSCode doesn’t know where R is. This page has some instructions on how to fix it. Look under “Connect R”. If you can’t get it to work, ask a neighbor (or me) for help.\n\nInstall tinytex. Click the Quarto Preview terminal (in the bottom right) and type:\n\nquarto install tinytex\n\nClick the “Preview” icon at the top right, and hopefully it works!\nRead the document, make the changes that you are asked to, and then preview the document again. Notice that there is a new PDF file in the folder.\nUpload the PDF to Brightspace! You did it!!\n\nIf things aren’t working then ask a neighbor for help.\n\n\nVideo Walkthrough\nThis was from an older version of VSCode, but should still be helpful:\n\n\n\nSet up Github Copilot\nIf you want to use Github Copilot\n\nSign up for an account at Github education\nInstall the GitHub Copilot extension in VSCode\nAuthenticate using the popup that shows up in the bottom right\n\nWe will talk more about how to use Copilot in class.",
     "crumbs": [
       "Assignments",
       "R Labs",

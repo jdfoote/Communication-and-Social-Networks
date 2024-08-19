@@ -404,10 +404,10 @@
 <p><img src="./images/the_fam.jpg"></p>
 </div>
 <div class="col fragment">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png" style="max-width:250px;"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png" style="max-width:200px;"></p>
 </div>
 <div class="col fragment">
-<p><img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style="max-width:250px;"></p>
+<p><img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style="max-width:150px;"></p>
 </div>
 </div>
 </section>
@@ -419,10 +419,10 @@
 <section id="introductions" class="slide level2">
 <h2>Introductions</h2>
 <ul>
-<li>Name</li>
-<li>Year</li>
-<li>Major</li>
-<li>Closest connection to a famous person</li>
+<li class="fragment">Name</li>
+<li class="fragment">Year</li>
+<li class="fragment">Major</li>
+<li class="fragment">Closest connection to a famous person</li>
 </ul>
 </section>
 <section id="what-is-communication-and-social-networks" class="slide level2">
@@ -450,16 +450,15 @@ NOT THIS KIND OF SOCIAL NETWORK!
 </section>
 <section id="who-you-are-connected-to-can-be-more-important-than-who-you-are" class="slide level2">
 <h2>Who you are connected to can be more important than who you are</h2>
-
-<img class="fragment r-stretch" src="./images/dyad_net.png" style="width:60%"></section>
+<div class="r-stack">
+<p><img data-src="./images/dyad_net.png" class="fragment"></p>
+<p><img data-src="./images/full_net.png" class="fragment"></p>
+</div>
+</section>
 <section id="who-you-are-connected-to-can-be-more-important-than-who-you-are-1" class="slide level2">
 <h2>Who you are connected to can be more important than who you are</h2>
 
-<img class="fragment r-stretch" src="./images/full_net.png" style="width:60%;"></section>
-<section id="who-you-are-connected-to-can-be-more-important-than-who-you-are-2" class="slide level2">
-<h2>Who you are connected to can be more important than who you are</h2>
-
-<img class="fragment r-stretch" src="./images/covid_bubble.png" style="width:60%;"></section>
+<img data-src="./images/covid_bubble.png" class="fragment r-stretch"></section>
 <section id="goals" class="slide level2">
 <h2>Goals</h2>
 <ol type="1">
@@ -511,8 +510,7 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <ul>
 <li class="fragment">Most content is asynchronous
 <ul>
-<li class="fragment">Readings</li>
-<li class="fragment">Video lectures</li>
+<li class="fragment">Readings + Video lectures</li>
 </ul></li>
 <li class="fragment">Tuesdays
 <ul>
@@ -549,13 +547,10 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <ul>
 <li class="fragment">3 things you learned / connections made</li>
 <li class="fragment">2 questions / things that are still confusing</li>
+<li class="fragment">1 discussion question for class</li>
 </ul></li>
-</ul></li>
-<li class="fragment">1 discussion question for class
-<ul>
 <li class="fragment">Discussion Questions due Monday at noon</li>
 </ul></li>
-<li class="fragment">Participation (in class and online)</li>
 </ul>
 </section>
 <section id="readings" class="slide level2">
@@ -578,18 +573,19 @@ NOT THIS KIND OF SOCIAL NETWORK!
 <ul>
 <li class="fragment">You will understand what this means! :)</li>
 </ul>
-<div class="fragment">
+<div class="fragment small">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">create_notable</span>(<span class="st">'zachary'</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a></a>  <span class="fu">mutate</span>(<span class="at">group =</span> <span class="fu">as.factor</span>(<span class="fu">group_infomap</span>())) <span class="sc">%&gt;%</span></span>
 <span id="cb1-4"><a></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">'kk'</span>) <span class="sc">+</span></span>
 <span id="cb1-5"><a></a>  <span class="fu">geom_edge_fan</span>(<span class="at">width=</span>.<span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb1-6"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> group), <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> group), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb1-7"><a></a>  <span class="fu">theme_graph</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="week_1_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+<p><img data-src="week_1_files/figure-revealjs/unnamed-chunk-1-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -629,12 +625,15 @@ NOT THIS KIND OF SOCIAL NETWORK!
 </ul></li>
 </ul>
 </section>
-<section id="wiki" class="slide level2">
-<h2>Wiki</h2>
+<section id="course-website" class="slide level2">
+<h2>Course Website</h2>
 <ul>
+<li class="fragment">Syllabus</li>
 <li class="fragment">Schedule</li>
+<li class="fragment">Lecture videos and slides</li>
 <li class="fragment">Links to readings</li>
 <li class="fragment">Links to assignments</li>
+<li class="fragment">Let me know what’s broken</li>
 </ul>
 </section>
 <section id="brightspace" class="slide level2">
