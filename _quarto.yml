@@ -69,6 +69,8 @@ website:
             - assignments/r_lab_6_–_visualizing_power.qmd
             - assignments/r_lab_7_–_groups_in_networks.qmd
             - assignments/r_lab_8_–_network_stats.qmd
+  repo-url: "https://github.com/jdfoote/Communication-and-Social-Networks"
+  repo-actions: ["edit", "issue"]
 
             
 
