@@ -8,6 +8,7 @@ format:
     progress: true
     transition: convex
     reveal_plugins: ['notes']
+    incremental: true
 ---
 
 ```{r setup, include=FALSE}
@@ -26,10 +27,10 @@ library(ggraph)
 <img src='./images/the_fam.jpg'/>
 </div>
 <div class='col fragment'>
-<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:250px;'>
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/500px-Wikipedia-logo-v2.svg.png' style='max-width:200px;'>
 </div>
 <div class='col fragment'>
-<img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:250px;'/>
+<img src="https://vignette.wikia.nocookie.net/logopedia/images/c/cd/Reddit_2017_%28Stacked%29.svg/revision/latest/scale-to-width-down/709?cb=20190502124341" style='max-width:150px;'/>
 </div>
 </div>
 
@@ -62,158 +63,160 @@ Why did the nearsighted man fall in the well?
 
 <img class='fragment' src='./images/zacharay_karate.png' height='200px' />
 
->- How do groups make decisions?
->- How do fads and fashions and misinformation and diseases spread?
->- How do our connections influence our perceptions about and behavior in the world?
+- How do groups make decisions?
+- How do fads and fashions and misinformation and diseases spread?
+- How do our connections influence our perceptions about and behavior in the world?
 
 ## Who you are connected to can be more important than who you are
 
-<img class='fragment' src='./images/dyad_net.png' style='width:60%'/>
+::: {.r-stack}
+![](./images/dyad_net.png){.fragment}
+
+![](./images/full_net.png){.fragment}
+:::
 
 ## Who you are connected to can be more important than who you are
 
-<img class='fragment' src='./images/full_net.png' style='width:60%;'/>
-
-## Who you are connected to can be more important than who you are
-
-<img class='fragment' src='./images/covid_bubble.png' style='width:60%;'/>
-
+![](./images/covid_bubble.png){.fragment}
 
 ## Goals
-> 1. Understand the foundations of network theory and analysis
-> 2. Critically read social network studies
-> 3. Learn how social networks relate to your own interests
-> 4. Gain a basic understanding of gathering and analyzing network data in R
+ 1. Understand the foundations of network theory and analysis
+ 2. Critically read social network studies
+ 3. Learn how social networks relate to your own interests
+ 4. Gain a basic understanding of gathering and analyzing network data in R
 
 # How we reach those goals
 
 ## About the class
 
-> - Building a learning community
-> - Discussions vs. lectures
-> - Resolving confusion
-> - Project-based
+ - Building a learning community
+ - Discussions vs. lectures
+ - Resolving confusion
+ - Project-based
 
 ## Grading
->- Normal grading has some negative unintended consequences
+- Normal grading has some negative unintended consequences
 <div class='container'>
 <div class='col'>
 <img class='fragment' src='./images/discussion.jpg' style='max-width:450px;'/>
 </div>
 </div>
->- How can we build a learning community?
+- How can we build a learning community?
 
 ## Grading
->- I'm interested in teaching, not assessing
-> - Goal is to build structures that encourage learning and accountability
->- Assignments will be turned in on Brightspace and/or discussed in class
->- I will provide general feedback
->- 3 times during the semester you will turn in reflection pieces
->- If I disagree I will reach out
+- I'm interested in teaching, not assessing
+ - Goal is to build structures that encourage learning and accountability
+- Assignments will be turned in on Brightspace and/or discussed in class
+- I will provide general feedback
+- 3 times during the semester you will turn in reflection pieces
+- If I disagree I will reach out
 
 ## Class Meetings
 
-> - Most content is asynchronous
->	- Readings
->	- Video lectures
-> - Tuesdays
->	- Time discussing + reviewing concepts and homework
->	- Random cold calling
-> - Thursdays 
->	- Activities
->	- R Labs
->	- Co-working / Office Hours
+- Most content is asynchronous
+  - Readings + Video lectures
+- Tuesdays
+  - Time discussing + reviewing concepts and homework
+  - Random cold calling
+- Thursdays 
+  - Activities
+  - R Labs
+  - Co-working / Office Hours
 
 ## Class meetings
 
-> - I will work hard to make our classes valuable
-> - Do the same; be prepared, open, and engaged
-> - Class discussions are a fundamental part of the class and I expect you to be at every class
+ - I will work hard to make our classes valuable
+ - Do the same; be prepared, open, and engaged
+ - Class discussions are a fundamental part of the class and I expect you to be at every class
 
 ## Assignments
 
->- Homework
->	- Social network concepts
->	- Programming practice
->- Reading
->   - 3-2-1 on Brightspace
->     - 3 things you learned / connections made
->     - 2 questions / things that are still confusing
+- Homework
+	- Social network concepts
+	- Programming practice
+- Reading
+   - 3-2-1 on Brightspace
+     - 3 things you learned / connections made
+     - 2 questions / things that are still confusing
       - 1 discussion question for class
->	- Discussion Questions due Monday at noon
->- Participation (in class and online)
+	- Discussion Questions due Monday at noon
 
 ## Readings
-> - Academic papers
->	- Typically linked from wiki
->	- A few on Brightspace (I will make this clear)
-> - Textbooks
->	- Networks, Crowds and Markets
->	- Introduction to social network methods
+ - Academic papers
+	- Typically linked from wiki
+	- A few on Brightspace (I will make this clear)
+ - Textbooks
+	- Networks, Crowds and Markets
+	- Introduction to social network methods
 
 ## Programming
 
->- You will understand what this means! :)
+- You will understand what this means! :)
 
-<div class='fragment'>
-```{r, echo = T, message = F, warning=F, fig.height = 3.5}
+::: {.fragment .small}
+
+```{r, echo = T, message = F, warning=F, fig.height=3.7, fig.width=6}
 create_notable('zachary') %>%
   activate(nodes) %>%
   mutate(group = as.factor(group_infomap())) %>%
   ggraph(layout = 'kk') +
   geom_edge_fan(width=.2) + 
-  geom_node_point(aes(color = group), size = 5)
+  geom_node_point(aes(color = group), size = 5) +
+  theme_graph()
 ```
-</div>
+::: 
 
 ## Exam
-> - One exam
->	- Goal is to encourage self-accountability
+ - One exam
+	- Goal is to encourage self-accountability
 
 ## Final Project
 
 Options:
 
-> - Group project: network-based intervention (e.g., spreading an idea on campus)
-> - (Group?) research project: analysis of network data
-> - "Pitch" to an organization about how what you have learned could be used to help their organization
+ - Group project: network-based intervention (e.g., spreading an idea on campus)
+ - (Group?) research project: analysis of network data
+ - "Pitch" to an organization about how what you have learned could be used to help their organization
 
 
 # Resources
 
 ## Discord
 
-> - Conversation and questions
-> - Help
->	- In general, ask publicly so others can answer / see the answer
+ - Conversation and questions
+ - Help
+	- In general, ask publicly so others can answer / see the answer
 
-## Wiki
+## Course Website
 
-> - Schedule
-> - Links to readings
-> - Links to assignments
+- Syllabus
+- Schedule
+- Lecture videos and slides
+- Links to readings
+- Links to assignments
+- Let me know what's broken
 
 ## Brightspace
 
-> - Some readings
-> - Submit assignments
+ - Some readings
+ - Submit assignments
 
 ## Office Hours
 
-> - Tuesdays, 2-4
->	- Also open to meeting virtually
+ - Tuesdays, 2-4
+	- Also open to meeting virtually
 
 ## Please be vocal
->- I will solicit feedback as part of reflections
->- Let me know what is and isn't working
+- I will solicit feedback as part of reflections
+- Let me know what is and isn't working
 
 ## Assignments
 
-> - Read the syllabus
-> - Fill out the reflection on Brightspace
-> - This Thursday will be a (fun!) synchronous activity
-> - Bring your computer, if possible!
-> - Make sure you are signed up on Discord
+ - Read the syllabus
+ - Fill out the reflection on Brightspace
+ - This Thursday will be a (fun!) synchronous activity
+ - Bring your computer, if possible!
+ - Make sure you are signed up on Discord
 
 
 ## Questions?

@@ -52,6 +52,7 @@ I\'m hopeful that this will let you do more, faster.
         "no"
     -   This will show a bunch of crazy messages for a while. You can
         probably ignore them.
+    -  WINDOWS USERS: There's a chance that this won't work because VSCode doesn't know where R is. [This page](https://rolkra.github.io/R-VSCode/) has some instructions on how to fix it. Look under "Connect R". If you can't get it to work, ask a neighbor (or me) for help.
 11. Install tinytex.
     Click the Quarto Preview terminal (in the bottom right) and type:
     -   `quarto install tinytex`
