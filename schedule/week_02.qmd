@@ -9,6 +9,7 @@ date: "2024-08-27"
 **Assignment Due (on Monday):**
 
 * [Homework 1](/assignments/Homework-1.html)
+* Initial Reflection (on Brightspace)
 * [Reading Review](/syllabus/syllabus.qmd#reading-review-assignments) (Due Monday at noon!)
 
 
